@@ -1,0 +1,97 @@
+\section{Positive Measures, Discretization, and Identifiability}\label{sec:theory}
+\subsection{Observation model and the meaning of a diffusion distribution}
+Let $I_D=[D_{\min},D_{\max}]\subset(0,\infty)$ and let $\mu_\ell$ be a finite nonnegative Borel measure for frequency $\ell=1,\ldots,p$. With acquisition coordinates $b_i\geq0$, $i=1,\ldots,n$, write
+\begin{equation}\label{eq:measure}
+ Y_{i\ell}=(\mathcal L\mu_\ell)_i+\varepsilon_{i\ell},\qquad
+ (\mathcal L\mu)_i=\int_{I_D}e^{-b_iD}\,d\mu(D).
+\end{equation}
+Here $b_i$ has units $\mathrm{s\,m^{-2}}$ and $D$ has units $\mathrm{m^2\,s^{-1}}$. For ideal rectangular gradient pulses, $b=\gamma^2g^2\delta^2(\Delta-\delta/3)$ \cite{stejskal}; other waveforms require their own calibrated encoding factor. Merely writing $b=uv$ does not add independent information when the kernel remains $e^{-Duv}$. We consider pure diffusion, without exchange, convection, relaxation contrast, or an estimated baseline. Those effects require a different observation model.
+
+The benchmark assumes independent $N(0,\sigma^2)$ errors with known $\sigma$. Real signed absorption data are permitted: positivity constrains the reconstructed measure, not every noisy datum. Taking absolute values or clipping negative observations would change this noise model. Frequencies outside a declared signal mask are unestimated, rather than inferred to contain zero chemical signal.
+
+Let $D_0>0$ be a reference diffusion coefficient and $x=\log(D/D_0)$, with $I_x=[a,c]$. The push-forward measure $\nu$ obeys
+\begin{equation}\label{eq:log}
+ (\mathcal L\mu)_i=\int_{I_x} k_i(x)\,d\nu(x),\qquad
+ k_i(x)=e^{-b_iD_0e^x}.
+\end{equation}
+If $d\mu=f(D)dD=\rho(x)dx$, then $\rho(x)=D_0e^x f(D_0e^x)$. A density per unit $D$, a density per unit $\log D$, and a bin mass are different quantities. In particular, the height of a histogram representing an atom diverges as the bin width tends to zero, while its mass remains fixed.
+
+\subsection{Mass-preserving discretization and a display error bound}
+Let $I_x$ be partitioned into cells $C_h$ of width at most $\delta$. Bin masses are $m_h=\nu(C_h)$; plotting cell densities means displaying $m_h/|C_h|$. If $Q\nu=\sum_h m_h\delta_{x_h}$, with $x_h$ the midpoint of $C_h$, then total mass is preserved exactly. This operation does not transform an atom into a physically broadened component.
+
+\begin{Proposition}[Quantization and forward error]\label{prop:quantization}
+For a positive measure $\nu$ of mass $M>0$, midpoint quantization satisfies
+\begin{equation}\label{eq:quantization}
+ W_1(\nu/M,Q\nu/M)\leq\delta/2,\qquad
+ |\mathcal L_i\nu-\mathcal L_iQ\nu|\leq M\delta/(2e).
+\end{equation}
+For two normalized measures $\nu,\eta$, both quantized on such a grid,
+$|W_1(\nu,\eta)-W_1(Q\nu,Q\eta)|\leq\delta$.
+\end{Proposition}
+\begin{proof}
+Transport each point to its cell midpoint. Every displacement is at most $\delta/2$, giving the first bound. Since
+$|k_i'(x)|=t e^{-t}\leq e^{-1}$ for $t=b_iD_0e^x\geq0$, integration of the Lipschitz bound gives the second. The final statement follows twice from the triangle inequality for $W_1$.
+\end{proof}
+
+This is an approximation bound, not a resolution theorem. The atomic solver below evaluates its exponentials at the fitted continuous rates, not at histogram midpoints. Its 256-bin export is used for compatible visualization and a declared binned evaluation. On $D/D_0\in[0.1,15]$, $\delta=\log(150)/256\simeq0.019573$; native and binned transport comparisons need not agree below this scale. The one-dimensional formula $W_1(\nu,\eta)=\int|F_\nu-F_\eta|dx$ is classical \cite{vallender}. Normalized shape is undefined for a zero-mass measure and is treated separately below.
+
+\subsection{Finite observations and restricted atomic uniqueness}
+\begin{Proposition}[Ambiguity of unrestricted positive measures]\label{prop:ambiguity}
+For any $n$ finite Laplace sampling coordinates and any interval with nonempty interior, there exist two distinct positive measures with the same total mass and identical sampled transforms.
+\end{Proposition}
+\begin{proof}
+Choose $n+2$ distinct points $D_j$ in the interval and form the $(n+1)\times(n+2)$ matrix whose first row is one and whose other rows are $e^{-b_iD_j}$. A nonzero null vector $v$ exists. Since $\sum_jv_j=0$, it has both positive and negative entries. The measures $\mu_+=\sum_{v_j>0}v_j\delta_{D_j}$ and $\mu_-=\sum_{v_j<0}(-v_j)\delta_{D_j}$ are positive, nonzero, distinct, and have equal masses and transforms by construction.
+\end{proof}
+
+The proposition is an existence statement about the unrestricted class; it does not say that every positive measure is ambiguous under every finite-dimensional restriction. In particular, the following elementary atomic result prevents an overstatement of impossibility.
+
+\begin{Proposition}[Noiseless uniqueness with a prescribed order bound]\label{prop:atomic}
+On a compact positive interval, samples at $b_i=b_0+ih$, $i=0,\ldots,2r-1$, with $h>0$, distinguish any two measures having at most $r$ atoms.
+\end{Proposition}
+\begin{proof}
+The difference of two such measures has at most $s\leq2r$ distinct support points. Absorb $e^{-b_0D_j}$ into their signed weights and put $z_j=e^{-hD_j}$. Equality of the first $s$ samples gives $\sum_{j=1}^s c_j z_j^i=0$, $i=0,\ldots,s-1$. The resulting square Vandermonde matrix is nonsingular because the $z_j$ are distinct, so every weight vanishes.
+\end{proof}
+
+No stability constant uniform over colliding rates follows from this proof. At finite noise, nearby exponentials can be almost indistinguishable. If two components have exactly the same $D$, only their summed spectral amplitudes are observed in Equation~\eqref{eq:measure}; diffusion alone cannot separate them into distinct species.
+
+For an atomic model, $Y^0=K(D)A$, where $K_{ij}=e^{-b_iD_j}$ and $A\geq0$. If $K$ has full column rank, $\rank(Y^0)=\rank(A)$. When $A=wc^\top$ is proportional across frequencies, the clean matrix has rank one even if $w$ has several nonzero entries. The common decay can still be multiexponential and, under Proposition~\ref{prop:atomic}'s assumptions, identifiable from noiseless samples. Proportionality removes spectral diversity; it is not by itself a proof of scalar exponential nonidentifiability. Repeated noisy versions can improve precision without increasing matrix rank.
+
+\begin{Proposition}[What a noise threshold says about rank]\label{prop:rank}
+If $Y=Y^0+E$ and $\|E\|_2\leq\tau$, the number of singular values of $Y$ exceeding $\tau$ is no greater than $\rank(Y^0)$.
+\end{Proposition}
+\begin{proof}
+For $k>\rank(Y^0)$, the singular-value perturbation inequality gives $s_k(Y)\leq s_k(Y^0)+\|E\|_2\leq\tau$.
+\end{proof}
+
+Thus resolved matrix directions provide a lower count, not an upper bound on hidden rates or chemical species. A search capped at this count makes an additional predictive modeling choice. This matters for the archived automatic MF procedure, whose cap targets resolved factors. It must not be interpreted as a consistent chemical order estimator.
+
+\subsection{Distributional sharing, normalization, and partial sharing}\label{sec:sharing}
+On a mass grid, a shared distributional model is $X=SA$, with
+\begin{equation}\label{eq:mfconstraints}
+ S\in\R_+^{q\times r},\quad A\in\R_+^{r\times p},\quad
+ \one^\top S=\one^\top.
+\end{equation}
+The simplex constraint fixes the scaling ambiguity $S_{\cdot j}\mapsto t_jS_{\cdot j}$, $A_{j\cdot}\mapsto A_{j\cdot}/t_j$. It does not fix permutation ambiguity, coincident profiles, or nonunique factorizations. Each column of $S$ is a distribution and may have several modes; its index is not necessarily a species label.
+
+A useful extension from the earlier continuous formulation is $C=SA+V$, $V\geq0$, on nonnegative unit-integral basis functions $\phi_h$. Then $\rho_\ell(x)=\sum_h C_{h\ell}\phi_h(x)$ and its total mass is $\sum_j A_{j\ell}+\one^\top V_{\cdot\ell}$. Because $A=0,V=C$ is feasible for every $C\geq0$, the private term preserves the full positive basis cone. The shared rank changes the representation cost rather than the set of attainable total densities. The decomposition itself is not generally identifiable: for $c_\ell=m_\ell s$, every $A_{1\ell}=tm_\ell,V_{\cdot\ell}=(1-t)m_\ell s$, $0\leq t\leq1$, produces the same density.
+
+One may regularize this model with
+\begin{equation}\label{eq:partial}
+ J=\frac{1}{2p}\left[\|\sigma^{-1}(KC-Y)\|_F^2+
+ \lambda_s\tr(C^\top QC)+\lambda_p\tr(V^\top GV)\right],
+\end{equation}
+where $K_{ih}=\int k_i\phi_h$, $G_{hk}=\int\phi_h\phi_k$, and $Q_{hk}=\int\phi_h'\phi_k'$. The penalties act on the total-density derivative and the private density, respectively. They are not interchangeable.
+
+\begin{Proposition}[Conditional uniqueness for one shared profile]\label{prop:partial}
+For a fixed unit-mass profile $s$, let $L^\top L=Q$, $F^\top F=G$, and $T=[K/\sigma;\sqrt{\lambda_s}L]$. If $G$ is positive definite, $\lambda_p>0$, and $Ks\ne0$, the conditional NNLS problem for $(a_\ell,v_\ell)$ has a unique solution.
+\end{Proposition}
+\begin{proof}
+Its design matrix is
+\begin{equation}\label{eq:partialdesign}
+ B(s)=\begin{bmatrix}Ts&T\\0&\sqrt{\lambda_p}F\end{bmatrix},\qquad
+ d_\ell=\begin{bmatrix}y_\ell/\sigma\\0\\0\end{bmatrix}.
+\end{equation}
+If $B(s)(\alpha,z)^\top=0$, the lower block gives $Fz=0$, hence $z=0$. Then $Ts\alpha=0$ implies $\alpha=0$. Full column rank makes the quadratic objective strictly convex, giving a unique constrained minimizer.
+\end{proof}
+
+This inherited formulation clarifies which uniqueness can be proved. It does not imply a unique outer profile or molecular decomposition. No new partial-sharing fits are pooled into the present support benchmark; earlier partial-sharing studies used different designs and remain separate evidence.

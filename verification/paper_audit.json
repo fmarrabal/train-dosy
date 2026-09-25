@@ -1,0 +1,33 @@
+{
+  "pages": 22,
+  "references": 23,
+  "registered_dois_verified": 21,
+  "visual_review_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "latex_overfull_or_undefined": false,
+  "sha256": "01577b19a06b1510167a24243dacc2f39dc1419977d31434c666cfb700ebaeeb",
+  "mf_lineage_restored": true,
+  "author_declarations_pending": true
+}

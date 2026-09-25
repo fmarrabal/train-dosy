@@ -1,0 +1,89 @@
+{
+  "positive_test": {
+    "RAI": {
+      "n": 36,
+      "correct": 17,
+      "recovered": 17,
+      "spectral_leakage_fraction": 0.05165593382654126,
+      "unmatched_mass_fraction": 0.06774063252186399,
+      "test_clean_rmse_sigma": 0.2870359042425086,
+      "w1_logD": 0.1523474218373191
+    },
+    "RAI_S": {
+      "n": 36,
+      "correct": 25,
+      "recovered": 23,
+      "spectral_leakage_fraction": 0.017277297740448696,
+      "unmatched_mass_fraction": 0.07257159906684635,
+      "test_clean_rmse_sigma": 0.23298944747192005,
+      "w1_logD": 0.1094377759040857
+    },
+    "DOME": {
+      "n": 36,
+      "correct": 26,
+      "recovered": 22,
+      "spectral_leakage_fraction": 0.038565275903751854,
+      "unmatched_mass_fraction": 0.0701858896671646,
+      "test_clean_rmse_sigma": 0.25906698280632084,
+      "w1_logD": 0.13926487116728894
+    },
+    "DOME_S": {
+      "n": 36,
+      "correct": 25,
+      "recovered": 23,
+      "spectral_leakage_fraction": 0.01727729774044869,
+      "unmatched_mass_fraction": 0.07257159906714354,
+      "test_clean_rmse_sigma": 0.23298944747194955,
+      "w1_logD": 0.10943777590395734
+    }
+  },
+  "paired_changes_positive": {
+    "RAI": {
+      "spectral_leakage_fraction": {
+        "delta": -0.03437863608609257,
+        "bootstrap95": [
+          -0.05282397193092774,
+          -0.019258362147443475
+        ]
+      },
+      "test_clean_rmse_sigma": {
+        "delta": -0.054046456770588586,
+        "bootstrap95": [
+          -0.07997638015589965,
+          -0.03246695283600854
+        ]
+      },
+      "w1_logD": {
+        "delta": -0.04290964593323346,
+        "bootstrap95": [
+          -0.06863093747148853,
+          -0.02458148559172085
+        ]
+      }
+    },
+    "DOME": {
+      "spectral_leakage_fraction": {
+        "delta": -0.02128797816330317,
+        "bootstrap95": [
+          -0.03155405490609772,
+          -0.012677037817801762
+        ]
+      },
+      "test_clean_rmse_sigma": {
+        "delta": -0.02607753533437136,
+        "bootstrap95": [
+          -0.03377596808518037,
+          -0.01810537092074191
+        ]
+      },
+      "w1_logD": {
+        "delta": -0.029827095263331622,
+        "bootstrap95": [
+          -0.048168793462855485,
+          -0.010122798845300332
+        ]
+      }
+    }
+  },
+  "convention": "36 signal-present atomic cases; six nulls separate; no refitting"
+}

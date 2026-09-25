@@ -1,0 +1,100 @@
+{
+  "python": "3.13.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "pydantic": "2.13.2",
+    "fastapi": "0.141.1",
+    "uvicorn": "0.53.0",
+    "starlette": "1.7.0",
+    "pytest": "9.1.1",
+    "httpx": "0.28.1",
+    "matplotlib": "3.11.0",
+    "setuptools": "82.0.1"
+  },
+  "immutable_sources_verified": 22,
+  "examples": [
+    {
+      "example": "one_component",
+      "method": "RAI-S",
+      "true_rank": 1,
+      "selected_rank": 1,
+      "success": true,
+      "kkt": 3.8724541938448957e-16,
+      "stationarity": 1.0806796054925402e-09,
+      "clean_test_rmse_sigma": 0.1875669343407178,
+      "seconds": 2.36737200000789
+    },
+    {
+      "example": "one_component",
+      "method": "DOME-S",
+      "true_rank": 1,
+      "selected_rank": 1,
+      "success": true,
+      "kkt": 3.8724541938448957e-16,
+      "stationarity": 1.0806796054925402e-09,
+      "clean_test_rmse_sigma": 0.1875669343407178,
+      "seconds": 1.2663211000617594
+    },
+    {
+      "example": "two_components",
+      "method": "RAI-S",
+      "true_rank": 2,
+      "selected_rank": 2,
+      "success": true,
+      "kkt": 2.9147158703139556e-16,
+      "stationarity": 1.8107693992163094e-09,
+      "clean_test_rmse_sigma": 0.2151856796333496,
+      "seconds": 1.7587488999124616
+    },
+    {
+      "example": "two_components",
+      "method": "DOME-S",
+      "true_rank": 2,
+      "selected_rank": 2,
+      "success": true,
+      "kkt": 2.9147158703139556e-16,
+      "stationarity": 1.8107693992163094e-09,
+      "clean_test_rmse_sigma": 0.2151856796333496,
+      "seconds": 1.232500100042671
+    },
+    {
+      "example": "three_components",
+      "method": "RAI-S",
+      "true_rank": 3,
+      "selected_rank": 3,
+      "success": true,
+      "kkt": 5.245482039587116e-16,
+      "stationarity": 3.220472903029851e-11,
+      "clean_test_rmse_sigma": 0.20814193079430207,
+      "seconds": 1.6438335999846458
+    },
+    {
+      "example": "three_components",
+      "method": "DOME-S",
+      "true_rank": 3,
+      "selected_rank": 3,
+      "success": true,
+      "kkt": 5.245482039587116e-16,
+      "stationarity": 3.220472903029851e-11,
+      "clean_test_rmse_sigma": 0.20814193079430207,
+      "seconds": 1.3172850999981165
+    }
+  ],
+  "csharp_http_prediction_parity": true,
+  "matlab_http_prediction_parity": true,
+  "native_mf_api_prediction_parity": true,
+  "mf_kkt": 1.5289982594984784e-09,
+  "mf_selected_rank": 1,
+  "mf_bins": 256,
+  "benchmark_smoke_fits": 12,
+  "benchmark_smoke_max_clean_rmse_delta": 0.0,
+  "original_mf_figure_sha256": "0ce63ab29e7cfbffc867ec569a6540827b9e63da9a30d5a125ce26558c639ed3",
+  "limits": [
+    "C# is a client, not an independent solver",
+    "No full new 48-case rerun; immutable prior metrics retained",
+    "No new real-data validation",
+    "No neural retraining in public package"
+  ]
+}

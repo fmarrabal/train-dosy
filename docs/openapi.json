@@ -1,0 +1,218 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TRAIn-DOSY",
+    "description": "Joint positive ILT research service; SI units; automatic order selection",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/fit": {
+      "post": {
+        "summary": "Invert",
+        "operationId": "invert_v1_fit_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FitRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "FitRequest": {
+        "properties": {
+          "Y": {
+            "items": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Y"
+          },
+          "b": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "B"
+          },
+          "ppm": {
+            "items": {
+              "type": "number"
+            },
+            "type": "array",
+            "title": "Ppm"
+          },
+          "sigma": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Sigma"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "RAI-S",
+              "DOME-S",
+              "MF-AUTO"
+            ],
+            "title": "Method",
+            "default": "RAI-S"
+          },
+          "mask": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "boolean"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mask"
+          },
+          "diffusion_bounds": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Diffusion Bounds",
+            "default": [
+              1e-10,
+              1.5e-08
+            ]
+          },
+          "bins": {
+            "type": "integer",
+            "maximum": 2048.0,
+            "minimum": 256.0,
+            "title": "Bins",
+            "default": 256
+          },
+          "max_components": {
+            "type": "integer",
+            "maximum": 4.0,
+            "minimum": 1.0,
+            "title": "Max Components",
+            "default": 4
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "Y",
+          "b",
+          "ppm",
+          "sigma"
+        ],
+        "title": "FitRequest",
+        "description": "Signed phased observations. b is s/m\u00b2 and all diffusion values are m\u00b2/s."
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

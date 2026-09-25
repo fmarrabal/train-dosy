@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Cite the software release and original TRAIn; see docs/PROVENANCE.md for method-specific credit."
+title: "TRAIn-DOSY: Positive Joint Laplace Inversion"
+type: software
+authors:
+  - family-names: "Arrabal-Campos"
+    given-names: "Francisco M."
+version: 0.1.0
+date-released: 2026-09-25
+url: "https://github.com/fmarrabal/train-dosy"
+repository-code: "https://github.com/fmarrabal/train-dosy"
+license: GPL-3.0-or-later
+keywords:
+  - DOSY
+  - inverse Laplace transform
+  - NMR
+  - NNLS
+  - spectral support
+

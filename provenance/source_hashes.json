@@ -1,0 +1,134 @@
+[
+  {
+    "path": "src/train_dosy/_frozen/support.py",
+    "sha256": "c9fcf58eb8226cf177f9b08692382cf33a6a9de4954c8f6c8d988d818be86531",
+    "source_project": "dosy_support_v2_20260925",
+    "source_filename": "support.py"
+  },
+  {
+    "path": "src/train_dosy/_frozen/vendor/dome/__init__.py",
+    "sha256": "f7bbecb5d66ebcc53249a4c2cfb90f5e69397b72561c6ed219fbdd596a930a65",
+    "source_project": "dome",
+    "source_filename": "__init__.py"
+  },
+  {
+    "path": "src/train_dosy/_frozen/vendor/dome/solver.py",
+    "sha256": "17c31f473f502be7027f46823d47f1f2190c5a1744ef90d70d81fe974d05398f",
+    "source_project": "dome",
+    "source_filename": "solver.py"
+  },
+  {
+    "path": "src/train_dosy/_frozen/vendor/rai_ilt/components.py",
+    "sha256": "cd5dfea2bb4c5684c2bc383f0aad8dc36963e09151f03165c609814a95eb2671",
+    "source_project": "rai_ilt",
+    "source_filename": "components.py"
+  },
+  {
+    "path": "src/train_dosy/_frozen/vendor/rai_ilt/model.py",
+    "sha256": "b2199c873168234d429f5584920a6680a0468774adf0df9f95e617f25691fc38",
+    "source_project": "rai_ilt",
+    "source_filename": "model.py"
+  },
+  {
+    "path": "src/train_dosy/_frozen/vendor/rai_ilt/solver.py",
+    "sha256": "d8ddb56c89b18d52a93ee5581a0814e9b766537fc0d070603c42cd6178a2d0ee",
+    "source_project": "rai_ilt",
+    "source_filename": "solver.py"
+  },
+  {
+    "path": "benchmarks/synthetic.py",
+    "sha256": "d6df464f44e0b97687ddfb7eba8c33708e7fe349ea8306321634622c2112ef28",
+    "source_project": "dosy_support_v2_20260925",
+    "source_filename": "synthetic.py"
+  },
+  {
+    "path": "benchmarks/evaluate.py",
+    "sha256": "9565add8e79852c6f4ffd86b1807c477314e98b82883e4a188b95aa51c54288d",
+    "source_project": "dosy_support_v2_20260925",
+    "source_filename": "evaluate.py"
+  },
+  {
+    "path": "benchmarks/frozen/metrics.csv",
+    "sha256": "9d2d80de7eef543efd1692d15d23febd62e620d15e47c22076b17fb2f2972030",
+    "source_project": "dosy_support_v2_20260925",
+    "source_filename": "metrics.csv"
+  },
+  {
+    "path": "matlab/legacy/TRAIn_DOSY_MFV31.m",
+    "sha256": "d7d2ec44b70f3f68baeb4f7c57592c3e14067cb1a5ed18244d5648724ef4a82f",
+    "source_project": "CODIGO_MEJORADO",
+    "source_filename": "TRAIn_DOSY_MFV31.m"
+  },
+  {
+    "path": "matlab/reference/DOSY_MF_Auto.m",
+    "sha256": "eef726fc289205091b3cfe133190deb3580e51437d496026b206f99da17dbaef",
+    "source_project": "ilt_unified_benchmark_20260924",
+    "source_filename": "DOSY_MF_Auto.m"
+  },
+  {
+    "path": "matlab/reference/DOSY_RankEvidence.m",
+    "sha256": "7a9164b0fe779ed93aeb6b69bf9a40aa94bae1632d685b76523e83c00425d8e5",
+    "source_project": "ilt_unified_benchmark_20260924",
+    "source_filename": "DOSY_RankEvidence.m"
+  },
+  {
+    "path": "matlab/reference/DOSY_SelectConverged.m",
+    "sha256": "18c262b5ae453f0ca49feaf79921d948e427aaa22acd1e1c9a1f89bf1f9b48bb",
+    "source_project": "ilt_unified_benchmark_20260924",
+    "source_filename": "DOSY_SelectConverged.m"
+  },
+  {
+    "path": "matlab/reference/mf_robust/DOSY_MF_Robust.m",
+    "sha256": "2ee942c911d6f6424dd8cec715ed48bbd65e4ded666f956d1da2abc1bf521ded",
+    "source_project": "mf_robust",
+    "source_filename": "DOSY_MF_Robust.m"
+  },
+  {
+    "path": "matlab/reference/mf_robust/+mfrobust/evaluate.m",
+    "sha256": "06075cc330b0175b671ee3bdb60105db4cc96147b764340e9359654e00d7d3ac",
+    "source_project": "+mfrobust",
+    "source_filename": "evaluate.m"
+  },
+  {
+    "path": "matlab/reference/mf_robust/+mfrobust/lognormal_fit.m",
+    "sha256": "ea741e74c622be11e46bba1cb76fe8d0000b6aff989d493f0fb78d3a5d4be0c8",
+    "source_project": "+mfrobust",
+    "source_filename": "lognormal_fit.m"
+  },
+  {
+    "path": "matlab/reference/mf_robust/+mfrobust/nnls_batch.m",
+    "sha256": "d223afaf9364794bfb059ed9796921d0b41113866c5b174c4dfacb6b6e250ded",
+    "source_project": "+mfrobust",
+    "source_filename": "nnls_batch.m"
+  },
+  {
+    "path": "matlab/reference/mf_robust/+mfrobust/profile_refine.m",
+    "sha256": "6835fef1149f13ed41f187ac70df113278ca2b382859fd3b09540a8b4b2f1f02",
+    "source_project": "+mfrobust",
+    "source_filename": "profile_refine.m"
+  },
+  {
+    "path": "matlab/reference/mf_robust/+mfrobust/simplex_block.m",
+    "sha256": "bc6d4e8e1698aed00e60d407da0fe4dbe58a842258acc1f21e641713f687f1ae",
+    "source_project": "+mfrobust",
+    "source_filename": "simplex_block.m"
+  },
+  {
+    "path": "matlab/reference/mf_original/dosy_v4/+dosyv4/prepare.m",
+    "sha256": "8570904f549c0dca038a278f9509306048c91f706262e4126d45c3f12f7e4788",
+    "source_project": "+dosyv4",
+    "source_filename": "prepare.m"
+  },
+  {
+    "path": "matlab/reference/mf_original/dosy_v4/+dosyv4/regularizers.m",
+    "sha256": "0f502e07fd162545157045eb33624422b4aae9f2dce5dedc6ba0f9e9cf5879f4",
+    "source_project": "+dosyv4",
+    "source_filename": "regularizers.m"
+  },
+  {
+    "path": "LICENSE",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+    "source_project": "diffusion-inversion",
+    "source_filename": "LICENSE"
+  }
+]

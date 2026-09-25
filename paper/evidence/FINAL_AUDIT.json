@@ -1,0 +1,170 @@
+{
+  "numerical_assertions_passed": true,
+  "configuration_frozen_before_test": true,
+  "counts": {
+    "test": 240,
+    "archive": 144
+  },
+  "support_fits_verified": 144,
+  "max_amplitude_kkt": 1.1192911453366212e-15,
+  "max_rate_stationarity": 1.3394493968293113e-07,
+  "poor_precision_flags": 4,
+  "atomic_model_mismatch_flags": 4,
+  "neural_nonconvergence": [
+    {
+      "case": "r1_snr50_rep2",
+      "method": "RAI_Net_original"
+    },
+    {
+      "case": "r1_snr50_rep2",
+      "method": "RAI_Net_v2"
+    }
+  ],
+  "neural_train_problems": 64,
+  "neural_validation_problems": 16,
+  "checkpoint_sha256": "a31627e4234a8c9464b20cd88d6ae15fd904560a4ecbf3c5a0657e26085bb786",
+  "original_benchmark_zip_unchanged": "c771c7c6b1bffb29515b45c0a8ba15a2373ca12afab0e4787dd69d1c5af106d6",
+  "matlab": {
+    "matlab_version": "26.1.0.3251617 (R2026a) Update 2",
+    "lsqnonneg_prediction_relative_difference": 4.61961705066038e-17,
+    "public_api_passed": true,
+    "rank": 3,
+    "numerical_success": true
+  },
+  "unit_tests": "5 passed; see unit_tests.log",
+  "visual_qa": [
+    "DOSY_antes_despues.png",
+    "DOSY_discreto_test.png",
+    "DOSY_RAI_Net.png"
+  ],
+  "visual_qa_status": "Inspected; title/footer overlap fixed before delivery",
+  "limitations": [
+    "Minor species identified in only 1/6 new weak cases",
+    "DOME rank selection regresses for one proportional and one broad case",
+    "No convincing RAI-Net improvement in independent test",
+    "No new real-experiment validation"
+  ],
+  "clean_replay": {
+    "clean_extracted_execution_passed": true,
+    "verified_payload_files": 1311,
+    "verified_reference_files": 52,
+    "prediction_relative_difference": 0.0,
+    "source_sha256": "c9fcf58eb8226cf177f9b08692382cf33a6a9de4954c8f6c8d988d818be86531",
+    "interpreter": "SOURCE_PROJECT\\rai-ilt\\.venv\\Scripts\\python.exe",
+    "rank": 3,
+    "scope": "Previous bundle before presentation and API metadata correction; numerical selector core unchanged."
+  },
+  "display_and_automatic_api_correction": {
+    "MF_file_sha256": "0ce63ab29e7cfbffc867ec569a6540827b9e63da9a30d5a125ce26558c639ed3",
+    "MF_numerical_file_unchanged": true,
+    "MF_plotted_masses_identical": true,
+    "original_color_maximum": 63.349863566772754,
+    "original_display_floor": 0.001,
+    "original_absolute_floor": 0.06334986356677276,
+    "discarded_remapping_relative_change": 0.01888345944744041,
+    "discarded_absolute_floor": 0.0051119945419030415,
+    "automatic_tests": [
+      {
+        "case": "r1_snr200_rep1",
+        "method": "RAI",
+        "selected_rank": 1,
+        "truth_used_for_assertion_only": 1,
+        "solver_received_true_rank": false,
+        "candidates": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "unchanged_fit": true
+      },
+      {
+        "case": "r1_snr200_rep1",
+        "method": "DOME",
+        "selected_rank": 1,
+        "truth_used_for_assertion_only": 1,
+        "solver_received_true_rank": false,
+        "candidates": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "unchanged_fit": true
+      },
+      {
+        "case": "r2_snr200_rep1",
+        "method": "RAI",
+        "selected_rank": 2,
+        "truth_used_for_assertion_only": 2,
+        "solver_received_true_rank": false,
+        "candidates": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "unchanged_fit": true
+      },
+      {
+        "case": "r2_snr200_rep1",
+        "method": "DOME",
+        "selected_rank": 2,
+        "truth_used_for_assertion_only": 2,
+        "solver_received_true_rank": false,
+        "candidates": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "unchanged_fit": true
+      },
+      {
+        "case": "r3_snr200_rep1",
+        "method": "RAI",
+        "selected_rank": 3,
+        "truth_used_for_assertion_only": 3,
+        "solver_received_true_rank": false,
+        "candidates": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "unchanged_fit": true
+      },
+      {
+        "case": "r3_snr200_rep1",
+        "method": "DOME",
+        "selected_rank": 3,
+        "truth_used_for_assertion_only": 3,
+        "solver_received_true_rank": false,
+        "candidates": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "unchanged_fit": true
+      }
+    ],
+    "numerical_selector_core_unchanged": true,
+    "default_search_orders": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "previous_bundle_preserved": "dosy_support_v2_20260925.zip",
+    "corrected_figure": "figures/DOSY_MF_RAI_S_DOME_S_AUTO.png",
+    "visual_qa": "Inspected: original MF appearance restored; no title/footer overlaps"
+  }
+}

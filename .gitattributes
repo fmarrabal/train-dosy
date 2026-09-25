@@ -1,0 +1,2 @@
+# Preserve byte identities of frozen scientific sources and fixtures on every OS.
+* -text

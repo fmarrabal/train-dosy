@@ -1,0 +1,8 @@
+numpy==2.5.1
+scipy==1.18.0
+matplotlib==3.11.0
+# Only for optional bibliographic refresh:
+requests
+# Only for PDF text/structure checks and local contact sheets:
+pypdf
+Pillow

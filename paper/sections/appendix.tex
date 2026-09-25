@@ -1,0 +1,40 @@
+\section{Further Mathematical and Numerical Details}
+\subsection{Scaling and invariance}
+In the atomic model, replacing $(Y,\sigma)$ by $(cY,c\sigma)$ for $c>0$ maps $A$ to $cA$, leaves rates fixed, and preserves the normalized objective and screening scores. The same transformation preserves the paired allowance in Equation~\eqref{eq:selection}. Thus, for unchanged candidate paths and masks, the exact-arithmetic decision is invariant to signal units. Finite solver tolerances and tie handling can introduce small numerical differences. Changing physical diffusion units with the reciprocal change in $b$ also preserves $bD$ and the predictions. Rescaling observations without rescaling $\sigma$ changes the statistical problem.
+
+The MF objective has a related property through $\widetilde Y=Y/s_Y$: multiplying the data by $c$ changes $s_Y$ by $c$, leaves normalized factors unchanged, and rescales the exported amplitudes. Changing the number of frequencies is different. Averaging the data term by $p$ and the amplitude penalty by $p$ does not make arbitrary deletion of frequencies innocuous; the available shared information changes. The exact grid, quadrature, and regularization operator must also be kept fixed when claiming numerical equality of two MF outputs.
+
+\subsection{A local separation expansion}
+For the split in Equation~\eqref{eq:split}, write $\delta_1=-(1-p)\Delta$, $\delta_2=p\Delta$. Taylor expansion of $e^{-b(m+\delta)}$ gives a first-order term proportional to $p\delta_1+(1-p)\delta_2=0$, and a second-order term proportional to $p\delta_1^2+(1-p)\delta_2^2=p(1-p)\Delta^2$. The bounded-interval remainder is $O(\Delta^3)$ for a fixed finite acquisition design. The derivative in $\Delta$ vanishes at collision; a variance parameter can expose a nonzero second-order direction. This changes search geometry, not the measured information. After NNLS and rate refinement, moment preservation of the proposal is not a constraint on the final estimate.
+
+\subsection{Support geometry and precision warnings}
+For an interior fixed active set, the first-order rate information after treating amplitudes as nuisance involves projected kernel derivatives, weighted by amplitudes across frequencies. Extra rows or differently weighted spectra can add information. In proportional spectra, repeated columns may reduce variance by replication, while preserving the same decay-mixture proportions. If all relevant projected derivatives vanish, local rate separation fails irrespective of the plotted bin count.
+
+The software additionally records the condition of the full residual Jacobian and the diagonal of a pseudoinverse of its Gram matrix. Residual-dependent terms, singular directions, active-set changes, and model selection prevent interpreting this output as a calibrated Fisher-information confidence interval. In particular, a pseudoinverse can return finite entries even when some directions are unidentifiable. The separate condition warning must be retained. A small normalized projected gradient establishes neither small parameter error nor precise component identification.
+
+\section{Earlier Aggregation Convention}\label{app:legacy}
+The support-study report originally summarized 42 atomic problems, including six null cases whose leakage and shape-score contributions were set to zero by convention. Table~\ref{tab:legacy} reproduces that aggregation for traceability. The primary text instead uses the 36 signal-present cases and reports the six null outcomes separately. This is a change in presentation and denominator, with no changed reconstruction or omitted failed positive case.
+\begin{table}[htbp]
+\caption{Earlier 42-case convention, including six null controls. Columns are defined as in Table~\ref{tab:primary}. The zero-valued null shape contributions are bookkeeping conventions, not normalized Wasserstein distances.}\label{tab:legacy}
+\begin{adjustwidth}{-\extralength}{0cm}\centering\small
+\input{sections/table_legacy42}
+\end{adjustwidth}
+\end{table}
+
+\section{Reproducibility and Source Reuse}\label{app:repro}
+The source archive \texttt{dosy\_support\_v2\_20260925\_corrected.zip} has SHA-256
+\begin{quote}\small\ttfamily\path{fb130729aa69d258869a103c13e32df0fbe2861f771fdeb51e5660372a6b6bff}\end{quote}
+The frozen numerical selector \texttt{support.py} has SHA-256
+\begin{quote}\small\ttfamily\path{c9fcf58eb8226cf177f9b08692382cf33a6a9de4954c8f6c8d988d818be86531}\end{quote}
+The unchanged MF result used in Figure~\ref{fig:dosycontinuous} has SHA-256
+\begin{quote}\small\ttfamily\path{0ce63ab29e7cfbffc867ec569a6540827b9e63da9a30d5a125ce26558c639ed3}\end{quote}
+The retrained neural checkpoint has SHA-256
+\begin{quote}\small\ttfamily\path{a31627e4234a8c9464b20cd88d6ae15fd904560a4ecbf3c5a0657e26085bb786}\end{quote}
+
+The public repository \url{https://github.com/fmarrabal/train-dosy} provides \texttt{paper/scripts/prepare\_evidence.py}. From the repository root, running that script reads the minimal saved synthetic fixture set, regenerates the primary and legacy tables, and produces the four scientific figures. No solver is called. The file \texttt{paper/build.ps1} compiles the editable LaTeX. The public \texttt{benchmarks/run\_atomic.py} separately reruns the 48-problem atomic protocol with the frozen generator, mask convention, and four methods; it does not substitute the new API discovery mask for the historical benchmark mask. Dependency versions, direct MATLAB instructions, API schemas, and C\# examples are documented in the release.
+
+Source hashes in \texttt{provenance/source\_hashes.json} identify the preserved MF Version 3.1, later MF reference, atomic numerical core, and synthetic generator. The software citation distinguishes original TRAIn authorship from the multifrequency extension \cite{train,mfv31,software}. MATLAB's proprietary \texttt{lsqnonneg} implementation is called from the installed product and is not redistributed. The scientific quantities in the frozen result files were not altered when preparing this release.
+
+The earlier Mathematics continuous-profile draft supplied the measure notation, density Jacobian, normalized positive-basis construction, partial-sharing objective, and conditional uniqueness argument. The RAI component revision supplied the finite-rate variable-projection perspective and its singular-model caveats. DOME's design record supplied the interpretation of moment-based proposals. All were reviewed against the corresponding mathematical expressions and implementation, and reworded for the present scope. Old Gaussian compendia and partial-sharing result tables use different protocols and are not relabeled as results of the new selector. A file-level reuse map accompanies the manuscript.
+
+The current benchmark primarily tests internal RAI/DOME variants. A wider archived screen of ILT configurations is not a substitute for matched, independently tuned external comparisons: its entries include parameter variants and local adaptations. Publication claims should remain tied to the explicitly reported panel. The earlier paper draft, solver archive, and underlying prior work remain locally preserved. This revision identifies the public code release; it does not claim journal submission, acceptance, or approval of a completed author list.

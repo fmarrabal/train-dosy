@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "train-dosy"
+version = "0.1.0"
+description = "Positive joint Laplace inversion: TRAIn-derived MF, RAI-S and DOME-S"
+requires-python = ">=3.11"
+license = "GPL-3.0-or-later"
+authors = [{name = "Francisco M. Arrabal-Campos"}]
+dependencies = ["numpy>=2.1,<3", "scipy>=1.14,<2", "pydantic>=2.10,<3"]
+[project.optional-dependencies]
+api = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
+test = ["pytest>=8,<10", "httpx>=0.27,<1"]
+plots = ["matplotlib>=3.9,<4"]
+[project.scripts]
+train-dosy = "train_dosy.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = true
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,59 @@
+{
+  "frozen_at_utc": "2026-09-24T23:39:02.455707+00:00",
+  "config": {
+    "max_components": 4,
+    "alpha": 0.01,
+    "validation_stride": 4,
+    "selection_se": 1.0,
+    "max_nfev": 350
+  },
+  "development_problems": 24,
+  "new_test_problems": 48,
+  "network_test_problems": 24,
+  "archive_problems": 24,
+  "seed_partitions": {
+    "development": 510000,
+    "neural_training_and_problem_validation": 610000,
+    "untouched_test": 810000
+  },
+  "selection": "conditional support screen at alpha .01; reserved-gradient paired 1-SD prediction rule; prefer lower rank then smaller support; refit all available training acquisitions",
+  "known_limit": "Scores conditional on estimated rates are not calibrated p-values; no formal FWER guarantee. Atomic fits to broad distributions are misspecified. No test truth or outer test acquisitions are provided to solvers.",
+  "protocol_change_on_development": "Prefer rank before support cardinality, after a weak-species development case exposed atom fragmentation. Initial development results retained. No alpha sweep.",
+  "source_sha256": {
+    "support.py": "c9fcf58eb8226cf177f9b08692382cf33a6a9de4954c8f6c8d988d818be86531",
+    "synthetic.py": "d6df464f44e0b97687ddfb7eba8c33708e7fe349ea8306321634622c2112ef28",
+    "evaluate.py": "9565add8e79852c6f4ffd86b1807c477314e98b82883e4a188b95aa51c54288d",
+    "run_benchmark.py": "864f4aea6dece84b2baeae32fb9d3f99c43f49b9ca1013265d677fb2865f2fac",
+    "train_net.py": "f4f9e7a876bfed38eae7623954b495f1405664fb5c901f9744ddfda8ddfae3d9",
+    "evaluate_net.py": "64f0b8251802654dc996d90868bd20c63320c72be73bf3d35cccd809922ac92f",
+    "vendor/rai_ilt/net.py": "8bc91454cff2ba6ddccf9153ded07fa39877e7320f8b9c1e17c608b9d577b25f",
+    "vendor/rai_ilt/adaptive.py": "6c95971392a9f54706d703fc25872b92c256f185320e7cce1d8044cf663e2eed"
+  },
+  "frozen_benchmark_inputs": {
+    "close_overlap_r3_rep1.mat": "ed1351cdad2165d606abdde349d55a36bf63bc18569918fc6377411865e56deb",
+    "close_overlap_r3_rep2.mat": "2faf99f262814457d504ad56c0ef9a1815fbefce31c29cd1a6a1643b2ae3d371",
+    "close_overlap_r3_rep3.mat": "29e0d4dfe7fb4e1f60ed265fc21b09d366f5dc84e67756a2affaa2ce0a06d0ee",
+    "proportional_r3_rep1.mat": "e5b2270c323ef355157809aa8e81428144ee5bf4b6a8c4418f5ebbfc03361cfc",
+    "proportional_r3_rep2.mat": "302b2d6e7d4fd28c768ba968d9d5f304bd16348aa3f4aafe48326c68805b3bf1",
+    "proportional_r3_rep3.mat": "bf7eb92d1ae536afb84bd59544a55de99b0950f09cd3596bb367824b4cc10fa7",
+    "r1_snr200_rep1.mat": "b6d52de72430766110d2f013b28e7a73699588fbf5e0eb37e75f0fc17b5d6351",
+    "r1_snr200_rep2.mat": "eba4a760f51e54258075e389b0e6270ea549fd2672a2d173657652be3a2dd05f",
+    "r1_snr200_rep3.mat": "83725f7e1377af7144a8c6e25a3e6600e00e1618c0b6188d5b8ceed9e2b4517e",
+    "r1_snr50_rep1.mat": "19c18de810d7b8a05cb6bddff41fcea19c1da1bad76451e4b1abadbddd04d141",
+    "r1_snr50_rep2.mat": "9538a686db6869760bec31fa54cc790e34284d1c4482ade5c80289a134d2a247",
+    "r1_snr50_rep3.mat": "ccacd3bffb87adf9ffcb32dfbc69092772b553874447aff429c14fd41a981583",
+    "r2_snr200_rep1.mat": "8823086a9b3a4384ab8b8cc9fe40af86cdeaeb40e7a069961c1edad91f22b179",
+    "r2_snr200_rep2.mat": "d29eff9cbc719b8dbe68541299f4eec53bdb1def28a2b46b57ff8d4beaedc662",
+    "r2_snr200_rep3.mat": "af0d2288e2fc08992c35c1e801baf6b5bd84521fd15cf06fbf57c90fad3d4ef0",
+    "r2_snr50_rep1.mat": "8de04fc69b10fa4f3fc5a3de91cb70c448b2ee37dec6ef9d90e09846b35b223e",
+    "r2_snr50_rep2.mat": "ff82a46f2ac733d7e6c1ad3a4a3fdf44436a0c75e5768da8df30bdc9e298ed69",
+    "r2_snr50_rep3.mat": "eb114e470c8478f85c7c5cd03ad1bf261d6ea274820d38ae787e4b69073e271b",
+    "r3_snr200_rep1.mat": "e586f8c904d119ffcd8bf2e4e4eaa9125da6f5823cc7eb1da37b5c9e7128a3f8",
+    "r3_snr200_rep2.mat": "a424036699ab705d94343cead050f729368f253459457d05485d5b7dc56b1d09",
+    "r3_snr200_rep3.mat": "a12107635a1137ff9cac6db89bf25832754522745e202f2d41ecfc8cb0067fd9",
+    "r3_snr50_rep1.mat": "9092dd15c16323d11de7e984174bdb61a5985e1288a77030c3c493d686fcbb59",
+    "r3_snr50_rep2.mat": "17b10341138ef2d4e262f56ecd546f1a3f08a27170194e60ae6dc138a9b254b1",
+    "r3_snr50_rep3.mat": "df9f1efe02cd58bb122f265c53160a70523835157b31e8ace7f1b34255a48080"
+  },
+  "mf_unchanged_source_sha256": "eef726fc289205091b3cfe133190deb3580e51437d496026b206f99da17dbaef"
+}

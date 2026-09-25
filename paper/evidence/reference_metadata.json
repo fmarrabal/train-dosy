@@ -1,0 +1,1667 @@
+{
+  "checked_utc": "2026-09-25T01:07:50.365326+00:00",
+  "references": [
+    {
+      "doi": "10.1063/1.1695690",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Spin Diffusion Measurements: Spin Echoes in the Presence of a Time-Dependent Field Gradient"
+      ],
+      "author": [
+        {
+          "given": "E. O.",
+          "family": "Stejskal",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry, University of Wisconsin, Madison, Wisconsin"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "J. E.",
+          "family": "Tanner",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry, University of Wisconsin, Madison, Wisconsin"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "The Journal of Chemical Physics"
+      ],
+      "volume": "42",
+      "page": "288-292",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1965,
+            1,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1063%2F1.1695690"
+    },
+    {
+      "doi": "10.1021/ja00034a071",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Diffusion-ordered two-dimensional nuclear magnetic resonance spectroscopy"
+      ],
+      "author": [
+        {
+          "given": "Kevin F.",
+          "family": "Morris",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "suffix": "Jr.",
+          "given": "Charles S.",
+          "family": "Johnson",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Journal of the American Chemical Society"
+      ],
+      "volume": "114",
+      "page": "3139-3141",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1992,
+            4
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Fja00034a071"
+    },
+    {
+      "doi": "10.1016/0010-4655(82)90174-6",
+      "status": "verified_registered_metadata",
+      "title": [
+        "CONTIN: A general purpose constrained regularization program for inverting noisy linear algebraic and integral equations"
+      ],
+      "author": [
+        {
+          "given": "Stephen W.",
+          "family": "Provencher",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Computer Physics Communications"
+      ],
+      "volume": "27",
+      "page": "229-242",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1982,
+            9
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1016%2F0010-4655%2882%2990174-6"
+    },
+    {
+      "doi": "10.1021/ac402698h",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Trust-Region Algorithm for the Inversion of Molecular Diffusion NMR Data"
+      ],
+      "author": [
+        {
+          "given": "Kaipin",
+          "family": "Xu",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Physics Department and Shanghai\rKey Laboratory of Magnetic Resonance, East China Normal University, Shanghai 200062, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Shanmin",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Physics Department and Shanghai\rKey Laboratory of Magnetic Resonance, East China Normal University, Shanghai 200062, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Analytical Chemistry"
+      ],
+      "volume": "86",
+      "page": "592-599",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2013,
+            12,
+            13
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Fac402698h"
+    },
+    {
+      "doi": "10.1021/ac3032004",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Iterative Thresholding Algorithm for Multiexponential Decay Applied to PGSE NMR Data"
+      ],
+      "author": [
+        {
+          "given": "Mateusz",
+          "family": "Urbańczyk",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Faculty of Chemistry, University of Warsaw, Pasteura 1, 02-093\rWarsaw, Poland"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Diana",
+          "family": "Bernin",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Swedish NMR Centre, University of Gothenburg, Box 465, 40530\rGöteborg, Sweden"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Wiktor",
+          "family": "Koźmiński",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Faculty of Chemistry, University of Warsaw, Pasteura 1, 02-093\rWarsaw, Poland"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Krzysztof",
+          "family": "Kazimierczuk",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Centre of New Technologies, University of Warsaw, Zwirki i Wigury\r93, 02-089 Warsaw, Poland"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Analytical Chemistry"
+      ],
+      "volume": "85",
+      "page": "1828-1833",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2013,
+            1,
+            22
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Fac3032004"
+    },
+    {
+      "doi": "10.1039/C6AN01902A",
+      "status": "verified_registered_metadata",
+      "title": [
+        "PALMA, an improved algorithm for DOSY signal processing"
+      ],
+      "author": [
+        {
+          "given": "Afef",
+          "family": "Cherni",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Institut de Génétique et de Biologie Moléculaire et Cellulaire (IGBMC)"
+            },
+            {
+              "name": "INSERM U596"
+            },
+            {
+              "name": "CNRS UMR 7104"
+            },
+            {
+              "name": "Université de Strasbourg"
+            },
+            {
+              "name": "67404 Illkirch-Graffenstaden"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Emilie",
+          "family": "Chouzenoux",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Université Paris-Est"
+            },
+            {
+              "name": "LIGM (UMR 8049)"
+            },
+            {
+              "name": "CNRS"
+            },
+            {
+              "name": "ENPC"
+            },
+            {
+              "name": "ESIEE Paris"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-1400-5326",
+          "authenticated-orcid": false,
+          "given": "Marc-André",
+          "family": "Delsuc",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Institut de Génétique et de Biologie Moléculaire et Cellulaire (IGBMC)"
+            },
+            {
+              "name": "INSERM U596"
+            },
+            {
+              "name": "CNRS UMR 7104"
+            },
+            {
+              "name": "Université de Strasbourg"
+            },
+            {
+              "name": "67404 Illkirch-Graffenstaden"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "The Analyst"
+      ],
+      "volume": "142",
+      "page": "772-779",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2017
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2FC6AN01902A"
+    },
+    {
+      "doi": "10.3390/math13132166",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Regularized Kaczmarz Solvers for Robust Inverse Laplace Transforms"
+      ],
+      "author": [
+        {
+          "given": "Marta",
+          "family": "González-Lázaro",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics, Research Centre CIAIMBITAL, University of Almería, 04120 Almería, Spain"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-9206-4105",
+          "authenticated-orcid": false,
+          "given": "Eduardo",
+          "family": "Viciana",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Engineering, Research Centre CIAIMBITAL, University of Almería, 04120 Almería, Spain"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Víctor",
+          "family": "Valdivieso",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Engineering, Research Centre CIAIMBITAL, University of Almería, 04120 Almería, Spain"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8355-580X",
+          "authenticated-orcid": false,
+          "given": "Ignacio",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics, Research Centre CIAIMBITAL, University of Almería, 04120 Almería, Spain"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5510-6297",
+          "authenticated-orcid": false,
+          "given": "Francisco Manuel",
+          "family": "Arrabal-Campos",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Engineering, Research Centre CIAIMBITAL, University of Almería, 04120 Almería, Spain"
+            }
+          ],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Mathematics"
+      ],
+      "volume": "13",
+      "page": "2166",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            7,
+            2
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.3390%2Fmath13132166"
+    },
+    {
+      "doi": "10.1016/j.jmr.2017.03.004",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Reconstructing diffusion ordered NMR spectroscopy by simultaneous inversion of Laplace transform"
+      ],
+      "author": [
+        {
+          "given": "Bin",
+          "family": "Yuan",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yiming",
+          "family": "Ding",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ghulam M.",
+          "family": "Kamal",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Limin",
+          "family": "Shao",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Zhiming",
+          "family": "Zhou",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Bin",
+          "family": "Jiang",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Peng",
+          "family": "Sun",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Xu",
+          "family": "Zhang",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Maili",
+          "family": "Liu",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Journal of Magnetic Resonance"
+      ],
+      "volume": "278",
+      "page": "1-7",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2017,
+            5
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1016%2Fj.jmr.2017.03.004"
+    },
+    {
+      "doi": "10.1021/acs.analchem.9b03865",
+      "status": "verified_registered_metadata",
+      "title": [
+        "High-Resolution Reconstruction for Diffusion-Ordered NMR Spectroscopy"
+      ],
+      "author": [
+        {
+          "given": "Enping",
+          "family": "Lin",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Electronic Science, State Key Laboratory of Physical Chemistry of Solid Surfaces, Xiamen University, Xiamen, Fujian 361005, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Yu",
+          "family": "Yang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Electronic Science, State Key Laboratory of Physical Chemistry of Solid Surfaces, Xiamen University, Xiamen, Fujian 361005, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0606-1165",
+          "authenticated-orcid": true,
+          "given": "Yuqing",
+          "family": "Huang",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Electronic Science, State Key Laboratory of Physical Chemistry of Solid Surfaces, Xiamen University, Xiamen, Fujian 361005, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-1473-2224",
+          "authenticated-orcid": true,
+          "given": "Zhong",
+          "family": "Chen",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Electronic Science, State Key Laboratory of Physical Chemistry of Solid Surfaces, Xiamen University, Xiamen, Fujian 361005, China"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Analytical Chemistry"
+      ],
+      "volume": "92",
+      "page": "634-639",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            11,
+            26
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Facs.analchem.9b03865"
+    },
+    {
+      "doi": "10.1137/0710036",
+      "status": "verified_registered_metadata",
+      "title": [
+        "The Differentiation of Pseudo-Inverses and Nonlinear Least Squares Problems Whose Variables Separate"
+      ],
+      "author": [
+        {
+          "given": "G. H.",
+          "family": "Golub",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "V.",
+          "family": "Pereyra",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "SIAM Journal on Numerical Analysis"
+      ],
+      "volume": "10",
+      "page": "413-432",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1973,
+            4
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F0710036"
+    },
+    {
+      "doi": "10.1088/0266-5611/29/4/045003",
+      "status": "verified_registered_metadata",
+      "title": [
+        "A generalization of variable elimination for separable inverse problems beyond least squares"
+      ],
+      "author": [
+        {
+          "given": "Paul",
+          "family": "Shearer",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Anna C",
+          "family": "Gilbert",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Inverse Problems"
+      ],
+      "volume": "29",
+      "page": "045003",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2013,
+            3,
+            18
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1088%2F0266-5611%2F29%2F4%2F045003"
+    },
+    {
+      "doi": "10.1137/1.9781611971217",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Solving Least Squares Problems"
+      ],
+      "author": [
+        {
+          "given": "Charles L.",
+          "family": "Lawson",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "California Institute of Technology"
+            },
+            {
+              "name": "Visual Numerics, Inc."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Richard J.",
+          "family": "Hanson",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "California Institute of Technology"
+            },
+            {
+              "name": "Visual Numerics, Inc."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [],
+      "volume": null,
+      "page": null,
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1995,
+            1,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F1.9781611971217"
+    },
+    {
+      "doi": "10.1088/1361-6420/ab2a29",
+      "status": "verified_registered_metadata",
+      "title": [
+        "The sliding Frank–Wolfe algorithm and its application to super-resolution microscopy"
+      ],
+      "author": [
+        {
+          "given": "Quentin",
+          "family": "Denoyelle",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7709-256X",
+          "authenticated-orcid": false,
+          "given": "Vincent",
+          "family": "Duval",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4477-0387",
+          "authenticated-orcid": false,
+          "given": "Gabriel",
+          "family": "Peyré",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Emmanuel",
+          "family": "Soubies",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Inverse Problems"
+      ],
+      "volume": "36",
+      "page": "014001",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            12,
+            3
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1088%2F1361-6420%2Fab2a29"
+    },
+    {
+      "doi": "10.1137/1118101",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Calculation of the Wasserstein Distance Between Probability Distributions on the Line"
+      ],
+      "author": [
+        {
+          "given": "S. S.",
+          "family": "Vallender",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Theory of Probability &amp; Its Applications"
+      ],
+      "volume": "18",
+      "page": "784-786",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1974,
+            9
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F1118101"
+    },
+    {
+      "doi": "10.1214/aos/1176344136",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Estimating the Dimension of a Model"
+      ],
+      "author": [
+        {
+          "given": "Gideon",
+          "family": "Schwarz",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "The Annals of Statistics"
+      ],
+      "volume": "6",
+      "page": null,
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1978,
+            3,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1214%2Faos%2F1176344136"
+    },
+    {
+      "doi": "10.1039/c6py00691d",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Molecular weight prediction with no dependence on solvent viscosity. A quantitative pulse field gradient diffusion NMR approach"
+      ],
+      "author": [
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "ceiA3"
+            },
+            {
+              "name": "Universidad de Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Pascual",
+          "family": "Oña-Burgos",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "ceiA3"
+            },
+            {
+              "name": "Universidad de Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ignacio",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "ceiA3"
+            },
+            {
+              "name": "Universidad de Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Polymer Chemistry"
+      ],
+      "volume": "7",
+      "page": "4326-4329",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2016
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fc6py00691d"
+    },
+    {
+      "doi": "10.1039/c6py90124g",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Correction: Molecular weight prediction with no dependence on solvent viscosity. A quantitative pulse field gradient diffusion NMR approach"
+      ],
+      "author": [
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "ceiA3"
+            },
+            {
+              "name": "Universidad de Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Pascual",
+          "family": "Oña-Burgos",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "ceiA3"
+            },
+            {
+              "name": "Universidad de Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ignacio",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "ceiA3"
+            },
+            {
+              "name": "Universidad de Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Polymer Chemistry"
+      ],
+      "volume": "7",
+      "page": "5331-5331",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2016
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fc6py90124g"
+    },
+    {
+      "doi": "10.1039/c8ay01817k",
+      "status": "verified_registered_metadata",
+      "title": [
+        "A diffusion NMR method for the prediction of the weight-average molecular weight of globular proteins in aqueous media of different viscosities"
+      ],
+      "author": [
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "Research Centre CIAIMBITAL"
+            },
+            {
+              "name": "University of Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8952-107X",
+          "authenticated-orcid": false,
+          "given": "Luis M.",
+          "family": "Aguilera-Sáez",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "Research Centre CIAIMBITAL"
+            },
+            {
+              "name": "University of Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8355-580X",
+          "authenticated-orcid": false,
+          "given": "Ignacio",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "Research Centre CIAIMBITAL"
+            },
+            {
+              "name": "University of Almería"
+            },
+            {
+              "name": "Almería"
+            },
+            {
+              "name": "Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Analytical Methods"
+      ],
+      "volume": "11",
+      "page": "142-147",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2019
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fc8ay01817k"
+    },
+    {
+      "doi": "10.1016/j.eurpolymj.2024.113710",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Concentration-independent molecular weight determination of polymers via diffusion NMR: A universal approach across solvents"
+      ],
+      "author": [
+        {
+          "given": "Francisco Manuel",
+          "family": "Arrabal-Campos",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Marta",
+          "family": "González-Lázaro",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Juana M.",
+          "family": "Pérez",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Juan A.",
+          "family": "Martínez Lao",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ignacio",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "European Polymer Journal"
+      ],
+      "volume": "226",
+      "page": "113710",
+      "article_number": "113710",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            2
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1016%2Fj.eurpolymj.2024.113710"
+    },
+    {
+      "doi": "10.1039/c7sm01569k",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Molecular weight prediction in polystyrene blends. Unprecedented use of a genetic algorithm in pulse field gradient spin echo (PGSE) NMR"
+      ],
+      "author": [
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "Research Centre for Agricultural and Food Biotechnology (BITAL)"
+            },
+            {
+              "name": "University of Almería"
+            },
+            {
+              "name": "Ctra. Sacramento"
+            },
+            {
+              "name": "s/n"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "José D.",
+          "family": "Álvarez",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Informatics – CIESOL"
+            },
+            {
+              "name": "ceiA3"
+            },
+            {
+              "name": "University of Almería"
+            },
+            {
+              "name": "Ctra. Sacramento"
+            },
+            {
+              "name": "s/n"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Amador",
+          "family": "García-Sancho",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Chemical Laboratory"
+            },
+            {
+              "name": "AIMPLAS (Plastic Technology Center)"
+            },
+            {
+              "name": "Parque Tecnológico"
+            },
+            {
+              "name": "C/ Gustave Eiffel 4"
+            },
+            {
+              "name": "Paterna"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8355-580X",
+          "authenticated-orcid": false,
+          "given": "Ignacio",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics"
+            },
+            {
+              "name": "Research Centre for Agricultural and Food Biotechnology (BITAL)"
+            },
+            {
+              "name": "University of Almería"
+            },
+            {
+              "name": "Ctra. Sacramento"
+            },
+            {
+              "name": "s/n"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Soft Matter"
+      ],
+      "volume": "13",
+      "page": "6620-6626",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2017
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fc7sm01569k"
+    },
+    {
+      "doi": "10.1021/acs.jpca.8b08584",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Algebraic Reconstruction Technique for Diffusion NMR Experiments. Application to the Molecular Weight Prediction of Polymers"
+      ],
+      "author": [
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics, Research Centre CIAIMBITAL, Universidad de Almería, Ctra. Sacramento, s/n, Almería, E-04120, Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Luis M.",
+          "family": "Aguilera-Sáez",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics, Research Centre CIAIMBITAL, Universidad de Almería, Ctra. Sacramento, s/n, Almería, E-04120, Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8355-580X",
+          "authenticated-orcid": true,
+          "given": "Ignacio",
+          "family": "Fernández",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Chemistry and Physics, Research Centre CIAIMBITAL, Universidad de Almería, Ctra. Sacramento, s/n, Almería, E-04120, Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "The Journal of Physical Chemistry A"
+      ],
+      "volume": "123",
+      "page": "943-950",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            1,
+            16
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Facs.jpca.8b08584"
+    }
+  ]
+}

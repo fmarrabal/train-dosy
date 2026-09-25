@@ -1,0 +1,11 @@
+{
+  "executable": "SOURCE_PROJECT\\rai-ilt\\.venv\\Scripts\\python.exe",
+  "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "torch": "2.14.0"
+  },
+  "threads_per_process": 1
+}

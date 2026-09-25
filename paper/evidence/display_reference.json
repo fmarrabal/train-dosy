@@ -1,0 +1,9 @@
+{
+  "case": "r3_snr200_rep1",
+  "common_color_maximum": 63.349863566772754,
+  "common_lower_display_fraction": 0.001,
+  "MF_source_sha256": "0ce63ab29e7cfbffc867ec569a6540827b9e63da9a30d5a125ce26558c639ed3",
+  "source_gallery": "dosy_todos_metodos_20260925",
+  "original_display_smoothing": false,
+  "correction": "Use original MF cells with no remapping, and the original shared color scale and threshold."
+}

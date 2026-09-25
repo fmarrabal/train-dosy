@@ -1,0 +1,22 @@
+TRAIn-DOSY public research package
+Copyright (C) 2026 Francisco M. Arrabal-Campos.
+Software released under GNU GPL version 3 or later; see LICENSE.
+This release is made at the project owner's explicit request.
+
+Algorithmic credit:
+- Original TRAIn: K. Xu and S. Zhang, Analytical Chemistry 2014,
+  doi:10.1021/ac402698h.
+- TRAIn_DOSY_MFV31 multifrequency extension: Francisco Arrabal-Campos,
+  Universidad de Almeria / NMRMBC Research Group, as identified in its header.
+- NNLS: Lawson and Hanson; MATLAB lsqnonneg is required, not distributed.
+- Variable projection: Golub and Pereyra (1973).
+- NumPy, SciPy, Pydantic, FastAPI, Uvicorn, Matplotlib and .NET are separately
+  installed dependencies with their own licenses, not vendored binaries.
+- paper/Definitions retains MDPI's original LaTeX template notices.
+  LICENSE does not replace third-party notices.
+- Research manuscripts and synthetic figures are author draft materials,
+  not a claim of journal acceptance or approval by a completed author list.
+
+The frozen Python RAI/DOME research sources were supplied from the owner's
+local projects. The minimal initializer is documented in docs/PROVENANCE.md.
+No source implementation of MATLAB's proprietary lsqnonneg is redistributed.

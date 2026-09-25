@@ -1,0 +1,50 @@
+\documentclass[mathematics,article,submit,moreauthors]{Definitions/mdpi}
+\usepackage{placeins}
+\usepackage{xurl}
+\firstpage{1}
+\makeatletter\setcounter{page}{\@firstpage}\makeatother
+\pubvolume{0}\issuenum{0}\articlenumber{0}
+\pubyear{2026}\copyrightyear{2026}
+\datereceived{ }\daterevised{ }\dateaccepted{ }\datepublished{ }
+\doinum{}\hreflink{}
+\Title{Positive Joint Laplace Inversion: Spectral Support Selection and Identifiability in Diffusion-Ordered Spectroscopy}
+\Author{Author information to be supplied}
+\AuthorNames{Author information to be supplied}
+\address{Affiliations to be supplied.}
+\corres{Corresponding author and email to be supplied.}
+\abstract{Joint inverse Laplace problems arise when several measured signals share decay mechanisms but have different nonnegative amplitudes. In diffusion-ordered spectroscopy, this structure connects diffusion coefficients across chemical shifts, while leaving the number and spectral support of the components unknown. We formulate reconstruction in the space of positive measures and distinguish distributional factorization from finite atomic models. Elementary results establish mass-preserving discretization bounds, finite-sampling ambiguity, conditional amplitude uniqueness, and the limits of matrix-rank evidence. We then develop a spectral-support selector using residualized exponential kernels, nonnegative variable projection, and reserved-acquisition prediction. A conditional Gaussian calculation explains the screening statistic and the paired predictive rule; data-adaptive screening prevents interpreting either as a calibrated discovery test. In 36 independent signal-present atomic simulations, the selector reduces mean spectral leakage from 5.166\% to 1.728\% for RAI and from 3.857\% to 1.728\% for DOME. Joint recovery of order and rates improves from 17 to 23 cases and from 22 to 23 cases, respectively, while unmatched mass increases slightly. Six null controls, six broad-distribution controls, and 24 transfer problems expose remaining limitations. The resulting framework separates numerical stationarity, predictive adequacy, and component identification, and provides reproducible evidence without a universal recovery claim.}
+\keyword{inverse Laplace transform; positive measures; variable projection; nonnegative least squares; model selection; spectral support; identifiability; DOSY}
+\MSC{65R32; 65F22; 62F07; 92E10}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\draftfield}[1]{\textbf{Author confirmation required:} #1}
+\renewcommand{\contentleftcolumn}{\leftcolFont\raggedright
+\textbf{Research manuscript draft}\\25 September 2026\\[4pt]
+Prepared for Mathematics.\\Not submitted.\\Author details pending.}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[L]{\fontsize{8}{9}\selectfont Research draft for Mathematics}
+\fancyfoot[R]{\fontsize{8}{9}\selectfont 25 September 2026}}
+\AtBeginDocument{\fancyhead[L]{\fontsize{8}{9}\selectfont Positive joint Laplace inversion}
+\fancyhead[R]{\fontsize{8}{9}\selectfont\thepage{} of \pageref*{LastPage}}\fancyfoot{}}
+\begin{document}
+\input{sections/introduction}
+\input{sections/theory}
+\input{sections/algorithm}
+\input{sections/experiments}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/backmatter}
+\appendixtitles{yes}
+\appendixstart
+\appendix
+\input{sections/appendix}
+\reftitle{References}
+\begin{thebibliography}{99}
+\input{references}
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,13 @@
+source,sha256,destination,use
+papers/mathematics_rebalanced_20260918_211140/main.tex,7354723407e107b01d3a9dce596d3f64bcf8d8e1da9f2beefcba10adfe5d8e02,main.tex,"MDPI layout; rewritten title, abstract, scope; no inferred authors"
+mathematics_rebalanced_20260918_211140/sections/introduction.tex,cb94a9cc9967d89c7c0b2fc33914b8d94e8b34ebf980f682337bf4130570a38b,sections/introduction.tex,Pure diffusion context and prior-art leads; rewritten and narrowed
+mathematics_rebalanced_20260918_211140/sections/methods.tex,486ca0e5ec001aa15bae649f8c40fe70706740dfc77ea59c645155766863d723,sections/theory.tex,Positive measures; density Jacobian; normalized shared/private profiles; conditional uniqueness proof
+mathematics_rebalanced_20260918_211140/sections/results.tex,955f3bc436bf1758cb957dc496768098fc7c861b33475020ed9ca6dcfb889c30,sections/results.tex,Reviewed but numerical banks deliberately not pooled or relabeled
+mathematics_rebalanced_20260918_211140/sections/discussion.tex,a529b804df693e3fa69c27d47ecae516fbc5d04a595e524a50db63fd34992bbb,sections/discussion.tex,"Distinction between representation, stationarity, reconstruction and interpretation"
+mathematics_rebalanced_20260918_211140/sections/backmatter.tex,e7fbd9f32f62aebee88563c594e2da1310456530158993b340aaf4be09ad153e,sections/backmatter.tex,"Pending authorship, public release and disclosure conventions"
+papers/mathematics_rebalanced_20260918_211140/references.tex,345ad5eae9003069bb7a1e77cb7edf490e122da39f708301bb0d54ecbeca7b27,references.tex,Selected primary reference leads; DOI metadata checked
+paper/mathematics/components_revision.tex,a7e126611be67216cd98b636bc7ed2063764f37a5261e2ce7da14e7920d48d7b,sections/algorithm.tex,"Atomic variable projection, shared rates, singular-model BIC caveats; old benchmark not reused as new evidence"
+NEW_ITERATIVE_ILT/dome-inversion/DESIGN.md,c3f326073808568b7a8886bcf7bab5ba5f7ac1b01077c4ee5358dabe19ca87da,sections/algorithm.tex,"Moment proposal meaning, second-order split expansion, exact-kernel acceptance; no claim of novel solver superiority"
+ARTICULOS-CIENTIFICOS/NEW_ITERATIVE_ILT/RESUMEN_GLOBAL_2026-09-14.md,f6769edf24ea8f7f53ae631fa759bc5921f8729817a1e40b8de1833b7c732f4d,sections/discussion.tex,Research-history assessment and limits; no pooling of heterogeneous studies
+ARTICULOS-CIENTIFICOS/NEW_ITERATIVE_ILT/README.md,ec01e234d0bf4456be27beef6aaf9ba8a635de5917fdb2f1a9c97a597a1c18e1,README_ES.md,Historical project context and manuscript discovery
+mathematics_rebalanced_20260918_211140/Definitions/mdpi.cls,b2b0bfec7b7035712215dfe52e23a30ae165211b03a64b098be9ae86cff93af7,Definitions/mdpi.cls,Unmodified local MDPI class dated 7 February 2025

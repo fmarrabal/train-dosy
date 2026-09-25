@@ -1,0 +1,62 @@
+[
+  {
+    "path": "dosy_support_v2_20260925\\metrics.csv",
+    "sha256": "9d2d80de7eef543efd1692d15d23febd62e620d15e47c22076b17fb2f2972030",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\summary.json",
+    "sha256": "4979724341157f67726df3bde077e27c1712be0892291a6af56aaf1ac2942330",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\protocol_frozen.json",
+    "sha256": "7bc328ad3b3c9df3a613f3a764952309550a3d9080b5e9a50f5cd0ae4dcc912b",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\FINAL_AUDIT.json",
+    "sha256": "158857f3a97741691728b704b5b05880b430a548619e381e5c31dfc186af649a",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\support.py",
+    "sha256": "c9fcf58eb8226cf177f9b08692382cf33a6a9de4954c8f6c8d988d818be86531",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\synthetic.py",
+    "sha256": "d6df464f44e0b97687ddfb7eba8c33708e7fe349ea8306321634622c2112ef28",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\evaluate.py",
+    "sha256": "9565add8e79852c6f4ffd86b1807c477314e98b82883e4a188b95aa51c54288d",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\environment.json",
+    "sha256": "684623dbf51561460c40c13991080b620e38196cc7402fee6512cfe86f7ab198",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\vendor_provenance.json",
+    "sha256": "64064986edb1f4fb6d6eb19250f782fe1cad2a0836fb9cdd02db77080804f809",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\README.md",
+    "sha256": "69abbc69ecaa2c2ba8100969d3c7c7b3ba8a6b97e5f90e1eb61a5b0757781003",
+    "role": "frozen support study"
+  },
+  {
+    "path": "dosy_support_v2_20260925\\display_reference.json",
+    "sha256": "319f86165a8dc3af753defec5bbbaa1b95314c001b20b4787a72277e352d7265",
+    "role": "frozen support study"
+  },
+  {
+    "path": "ilt_unified_benchmark_20260924\\results\\r3_snr200_rep1_mf_auto.mat",
+    "sha256": "0ce63ab29e7cfbffc867ec569a6540827b9e63da9a30d5a125ce26558c639ed3",
+    "role": "unaltered MF figure"
+  }
+]
