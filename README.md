@@ -1,26 +1,26 @@
 # TRAIn-DOSY: positive joint Laplace inversion
 [Español](README_ES.md) · [API](docs/API_EN.md) · [Mathematics](docs/METHODS_EN.md) · [Provenance](docs/PROVENANCE.md) · [Manuscript](paper/output/pdf/Positive_Joint_Laplace_Inversion_Mathematics.pdf)
 
-Research software by **Francisco M. Arrabal-Campos** for joint DOSY reconstruction from whole spectral signal regions. The MF line derives from the original **TRAIn of Xu and Zhang**, through Arrabal-Campos's **TRAIn_DOSY_MFV31**. Both the preserved historical source and the later numerical MF reference are included and explicitly distinguished.
+Research software by **Francisco M. Arrabal-Campos** for joint DOSY reconstruction from whole spectral signal regions. The TRAIn-MF line derives from the original **TRAIn of Xu and Zhang**, through Arrabal-Campos's **TRAIn_DOSY_MFV31**. Both the preserved historical source and the later numerical TRAIn-MF reference are included and explicitly distinguished.
 
 ![DOSY examples with ground truth](examples/dosy_ground_truth.png)
 
-Current manuscript: [manuscript-v2](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v2), 25 pages and 48 references. This bibliography revision preserves numerical software v0.1.0 and its results.
+Current manuscript: [manuscript-v3](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v3), 25 pages and 48 references. This naming revision preserves numerical software v0.1.0 and its results.
 
-## Why MF?
+## Why TRAIn-MF?
 **MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
 
-**TRAIn-MF: a multifrequency extension of TRAIn through nonnegative matrix factorization** names the lineage. The current constrained reference replaces the original embedded TRAIn iteration; it is not numerically identical to V3.1. Function names, historical source bytes, numerical cores and frozen results are preserved. See the [expanded bibliography](docs/BIBLIOGRAPHY_EN.md).
+**TRAIn-MF: a multifrequency extension of TRAIn through nonnegative matrix factorization** is the algorithm name. The current constrained reference replaces the original embedded TRAIn iteration; it is not numerically identical to V3.1. Function names, historical source bytes, numerical cores and frozen results are preserved. See the [expanded bibliography](docs/BIBLIOGRAPHY_EN.md).
 
 ## What is implemented
 | Language | Implementation | Role |
 |---|---|---|
-| MATLAB | Historical TRAIn_DOSY_MFV31; native DOSY_MF_Auto and constrained MF reference | Distributional/polymer profiles, ≥256 diffusion bins, installed MATLAB NNLS |
+| MATLAB | Historical TRAIn_DOSY_MFV31; native DOSY_MF_Auto and constrained TRAIn-MF reference | Distributional/polymer profiles, ≥256 diffusion bins, installed MATLAB NNLS |
 | Python | Frozen RAI-S and DOME-S solvers, validation, CLI, REST API, synthetic benchmark and plotting | Discrete shared diffusion rates and automatic spectral-support/order selection |
 | C#/.NET 10 | Typed SDK and command-line client | Calls the same API; not a third independent numerical solver |
-| API MF backend | Python launches the native MATLAB code when explicitly configured by the operator | Preserves the MATLAB algorithm and licensing requirements |
+| API TRAIn-MF backend | Python launches the native MATLAB code when explicitly configured by the operator | Preserves the MATLAB algorithm and licensing requirements |
 
-The numerical MF reference and frozen atomic core are copied without alteration and hashed. The public packaging adds no manual peak-height deletion. The algorithm receives neither ground truth nor an expected component count.
+The numerical TRAIn-MF reference and frozen atomic core are copied without alteration and hashed. The public packaging adds no manual peak-height deletion. The algorithm receives neither ground truth nor an expected component count.
 
 ## Install Python
 Python 3.11 or newer; the release was tested with Python 3.13.13. Use a virtual environment:
@@ -64,7 +64,7 @@ Supply a real, phase-corrected Y matrix: acquisition rows by chemical-shift colu
 
 Use the full spectrum to choose signal regions, then jointly fit those columns. A Boolean mask excludes solvent and noise-only regions; excluded values remain unestimated. Default discovery avoids the inner validation rows. Do not run separate one-pixel fits and then call the result joint component recovery. The array/resource limits are specified in the [API contract](docs/API_EN.md).
 
-For RAI-S/DOME-S, a 256-bin map conserves estimated mass but the rate optimization is continuous. Increasing display bins does not improve physical resolution. For MF the grid contains the actual unknown masses. Display density requires division by bin width.
+For RAI-S/DOME-S, a 256-bin map conserves estimated mass but the rate optimization is continuous. Increasing display bins does not improve physical resolution. For TRAIn-MF the grid contains the actual unknown masses. Display density requires division by bin width.
 
 ## MATLAB
 MATLAB plus Optimization Toolbox is required; tested in R2026a. From the MATLAB prompt:
@@ -118,11 +118,11 @@ On another platform, run pdflatex three times on main.tex from paper/ (MiKTeX/Te
 
 The atomic protocol contains 36 signal-present discrete cases, six null cases and six broad-profile controls. The frozen primary table reports correct order/all rates as RAI 17/36, RAI-S 23/36, DOME 22/36, DOME-S 23/36 (all-rates column). Selected order alone differs: 17, 25, 26 and 25 of 36 respectively. Agreement of the two S variants does not create independent replication. Broad polymer distributions require a different representation.
 
-The original MF manuscript illustration is an unchanged saved result. The package does not claim new superiority, global optimality, chemical identification, new experimental validation or full retraining of the exploratory neural models. See [methods and reproducibility scopes](docs/METHODS_EN.md). Full-benchmark reruns may be slow; the three examples are smoke demonstrations, not replacements for the test panel.
+The original TRAIn-MF manuscript illustration is an unchanged saved result. The package does not claim new superiority, global optimality, chemical identification, new experimental validation or full retraining of the exploratory neural models. See [methods and reproducibility scopes](docs/METHODS_EN.md). Full-benchmark reruns may be slow; the three examples are smoke demonstrations, not replacements for the test panel.
 
 ## Layout
 - src/train_dosy: contract, API, CLI and frozen Python estimator.
-- matlab/reference: native MF, NNLS/simplex/profile optimization and automatic selection.
+- matlab/reference: native TRAIn-MF, NNLS/simplex/profile optimization and automatic selection.
 - matlab/legacy: original TRAIn_DOSY_MFV31.
 - csharp: reusable SDK and CLI.
 - examples: inputs, separate truth, fitted outputs and DOSY figures.

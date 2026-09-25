@@ -30,11 +30,11 @@
     25
   ],
   "latex_overfull_or_undefined": false,
-  "sha256": "392d6e21819727f3481ae918ebaeed90c84f542f0a85cd8fe3a912032b460b06",
+  "sha256": "c916a4e26a5e7ad1a27d227713fab3c39e4471c61d6306ff30798f0bca4266b3",
   "mf_lineage_restored": true,
   "mf_defined_as": "multifrequency; nonnegative matrix factorization describes mathematical form",
   "author_declarations_pending": true,
-  "manuscript_revision": "manuscript-v2",
+  "manuscript_revision": "manuscript-v3",
   "numerical_software_version": "0.1.0",
   "immutable_sources_verified": 22,
   "numerical_files_unchanged_from_v0_1_0": [
@@ -80,8 +80,6 @@
     "matlab/reference/mf_robust/+mfrobust/simplex_block.m",
     "matlab/reference/mf_robust/DOSY_MF_Robust.m",
     "matlab/run_mf_api.m",
-    "paper/figures/dosy_continuous.pdf",
-    "paper/figures/dosy_continuous.png",
     "paper/figures/dosy_discrete.pdf",
     "paper/figures/dosy_discrete.png",
     "paper/figures/geometry.pdf",
@@ -123,6 +121,7 @@
     "src/train_dosy/mf.py",
     "src/train_dosy/models.py"
   ],
-  "scope": "Bibliography and documentation; no numerical core or benchmark changes",
-  "visual_review": "Rendered all 25 pages with Poppler at 105 dpi; inspected five contact sheets after final compilation."
+  "scope": "Algorithm naming and figure export margins only; numerical software v0.1.0 unchanged",
+  "visual_review": "All 25 pages rendered at 100 dpi and inspected in five contact sheets; full figure labels visible.",
+  "algorithm_name": "TRAIn-MF"
 }

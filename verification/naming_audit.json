@@ -1,0 +1,23 @@
+{
+  "name": "TRAIn-MF",
+  "api_identifier": "MF-AUTO",
+  "matlab_entry_point": "DOSY_MF_Auto",
+  "changed_figure_pixels": 6244,
+  "changed_pixel_bbox": [
+    975,
+    46,
+    1494,
+    70
+  ],
+  "image_size": [
+    1760,
+    1386
+  ],
+  "plot_change": "Panel title renamed; export bounds expanded to include the full colorbar label. The recorded pixel comparison precedes this margin-only export adjustment; data and plotting scales are unchanged.",
+  "numerical_refitting": false,
+  "immutable_sources_verified": 22,
+  "files_unchanged_from_v0_1_0": 82,
+  "references_unchanged": true,
+  "pdf_pages": 25,
+  "latex_overfull_or_undefined": false
+}

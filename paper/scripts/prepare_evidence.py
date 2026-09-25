@@ -89,11 +89,12 @@ def main():
             side.plot(den.sum(1),np.exp((e[:-1]+e[1:])/2)/1e-9,color='#176b96',lw=.8);side.axis('off')
         ca=fig.add_axes([.93,.2,.016,.57]);cb=fig.colorbar(im,cax=ca,ticks=[.001,.01,.1,1]);cb.set_label('Cell density / common reference maximum',fontsize=8)
         cb.ax.tick_params(labelsize=8)
-        fig.savefig(figs/(name+'.pdf'));fig.savefig(figs/(name+'.png'));plt.close(fig)
+        export = {'bbox_inches': 'tight'} if name == 'dosy_continuous' else {}
+        fig.savefig(figs/(name+'.pdf'), **export);fig.savefig(figs/(name+'.png'), **export);plt.close(fig)
     z=archived('r3_snr200_rep1');x,e=ground(z);items=[('Ground truth: finite-width profiles',x,e)]
     f=bench/'results/r3_snr200_rep1_mf_auto.mat';assert sha(f)==ref['MF_source_sha256']
     mf=loadmat(f,simplify_cells=True);d=loadmat(bench/'inputs/r3_snr200_rep1.mat',simplify_cells=True)['D']*1e-9;u=np.log(d);ed=np.r_[u[0],(u[1:]+u[:-1])/2,u[-1]]
-    items.append(('MF: automatic factor count',mf['X'],ed));provenance.append({'path':str(f.relative_to(args.source)),'sha256':sha(f),'role':'unaltered MF figure'})
+    items.append(('TRAIn-MF: automatic factor count',mf['X'],ed));provenance.append({'path':str(f.relative_to(args.source)),'sha256':sha(f),'role':'unaltered MF figure'})
     for m in ['RAI_S','DOME_S']:xx,ee=saved('archive',z['id'],m);items.append((m.replace('_','-')+': automatic order',xx,ee))
     dosy(z,items,'dosy_continuous',ref['common_color_maximum'])
     z=generate(18,'test');x,e=ground(z);items=[('Ground truth: three atoms',x,e)]

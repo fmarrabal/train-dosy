@@ -1,26 +1,26 @@
 # TRAIn-DOSY: inversión conjunta positiva de Laplace
 [English](README.md) · [API](docs/API_ES.md) · [Matemática](docs/METHODS_ES.md) · [Procedencia](docs/PROVENANCE.md) · [Artículo](paper/output/pdf/Positive_Joint_Laplace_Inversion_Mathematics.pdf)
 
-Software de investigación de **Francisco M. Arrabal-Campos** para reconstrucción DOSY conjunta a partir de las regiones con señal del espectro completo. La línea MF procede del **TRAIn original de Xu y Zhang**, a través de la extensión **TRAIn_DOSY_MFV31 de Arrabal-Campos**. Se conservan tanto ese archivo histórico como la referencia numérica posterior.
+Software de investigación de **Francisco M. Arrabal-Campos** para reconstrucción DOSY conjunta a partir de las regiones con señal del espectro completo. La línea TRAIn-MF procede del **TRAIn original de Xu y Zhang**, a través de la extensión **TRAIn_DOSY_MFV31 de Arrabal-Campos**. Se conservan tanto ese archivo histórico como la referencia numérica posterior.
 
 ![DOSY con verdad de referencia](examples/dosy_ground_truth.png)
 
-Manuscrito actual: [manuscript-v2](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v2), 25 páginas y 48 referencias. Esta revisión bibliográfica conserva el software numérico v0.1.0 y sus resultados.
+Manuscrito actual: [manuscript-v3](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v3), 25 páginas y 48 referencias. Esta revisión del nombre conserva el software numérico v0.1.0 y sus resultados.
 
-## ¿Por qué MF?
+## ¿Por qué TRAIn-MF?
 **MF significa multifrecuencia**, de acuerdo con la cabecera original de `TRAIn_DOSY_MFV31`. Matemáticamente se implementa mediante factorización matricial no negativa, `Y ≈ K S A`: las columnas de `S` son perfiles de difusión compartidos y las filas de `A` describen su intensidad en las distintas frecuencias. Sigue siendo multifrecuencia si el rango seleccionado es uno. Un perfil puede ser ancho o multimodal; el rango no equivale al número de sustancias.
 
-**TRAIn-MF: extensión multifrecuencia de TRAIn mediante factorización matricial no negativa** identifica la procedencia. La referencia actual con restricciones sustituye la iteración TRAIn interna original y no es numéricamente idéntica a V3.1. Se conservan los nombres de las funciones, los bytes del original, los núcleos numéricos y los resultados guardados. Consulta la [bibliografía ampliada](docs/BIBLIOGRAPHY_ES.md).
+**TRAIn-MF: extensión multifrecuencia de TRAIn mediante factorización matricial no negativa** es el nombre del algoritmo. La referencia actual con restricciones sustituye la iteración TRAIn interna original y no es numéricamente idéntica a V3.1. Se conservan los nombres de las funciones, los bytes del original, los núcleos numéricos y los resultados guardados. Consulta la [bibliografía ampliada](docs/BIBLIOGRAPHY_ES.md).
 
 ## Implementaciones incluidas
 | Lenguaje | Contenido | Función |
 |---|---|---|
-| MATLAB | TRAIn_DOSY_MFV31 histórico; DOSY_MF_Auto y MF restringido nativos | Perfiles distribucionales/polímeros, ≥256 bins, NNLS de MATLAB instalado |
+| MATLAB | TRAIn_DOSY_MFV31 histórico; DOSY_MF_Auto y TRAIn-MF restringido nativos | Perfiles distribucionales/polímeros, ≥256 bins, NNLS de MATLAB instalado |
 | Python | RAI-S/DOME-S congelados, validación, CLI, API REST, benchmark y figuras | Tasas discretas compartidas y selección automática de soporte y orden |
 | C#/.NET 10 | SDK tipado y cliente de consola | Usa la misma API; no es un tercer solver numérico independiente |
-| Backend MF de la API | Ejecuta MATLAB nativo si el operador lo configura | Mantiene el algoritmo y los requisitos de licencia de MATLAB |
+| Backend TRAIn-MF de la API | Ejecuta MATLAB nativo si el operador lo configura | Mantiene el algoritmo y los requisitos de licencia de MATLAB |
 
-El MF de referencia y el núcleo atómico conservan su código y sus hashes. La publicación añade interfaces y reproducibilidad. No se elimina por porcentaje de altura ni se suministra al algoritmo el número verdadero de componentes.
+El TRAIn-MF de referencia y el núcleo atómico conservan su código y sus hashes. La publicación añade interfaces y reproducibilidad. No se elimina por porcentaje de altura ni se suministra al algoritmo el número verdadero de componentes.
 
 ## Instalación de Python
 Python ≥3.11; probado con Python 3.13.13:
@@ -64,7 +64,7 @@ Y debe ser real y estar faseada: filas de adquisición por columnas de desplazam
 
 Se seleccionan regiones con señal sobre el espectro completo y se ajustan conjuntamente sus frecuencias. La máscara excluye disolvente y línea base; esas frecuencias quedan sin estimar. El descubrimiento automático excluye filas de validación interna. Un ajuste independiente a un punto no equivale a recuperar componentes correlacionados entre frecuencias. [Contrato y límites](docs/API_ES.md).
 
-En RAI-S y DOME-S, la malla de al menos 256 bins conserva masa para dibujar; las tasas se optimizan de forma continua. Más bins de dibujo no mejoran la resolución física. En MF las masas de esa malla sí son las incógnitas. Para representar densidad hay que dividir por el ancho del bin.
+En RAI-S y DOME-S, la malla de al menos 256 bins conserva masa para dibujar; las tasas se optimizan de forma continua. Más bins de dibujo no mejoran la resolución física. En TRAIn-MF las masas de esa malla sí son las incógnitas. Para representar densidad hay que dividir por el ancho del bin.
 
 ## MATLAB
 Requiere MATLAB y Optimization Toolbox; probado con R2026a:
@@ -118,11 +118,11 @@ En otros sistemas, ejecutar pdflatex tres veces sobre main.tex desde paper/, con
 
 El protocolo tiene 36 casos discretos con señal, seis nulos y seis controles anchos. La recuperación conjunta de orden y todas las tasas es: RAI 17/36; RAI-S 23/36; DOME 22/36; DOME-S 23/36. Si solo se cuenta acertar el orden, los valores son 17, 25, 26 y 25 de 36. La coincidencia de los métodos S no es una replicación independiente. Las distribuciones poliméricas anchas requieren otra representación.
 
-La figura MF original del manuscrito conserva el resultado guardado. No se afirma superioridad universal, óptimo global, identificación química, nueva validación experimental ni reentrenamiento completo de las variantes neuronales exploratorias. [Alcance y límites](docs/METHODS_ES.md). El benchmark completo puede tardar; los tres ejemplos no lo sustituyen.
+La figura TRAIn-MF original del manuscrito conserva el resultado guardado. No se afirma superioridad universal, óptimo global, identificación química, nueva validación experimental ni reentrenamiento completo de las variantes neuronales exploratorias. [Alcance y límites](docs/METHODS_ES.md). El benchmark completo puede tardar; los tres ejemplos no lo sustituyen.
 
 ## Organización
 - src/train_dosy: contrato, API, CLI y estimador Python congelado.
-- matlab/reference: MF nativo, NNLS, simplex, refinamiento y selección automática.
+- matlab/reference: TRAIn-MF nativo, NNLS, simplex, refinamiento y selección automática.
 - matlab/legacy: TRAIn_DOSY_MFV31 original.
 - csharp: SDK reutilizable y CLI.
 - examples: entradas, verdad separada, ajustes y figuras.

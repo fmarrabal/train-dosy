@@ -1,4 +1,6 @@
 # Contrato de la API (v1)
+
+El nombre público del algoritmo es **TRAIn-MF**. Se conserva `MF-AUTO` como identificador de API/CLI y `DOSY_MF_Auto` como función MATLAB. Ambos invocan la misma referencia numérica.
 La inversión se realiza conjuntamente sobre las frecuencias seleccionadas. La API no acepta especie química, número verdadero de componentes, valor objetivo de difusión ni archivo de verdad de referencia.
 
 ## Arranque y llamada
@@ -19,11 +21,11 @@ En Windows PowerShell, usar curl.exe.
 | b | Factores físicos de atenuación distintos y no negativos, en s/m². No son simplemente G². |
 | ppm | Desplazamientos químicos distintos, uno por columna, ascendentes o descendentes. |
 | sigma | Desviación estándar positiva del ruido homogéneo conocido, en unidades de Y. |
-| method | RAI-S, DOME-S o MF-AUTO. MF necesita MATLAB configurado y con licencia. |
+| method | RAI-S, DOME-S o MF-AUTO. TRAIn-MF necesita MATLAB configurado y con licencia. |
 | mask | Máscara booleana opcional; true incluye una frecuencia. Las excluidas no se estiman. |
 | diffusion_bounds | Intervalo positivo creciente en m²/s; defecto [1e-10, 1.5e-8]. |
-| bins | De 256 a 2048. En RAI-S/DOME-S afecta a la representación; las tasas se optimizan fuera de la malla. En MF es la malla real de optimización. |
-| max_components | Límite de búsqueda 1–4 para los métodos atómicos, defecto 4. No fija el resultado. MF conserva el límite de 4. |
+| bins | De 256 a 2048. En RAI-S/DOME-S afecta a la representación; las tasas se optimizan fuera de la malla. En TRAIn-MF es la malla real de optimización. |
+| max_components | Límite de búsqueda 1–4 para los métodos atómicos, defecto 4. No fija el resultado. TRAIn-MF conserva el límite de 4. |
 
 Se rechazan campos adicionales, valores no finitos, coordenadas repetidas, dimensiones incorrectas, máscaras vacías, menos de 12 o más de 256 gradientes, más de 8192 frecuencias y más de 524288 observaciones. El cuerpo HTTP no puede superar 16 MiB.
 
@@ -34,7 +36,7 @@ La máscara explícita debe ser previa o calcularse sin datos de prueba externa 
 ## Resultados
 En los métodos atómicos, D contiene tasas fuera de malla; A tiene r por n_seleccionadas. X contiene **masa por bin**, con bins por n_seleccionadas. logD_edges son bordes en logaritmo natural de D en SI; X/diff(logD_edges) es densidad. prediction usa las tasas exactas, conserva el orden de gradientes y solo incluye las frecuencias seleccionadas.
 
-MF devuelve D_grid, X, S y A, con X=S A. Su rango cuenta factores predictivos compartidos, no especies químicas. Hay que comprobar success, status y kkt antes de interpretar un resultado.
+TRAIn-MF devuelve D_grid, X, S y A, con X=S A. Su rango cuenta factores predictivos compartidos, no especies químicas. Hay que comprobar success, status y kkt antes de interpretar un resultado.
 
 Ambos devuelven mask, selected_frequency_indices (índices desde cero), ppm, selected_rank, selection_mode, search_limit, search_limit_reached, units y software_version. El rango cero es válido en ventanas de ruido suministradas explícitamente; si el descubrimiento automático no detecta señal se devuelve 422.
 
@@ -45,11 +47,11 @@ Los diagnósticos atómicos incluyen pérdidas de candidatos, soporte, estaciona
 
 Es una API de investigación probada en local; no existe un servicio alojado públicamente. Un despliegue en Internet requiere autenticación, proxy con límites, aislamiento y revisión operativa. Cancelar el cliente no garantiza parar el ajuste Python. El subproceso MATLAB tiene un límite de 600 segundos.
 
-## Backend MF nativo opcional
+## Backend TRAIn-MF nativo opcional
 Instalar MATLAB y Optimization Toolbox; configurar en el proceso del servidor:
 ~~~powershell
 $env:TRAIN_DOSY_MATLAB = 'C:\Program Files\MATLAB\R2026a\bin\matlab.exe'
 $env:TRAIN_DOSY_MATLAB_FUNCTIONS = (Resolve-Path matlab).Path
 ~~~
-Arrancar después el servidor o usar la CLI con --method MF-AUTO. Las rutas las fija el operador, nunca la petición. Cada ajuste MF inicia MATLAB en modo batch. MATLAB y su lsqnonneg no se redistribuyen. Ejemplo directo: matlab/example_mf.m.
+Arrancar después el servidor o usar la CLI con --method MF-AUTO. Las rutas las fija el operador, nunca la petición. Cada ajuste TRAIn-MF inicia MATLAB en modo batch. MATLAB y su lsqnonneg no se redistribuyen. Ejemplo directo: matlab/example_mf.m.
 
