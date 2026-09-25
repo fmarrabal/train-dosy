@@ -1,4 +1,10 @@
 # Mathematical contract and limits
+
+## Why MF?
+**MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
+
+**TRAIn-MF: a multifrequency extension of TRAIn through nonnegative matrix factorization** names the lineage. The current constrained reference replaces the original embedded TRAIn iteration; it is not numerically identical to V3.1. Function names, historical source bytes, numerical cores and frozen results are preserved. See the [expanded bibliography](BIBLIOGRAPHY_EN.md).
+
 The acquisition model is Y(i,l)=integral exp(-b_i D) d mu_l(D)+noise. D is diffusion; inferred molecular weight requires a separately justified calibration.
 
 ## Distributional MF

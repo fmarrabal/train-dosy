@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-09-25T01:07:50.365326+00:00",
+  "checked_utc": "2026-09-25T10:27:45.142303+00:00",
   "references": [
     {
       "doi": "10.1063/1.1695690",
@@ -735,314 +735,6 @@
       "source": "https://api.crossref.org/works/10.1021%2Facs.analchem.9b03865"
     },
     {
-      "doi": "10.1137/0710036",
-      "status": "verified_registered_metadata",
-      "title": [
-        "The Differentiation of Pseudo-Inverses and Nonlinear Least Squares Problems Whose Variables Separate"
-      ],
-      "author": [
-        {
-          "given": "G. H.",
-          "family": "Golub",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "given": "V.",
-          "family": "Pereyra",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "SIAM Journal on Numerical Analysis"
-      ],
-      "volume": "10",
-      "page": "413-432",
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            1973,
-            4
-          ]
-        ]
-      },
-      "source": "https://api.crossref.org/works/10.1137%2F0710036"
-    },
-    {
-      "doi": "10.1088/0266-5611/29/4/045003",
-      "status": "verified_registered_metadata",
-      "title": [
-        "A generalization of variable elimination for separable inverse problems beyond least squares"
-      ],
-      "author": [
-        {
-          "given": "Paul",
-          "family": "Shearer",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "given": "Anna C",
-          "family": "Gilbert",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "Inverse Problems"
-      ],
-      "volume": "29",
-      "page": "045003",
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            2013,
-            3,
-            18
-          ]
-        ]
-      },
-      "source": "https://api.crossref.org/works/10.1088%2F0266-5611%2F29%2F4%2F045003"
-    },
-    {
-      "doi": "10.1137/1.9781611971217",
-      "status": "verified_registered_metadata",
-      "title": [
-        "Solving Least Squares Problems"
-      ],
-      "author": [
-        {
-          "given": "Charles L.",
-          "family": "Lawson",
-          "sequence": "first",
-          "affiliation": [
-            {
-              "name": "California Institute of Technology"
-            },
-            {
-              "name": "Visual Numerics, Inc."
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "given": "Richard J.",
-          "family": "Hanson",
-          "sequence": "additional",
-          "affiliation": [
-            {
-              "name": "California Institute of Technology"
-            },
-            {
-              "name": "Visual Numerics, Inc."
-            }
-          ],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [],
-      "volume": null,
-      "page": null,
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            1995,
-            1,
-            1
-          ]
-        ]
-      },
-      "source": "https://api.crossref.org/works/10.1137%2F1.9781611971217"
-    },
-    {
-      "doi": "10.1088/1361-6420/ab2a29",
-      "status": "verified_registered_metadata",
-      "title": [
-        "The sliding Frank–Wolfe algorithm and its application to super-resolution microscopy"
-      ],
-      "author": [
-        {
-          "given": "Quentin",
-          "family": "Denoyelle",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0002-7709-256X",
-          "authenticated-orcid": false,
-          "given": "Vincent",
-          "family": "Duval",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "ORCID": "https://orcid.org/0000-0002-4477-0387",
-          "authenticated-orcid": false,
-          "given": "Gabriel",
-          "family": "Peyré",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        },
-        {
-          "given": "Emmanuel",
-          "family": "Soubies",
-          "sequence": "additional",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "Inverse Problems"
-      ],
-      "volume": "36",
-      "page": "014001",
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            2019,
-            12,
-            3
-          ]
-        ]
-      },
-      "source": "https://api.crossref.org/works/10.1088%2F1361-6420%2Fab2a29"
-    },
-    {
-      "doi": "10.1137/1118101",
-      "status": "verified_registered_metadata",
-      "title": [
-        "Calculation of the Wasserstein Distance Between Probability Distributions on the Line"
-      ],
-      "author": [
-        {
-          "given": "S. S.",
-          "family": "Vallender",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "Theory of Probability &amp; Its Applications"
-      ],
-      "volume": "18",
-      "page": "784-786",
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            1974,
-            9
-          ]
-        ]
-      },
-      "source": "https://api.crossref.org/works/10.1137%2F1118101"
-    },
-    {
-      "doi": "10.1214/aos/1176344136",
-      "status": "verified_registered_metadata",
-      "title": [
-        "Estimating the Dimension of a Model"
-      ],
-      "author": [
-        {
-          "given": "Gideon",
-          "family": "Schwarz",
-          "sequence": "first",
-          "affiliation": [],
-          "role": [
-            {
-              "vocabulary": "crossref",
-              "role": "author"
-            }
-          ]
-        }
-      ],
-      "container": [
-        "The Annals of Statistics"
-      ],
-      "volume": "6",
-      "page": null,
-      "article_number": null,
-      "published": {
-        "date-parts": [
-          [
-            1978,
-            3,
-            1
-          ]
-        ]
-      },
-      "source": "https://api.crossref.org/works/10.1214%2Faos%2F1176344136"
-    },
-    {
       "doi": "10.1039/c6py00691d",
       "status": "verified_registered_metadata",
       "title": [
@@ -1452,6 +1144,248 @@
       "source": "https://api.crossref.org/works/10.1016%2Fj.eurpolymj.2024.113710"
     },
     {
+      "doi": "10.1039/d6py00103c",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Real-time monitoring of photoinduced atom transfer radical polymerization by time-resolved diffusion NMR"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0009-0006-1760-9711",
+          "given": "Marek",
+          "family": "Czarnota"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-4231-2929",
+          "given": "Martyna",
+          "family": "Cybularczyk-Cecotka"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-0197-1664",
+          "given": "Franz F.",
+          "family": "Westermair"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5510-6297",
+          "given": "Francisco",
+          "family": "Arrabal Campos"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-8634-5266",
+          "given": "Kriti",
+          "family": "Kapil"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-1960-3402",
+          "given": "Krzysztof",
+          "family": "Matyjaszewski"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-0355-9542",
+          "given": "Grzegorz",
+          "family": "Szczepaniak"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6085-1593",
+          "given": "Mateusz",
+          "family": "Urbańczyk"
+        }
+      ],
+      "container": [
+        "Polymer Chemistry"
+      ],
+      "volume": "17",
+      "page": "1109-1115",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fd6py00103c"
+    },
+    {
+      "doi": "10.1039/d1py00547b",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Cyclic polylactide synthesis initiated by a lithium anthraquinoid: understanding the selectivity through DFT and diffusion NMR"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-7139-8990",
+          "given": "Cristina Ruiz",
+          "family": "Martínez"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-6495-2591",
+          "given": "Juana M.",
+          "family": "Pérez"
+        },
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos"
+        },
+        {
+          "given": "María",
+          "family": "Batuecas"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-6175-3941",
+          "given": "Manuel A.",
+          "family": "Ortuño"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8355-580X",
+          "given": "Ignacio",
+          "family": "Fernández"
+        }
+      ],
+      "container": [
+        "Polymer Chemistry"
+      ],
+      "volume": "12",
+      "page": "4083-4092",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2021
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fd1py00547b"
+    },
+    {
+      "doi": "10.1039/d2py01076c",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Lithium anthraquinoids as catalysts in the ROP of lactide and caprolactone into cyclic polymers"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-7139-8990",
+          "given": "Cristina",
+          "family": "Ruiz Martínez"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-6495-2591",
+          "given": "Juana M.",
+          "family": "Pérez"
+        },
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3198-5378",
+          "given": "Antonio",
+          "family": "Rodríguez-Diéguez"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7077-8972",
+          "given": "Duane",
+          "family": "Choquesillo-Lazarte"
+        },
+        {
+          "given": "Juan A.",
+          "family": "Martínez-Lao"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-6175-3941",
+          "given": "Manuel A.",
+          "family": "Ortuño"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8355-580X",
+          "given": "Ignacio",
+          "family": "Fernández"
+        }
+      ],
+      "container": [
+        "Polymer Chemistry"
+      ],
+      "volume": "14",
+      "page": "452-461",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2023
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fd2py01076c"
+    },
+    {
+      "doi": "10.1039/d6tb00497k",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Electrospun PVA-chitosan nanofibers with antibacterial properties for wound healing: unveiling the potential of low molecular weight chitosan"
+      ],
+      "author": [
+        {
+          "given": "Liqiong",
+          "family": "Li"
+        },
+        {
+          "given": "Asier R.",
+          "family": "Muguruza"
+        },
+        {
+          "given": "Francisco M.",
+          "family": "Arrabal-Campos"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-2930-8845",
+          "given": "Tamara",
+          "family": "Férnandez"
+        },
+        {
+          "given": "Silvia",
+          "family": "Fernández-García"
+        },
+        {
+          "given": "Nuria",
+          "family": "Muñoz-Flores"
+        },
+        {
+          "given": "Julia",
+          "family": "Lorenzo"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8355-580X",
+          "given": "Ignacio",
+          "family": "Fernández"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6313-2340",
+          "given": "Rafael",
+          "family": "Contreras-Caceres"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-9076-4642",
+          "given": "Pablo",
+          "family": "Guardia"
+        }
+      ],
+      "container": [
+        "Journal of Materials Chemistry B"
+      ],
+      "volume": "14",
+      "page": "9312-9326",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2026
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fd6tb00497k"
+    },
+    {
       "doi": "10.1039/c7sm01569k",
       "status": "verified_registered_metadata",
       "title": [
@@ -1662,6 +1596,1115 @@
         ]
       },
       "source": "https://api.crossref.org/works/10.1021%2Facs.jpca.8b08584"
+    },
+    {
+      "doi": "10.1137/0710036",
+      "status": "verified_registered_metadata",
+      "title": [
+        "The Differentiation of Pseudo-Inverses and Nonlinear Least Squares Problems Whose Variables Separate"
+      ],
+      "author": [
+        {
+          "given": "G. H.",
+          "family": "Golub",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "V.",
+          "family": "Pereyra",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "SIAM Journal on Numerical Analysis"
+      ],
+      "volume": "10",
+      "page": "413-432",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1973,
+            4
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F0710036"
+    },
+    {
+      "doi": "10.1088/0266-5611/29/4/045003",
+      "status": "verified_registered_metadata",
+      "title": [
+        "A generalization of variable elimination for separable inverse problems beyond least squares"
+      ],
+      "author": [
+        {
+          "given": "Paul",
+          "family": "Shearer",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Anna C",
+          "family": "Gilbert",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Inverse Problems"
+      ],
+      "volume": "29",
+      "page": "045003",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2013,
+            3,
+            18
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1088%2F0266-5611%2F29%2F4%2F045003"
+    },
+    {
+      "doi": "10.1137/1.9781611971217",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Solving Least Squares Problems"
+      ],
+      "author": [
+        {
+          "given": "Charles L.",
+          "family": "Lawson",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "California Institute of Technology"
+            },
+            {
+              "name": "Visual Numerics, Inc."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Richard J.",
+          "family": "Hanson",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "California Institute of Technology"
+            },
+            {
+              "name": "Visual Numerics, Inc."
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [],
+      "volume": null,
+      "page": null,
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1995,
+            1,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F1.9781611971217"
+    },
+    {
+      "doi": "10.1088/1361-6420/ab2a29",
+      "status": "verified_registered_metadata",
+      "title": [
+        "The sliding Frank–Wolfe algorithm and its application to super-resolution microscopy"
+      ],
+      "author": [
+        {
+          "given": "Quentin",
+          "family": "Denoyelle",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7709-256X",
+          "authenticated-orcid": false,
+          "given": "Vincent",
+          "family": "Duval",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4477-0387",
+          "authenticated-orcid": false,
+          "given": "Gabriel",
+          "family": "Peyré",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Emmanuel",
+          "family": "Soubies",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Inverse Problems"
+      ],
+      "volume": "36",
+      "page": "014001",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2019,
+            12,
+            3
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1088%2F1361-6420%2Fab2a29"
+    },
+    {
+      "doi": "10.1016/s0006-3495(76)85660-3",
+      "status": "verified_registered_metadata",
+      "title": [
+        "A Fourier method for the analysis of exponential decay curves"
+      ],
+      "author": [
+        {
+          "given": "S.W.",
+          "family": "Provencher"
+        }
+      ],
+      "container": [
+        "Biophysical Journal"
+      ],
+      "volume": "16",
+      "page": "27-41",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1976,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1016%2Fs0006-3495%2876%2985660-3"
+    },
+    {
+      "doi": "10.1137/1.9780898719697",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Rank-Deficient and Discrete Ill-Posed Problems"
+      ],
+      "author": [
+        {
+          "given": "Per Christian",
+          "family": "Hansen"
+        }
+      ],
+      "container": [],
+      "volume": null,
+      "page": null,
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1998,
+            1,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F1.9780898719697"
+    },
+    {
+      "doi": "10.1137/0718025",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Estimating Solutions of First Kind Integral Equations with Nonnegative Constraints and Optimal Smoothing"
+      ],
+      "author": [
+        {
+          "given": "J. P.",
+          "family": "Butler"
+        },
+        {
+          "given": "J. A.",
+          "family": "Reeds"
+        },
+        {
+          "given": "S. V.",
+          "family": "Dawson"
+        }
+      ],
+      "container": [
+        "SIAM Journal on Numerical Analysis"
+      ],
+      "volume": "18",
+      "page": "381-397",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1981,
+            6
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F0718025"
+    },
+    {
+      "doi": "10.1006/jmre.1998.1387",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Uniform-Penalty Inversion of Multiexponential Decay Data"
+      ],
+      "author": [
+        {
+          "given": "G.C.",
+          "family": "Borgia"
+        },
+        {
+          "given": "R.J.S.",
+          "family": "Brown"
+        },
+        {
+          "given": "P.",
+          "family": "Fantazzini"
+        }
+      ],
+      "container": [
+        "Journal of Magnetic Resonance"
+      ],
+      "volume": "132",
+      "page": "65-77",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1998,
+            5
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1006%2Fjmre.1998.1387"
+    },
+    {
+      "doi": "10.1088/0266-5611/31/4/045010",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Adaptive truncation of matrix decompositions and efficient estimation of NMR relaxation distributions"
+      ],
+      "author": [
+        {
+          "given": "Paul D",
+          "family": "Teal"
+        },
+        {
+          "given": "Craig",
+          "family": "Eccles"
+        }
+      ],
+      "container": [
+        "Inverse Problems"
+      ],
+      "volume": "31",
+      "page": "045010",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2015,
+            3,
+            25
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1088%2F0266-5611%2F31%2F4%2F045010"
+    },
+    {
+      "doi": "10.1137/080716542",
+      "status": "verified_registered_metadata",
+      "title": [
+        "A Fast Iterative Shrinkage-Thresholding Algorithm for Linear Inverse Problems"
+      ],
+      "author": [
+        {
+          "given": "Amir",
+          "family": "Beck"
+        },
+        {
+          "given": "Marc",
+          "family": "Teboulle"
+        }
+      ],
+      "container": [
+        "SIAM Journal on Imaging Sciences"
+      ],
+      "volume": "2",
+      "page": "183-202",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2009,
+            1,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F080716542"
+    },
+    {
+      "doi": "10.1109/78.995059",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Solving Fredholm integrals of the first kind with tensor product structure in 2 and 2.5 dimensions"
+      ],
+      "author": [
+        {
+          "given": "L.",
+          "family": "Venkataramanan"
+        },
+        {
+          "family": "Yi-Qiao Song"
+        },
+        {
+          "given": "M.D.",
+          "family": "Hurlimann"
+        }
+      ],
+      "container": [
+        "IEEE Transactions on Signal Processing"
+      ],
+      "volume": "50",
+      "page": "1017-1026",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2002,
+            5
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1109%2F78.995059"
+    },
+    {
+      "doi": "10.1088/1361-6420/33/1/015003",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Uniform Penalty inversion of two-dimensional NMR relaxation data"
+      ],
+      "author": [
+        {
+          "given": "V",
+          "family": "Bortolotti"
+        },
+        {
+          "given": "R J S",
+          "family": "Brown"
+        },
+        {
+          "given": "P",
+          "family": "Fantazzini"
+        },
+        {
+          "given": "G",
+          "family": "Landi"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3961-4037",
+          "given": "F",
+          "family": "Zama"
+        }
+      ],
+      "container": [
+        "Inverse Problems"
+      ],
+      "volume": "33",
+      "page": "015003",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2016,
+            12,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1088%2F1361-6420%2F33%2F1%2F015003"
+    },
+    {
+      "doi": "10.1137/23m1600943",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Uniform Multipenalty Regularization for Linear Ill-Posed Inverse Problems"
+      ],
+      "author": [
+        {
+          "given": "Villiam",
+          "family": "Bortolotti"
+        },
+        {
+          "given": "Germana",
+          "family": "Landi"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3961-4037",
+          "given": "Fabiana",
+          "family": "Zama"
+        }
+      ],
+      "container": [
+        "SIAM Journal on Scientific Computing"
+      ],
+      "volume": "47",
+      "page": "A790-A810",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            3,
+            13
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F23m1600943"
+    },
+    {
+      "doi": "10.1016/0169-7439(95)00047-x",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Multivariate curve resolution applied to second order data"
+      ],
+      "author": [
+        {
+          "given": "Roma",
+          "family": "Tauler"
+        }
+      ],
+      "container": [
+        "Chemometrics and Intelligent Laboratory Systems"
+      ],
+      "volume": "30",
+      "page": "133-146",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1995,
+            11
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1016%2F0169-7439%2895%2900047-x"
+    },
+    {
+      "doi": "10.1038/44565",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Learning the parts of objects by non-negative matrix factorization"
+      ],
+      "author": [
+        {
+          "given": "Daniel D.",
+          "family": "Lee"
+        },
+        {
+          "given": "H. Sebastian",
+          "family": "Seung"
+        }
+      ],
+      "container": [
+        "Nature"
+      ],
+      "volume": "401",
+      "page": "788-791",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1999,
+            10
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1038%2F44565"
+    },
+    {
+      "doi": "10.1021/ac7025833",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Speedy Component Resolution: An Improved Tool for Processing Diffusion-Ordered Spectroscopy Data"
+      ],
+      "author": [
+        {
+          "given": "Mathias",
+          "family": "Nilsson"
+        },
+        {
+          "given": "Gareth A.",
+          "family": "Morris"
+        }
+      ],
+      "container": [
+        "Analytical Chemistry"
+      ],
+      "volume": "80",
+      "page": "3777-3782",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2008,
+            4,
+            12
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Fac7025833"
+    },
+    {
+      "doi": "10.1039/c3cc46228e",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Unmixing the NMR spectra of similar species – vive la différence"
+      ],
+      "author": [
+        {
+          "given": "Adam A.",
+          "family": "Colbourne"
+        },
+        {
+          "given": "Sebastian",
+          "family": "Meier"
+        },
+        {
+          "given": "Gareth A.",
+          "family": "Morris"
+        },
+        {
+          "given": "Mathias",
+          "family": "Nilsson"
+        }
+      ],
+      "container": [
+        "Chemical Communications"
+      ],
+      "volume": "49",
+      "page": "10510",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2013
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1039%2Fc3cc46228e"
+    },
+    {
+      "doi": "10.1021/ja2004895",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Local Covariance Order Diffusion-Ordered Spectroscopy: A Powerful Tool for Mixture Analysis"
+      ],
+      "author": [
+        {
+          "given": "Adam A.",
+          "family": "Colbourne"
+        },
+        {
+          "given": "Gareth A.",
+          "family": "Morris"
+        },
+        {
+          "given": "Mathias",
+          "family": "Nilsson"
+        }
+      ],
+      "container": [
+        "Journal of the American Chemical Society"
+      ],
+      "volume": "133",
+      "page": "7640-7643",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2011,
+            4,
+            29
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Fja2004895"
+    },
+    {
+      "doi": "10.1002/mrc.4717",
+      "status": "verified_registered_metadata",
+      "title": [
+        "The GNAT: A new tool for processing NMR data"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-4731-0626",
+          "given": "Laura",
+          "family": "Castañar"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0591-9166",
+          "given": "Guilherme Dal",
+          "family": "Poggetto"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-9701-4342",
+          "given": "Adam A.",
+          "family": "Colbourne"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4859-6259",
+          "given": "Gareth A.",
+          "family": "Morris"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3301-7899",
+          "given": "Mathias",
+          "family": "Nilsson"
+        }
+      ],
+      "container": [
+        "Magnetic Resonance in Chemistry"
+      ],
+      "volume": "56",
+      "page": "546-558",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            3,
+            25
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1002%2Fmrc.4717"
+    },
+    {
+      "doi": "10.1093/imanum/drab108",
+      "status": "verified_registered_metadata",
+      "title": [
+        "From ESPRIT to ESPIRA: estimation of signal parameters by iterative rational approximation"
+      ],
+      "author": [
+        {
+          "given": "Nadiia",
+          "family": "Derevianko"
+        },
+        {
+          "given": "Gerlind",
+          "family": "Plonka"
+        },
+        {
+          "given": "Markus",
+          "family": "Petz"
+        }
+      ],
+      "container": [
+        "IMA Journal of Numerical Analysis"
+      ],
+      "volume": "43",
+      "page": "789-827",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2022,
+            2,
+            9
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1093%2Fimanum%2Fdrab108"
+    },
+    {
+      "doi": "10.1214/aoms/1177703862",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Identifiability of Finite Mixtures"
+      ],
+      "author": [
+        {
+          "given": "Henry",
+          "family": "Teicher"
+        }
+      ],
+      "container": [
+        "The Annals of Mathematical Statistics"
+      ],
+      "volume": "34",
+      "page": "1265-1269",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1963,
+            12
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1214%2Faoms%2F1177703862"
+    },
+    {
+      "doi": "10.1021/acs.analchem.3c00537",
+      "status": "verified_registered_metadata",
+      "title": [
+        "High-Quality Reconstruction for Laplace NMR Based on Deep Learning"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-1695-9895",
+          "given": "Bo",
+          "family": "Chen"
+        },
+        {
+          "given": "Liubin",
+          "family": "Wu"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-3201-3952",
+          "given": "Xiaohong",
+          "family": "Cui"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3971-8389",
+          "given": "Enping",
+          "family": "Lin"
+        },
+        {
+          "given": "Shuohui",
+          "family": "Cao"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8202-5639",
+          "given": "Haolin",
+          "family": "Zhan"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0606-1165",
+          "given": "Yuqing",
+          "family": "Huang"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5514-455X",
+          "given": "Yu",
+          "family": "Yang"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-1473-2224",
+          "given": "Zhong",
+          "family": "Chen"
+        }
+      ],
+      "container": [
+        "Analytical Chemistry"
+      ],
+      "volume": "95",
+      "page": "11596-11602",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            7,
+            27
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1021%2Facs.analchem.3c00537"
+    },
+    {
+      "doi": "10.1126/sciadv.adw1379",
+      "status": "verified_registered_metadata",
+      "title": [
+        "High-confidence reconstruction for Laplace inversion in NMR based on uncertainty-informed deep learning"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-1695-9895",
+          "given": "Bo",
+          "family": "Chen"
+        },
+        {
+          "given": "Yuebin",
+          "family": "Zhang"
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0001-0830-9999",
+          "given": "Lina",
+          "family": "Wang"
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0009-6403-6460",
+          "given": "Zhe",
+          "family": "Zhan"
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0001-1048-3013",
+          "given": "Xun",
+          "family": "Guan"
+        },
+        {
+          "ORCID": "https://orcid.org/0009-0000-1395-7838",
+          "given": "Zhuoran",
+          "family": "Rong"
+        },
+        {
+          "given": "Yinping",
+          "family": "Cui"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3971-8389",
+          "given": "Enping",
+          "family": "Lin"
+        },
+        {
+          "given": "Shuohui",
+          "family": "Cao"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0606-1165",
+          "given": "Yuqing",
+          "family": "Huang"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5514-455X",
+          "given": "Yu",
+          "family": "Yang"
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-1473-2224",
+          "given": "Zhong",
+          "family": "Chen"
+        }
+      ],
+      "container": [
+        "Science Advances"
+      ],
+      "volume": "11",
+      "page": null,
+      "article_number": "eadw1379",
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            8,
+            29
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1126%2Fsciadv.adw1379"
+    },
+    {
+      "doi": "10.1137/1118101",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Calculation of the Wasserstein Distance Between Probability Distributions on the Line"
+      ],
+      "author": [
+        {
+          "given": "S. S.",
+          "family": "Vallender",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "Theory of Probability &amp; Its Applications"
+      ],
+      "volume": "18",
+      "page": "784-786",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1974,
+            9
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1137%2F1118101"
+    },
+    {
+      "doi": "10.1214/aos/1176344136",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Estimating the Dimension of a Model"
+      ],
+      "author": [
+        {
+          "given": "Gideon",
+          "family": "Schwarz",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container": [
+        "The Annals of Statistics"
+      ],
+      "volume": "6",
+      "page": null,
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            1978,
+            3,
+            1
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1214%2Faos%2F1176344136"
+    },
+    {
+      "doi": "10.1017/cbo9780511800474",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Algebraic Geometry and Statistical Learning Theory"
+      ],
+      "author": [
+        {
+          "given": "Sumio",
+          "family": "Watanabe"
+        }
+      ],
+      "container": [],
+      "volume": null,
+      "page": null,
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2009,
+            8,
+            13
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1017%2Fcbo9780511800474"
+    },
+    {
+      "doi": "10.1023/a:1017501703105",
+      "status": "verified_registered_metadata",
+      "title": [
+        "Convergence of a Block Coordinate Descent Method for Nondifferentiable Minimization"
+      ],
+      "author": [
+        {
+          "given": "P.",
+          "family": "Tseng"
+        }
+      ],
+      "container": [
+        "Journal of Optimization Theory and Applications"
+      ],
+      "volume": "109",
+      "page": "475-494",
+      "article_number": null,
+      "published": {
+        "date-parts": [
+          [
+            2001,
+            6
+          ]
+        ]
+      },
+      "source": "https://api.crossref.org/works/10.1023%2Fa%3A1017501703105"
     }
   ]
 }

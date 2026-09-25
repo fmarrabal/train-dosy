@@ -1,4 +1,10 @@
 # Contrato matemático y límites
+
+## ¿Por qué MF?
+**MF significa multifrecuencia**, de acuerdo con la cabecera original de `TRAIn_DOSY_MFV31`. Matemáticamente se implementa mediante factorización matricial no negativa, `Y ≈ K S A`: las columnas de `S` son perfiles de difusión compartidos y las filas de `A` describen su intensidad en las distintas frecuencias. Sigue siendo multifrecuencia si el rango seleccionado es uno. Un perfil puede ser ancho o multimodal; el rango no equivale al número de sustancias.
+
+**TRAIn-MF: extensión multifrecuencia de TRAIn mediante factorización matricial no negativa** identifica la procedencia. La referencia actual con restricciones sustituye la iteración TRAIn interna original y no es numéricamente idéntica a V3.1. Se conservan los nombres de las funciones, los bytes del original, los núcleos numéricos y los resultados guardados. Consulta la [bibliografía ampliada](BIBLIOGRAPHY_ES.md).
+
 El modelo es Y(i,l)=integral exp(-b_i D) d mu_l(D)+ruido. D es difusión. Convertirlo a peso molecular requiere una calibración justificada aparte.
 
 ## MF distribucional

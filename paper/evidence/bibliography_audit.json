@@ -1,0 +1,169 @@
+{
+  "review_date": "2026-09-25",
+  "previous_references": 23,
+  "references": 48,
+  "registered_dois": 46,
+  "added_self_publications": 4,
+  "added_methodological_references": 21,
+  "all_entries_cited": true,
+  "source_website": "https://franciscoarrabal.com/publicaciones",
+  "website_records_reviewed": 108,
+  "discovery_catalogue": {
+    "project": "diffusion-inversion",
+    "commit": "1d2656377a95833c4f7b0b5da2e3b6aca908f9f0",
+    "scope": "Read-only bibliographic discovery; private source code not redistributed"
+  },
+  "excluded": [
+    {
+      "doi": "10.1039/C6PY90106A",
+      "registered_title": "Contents list",
+      "reason": "Incorrect DOI associated with the correction on the website; retained 10.1039/C6PY90124G instead"
+    }
+  ],
+  "selected": [
+    {
+      "key": "photo2026",
+      "doi": "10.1039/d6py00103c",
+      "reason": "Polymer diffusion; time-resolved monitoring"
+    },
+    {
+      "key": "cyclic2021",
+      "doi": "10.1039/d1py00547b",
+      "reason": "Diffusion NMR and polymer architecture"
+    },
+    {
+      "key": "cyclic2023",
+      "doi": "10.1039/d2py01076c",
+      "reason": "Cyclic-polymer application context"
+    },
+    {
+      "key": "chitosan2026",
+      "doi": "10.1039/d6tb00497k",
+      "reason": "Molecular-weight-sensitive materials application; not ILT validation"
+    },
+    {
+      "key": "brd",
+      "doi": "10.1137/0718025",
+      "reason": "Positive smoothing of first-kind equations"
+    },
+    {
+      "key": "flint",
+      "doi": "10.1088/0266-5611/31/4/045010",
+      "reason": "Compression and efficient regularized inversion"
+    },
+    {
+      "key": "fista",
+      "doi": "10.1137/080716542",
+      "reason": "Accelerated proximal optimization"
+    },
+    {
+      "key": "hansen",
+      "doi": "10.1137/1.9780898719697",
+      "reason": "Ill-conditioning and regularization"
+    },
+    {
+      "key": "nmf",
+      "doi": "10.1038/44565",
+      "reason": "Nonnegative matrix factorization precedent"
+    },
+    {
+      "key": "tseng",
+      "doi": "10.1023/a:1017501703105",
+      "reason": "Conditional block-coordinate convergence"
+    },
+    {
+      "key": "teicher",
+      "doi": "10.1214/aoms/1177703862",
+      "reason": "Model-class-dependent identifiability"
+    },
+    {
+      "key": "watanabe",
+      "doi": "10.1017/cbo9780511800474",
+      "reason": "Singular models and limits of regular BIC"
+    },
+    {
+      "key": "score",
+      "doi": "10.1021/ac7025833",
+      "reason": "Joint DOSY component resolution"
+    },
+    {
+      "key": "outscore",
+      "doi": "10.1039/c3cc46228e",
+      "reason": "Diffusion and spectral information for unmixing"
+    },
+    {
+      "key": "locodosy",
+      "doi": "10.1021/ja2004895",
+      "reason": "Local covariance order and overlaps"
+    },
+    {
+      "key": "espira",
+      "doi": "10.1093/imanum/drab108",
+      "reason": "Finite exponential parameter estimation"
+    },
+    {
+      "key": "drect",
+      "doi": "10.1021/acs.analchem.3c00537",
+      "reason": "Deep learning for Laplace NMR"
+    },
+    {
+      "key": "dream",
+      "doi": "10.1126/sciadv.adw1379",
+      "reason": "Uncertainty-informed learned reconstruction"
+    },
+    {
+      "key": "gnat",
+      "doi": "10.1002/mrc.4717",
+      "reason": "NMR processing and DOSY software context"
+    },
+    {
+      "key": "upen",
+      "doi": "10.1006/jmre.1998.1387",
+      "reason": "Adaptive uniform-penalty regularization"
+    },
+    {
+      "key": "upen2d",
+      "doi": "10.1088/1361-6420/33/1/015003",
+      "reason": "Two-dimensional relaxation inversion"
+    },
+    {
+      "key": "mupen",
+      "doi": "10.1137/23m1600943",
+      "reason": "Spatial multipenalty regularization"
+    },
+    {
+      "key": "discrete",
+      "doi": "10.1016/s0006-3495(76)85660-3",
+      "reason": "Classical exponential-decay analysis"
+    },
+    {
+      "key": "mcr",
+      "doi": "10.1016/0169-7439(95)00047-x",
+      "reason": "Multivariate curve-resolution precedent"
+    },
+    {
+      "key": "separable2d",
+      "doi": "10.1109/78.995059",
+      "reason": "Tensor-structured Fredholm operators"
+    }
+  ],
+  "scope": "Bibliography and terminology only; no new numerical validation or performance claim",
+  "manual_metadata_notes": [
+    "UPEN2D: 2017 volume/issue year; early metadata December 2016",
+    "ESPIRA: 2023 issue year; online 2022",
+    "Author family/given parsing normalized for Ruiz Martínez, Dal Poggetto, Song and Hürlimann",
+    "OUTSCORE: full page range 10510-10512 verified on publisher landing page; Crossref lists first page only"
+  ],
+  "primary_metadata_checks": [
+    {
+      "key": "upen2d",
+      "url": "https://cris.unibo.it/handle/11585/575469",
+      "verified": "2017 issue year"
+    },
+    {
+      "key": "outscore",
+      "url": "https://pubs.rsc.org/en/content/articlelanding/2013/cc/c3cc46228e",
+      "verified": "10510-10512 page range"
+    }
+  ]
+}
