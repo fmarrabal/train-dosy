@@ -1,0 +1,108 @@
+{
+  "scope": "Finite-dimensional algebra checks only; no solver benchmark, no model refitting, no identifiability claim.",
+  "seed": 25092026,
+  "numpy": "2.5.1",
+  "checks": [
+    {
+      "name": "TRAIn-MF QR residual decomposition",
+      "relative_error": 1.248986711443086e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "TRAIn-MF Kronecker vectorization",
+      "relative_error": 1.2483348222019472e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "TRAIn-MF S gradient with A fixed",
+      "relative_error": 1.0644261110419187e-10,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "TRAIn squared-parametrization gradient",
+      "relative_error": 8.534762805705868e-11,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "TRAIn exact versus Gauss-Newton Hessian distinction",
+      "relative_error": 6.012034627954131e-11,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "RAI density graph trace equals pairwise energy",
+      "relative_error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "RAI fixed-grid density gradient",
+      "relative_error": 4.0898643638431764e-09,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "Adaptive RAI feasible primal-dual gap identity",
+      "relative_error": 2.4873747890531896e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged mean pi=0.08",
+      "relative_error": 1.3061447348531251e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged variance pi=0.08",
+      "relative_error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged mean pi=0.2",
+      "relative_error": 1.3061447348531251e-16,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged variance pi=0.2",
+      "relative_error": 2.0816681711721685e-17,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged mean pi=0.5",
+      "relative_error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged variance pi=0.5",
+      "relative_error": 1.734723475976807e-17,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged mean pi=0.8",
+      "relative_error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged variance pi=0.8",
+      "relative_error": 1.734723475976807e-17,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged mean pi=0.92",
+      "relative_error": 0.0,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "DOME exchanged variance pi=0.92",
+      "relative_error": 1.0408340855860843e-17,
+      "tolerance": 1e-10
+    },
+    {
+      "name": "CIRCE v2 decoder and scaled-penalty gradient",
+      "relative_error": 1.3755164796111662e-09,
+      "tolerance": 2e-06
+    },
+    {
+      "name": "CIRCE decoder mass preservation",
+      "relative_error": 1.16959432565724e-16,
+      "tolerance": 1e-10
+    }
+  ],
+  "passed": 20
+}

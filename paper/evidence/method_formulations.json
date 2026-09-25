@@ -1,0 +1,278 @@
+{
+  "revision": "manuscript-v4",
+  "scope": "Mathematical transcription of inspected implementations; no new fits or numerical changes. Local archive entries identify sources, not newly packaged runnable methods.",
+  "source_roots": {
+    "public": "repository root",
+    "local_archive": "author retained CODIGO_MEJORADO archive"
+  },
+  "sources": [
+    {
+      "method": "TRAIn supplied single-frequency implementation",
+      "latex_labels": [
+        "eq:trainobjective",
+        "eq:trainstep",
+        "eq:trainratio"
+      ],
+      "source_scope": "local_archive",
+      "path": "TRAIn.m",
+      "sha256": "25be4da57bd9ce899baba898e1de72ff2eda8f90595663ebff8824d42db3205e"
+    },
+    {
+      "method": "TRAIn-MF V3.1",
+      "latex_labels": [
+        "eq:v31conditional",
+        "eq:v31penalty"
+      ],
+      "source_scope": "public",
+      "path": "matlab/legacy/TRAIn_DOSY_MFV31.m",
+      "sha256": "d7d2ec44b70f3f68baeb4f7c57592c3e14067cb1a5ed18244d5648724ef4a82f"
+    },
+    {
+      "method": "TRAIn-MF objective and KKT",
+      "latex_labels": [
+        "eq:mf",
+        "eq:mfgrad"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/mf_robust/+mfrobust/evaluate.m",
+      "sha256": "06075cc330b0175b671ee3bdb60105db4cc96147b764340e9359654e00d7d3ac"
+    },
+    {
+      "method": "TRAIn-MF amplitude update",
+      "latex_labels": [
+        "eq:mfA"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/mf_robust/+mfrobust/nnls_batch.m",
+      "sha256": "d223afaf9364794bfb059ed9796921d0b41113866c5b174c4dfacb6b6e250ded"
+    },
+    {
+      "method": "TRAIn-MF simplex update",
+      "latex_labels": [
+        "eq:mfqr",
+        "eq:mfS"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/mf_robust/+mfrobust/simplex_block.m",
+      "sha256": "bc6d4e8e1698aed00e60d407da0fe4dbe58a842258acc1f21e641713f687f1ae"
+    },
+    {
+      "method": "TRAIn-MF outer algorithm",
+      "latex_labels": [
+        "sec:mfmath"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/mf_robust/DOSY_MF_Robust.m",
+      "sha256": "2ee942c911d6f6424dd8cec715ed48bbd65e4ded666f956d1da2abc1bf521ded"
+    },
+    {
+      "method": "TRAIn-MF profiled SQP",
+      "latex_labels": [
+        "eq:mfgrad"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/mf_robust/+mfrobust/profile_refine.m",
+      "sha256": "6835fef1149f13ed41f187ac70df113278ca2b382859fd3b09540a8b4b2f1f02"
+    },
+    {
+      "method": "TRAIn-MF curvature",
+      "latex_labels": [
+        "eq:mfcurvature"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/mf_original/dosy_v4/+dosyv4/regularizers.m",
+      "sha256": "0f502e07fd162545157045eb33624422b4aae9f2dce5dedc6ba0f9e9cf5879f4"
+    },
+    {
+      "method": "TRAIn-MF automatic wrapper",
+      "latex_labels": [
+        "sec:mfmath"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/DOSY_MF_Auto.m",
+      "sha256": "eef726fc289205091b3cfe133190deb3580e51437d496026b206f99da17dbaef"
+    },
+    {
+      "method": "TRAIn-MF rank evidence",
+      "latex_labels": [
+        "eq:mfrank"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/DOSY_RankEvidence.m",
+      "sha256": "7a9164b0fe779ed93aeb6b69bf9a40aa94bae1632d685b76523e83c00425d8e5"
+    },
+    {
+      "method": "TRAIn-MF predictive rank selection",
+      "latex_labels": [
+        "eq:mfselect"
+      ],
+      "source_scope": "public",
+      "path": "matlab/reference/DOSY_SelectConverged.m",
+      "sha256": "18c262b5ae453f0ca49feaf79921d948e427aaa22acd1e1c9a1f89bf1f9b48bb"
+    },
+    {
+      "method": "RAI atomic",
+      "latex_labels": [
+        "eq:raiobjective",
+        "eq:raigradient",
+        "eq:raibic"
+      ],
+      "source_scope": "public",
+      "path": "src/train_dosy/_frozen/vendor/rai_ilt/components.py",
+      "sha256": "cd5dfea2bb4c5684c2bc383f0aad8dc36963e09151f03165c609814a95eb2671"
+    },
+    {
+      "method": "RAI density",
+      "latex_labels": [
+        "eq:raidensity",
+        "eq:raidensitygrad",
+        "eq:graphdistance"
+      ],
+      "source_scope": "public",
+      "path": "src/train_dosy/_frozen/vendor/rai_ilt/solver.py",
+      "sha256": "d8ddb56c89b18d52a93ee5581a0814e9b766537fc0d070603c42cd6178a2d0ee"
+    },
+    {
+      "method": "RAI integrated grid",
+      "latex_labels": [
+        "eq:integratedbasis",
+        "eq:rairough"
+      ],
+      "source_scope": "public",
+      "path": "src/train_dosy/_frozen/vendor/rai_ilt/model.py",
+      "sha256": "b2199c873168234d429f5584920a6680a0468774adf0df9f95e617f25691fc38"
+    },
+    {
+      "method": "DOME native",
+      "latex_labels": [
+        "eq:domecurvature",
+        "eq:domeexchange",
+        "eq:domescore"
+      ],
+      "source_scope": "public",
+      "path": "src/train_dosy/_frozen/vendor/dome/solver.py",
+      "sha256": "17c31f473f502be7027f46823d47f1f2190c5a1744ef90d70d81fe974d05398f"
+    },
+    {
+      "method": "RAI-S and DOME-S",
+      "latex_labels": [
+        "eq:nnls",
+        "eq:score",
+        "eq:selection",
+        "alg:support"
+      ],
+      "source_scope": "public",
+      "path": "src/train_dosy/_frozen/support.py",
+      "sha256": "c9fcf58eb8226cf177f9b08692382cf33a6a9de4954c8f6c8d988d818be86531"
+    },
+    {
+      "method": "Adaptive Haar RAI",
+      "latex_labels": [
+        "eq:raihaar",
+        "eq:raiadmm",
+        "eq:haargap",
+        "eq:haarscore",
+        "eq:netfeatures"
+      ],
+      "source_scope": "local_archive",
+      "path": "dosy_support_v2_20260925/vendor/rai_ilt/adaptive.py",
+      "sha256": "6c95971392a9f54706d703fc25872b92c256f185320e7cce1d8044cf663e2eed"
+    },
+    {
+      "method": "Haar tree geometry",
+      "latex_labels": [
+        "eq:raiprojection"
+      ],
+      "source_scope": "local_archive",
+      "path": "dosy_support_v2_20260925/vendor/rai_ilt/tree.py",
+      "sha256": "40518c35fee47def3859bedd05ef8b53965b99c4efcca3c8da0f0c8c2ec398ca"
+    },
+    {
+      "method": "RAI-Net retrained target",
+      "latex_labels": [
+        "eq:rainet",
+        "eq:netloss"
+      ],
+      "source_scope": "local_archive",
+      "path": "dosy_support_v2_20260925/vendor/rai_ilt/net.py",
+      "sha256": "8bc91454cff2ba6ddccf9153ded07fa39877e7320f8b9c1e17c608b9d577b25f"
+    },
+    {
+      "method": "RAI-Net original target",
+      "latex_labels": [
+        "eq:netloss"
+      ],
+      "source_scope": "local_archive",
+      "path": "ilt_unified_benchmark_20260924/sources/rai-ilt/src/rai_ilt/net.py",
+      "sha256": "ee0ffcfbeeba663bc68044e834b1244167dc413ad9db04c5a649f23efb7171e1"
+    },
+    {
+      "method": "RAI-Net training bank",
+      "latex_labels": [
+        "sec:rainetmath"
+      ],
+      "source_scope": "local_archive",
+      "path": "dosy_support_v2_20260925/train_net.py",
+      "sha256": "f4f9e7a876bfed38eae7623954b495f1405664fb5c901f9744ddfda8ddfae3d9"
+    },
+    {
+      "method": "RAI-FLEX",
+      "latex_labels": [
+        "eq:raiflex",
+        "eq:flexgrad",
+        "eq:flexdf"
+      ],
+      "source_scope": "local_archive",
+      "path": "ilt_unified_benchmark_20260924/sources/rai-ilt/src/rai_ilt/joint_profiles.py",
+      "sha256": "41629a4fe4f88a5231215bda1e04ba2274da1c137b1fab1439b8c010a6666d97"
+    },
+    {
+      "method": "RAI-FLEX spline operator",
+      "latex_labels": [
+        "eq:raiflex"
+      ],
+      "source_scope": "local_archive",
+      "path": "ilt_unified_benchmark_20260924/sources/rai-ilt/src/rai_ilt/continuous_unmixing.py",
+      "sha256": "6542fdfb31dc77b83f53deba2a02a3811b848706134820c20168174f6df8007c"
+    },
+    {
+      "method": "DOME support averaging",
+      "latex_labels": [
+        "eq:domeaverage"
+      ],
+      "source_scope": "local_archive",
+      "path": "ilt_unified_benchmark_20260924/sources/dome-inversion/src/dome/support_average.py",
+      "sha256": "518001ea62799bd96623e9c64ce0e3bd828de71976aeca2f2ad0b0689fdce2e1"
+    },
+    {
+      "method": "Partial-C and CIRCE benchmark adapters",
+      "latex_labels": [
+        "eq:partialgradient",
+        "eq:circeone",
+        "eq:circetwo",
+        "eq:circecheck"
+      ],
+      "source_scope": "local_archive",
+      "path": "ilt_unified_benchmark_20260924/generalized.py",
+      "sha256": "461ed675dc5989f4db8faa960d69db6bdc1a1bc1bd85acbf7d33f87fe23e76a7"
+    },
+    {
+      "method": "CIRCE decoder",
+      "latex_labels": [
+        "eq:circedecoder"
+      ],
+      "source_scope": "local_archive",
+      "path": "ilt_unified_benchmark_20260924/sources/circe-ilt/src/circe/refined.py",
+      "sha256": "080a66b8b3210c670b2fae995b9dccd8860e5516fc2eeded0b16a32c235dc478"
+    },
+    {
+      "method": "CIRCE basis and quadrature",
+      "latex_labels": [
+        "app:circe"
+      ],
+      "source_scope": "local_archive",
+      "path": "ilt_unified_benchmark_20260924/sources/circe-ilt/src/circe/geometry.py",
+      "sha256": "ee5a434f74ee8ee42cdddd041616bcd4e44383104da73a3a6d4fba9be663a586"
+    }
+  ]
+}

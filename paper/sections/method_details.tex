@@ -1,0 +1,115 @@
+\section{Additional Method Specifications and Historical Comparators}\label{app:extensions}
+\subsection{The density-RAI graph}\label{app:graphdetails}
+For column $\ell$, let $a_\ell=\max_i|y_{i\ell}|$, $v_{i\ell}=y_{i\ell}/a_\ell$, and $s_{i\ell}=\sigma_{i\ell}/a_\ell$, with a positive numerical floor on $a_\ell$. For two columns meeting the SNR requirement, the inspected density implementation uses
+\begin{equation}\label{eq:graphdistance}
+ d_{\ell m}=\frac1n\sum_i
+ \frac{(v_{i\ell}-v_{im})^2}
+ {s_{i\ell}^2+s_{im}^2+v_{i\ell}^2\max_k s_{k\ell}^2+v_{im}^2\max_k s_{km}^2}.
+\end{equation}
+An edge is admitted only below the fixed distance threshold and when both columns include the other among their nearest eligible neighbors; ties at the neighbor cutoff are retained. Then $W_{\ell m}=e^{-d_{\ell m}}$. The denominator accounts heuristically for uncertainty in shape normalization, but Equation~\eqref{eq:graphdistance} is not a calibrated test statistic. Estimating this graph from the available fitting rows changes the estimator; fixed-graph convexity applies conditionally after that construction.
+
+\subsection{A feasible primal--dual gap for adaptive Haar RAI}\label{app:haargap}
+Use the notation of Equation~\eqref{eq:raiadmm}, and let $\mathcal P(Z)=\lambda\sqrt p\sum_{h\geq2}\|Z_{h,:}\|_2$. Choose $N\leq0$ entrywise and a matrix $D$ with first row zero and $\|D_{h,:}\|_2\leq\lambda\sqrt p$ for detail rows. These are dual-feasible for the nonnegative cone and Haar penalty, respectively.
+Let $u_\ell^*=H_\ell^{-1}(c_\ell-N_\ell-Q^\top D_\ell)$. Then
+\begin{equation}\label{eq:haargap}
+ \mathcal G(U,N,D)=\frac12\sum_\ell\|U_\ell-u_\ell^*\|_{H_\ell}^2
+ +\mathcal P(QU)-\langle D,QU\rangle-\langle N,U\rangle.
+\end{equation}
+For $U\geq0$, every term is nonnegative, and completing the quadratic square shows that $\mathcal G$ equals a primal value minus the corresponding feasible dual lower bound. It therefore bounds suboptimality on this fixed tree. In ADMM the code uses the feasible primal iterate $V$, projects $\rho d_V$ to the nonpositive orthant, and projects $\rho d_Z$ to the row balls above. For the separate penalty the balls become entrywise intervals $[-\lambda,\lambda]$. At $\lambda=0$, it uses $N=\min(-\nabla f(U),0)$ and $D=0$ after ridge NNLS. Floating-point gap values are floored at zero to remove negative roundoff; this is a numerical bound construction, not interval arithmetic.
+
+For completeness, let $m_{j\ell}$ be the current mass in leaf $j$, $\bar k_j$ its unit-mass kernel, and $w_j$ its log width. At each frequency the nuisance matrix concatenates columns $m_{j\ell}\bar k_j$ and $(m_{j\ell}w_j/2)\partial_x k(x_j)$ for occupied leaves, divided by that frequency's noise. Occupied means $m_{j\ell}>\max(0.02\max_hm_{h\ell},\operatorname{median}_i\sigma_{i\ell})$. Its left singular vectors with singular value at least one form $U_{\rm vis}$. For a prospective split contrast $t_j=(\bar k_{j,L}-\bar k_{j,R})/2$, put
+\begin{equation}\label{eq:haarscore}
+ v_{j\ell}=(I-U_{\rm vis}U_{\rm vis}^\top)(t_j/\Sigma_\ell),\quad
+ s_{j\ell}=\frac{\langle v_{j\ell},(Y-B_{\rm fine}C)_\ell/\Sigma_\ell\rangle^2}
+ {\|v_{j\ell}\|_2^2},\quad I_{j\ell}=m_{j\ell}\|v_{j\ell}\|_2.
+\end{equation}
+The score is set to zero if the denominator is at most $10^{-24}$ or $I_{j\ell}<0.05$. A raw score $s^0_{j\ell}$ omits nuisance projection. Joint-detail proposals rank leaves by $\sum_\ell s_{j\ell}$, private-detail proposals by $\max_\ell s_{j\ell}$, position proposals by $\sum_\ell s^0_{j\ell}$, and occupied-region proposals by $w_j\max_\ell m_{j\ell}$. At most four leaves are split per action, subject to capacity. The sibling pair with the smallest difference in its regional mass vectors supplies a merge proposal. These are deterministic heuristics inside the finite tree search, not tests of chemical identity.
+
+\subsection{The 14 RAI-Net action features}\label{app:netfeatures}
+For an action affecting leaves $I$, current leaf count $m$, candidate count $m'$, and fine count $q$, the feature vector used in Equation~\eqref{eq:rainet}, in stored order, is
+\begin{align}\label{eq:netfeatures}
+ \phi_a=\big(&m/q,\ m'/q,\ \one_{\rm merge},\ \one_{\rm position\ or\ occupied},\nonumber\\
+ &\log(1+\textstyle\sum_{j\in I,\ell}s_{j\ell}),\
+ \log(1+\max_{j\in I,\ell}s_{j\ell}),\
+ \log(1+\textstyle\sum_{j\in I,\ell}s^0_{j\ell}),\nonumber\\
+ &\log(1+\max_{j\in I,\ell}I_{j\ell}),\
+ \frac{\sum_{j\in I,\ell}m_{j\ell}}{\max(\sum_{j,\ell}m_{j\ell},10^{-300})},\
+ \frac{|I|^{-1}\sum_{j\in I}w_j}{\sum_jw_j},\nonumber\\
+ &\log(1+\lambda),\ \log(1+n_{\rm supplied}),\ \log(1+p),\ \log(1+F_{\rm current})\big).
+\end{align}
+The acquisition-count feature is the number of supplied reconstruction rows before the internal split, not an external-test count. The action scorer sees the state derived from fitting rows; validation is used separately to train the revised priority target and to select completed penalty paths. Networks and checkpoints are therefore tied to the feature semantics as well as their matrix dimensions.
+
+\subsection{DOME support averaging}\label{app:domeaverage}
+The historical averaging variant holds the rates selected by native DOME fixed. At each frequency it enumerates subsets $J$ of these rates, including the empty subset, and computes NNLS amplitudes $a^{J}_\ell$ and $c_{J\ell}=\mathrm{RSS}_{J\ell}/\sigma^2+6|J|$. The penalty counts the nominal subset size even if some fitted amplitudes are zero. With temperature $T=0.5$, it solves the finite entropy-regularized averaging problem
+\begin{equation}\label{eq:domeaverage}
+ \min_{w\geq0,\,\sum_Jw_J=1}\sum_Jw_Jc_{J\ell}+T\sum_Jw_J\log w_J,
+ \quad w_{J\ell}=\frac{e^{-c_{J\ell}/T}}{\sum_Le^{-c_{L\ell}/T}},\quad
+ \bar a_\ell=\sum_Jw_{J\ell}a^J_\ell.
+\end{equation}
+Soft weights can retain weak contributions; they are not posterior probabilities or confidence levels. The rate set is not re-estimated, and single-frequency inputs bypass this averaging. This construction is mathematically different from DOME-S, which screens allowed supports, refines rates for each candidate, and selects by reserved-acquisition prediction.
+
+\subsection{RAI-FLEX: joint atomic and smooth profiles}\label{app:raiflex}
+RAI-FLEX uses $r_a$ atoms and $r_c$ shared smooth profiles. Let $\varphi_h$ be 24 nonnegative, unit-integral cubic B-splines in log diffusion, $G$ their integrated Laplace matrix, and $L_2$ their second-derivative quadrature operator. The predicted matrix is $H(d,C)A$ with $H(d,C)=[K(d),GC]$. The objective is
+\begin{equation}\label{eq:raiflex}
+ \min_{d,\,C\geq0,\,\one^\top C=\one^\top,\,A\geq0}
+ \tfrac12\|(H(d,C)A-Y)/\Sigma\|_F^2+\tfrac\lambda2\|L_2C\|_F^2,
+ \quad \lambda=0.01.
+\end{equation}
+Rates satisfy the physical bounds. NNLS eliminates $A$ at every evaluation. Initial optimization uses log rates and columnwise $C=\operatorname{softmax}(Z)$ with bounded logits, followed by direct simplex refinement to reach boundary profiles that a softmax gradient can represent poorly. The profile gradient is
+\begin{equation}\label{eq:flexgrad}
+ G_C=G^\top((HA-Y)/\Sigma^2)A_c^\top+\lambda L_2^\top L_2C,
+ \qquad G_{Z,j}=C_j\odot\{G_{C,j}-(C_j^\top G_{C,j})\one\}.
+\end{equation}
+Here $A_c$ denotes the continuous-profile rows. A small logit gradient alone need not imply a small simplex KKT residual. After L-BFGS-B, up to 40 refinement sweeps alternate convex simplex quadratic profile updates, bounded atomic log-rate updates, and NNLS amplitudes, recording a scaled KKT residual with threshold $10^{-6}$.
+
+The archived comparison searches allocations $r_a+r_c=r$ for $r=1,\ldots,4$; the general software default has a larger cap. There is no zero-model candidate in this RAI-FLEX search. A local effective dimension projects profile/rate tangent directions away from active spectral-amplitude directions. If $T_\perp$ is this weighted tangent matrix and $P$ the tangent penalty Hessian, the count is
+\begin{equation}\label{eq:flexdf}
+ d_{\rm eff}=d_A+\tr\{(T_\perp^\top T_\perp+P)^+
+                                      T_\perp^\top T_\perp\}.
+\end{equation}
+Here $d_A=\sum_\ell\rank(\diag(\Sigma_\ell^{-1})H_{J_\ell})$ for the active amplitude subsets $J_\ell$; density tangent contrasts use spline coefficients above $10^{-5}$. The pseudoinverse is numerically truncated. The selector minimizes $\mathrm{RSS}/\sigma^2+2d_{\rm eff}+2d_{\rm eff}(d_{\rm eff}+1)/\max(1,np-d_{\rm eff}-1)$ over finite attained scores. It records stationarity but does not exclude every nonstationary candidate from this native selection. The count ignores active-set selection and nonlinear curvature and is therefore heuristic. Competing allocations within two score units are marked as type-ambiguous. The method does not certify that a fitted atom is a discrete molecule or that a broad profile is a polymer; these remain representation choices.
+
+\subsection{Partial-C: one shared profile and unrestricted private densities}\label{app:partialalgorithm}
+The generalized partial-C comparator instantiates Equation~\eqref{eq:partial} with 24 unit-integral cubic B-splines, one shared profile $s$, $C=sa+V$, $a,V\geq0$, and $\one^\top s=1$. Its penalty operators approximate the first derivative of the total density and the $L^2$ norm of the private density: $L^\top L=Q$ and $F^\top F=G$ in Section~\ref{sec:sharing}. These are different from RAI-FLEX's second-derivative penalty on its shared profiles. It fixes $\lambda_s=0.01$ and $\lambda_p=10$.
+
+For each proposed $s$, Equation~\eqref{eq:partialdesign} gives the joint conditional NNLS fit of $(a_\ell,v_\ell)$, including the private penalty. With these amplitudes profiled out, the envelope gradient is
+\begin{equation}\label{eq:partialgradient}
+ \nabla_s J=\{K^\top(KC-Y)/\sigma^2+\lambda_sL^\top LC\}a^\top/p.
+\end{equation}
+Two observation-derived starts are refined by simplex-constrained SLSQP, with at most 300 iterations, and the lowest attained objective is retained. Shared-profile and conditional-linear KKT residuals at most $10^{-5}$ define its stationarity diagnostic. Proposition~\ref{prop:partial} proves conditional uniqueness under its stated conditions; it does not prove uniqueness of $s$ or of a physical decomposition. Shared rank is fixed to one in this comparator, not automatically selected. Because $V$ can represent every positive basis density, a rank-one shared term places no rank-one restriction on the complete signal.
+
+\subsection{CIRCE reconstruction adapters: positive quadratics and a feasible-set check}\label{app:circe}
+The archived CIRCE comparison adapts the reconstruction objectives to the benchmark design. Its 256 normalized piecewise-linear hats give masses $C\geq0$, operator $K$, and density derivative $R$. Let $a_h$ be the unnormalized hat areas and $J_a=\diag(1/a_h)$. Normalize observed columns to $f_\ell=Y_\ell/\max(\|Y_\ell\|_2,\sqrt n\sigma)$ and form
+\begin{equation}\label{eq:circegraph}
+ W_{\ell m}=\frac{\exp(-\|f_\ell-f_m\|_2^2/0.1)}{q\max(1,p-1)}\ (\ell\ne m),
+ \quad W_{\ell\ell}=0,\qquad L_g=\diag(W\one)-W.
+\end{equation}
+Version 1 minimizes the convex quadratic
+\begin{equation}\label{eq:circeone}
+ F_1(C)=\tfrac12\|(KC-Y)/\sigma\|_F^2
+       +\tfrac{0.02}{2}\|RC\|_F^2
+       +\tfrac{0.01}{2}\tr(J_a^2 C L_g C^\top),\qquad C\geq0.
+\end{equation}
+Version 2 instead uses $C=TZ$, $Z\geq0$, where $T$ is a fixed positive mass-preserving decoder:
+\begin{equation}\label{eq:circedecoder}
+ T_{hk}=\frac{a_h\exp\{-(x_h-x_k)^2/(2w^2)\}}
+ {\sum_j a_j\exp\{-(x_j-x_k)^2/(2w^2)\}},\qquad
+ w=2\operatorname{mean}_h(x_{h+1}-x_h).
+\end{equation}
+With $s_\ell=\max(\max_i|Y_{i\ell}|,5\sigma)$, its objective is
+\begin{equation}\label{eq:circetwo}
+ F_2(Z)=\tfrac12\|(KTZ-Y)/\sigma\|_F^2
+       +\tfrac{0.2}{2}\sum_\ell\frac{\|RTZ_\ell\|_2^2}{s_\ell^2}
+       +\tfrac{0.01}{2}\tr(J_a^2TZL_gZ^\top T^\top).
+\end{equation}
+The decoder is part of the estimator, not display smoothing; its positive image is a restricted cone within the original basis representation. There is no learned decoder in this comparator. Both objectives have gradients given by the corresponding quadratic matrices, with $T^\top$ applied in Version 2. The usual implementation uses projected FISTA with restart and a fixed Hessian-norm Lipschitz bound. A ``strict'' configuration uses cyclic exact NNLS column blocks instead, including each graph column's off-diagonal contribution in the block right-hand side. Tolerances $10^{-6}$ and $10^{-10}$ distinguish numerical solves of the same objective, not additional physical inversion models.
+
+The adapter then checks the returned physical masses against a residual cone and mass caps. Let $e_h$ bound each basis column's quadrature error uniformly across acquisitions, using 64 composite-trapezoid subdivisions per segment, and $\varepsilon=\sqrt{\chi^2_{np,0.95}}$. Its check is
+\begin{equation}\label{eq:circecheck}
+ \|(KC-Y)/\sigma\|_F+\sqrt n\|e^\top C\|_2/\sigma\leq\varepsilon,
+ \qquad \one^\top C_\ell\leq
+ \frac{[Y_{i_{\min},\ell}+\varepsilon\sigma]_+}{e^{-b_{\min}D_{\rm cap}}}.
+\end{equation}
+Here $i_{\min}$ is the smallest acquisition coordinate and $D_{\rm cap}$ is the comparator's supplied last diffusion-grid rate. Quadrature and mass checks include recorded floating-point tolerances; no interval-arithmetic certificate is asserted. The positive quadratic is solved first and checked afterwards. If its minimizer is feasible for the additional restrictions, it also minimizes the quadratic over that restricted set; otherwise the adapter reports an unverified estimate. It does not solve a constrained rescue problem. Its grid-center mass cap and data-dependent graph must not be promoted to universal continuous-measure coverage guarantees.
+
+These adapters cover CIRCE reconstruction only. They do not compute CIRCE's alternative-measure bounds. The archived CIRCE-Net checkpoint was incompatible with this acquisition design, support, and basis, so no CIRCE-Net inference is claimed. Likewise, the full historical survey contains parameter configurations and design adaptations, not 60 independently validated mathematical inventions. None of these historical results is pooled into the primary support-selection panel.

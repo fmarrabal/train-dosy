@@ -5,7 +5,7 @@ Software de investigación de **Francisco M. Arrabal-Campos** para reconstrucci�
 
 ![DOSY con verdad de referencia](examples/dosy_ground_truth.png)
 
-Manuscrito actual: [manuscript-v3](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v3), 25 páginas y 48 referencias. Esta revisión del nombre conserva el software numérico v0.1.0 y sus resultados.
+Manuscrito actual: [manuscript-v4](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v4), 36 páginas y 48 referencias. Esta revisión formula cada método por separado e incorpora el Algoritmo 1 estructurado; conserva el software numérico v0.1.0 y sus resultados.
 
 ## ¿Por qué TRAIn-MF?
 **MF significa multifrecuencia**, de acuerdo con la cabecera original de `TRAIn_DOSY_MFV31`. Matemáticamente se implementa mediante factorización matricial no negativa, `Y ≈ K S A`: las columnas de `S` son perfiles de difusión compartidos y las filas de `A` describen su intensidad en las distintas frecuencias. Sigue siendo multifrecuencia si el rango seleccionado es uno. Un perfil puede ser ancho o multimodal; el rango no equivale al número de sustancias.

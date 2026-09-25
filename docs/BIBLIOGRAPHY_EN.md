@@ -34,4 +34,4 @@ The author publication list at [franciscoarrabal.com](https://franciscoarrabal.c
 
 The website links the 2016 correction to `10.1039/C6PY90106A`, which is a journal contents list. The manuscript instead retains the actual correction, [10.1039/C6PY90124G](https://doi.org/10.1039/C6PY90124G). The website itself was not modified. UPEN2D is cited by its 2017 volume/issue year (early publication metadata: December 2016); ESPIRA by its 2023 issue year (online 2022). Author name parsing is normalized for Ruiz Martínez, Dal Poggetto, Song and Hürlimann.
 
-The suffix MF in TRAIn-MF denotes multifrequency processing; nonnegative matrix factorization describes the model. The numerical software remains v0.1.0; the manuscript revision is `manuscript-v3`.
+The suffix MF in TRAIn-MF denotes multifrequency processing; nonnegative matrix factorization describes the model. The numerical software remains v0.1.0; the manuscript revision is `manuscript-v4`.

@@ -1,6 +1,9 @@
 \documentclass[mathematics,article,submit,moreauthors]{Definitions/mdpi}
 \usepackage{placeins}
 \usepackage{xurl}
+\usepackage{tabularx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \firstpage{1}
 \makeatletter\setcounter{page}{\@firstpage}\makeatother
 \pubvolume{0}\issuenum{0}\articlenumber{0}
@@ -35,6 +38,7 @@ Prepared for Mathematics.\\Not submitted.\\Author details pending.}
 \input{sections/introduction}
 \input{sections/related}
 \input{sections/theory}
+\input{sections/methods}
 \input{sections/algorithm}
 \input{sections/experiments}
 \input{sections/results}
@@ -43,7 +47,9 @@ Prepared for Mathematics.\\Not submitted.\\Author details pending.}
 \appendixtitles{yes}
 \appendixstart
 \appendix
+\renewcommand{\theHequation}{appendix.\arabic{equation}}
 \input{sections/appendix}
+\input{sections/method_details}
 \reftitle{References}
 \begin{thebibliography}{99}
 \input{references}

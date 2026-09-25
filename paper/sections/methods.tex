@@ -1,0 +1,253 @@
+\section{Method-Specific Inversion Problems}\label{sec:methods}
+\subsection{Notation, representation, and comparison scope}
+Let $Y\in\R^{n\times p}$ contain the retained spectral frequencies, with acquisition coordinates $b_i$, and let $\Sigma=(\sigma_{i\ell})$ contain their noise standard deviations. Division by $\Sigma$ below is entrywise; the benchmark uses the common value $\sigma$. We distinguish an atomic kernel $K(d)_{ij}=\exp(-b_i d_j)$ from an integrated basis operator
+\begin{equation}\label{eq:integratedbasis}
+ B_{ih}=\int_{x_{\min}}^{x_{\max}}e^{-b_iD_0e^x}\varphi_h(x)\,dx,
+ \qquad \varphi_h\geq0,\quad \int\varphi_h(x)\,dx=1.
+\end{equation}
+For the latter, $C_{h\ell}\geq0$ is mass, not density height, and $BC$ predicts the observations. Integration and discretization are part of the forward model, not a cosmetic change to the DOSY display. In contrast, exporting continuous atomic rates to 256 display cells does not turn the atomic fit into a 256-parameter inversion.
+
+Table~\ref{tab:methodcontract} separates the unknowns and selection targets. Here ``RAI'' without qualification in the primary results denotes its finite-component mode. Density RAI, adaptive Haar RAI, and RAI-Net are different estimators in the same software family. The expanded formulations describe the inspected research implementations; they do not add new benchmark observations. Appendix~\ref{app:extensions} specifies the nearby historical comparators RAI-FLEX, partial-C, CIRCE, and support averaging. The source-to-equation manifest distributed with the manuscript identifies the corresponding files and hashes. The curated public API packages RAI-S, DOME-S, and the MATLAB TRAIn-MF backend; describing an archived variant does not imply that its complete training or execution pipeline is packaged there.
+
+\begin{table}[htbp]
+\caption{Mathematical contracts. A selected representation size is not, in general, a chemical species count.}\label{tab:methodcontract}
+\centering\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.17\textwidth}*{3}{>{\raggedright\arraybackslash}X}}
+\toprule
+Method & Unknowns and prediction & Coupling or penalty & Selection target\\
+\midrule
+TRAIn & $h_\ell\geq0$, $Kh_\ell$ & Independent columns; iterative stopping & Stopping iterate\\
+RAI, atomic & $d,A\geq0$, $K(d)A$ & Shared rates & Native BIC-type order\\
+RAI, density & $C\geq0$, $BC$ & Roughness, ridge, spectral graph & Grid and validation error\\
+Adaptive RAI / RAI-Net & $U\geq0$, $B_{\mathcal T}U$ & Shared Haar details & Tree and penalty; learned action order for Net\\
+DOME & $d,A\geq0$, $K(d)A$ & Shared rates, split/exchange proposals & Native corrected score\\
+RAI-S / DOME-S & $d,A,H$, $K(d)A$ & Allowed spectral support $H$ & Predictive order and support\\
+TRAIn-MF & $S,A\geq0$, $KSA$ & Simplex profiles, curvature and ridge & Resolved predictive factors\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{TRAIn: squared positivity and a trust-region iteration}\label{sec:trainmath}
+The supplied single-frequency \texttt{TRAIn.m} implements a TRAIn-derived iteration \cite{train}. Its numerical core minimizes the unpenalized residual through the squared parametrization
+\begin{equation}\label{eq:trainobjective}
+ h=\eta\odot\eta,\qquad f(\eta)=\|Kh-y\|_2^2,
+ \quad g=4\diag(\eta)K^\top(Kh-y).
+\end{equation}
+The Gauss--Newton matrix and trust-region subproblem are
+\begin{equation}\label{eq:trainstep}
+ B_{\rm GN}=8\diag(\eta)K^\top K\diag(\eta),\qquad
+ \min_{\|s\|_2\leq\Delta}\ g^\top s+\tfrac12s^\top B_{\rm GN}s.
+\end{equation}
+The exact Hessian additionally contains $4\diag(K^\top(Kh-y))$; the code deliberately uses the Gauss--Newton approximation. Truncated conjugate gradients approximate Equation~\eqref{eq:trainstep}, stopping at the radius boundary or on nonpositive curvature, with at most 100 inner iterations. The trial point is $\eta^+=|\eta+s|$, which leaves its squared physical prediction unchanged. With a positive predicted reduction, the acceptance ratio is
+\begin{equation}\label{eq:trainratio}
+ \rho=\frac{f(\eta)-f(\eta^+)}{-g^\top s-s^\top B_{\rm GN}s/2}.
+\end{equation}
+The supplied implementation accepts when $\rho>0.01$, halves the radius when $\rho\leq0.25$, and doubles it when $\rho\geq0.75$, subject to its initial-radius cap. These are the settings of the inspected file, not a claim that every published TRAIn implementation has identical defaults.
+
+First it computes $h_{\rm NNLS}=\argmin_{h\geq0}\|Kh-y\|_2$ and $\nu=\|Kh_{\rm NNLS}-y\|_2$. Iteration stops when $\sqrt{f}\leq\mathtt{termFac}\,\nu$ or the iteration budget is exhausted. Thus $\nu$ is a residual floor from the same data, not an independently measured noise level. Despite a Tikhonov description in the interface, this core contains no explicit term $\lambda\|Lh\|^2$: its regularizing effects come from the parametrization, initialization, and stopping. Its final threshold $h_j<10^{-6}\max_kh_k$ is a further output modification.
+
+Squared positivity also changes stationarity: $\eta=0$ gives $g=0$ even when $K^\top(Kh-y)$ has negative entries and the NNLS KKT conditions fail. Indeed, the supplied initialization is proportional to $\min_i|y_i|$ and becomes zero if that minimum is zero. Consequently small $g$ is not by itself a certificate of NNLS optimality. Independent calls at each frequency minimize a separable sum of these residuals; they impose no shared components across frequencies.
+
+\subsection{RAI in finite-component mode}\label{sec:raiatomic}
+For each candidate order $r$, RAI profiles out the amplitudes:
+\begin{equation}\label{eq:raiobjective}
+ \psi_r(z)=\min_{A\geq0}\frac12\|(K(D_0e^z)A-Y)/\Sigma\|_F^2,
+ \quad z\in[\log(D_{\min}/D_0),\log(D_{\max}/D_0)]^r.
+\end{equation}
+Here $D_0=\sqrt{D_{\min}D_{\max}}$ in the component implementation. At each evaluation, SciPy NNLS solves the weighted amplitude problem separately for each frequency. Dividing a data column and its noise by the same positive scale, and rescaling its amplitude variable accordingly, leaves Equation~\eqref{eq:raiobjective} unchanged. The native code uses $s_\ell=\max(\max_i|Y_{i\ell}|,\operatorname{median}_i\sigma_{i\ell})$ for this conditioning step.
+
+On a stable NNLS active set, the envelope gradient is
+\begin{equation}\label{eq:raigradient}
+ \frac{\partial\psi_r}{\partial z_j}
+ =\sum_\ell A_{j\ell}(\partial_{z_j}k_j)^\top
+       \bigl((K A-Y)_\ell/\Sigma_\ell^2\bigr),
+ \qquad (\partial_{z_j}k_j)_i=-b_i d_j e^{-b_id_j}.
+\end{equation}
+Bounded L-BFGS-B updates the log rates. This native RAI step is not the squared-amplitude TRAIn trust-region iteration. Ten starts combine an interior equispaced grid, up to three births chosen by residual improvement on a 49-point log-rate grid extending the preceding order, and seeded random starts. The lowest attained objective determines the candidate, with a nearly tied converged start preferred within the implementation's objective tolerance. This is a finite multistart search, not a global minimization theorem.
+
+The native selector includes $r=0$ and minimizes
+\begin{equation}\label{eq:raibic}
+ \mathrm{BIC}_{\rm RAI}(r)=2\psi_r+r(p+1)\log(np).
+\end{equation}
+It counts every amplitude, including zeros. The primary comparison caps $r$ at four. This score is a heuristic adaptation of BIC \cite{schwarz}: inactive amplitudes and coincident rates make the mixture singular, invalidating a direct appeal to regular-model dimension counting \cite{watanabe}. Native optimization statuses are saved; the native selection itself does not enforce the stronger eligibility checks subsequently imposed by RAI-S. There is no spectral graph or density-smoothing penalty in this atomic RAI objective.
+
+\subsection{RAI with a positive density and a spectral graph}\label{sec:raidensity}
+Let log bins have widths $w_h$ and centers $c_h$, and use the unit-integral indicator bases in Equation~\eqref{eq:integratedbasis}. The operator is evaluated by 12-point Gauss--Legendre quadrature per cell. Let $H_w=\diag(1/w_h)$ and define the density-difference operator by
+\begin{equation}\label{eq:rairough}
+ (RC)_{h\ell}=\frac{C_{h+1,\ell}/w_{h+1}-C_{h\ell}/w_h}
+ {\sqrt{c_{h+1}-c_h}}.
+\end{equation}
+In the solver's column-normalized units, the fixed-grid, fixed-graph problem is
+\begin{equation}\label{eq:raidensity}
+ \min_{C\geq0}\ \frac{\|(BC-Y)/\Sigma\|_F^2}{2n}
+ +\frac{\lambda_s}{2}\|RC\|_F^2
+ +\frac{\eta}{2}\tr(C^\top H_wC)
+ +\frac{\gamma}{2}\tr(H_w C L_g C^\top).
+\end{equation}
+Here $L_g=\diag(W\one)-W$ is a symmetric positive semidefinite graph Laplacian on frequencies. The identity $\tr(H_w C L_g C^\top)=\sum_{\ell<m}W_{\ell m}\|H_w^{1/2}(C_\ell-C_m)\|_2^2$ shows that this penalty rewards similar density shapes at connected frequencies. It is not a chemical assignment constraint. Unlike the unregularized atomic objective, column normalization here also defines the relative scale of the density prior; physical masses are restored after fitting.
+
+The graph is constructed from normalized training decays, retaining sufficiently informative signals, mutual nearest neighbors, and a noise-scaled shape-distance threshold. Defaults are SNR at least eight, at most three mutual neighbors, distance at most 1.5, and weight $e^{-\mathrm{distance}}$; the precise distance is given in Appendix~\ref{app:graphdetails}. With the graph held fixed, the gradient is
+\begin{equation}\label{eq:raidensitygrad}
+ \nabla F=B^\top((BC-Y)/\Sigma^2)/n
+       +\lambda_sR^\top RC+\eta H_wC+\gamma H_w C L_g.
+\end{equation}
+The defaults $(\lambda_s,\eta,\gamma)=(0.02,10^{-5},0.05)$ give a strictly convex quadratic because $\eta H_w\succ0$. Nonnegative L-BFGS-B uses a diagonal Hessian scaling. A converged fixed-grid solution is therefore the unique minimizer of this quadratic, within numerical precision; this statement does not establish identifiability of a continuous measure or optimality of the grid search.
+
+Resolution adaptation starts from 128 bins, proposes midpoint splits while conserving parent mass, and allows at most 256 bins. For a candidate split, let $t_h=(k_{h,L}-k_{h,R})/2$. Its score is the sum across frequencies of squared residual correlations divided by $\|t_h/\Sigma_\ell\|^2$. Splits require sufficient signal information, $\max_\ell\|t_h C_{h\ell}/\Sigma_\ell\|_2/\sqrt n\geq0.25$. Up to a third of current cells are proposed. A refined grid is accepted only with successful inner optimization and a validation MSE below $0.99$ of its predecessor; otherwise refinement stops. The final selected grid is refitted on all supplied reconstruction rows. This chooses resolution, not the number of molecular species.
+
+\subsection{Adaptive Haar RAI: a convex problem on each tree}\label{sec:raiadaptive}
+The adaptive solver used by RAI-Net is a separate construction. A dyadic tree $\mathcal T$ partitions a 256-cell fine log grid into $m$ active leaves, initially eight and at most 64. If leaf $j$ has width $w_j$, let $U_{j\ell}$ denote its mass divided by $\sqrt{w_j}$. The mass-preserving prolongation and observation matrix are
+\begin{equation}\label{eq:raiprojection}
+ (P_{\mathcal T})_{hj}=\frac{\Delta x_h}{\sqrt{w_j}}\one_{\{h\subset j\}},
+ \qquad C=P_{\mathcal T}U,\qquad B_{\mathcal T}=B_{\rm fine}P_{\mathcal T}.
+\end{equation}
+Let $Q_{\mathcal T}$ be the orthogonal Haar transform of these normalized leaf coefficients; its first row represents total mass. In normalized data units, joint adaptive RAI solves
+\begin{equation}\label{eq:raihaar}
+ \min_{U\geq0} F_{\mathcal T,\lambda}(U)
+ =\frac{\|(B_{\mathcal T}U-Y)/\Sigma\|_F^2}{2n}
+ +\frac{\eta}{2}\|U\|_F^2
+ +\lambda\sqrt p\sum_{h=2}^{m}\|(Q_{\mathcal T}U)_{h,:}\|_2,
+ \quad \eta=10^{-4}.
+\end{equation}
+The group penalty promotes shared locations of density changes across frequencies while leaving their amplitudes distinct. The separate-frequency variant replaces it by $\lambda\sum_{h\geq2,\ell}|(Q_{\mathcal T}U)_{h\ell}|$. Neither penalizes the root coefficient. The joint penalty is convex; the ridge makes each fixed-tree problem strictly convex.
+
+For $\lambda>0$, introduce $V=U\geq0$ and $Z=QU$. Write $A_\ell=\diag(\Sigma_\ell^{-1})B_{\mathcal T}/\sqrt n$, $y'_\ell=Y_\ell/(\sqrt n\Sigma_\ell)$, $H_\ell=A_\ell^\top A_\ell+\eta I$, and $c_\ell=A_\ell^\top y'_\ell$. With scaled duals $d_V,d_Z$ and $\rho=0.5$, the implemented ADMM steps are
+\begin{align}
+ (H_\ell+2\rho I)U_\ell^+&=c_\ell+\rho\{V_\ell-d_{V,\ell}+Q^\top(Z_\ell-d_{Z,\ell})\},\label{eq:raiadmm}\\
+ V^+&=[U^++d_V]_+,\qquad Z^+=\operatorname{prox}_{\lambda\sqrt p\,\|\cdot\|_{2,1}^{\rm detail}/\rho}(QU^++d_Z),\nonumber\\
+ d_V^+&=d_V+U^+-V^+,\qquad d_Z^+=d_Z+QU^+-Z^+.\nonumber
+\end{align}
+The proximal map leaves the first row unchanged and sends a detail row $z$ to $(1-\lambda\sqrt p/(\rho\|z\|_2))_+z$. For $\lambda=0$, an augmented ridge NNLS problem is used instead. A feasible primal value and a feasible dual bound give a computable gap; the archived stopping rule is gap $\leq10^{-5}(1+F)$, with at most 3000 iterations. Appendix~\ref{app:haargap} gives the actual dual construction, so numerical convergence does not depend only on a library success flag.
+
+Tree actions include joint and private residual-detail splits, position-sensitive and occupied-region splits, and sibling merges. Split scores remove numerically visible nuisance tangent directions before correlating residuals with a mass-redistribution contrast. At fixed $\lambda$, a split is accepted only if both inner solves meet their gap criterion and
+\begin{equation}\label{eq:raiaction}
+ F_{\rm old}-F_{\rm new}>\max\{10^{-9}(1+F_{\rm old}),\mathrm{gap}_{\rm old}+\mathrm{gap}_{\rm new}\}.
+\end{equation}
+Merges allow a loss within $10^{-10}(1+F_{\rm old})$. Visited trees are excluded. The deterministic solver evaluates the available proposals and favors the lowest objective, then fewer leaves. These checks compare attained objectives across representations; they are not a convexity theorem for the whole adaptive search. Completed paths for $\lambda\in\{0,0.01,0.1\}$ are compared by internal validation MSE. Among paths within 0.005 of the minimum, the largest $\lambda$ is chosen, then the selected tree is refitted on all reconstruction rows. Validation selects completed paths; it does not replace Equation~\eqref{eq:raiaction} for intermediate actions.
+
+\subsection{RAI-Net: learning the order of admissible actions}\label{sec:rainetmath}
+RAI-Net retains Equations~\eqref{eq:raihaar}--\eqref{eq:raiaction}. For a tree state and a proposed action $a$, it predicts a scalar priority
+\begin{equation}\label{eq:rainet}
+ q_\theta(\phi_a)=w_3^\top\tanh\!\left(W_2\tanh(W_1\widetilde\phi_a+b_1)+b_2\right)+b_3,
+ \qquad \widetilde\phi_a=(\phi_a-\mu)/s.
+\end{equation}
+The 14 features encode current and proposed tree sizes, action type, conditional and raw residual scores, information, occupied mass, affected width, penalty, data dimensions, and the current objective; Appendix~\ref{app:netfeatures} specifies them. Feature standardization is fitted on training records only, with each scale at least 0.1. No true diffusion rates or species count are inference inputs.
+
+For recorded action gain $g_a$, let $t_a=\operatorname{sign}(g_a)\log(1+|g_a|)$. Training minimizes
+\begin{equation}\label{eq:netloss}
+ \frac1N\sum_{a=1}^N\ell(q_\theta(\phi_a)-t_a),\qquad
+ \ell(e)=\begin{cases}e^2/2,&|e|<1,\\|e|-1/2,&|e|\geq1.\end{cases}
+\end{equation}
+The original policy's target is training-objective decrease. In the retrained policy, it is internal validation prediction-MSE decrease; failed actions receive $g_a=-1$. The latter uses two 48-unit hidden layers, full-batch Adam with learning rate 0.003, 400 epochs, and seed 9252026. Whole-problem training and validation partitions, rather than random action-row splits, avoid sharing a problem across these partitions. The bank and checkpoint selection are documented in Section~\ref{sec:experiments}. Changing the target and the training bank together means this is a policy comparison, not an isolated architecture ablation.
+
+At inference, actions are sorted by decreasing $q_\theta$. With the archived shortlist of one, evaluation continues until a numerically admissible action is available; failed proposals lead to further candidates. Invalid policy output falls back to the deterministic order. The accepted action must still satisfy the classical gap and descent checks. The network therefore neither returns a density directly nor classifies the number of components. Its ordering can change the finite search path because not every action is evaluated: numerical safeguards are retained, but equality with deterministic RAI's final answer is not guaranteed.
+
+\subsection{DOME: atomic inversion with moment-based proposals}\label{sec:domemath}
+DOME solves the same fixed-order weighted atomic residual problem as Equation~\eqref{eq:raiobjective}; its difference lies in proposal generation, nonlinear refinement, and native model selection. It normalizes the whole matrix by $\max(\max|Y|,\sigma)$ and uses a bounded coordinate $u_j=\log(d_j/D_{\min})/\log(D_{\max}/D_{\min})\in[0,1]$. Thus
+\begin{equation}\label{eq:domegradient}
+ \partial_{u_j}k_j=-b\,d_j\log(D_{\max}/D_{\min})\odot k_j.
+\end{equation}
+At fixed rates, the small NNLS problem is solved by enumerating all active subsets, including the empty subset, using SVD least squares. A bounded trust-region reflective solve then uses the full active-set residual Jacobian of Proposition~\ref{prop:derivative}. This is distinct from native atomic RAI's L-BFGS-B envelope-gradient search and from original TRAIn's squared-amplitude iteration.
+
+A split of mass $a$ at rate $m$ into $\pi a$ at $m-(1-\pi)\Delta$ and $(1-\pi)a$ at $m+\pi\Delta$ preserves mass and first moment. At fixed $b$,
+\begin{equation}\label{eq:split}
+ Y_{\rm split}(b)-ae^{-bm}
+ =\tfrac12 ae^{-bm}b^2\pi(1-\pi)\Delta^2+O(\Delta^3).
+\end{equation}
+Let $E=KA-Y$, $P_K=KK^+$, and $J$ denote the profiled residual Jacobian in the internal normalized units. With consistent rate units, a curvature proposal for component $j$ uses
+\begin{equation}\label{eq:domecurvature}
+ h_j=(I-P_K)(b^2\odot k_j/2),\quad
+ q_j=(I-JJ^+)\operatorname{vec}(h_j A_{j,:}),\quad
+ \widehat v_j=\left[-\frac{\langle\operatorname{vec}E,q_j\rangle}{\|q_j\|_2^2}\right]_+.
+\end{equation}
+Zero or numerically negligible denominators provide no informative direction. A complementary spectral contrast uses
+\begin{equation}\label{eq:domespectral}
+ v_j=(I-P_K)(-b\odot k_j),\qquad
+ \zeta_\ell=-\tanh\!\left(\frac{v_j^\top E_\ell}{\max(\sigma\|v_j\|_2,10^{-15})}\right),\qquad
+ T_{i\ell}=v_{j,i}A_{j\ell}\zeta_\ell.
+\end{equation}
+Its candidate half-separation is $\widehat s_j=[-\langle E,T\rangle/\|T\|_F^2]_+$. The implementation proposes standard-deviation scales $s\in\{\sqrt{\widehat v_j},\widehat s_j,0.12d_j,0.4d_j,0.85d_j\}$ and fractions $\pi\in\{0.15,0.5,0.85\}$, setting $\Delta=s/\sqrt{\pi(1-\pi)}$ before restricting the pair to the physical bounds. Every proposal is evaluated with exact exponentials, not with the truncated expansion.
+
+Pairwise exchanges use aggregate masses $M_j=\sum_\ell A_{j\ell}$. Given a pair's mass-normalized mean $m$ and variance $v$, alternative fractions $\pi\in\{0.08,0.2,0.5,0.8,0.92\}$ yield
+\begin{equation}\label{eq:domeexchange}
+ d_L=m-\sqrt{v(1-\pi)/\pi},\qquad d_R=m+\sqrt{v\pi/(1-\pi)}.
+\end{equation}
+This preserves the pair's aggregate first two moments at proposal construction. It does not preserve each frequency's moments, and subsequent NNLS refinement is not constrained to preserve them. A finite beam, distinct-seed filtering, and local refinement limit the search. The native selector includes the zero model and minimizes
+\begin{equation}\label{eq:domescore}
+ \mathrm{score}_{\rm DOME}=\mathrm{RSS}/\sigma^2+2d_f+
+ \frac{2d_f(d_f+1)}{\max(np-d_f-1,1)},
+ \quad d_f=r+\#\{A_{j\ell}>10^{-10}\},
+\end{equation}
+where the amplitude cutoff is in DOME's normalized units. This is a heuristic effective-parameter count, not a regular-mixture likelihood theorem. Native status recording is distinct from a convergence-gated selector. DOME-S replaces the final score by the common procedure in Section~\ref{sec:algorithm}; the present study contains no ablation proving an independent advantage of moment exchange.
+
+\subsection{TRAIn-MF: a shared distributional factorization}\label{sec:mfmath}
+MF denotes \emph{multifrequency}, as in Arrabal-Campos's historical \texttt{TRAIn\_DOSY\_MFV31} header \cite{mfv31}. The matrix factorization $Y\approx KSA$ represents shared diffusion profiles in $S$ and component spectra in $A$. It remains multifrequency at $r=1$, and a profile may be broad or multimodal. The original TRAIn \cite{train}, historical V3.1, and the later constrained reference have a documented lineage but different numerical updates.
+
+For nonzero data, let $s_Y=\|Y\|_F/\sqrt{np}$ and $\widetilde Y=Y/s_Y$; use $s_Y=1$ for zero data. The current reference solves
+\begin{equation}\label{eq:mf}
+ \min_{S\geq0,\,\one^\top S=\one^\top,\,A\geq0}
+ F(S,A)=\frac{\|KSA-\widetilde Y\|_F^2}{2p}
+ +\frac{\lambda_S}{2}\|LS\|_F^2+\frac{\lambda_A}{2p}\|A\|_F^2.
+\end{equation}
+It uses at least 256 mass bins. With log nodes $x_h$, quadrature weights $w_h$, and $\rho_h=S_h/w_h$, $L$ discretizes density curvature:
+\begin{equation}\label{eq:mfcurvature}
+ (LS)_h=\frac{1}{\sqrt{\overline\Delta_h}}
+ \left\{\frac{\rho_{h+1}-\rho_h}{\Delta_h}
+       -\frac{\rho_h-\rho_{h-1}}{\Delta_{h-1}}\right\},
+ \quad \overline\Delta_h=(\Delta_{h-1}+\Delta_h)/2,
+\end{equation}
+for interior nodes, with trapezoidal $w_h$. This avoids treating grid masses as density heights and imposes no extra endpoint curvature rows. The automatic reference sets $\lambda_S=\lambda_A=10^{-8}$. Global RMS normalization makes these penalties relative to the observed signal scale. Returned amplitudes are multiplied by $s_Y$.
+
+For fixed $S$, each amplitude column is obtained with MATLAB's actual \texttt{lsqnonneg}:
+\begin{equation}\label{eq:mfA}
+ A_\ell^+=\argmin_{a\geq0}
+ \left\|\begin{bmatrix}KS\\\sqrt{\lambda_A}I\end{bmatrix}a
+       -\begin{bmatrix}\widetilde Y_\ell\\0\end{bmatrix}\right\|_2^2.
+\end{equation}
+The positive ridge makes this conditional solution unique. For fixed $A$, the $S$ update is a joint simplex-constrained quadratic, not a collection of independently clipped residual fits. If $A^\top=Q_AR_A$ is a thin QR factorization, orthogonality gives
+\begin{equation}\label{eq:mfqr}
+ \|KSA-\widetilde Y\|_F^2
+ =\|KS R_A^\top-\widetilde YQ_A\|_F^2+
+   \|\widetilde Y(I-Q_AQ_A^\top)\|_F^2.
+\end{equation}
+Consequently, with columnwise vectorization $s=\operatorname{vec}S$, this update solves
+\begin{equation}\label{eq:mfS}
+ \min_{s\geq0,\,(I_r\otimes\one^\top)s=\one}
+ \tfrac12\left\|
+ \begin{bmatrix}(R_A\otimes K)/\sqrt p\\\sqrt{\lambda_S}(I_r\otimes L)\end{bmatrix}s
+ -\begin{bmatrix}\operatorname{vec}(\widetilde YQ_A)/\sqrt p\\0\end{bmatrix}
+ \right\|_2^2.
+\end{equation}
+MATLAB \texttt{lsqlin} supplies a feasible proposal, with an interior-point fallback. Along its feasible segment from the current point, an exact scalar quadratic line search clips the step to $[0,1]$ and checks the attained objective.
+
+The implementation performs at most eight alternating sweeps, then, when necessary, refines the profiled objective $\Psi(S)=\min_{A\geq0}F(S,A)$ by simplex-constrained SQP, recomputing Equation~\eqref{eq:mfA} at every evaluation. Its envelope gradient is
+\begin{equation}\label{eq:mfgrad}
+ G_S=K^\top(KSA-\widetilde Y)A^\top/p+\lambda_SL^\top LS.
+\end{equation}
+For a simplex column $s_j$, set $\nu_j=s_j^\top G_{S,j}$. Stationarity requires $G_{S,j}-\nu_j\one\geq0$ and $s_j\odot(G_{S,j}-\nu_j\one)=0$, together with amplitude KKT conditions for $G_A=(KS)^\top(KSA-\widetilde Y)+\lambda_AA$. The code checks scaled primal, dual, and complementary residuals at tolerance $10^{-6}$, uses two starts, and records unresolved optimization. Accepted objective values are nonincreasing within numerical tolerance and bounded below; this alone does not prove convergence of the factors, uniqueness, or a global minimum. General block-coordinate results require hypotheses beyond observing descent \cite{tseng}.
+
+\subsubsection{Automatic factor selection in TRAIn-MF}
+This selector is distinct from the RAI-S/DOME-S rule. For $n_V$ internal validation rows and known $\sigma$, define
+\begin{equation}\label{eq:mfrank}
+ \tau=\sigma\{\sqrt{n_V}+\sqrt p+\sqrt{2\log(1/0.01)}\},\qquad
+ r_{\rm res}=\#\{s_j(Y_V)>\tau\}.
+\end{equation}
+Candidates $r=1,\ldots,\min(4,r_{\rm res})$ are fitted on internal fitting rows. A zero resolved count returns a zero estimate with a \texttt{no\_rank\_resolved} status. Among numerically converged candidates, let $r_*$ minimize the mean validation row loss $\ell_{i,r}=\|\widehat Y_{i,r}-Y_i\|_2^2/p$. Put $\delta_{i,r}=\ell_{i,r}-\ell_{i,r_*}$. Selection takes the smallest rank satisfying
+\begin{equation}\label{eq:mfselect}
+ \overline\delta_r\leq
+ \operatorname{sd}_{i\in V}(\delta_{i,r})/\sqrt{n_V}+10^{-15}.
+\end{equation}
+This is an empirical paired standard error across acquisitions, not the conditional Gaussian prediction-distance allowance in Equation~\eqref{eq:selection}. Failed candidate optimization, a failed final all-row refit, or $r_{\rm res}>4$ generates an unresolved status. Since rank counts visible signal directions, its use as a search restriction can miss chemical species with proportional spectra (Proposition~\ref{prop:rank}); $r_{\rm res}$ is not an upper bound on their number. Selection and signal masking also preclude interpreting Equation~\eqref{eq:mfrank} as an unconditional chemical detection guarantee. The manuscript keeps the archived TRAIn-MF example unchanged and does not infer atomic-benchmark superiority from it.
+
+\subsubsection{What the historical V3.1 update actually solves}
+With the other factors fixed, define $R_j=Y-\sum_{k\ne j}(Ks_k)A_{k,:}$ and $a=A_{j,:}$. For $\|a\|>0$, completion of the square gives
+\begin{equation}\label{eq:v31conditional}
+ \tfrac12\|(Kh)a-R_j\|_F^2
+ =\tfrac12\|a\|_2^2\|Kh-R_ja^\top/\|a\|_2^2\|_2^2+\mathrm{constant}.
+\end{equation}
+Historical V3.1 instead supplies $y_j=[R_ja^\top/\|a\|^2]_+$ to an embedded TRAIn core, augmented with $\sqrt{\lambda_s}L$ and $\sqrt{\lambda_w}\diag(\sqrt w)$. For fixed weights it therefore approximately solves
+\begin{equation}\label{eq:v31penalty}
+ \min_{h\geq0}\ \|Kh-y_j\|_2^2+\lambda_s\|Lh\|_2^2
+                       +\lambda_w\sum_k w_k h_k^2.
+\end{equation}
+The last term is a weighted quadratic, despite the source variable name \texttt{lambdaSparse}; it is not an explicit $\ell_1$ penalty. The code can update weights or penalty values, renormalize factors, and smooth spectra. Clipping the pseudo-observation changes Equation~\eqref{eq:v31conditional}; furthermore, a fixed global penalty would require the appropriate division by $\|a\|^2$ in a normalized conditional residual problem. These operations cannot be silently identified with exact alternating minimization of Equation~\eqref{eq:mf}. Preserving this distinction credits the TRAIn-MF antecedent \cite{train,mfv31} while documenting what the current constrained solver actually optimizes \cite{software}.

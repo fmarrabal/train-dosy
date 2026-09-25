@@ -1,5 +1,5 @@
 {
-  "pages": 25,
+  "pages": 36,
   "references": 48,
   "registered_dois_verified": 46,
   "visual_review_pages": [
@@ -27,14 +27,25 @@
     22,
     23,
     24,
-    25
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
   ],
   "latex_overfull_or_undefined": false,
-  "sha256": "c916a4e26a5e7ad1a27d227713fab3c39e4471c61d6306ff30798f0bca4266b3",
+  "sha256": "54890de84d5a871d979b791150b26ae4e04eb7389d711713c636ea1cd534b961",
   "mf_lineage_restored": true,
   "mf_defined_as": "multifrequency; nonnegative matrix factorization describes mathematical form",
   "author_declarations_pending": true,
-  "manuscript_revision": "manuscript-v3",
+  "manuscript_revision": "manuscript-v4",
   "numerical_software_version": "0.1.0",
   "immutable_sources_verified": 22,
   "numerical_files_unchanged_from_v0_1_0": [
@@ -121,7 +132,14 @@
     "src/train_dosy/mf.py",
     "src/train_dosy/models.py"
   ],
-  "scope": "Algorithm naming and figure export margins only; numerical software v0.1.0 unchanged",
-  "visual_review": "All 25 pages rendered at 100 dpi and inspected in five contact sheets; full figure labels visible.",
-  "algorithm_name": "TRAIn-MF"
+  "scope": "Method-specific mathematical formulations and structured Algorithm 1; numerical software v0.1.0, saved estimates, metrics, figures and bibliography unchanged.",
+  "visual_review": "All 36 pages rendered at 100 dpi and inspected in six contact sheets; Algorithm 1 also inspected at full page size.",
+  "algorithm_name": "TRAIn-MF",
+  "method_formulation_source_files": 27,
+  "algebra_checks_passed": 20,
+  "scientific_figure_files_unchanged_from_manuscript_v3": 8,
+  "algorithm_environment": "algorithm + algpseudocode",
+  "algorithm_number": 1,
+  "algorithm_pseudocode_page": 18,
+  "latex_duplicate_destinations": false
 }

@@ -5,7 +5,7 @@ Research software by **Francisco M. Arrabal-Campos** for joint DOSY reconstructi
 
 ![DOSY examples with ground truth](examples/dosy_ground_truth.png)
 
-Current manuscript: [manuscript-v3](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v3), 25 pages and 48 references. This naming revision preserves numerical software v0.1.0 and its results.
+Current manuscript: [manuscript-v4](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v4), 36 pages and 48 references. This mathematical revision formulates each method separately and presents structured Algorithm 1; numerical software v0.1.0 and its results are preserved.
 
 ## Why TRAIn-MF?
 **MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
