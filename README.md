@@ -5,7 +5,7 @@ Research software by **Francisco M. Arrabal-Campos** for joint DOSY reconstructi
 
 ![DOSY examples with ground truth](examples/dosy_ground_truth.png)
 
-Current manuscript: [manuscript-v4](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v4), 36 pages and 48 references. This mathematical revision formulates each method separately and presents structured Algorithm 1; numerical software v0.1.0 and its results are preserved.
+Current manuscript: [manuscript-v5](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v5), 38 pages and 48 references. This revision adds the supplied author metadata and funding, corrects mathematical and statistical overstatements, and proves conditional TRAIn-MF profile uniqueness and fixed-covariance identities. Numerical software v0.1.0 and its results are preserved. See the [manuscript audit](paper/AUDITORIA_MANUSCRITO_ES.md).
 
 ## Why TRAIn-MF?
 **MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
@@ -134,5 +134,5 @@ The original TRAIn-MF manuscript illustration is an unchanged saved result. The 
 ## Citation, license and status
 Use [CITATION.cff](CITATION.cff) for software and cite [original TRAIn](https://doi.org/10.1021/ac402698h) when discussing its lineage. Relevant author publications include [diffGA](https://doi.org/10.1039/c7sm01569k), [dART](https://doi.org/10.1021/acs.jpca.8b08584), and [regularized Kaczmarz](https://doi.org/10.3390/math13132166); the manuscript adds the molecular-weight studies and the 2016 correction.
 
-Software: GPL-3.0-or-later; [NOTICE](NOTICE) preserves attribution and dependency distinctions. MATLAB is separately licensed. Release v0.1.0 is research software with a draft manuscript: author order, affiliations, funding and conflict declarations remain to be confirmed. No journal submission is implied. Validation runs locally; no GitHub Actions workflows are installed or required.
+Software: GPL-3.0-or-later; [NOTICE](NOTICE) preserves attribution and dependency distinctions. MATLAB is separately licensed. Release v0.1.0 is research software with a draft manuscript: author order, affiliations, ORCIDs, correspondence and funding were supplied by the corresponding author. CRediT roles are explicitly proposed for confirmation by all three authors; conflict declarations remain pending. No journal submission is implied. Validation runs locally; no GitHub Actions workflows are installed or required.
 

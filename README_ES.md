@@ -5,7 +5,7 @@ Software de investigación de **Francisco M. Arrabal-Campos** para reconstrucci�
 
 ![DOSY con verdad de referencia](examples/dosy_ground_truth.png)
 
-Manuscrito actual: [manuscript-v4](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v4), 36 páginas y 48 referencias. Esta revisión formula cada método por separado e incorpora el Algoritmo 1 estructurado; conserva el software numérico v0.1.0 y sus resultados.
+Manuscrito actual: [manuscript-v5](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v5), 38 páginas y 48 referencias. Incorpora los autores y financiación indicados, corrige afirmaciones matemáticas y estadísticas demasiado fuertes, y demuestra una condición de unicidad del perfil TRAIn-MF e identidades con covarianza fija. Conserva el software numérico v0.1.0 y sus resultados. Véase la [auditoría del manuscrito](paper/AUDITORIA_MANUSCRITO_ES.md).
 
 ## ¿Por qué TRAIn-MF?
 **MF significa multifrecuencia**, de acuerdo con la cabecera original de `TRAIn_DOSY_MFV31`. Matemáticamente se implementa mediante factorización matricial no negativa, `Y ≈ K S A`: las columnas de `S` son perfiles de difusión compartidos y las filas de `A` describen su intensidad en las distintas frecuencias. Sigue siendo multifrecuencia si el rango seleccionado es uno. Un perfil puede ser ancho o multimodal; el rango no equivale al número de sustancias.
@@ -134,5 +134,5 @@ La figura TRAIn-MF original del manuscrito conserva el resultado guardado. No se
 ## Citas, licencia y estado
 [CITATION.cff](CITATION.cff) contiene la cita del software. Citar también [TRAIn original](https://doi.org/10.1021/ac402698h) al describir la procedencia. Se incorporan tus trabajos sobre [diffGA](https://doi.org/10.1039/c7sm01569k), [dART](https://doi.org/10.1021/acs.jpca.8b08584) y [Kaczmarz regularizado](https://doi.org/10.3390/math13132166), junto con los estudios de peso molecular y la corrección de 2016.
 
-Software GPL-3.0-or-later; [NOTICE](NOTICE) recoge atribuciones y dependencias. MATLAB se licencia aparte. v0.1.0 es software de investigación con un manuscrito en borrador: autoría definitiva, afiliaciones, financiación y conflictos siguen pendientes. No implica envío a la revista. Las comprobaciones son locales; no se instalan ni necesitan workflows de GitHub Actions.
+Software GPL-3.0-or-later; [NOTICE](NOTICE) recoge atribuciones y dependencias. MATLAB se licencia aparte. v0.1.0 es software de investigación con un manuscrito en borrador: el autor de correspondencia ha facilitado el orden de firma, afiliaciones, ORCID, correspondencia y financiación. CRediT es una propuesta pendiente de ratificación por los tres autores; las declaraciones de conflictos siguen pendientes. No implica envío a la revista. Las comprobaciones son locales; no se instalan ni necesitan workflows de GitHub Actions.
 

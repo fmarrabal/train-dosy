@@ -1,5 +1,5 @@
 {
-  "pages": 36,
+  "pages": 38,
   "references": 48,
   "registered_dois_verified": 46,
   "visual_review_pages": [
@@ -38,14 +38,16 @@
     33,
     34,
     35,
-    36
+    36,
+    37,
+    38
   ],
   "latex_overfull_or_undefined": false,
-  "sha256": "54890de84d5a871d979b791150b26ae4e04eb7389d711713c636ea1cd534b961",
+  "sha256": "6dae963159b6302eccb9a146732e2814ef2b9df92afa7ecbaffa7901a00f5533",
   "mf_lineage_restored": true,
   "mf_defined_as": "multifrequency; nonnegative matrix factorization describes mathematical form",
   "author_declarations_pending": true,
-  "manuscript_revision": "manuscript-v4",
+  "manuscript_revision": "manuscript-v5",
   "numerical_software_version": "0.1.0",
   "immutable_sources_verified": 22,
   "numerical_files_unchanged_from_v0_1_0": [
@@ -132,14 +134,25 @@
     "src/train_dosy/mf.py",
     "src/train_dosy/models.py"
   ],
-  "scope": "Method-specific mathematical formulations and structured Algorithm 1; numerical software v0.1.0, saved estimates, metrics, figures and bibliography unchanged.",
-  "visual_review": "All 36 pages rendered at 100 dpi and inspected in six contact sheets; Algorithm 1 also inspected at full page size.",
+  "scope": "Supplied author metadata, funding and mathematical audit; numerical software v0.1.0, saved estimates, metrics, source figure files and bibliography unchanged.",
+  "visual_review": "All 38 pages rendered at 100 dpi and inspected in seven contact sheets; full-page inspection of title/authors, Algorithm 1, both DOSY figures, declarations and new propositions. Discrete DOSY color label corrected in LaTeX layout; source figures preserved.",
   "algorithm_name": "TRAIn-MF",
   "method_formulation_source_files": 27,
-  "algebra_checks_passed": 20,
+  "algebra_checks_passed": 27,
   "scientific_figure_files_unchanged_from_manuscript_v3": 8,
   "algorithm_environment": "algorithm + algpseudocode",
   "algorithm_number": 1,
   "algorithm_pseudocode_page": 18,
-  "latex_duplicate_destinations": false
+  "latex_duplicate_destinations": false,
+  "author_metadata_supplied": true,
+  "credit_status": "proposal from author order; requires confirmation by all three authors",
+  "conflicts_status": "not provided",
+  "funding_identifiers_checked": true,
+  "acknowledgments_removed": true,
+  "ai_disclosure": "retained in methodology; MDPI placement documented as pending at submission",
+  "reference_metadata_cache_date": "2026-09-25",
+  "new_doi_network_verification": false,
+  "new_model_fits": false,
+  "conditional_profile_uniqueness": "sufficient condition and curvature-null counterexample proved; not global factor identifiability",
+  "correlated_noise": "fixed-design theoretical identities only; no new covariance estimator or correlated-noise benchmark"
 }

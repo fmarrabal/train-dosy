@@ -1,0 +1,45 @@
+\section{Conditional Uniqueness and Correlated-Noise Identities}\label{app:auditmath}
+\subsection{What curvature regularization guarantees for a TRAIn-MF profile update}
+The positive amplitude ridge in Equation~\eqref{eq:mfA} guarantees a unique conditional amplitude minimizer. The analogous claim for $S$ needs an additional condition: its curvature penalty is semidefinite, not positive definite.
+
+\begin{Proposition}[Sufficient condition for a unique conditional profile update]\label{prop:mfprofile}
+Fix $A$ and $\lambda_S>0$ in Equation~\eqref{eq:mf}. If the only matrix $U\in\R^{q\times r}$ satisfying
+\begin{equation}\label{eq:mfprofileunique}
+ KUA=0,\qquad LU=0,\qquad\one^\top U=0
+\end{equation}
+is $U=0$, the simplex-constrained $S$ subproblem has a unique minimizer.
+\end{Proposition}
+\begin{proof}
+For a feasible affine direction $U$, the second directional derivative is
+\begin{equation}\label{eq:mfsecondvariation}
+ \frac{d^2}{dt^2}F(S+tU,A)=\|KUA\|_F^2/p+\lambda_S\|LU\|_F^2.
+\end{equation}
+The stated condition makes this positive for every nonzero direction with $\one^\top U=0$, so the objective is strictly convex on the simplex affine hull. The product of simplices is nonempty and compact, giving existence; strict convexity gives uniqueness. The condition is sufficient, not a necessary characterization of uniqueness at a boundary optimum.
+\end{proof}
+
+A degeneracy example shows why the condition matters. With two equal amplitude rows $A_{1,:}=A_{2,:}$, choose $v\ne0$ such that $Lv=0$ and $\one^\top v=0$, and set $U=[v,-v]$. Such a $v$ exists for the interior second-difference operator: $L$ has at most $q-2$ independent rows, and adding the single mass constraint still leaves a nontrivial null space. Then $UA=0$ and $LU=0$. At any strictly positive feasible $S$, sufficiently small $t$ preserves nonnegativity of $S+tU$, while both the prediction and the full objective remain exactly unchanged. Thus positive curvature regularization and simplex normalization can coexist with indistinguishable profile pairs. This is a counterexample to strict convexity of every conditional update, not a claim that the saved TRAIn-MF example has this degeneracy. It also explains why replacing a local KKT check by a statement of chemical uniqueness would be incorrect.
+
+\subsection{Fixed-design scores under a specified covariance}\label{app:covariance}
+The iid identities in Propositions~\ref{prop:screen} and \ref{prop:paired} have covariance-aware forms. These clarify their assumptions; the frozen solvers do not estimate or apply the covariance corrections below. Throughout this subsection $\operatorname{vec}$ stacks columns, and the covariance is specified independently of the evaluated observations.
+
+\begin{Proposition}[Gaussian linear screening and paired quadratic loss]\label{prop:covariance}
+Let $Y=M+E$, with $e=\operatorname{vec}E\sim N(0,\Omega)$. For fixed correct rates $M=KA$, a fixed frequency group $G$, its indicator $g_G\in\R^p$, and the residualized direction $v_j$ of Equation~\eqref{eq:score}, put $w=g_G\otimes v_j$. If $w^\top\Omega w>0$, then
+\begin{equation}\label{eq:covscreen}
+ \frac{w^\top\operatorname{vec}Y}{\sqrt{w^\top\Omega w}}
+ \sim N\!\left(\frac{\|v_j\|_2^2\sum_{\ell\in G}A_{j\ell}}
+                    {\sqrt{w^\top\Omega w}},1\right).
+\end{equation}
+For fixed predictions $P,Q$ independent of $E$, a fixed symmetric weight matrix $W\succeq0$, and $\delta=\operatorname{vec}(P-Q)$, let $L_W(P)=\|\operatorname{vec}(P-Y)\|_W^2$. Then
+\begin{align}
+ \mathbb E[L_W(P)-L_W(Q)]
+ &=\|\operatorname{vec}(P-M)\|_W^2-\|\operatorname{vec}(Q-M)\|_W^2,\label{eq:covpairmean}\\
+ \operatorname{Var}[L_W(P)-L_W(Q)]&=4\delta^\top W\Omega W\delta.\label{eq:covpairvar}
+\end{align}
+\end{Proposition}
+\begin{proof}
+The screening numerator is a fixed linear functional of a Gaussian vector. Its mean follows from $v_j^\top K_{-j}=0$ and $v_j^\top k_j=\|v_j\|_2^2$, and its variance is $w^\top\Omega w$. Expanding the two quadratic losses cancels $e^\top We$; the random remainder is $-2\delta^\top We$. Its mean is zero and its variance gives Equation~\eqref{eq:covpairvar}.
+\end{proof}
+
+If $\Omega=\sigma^2I$, Equation~\eqref{eq:covscreen} reduces to Equation~\eqref{eq:scoremean}; taking $W=\sigma^{-2}I$ also recovers Equation~\eqref{eq:pairedvar}. For separable covariance $\Omega=\Gamma\otimes\Sigma_b$, the screening variance factors as $(g_G^\top\Gamma g_G)(v_j^\top\Sigma_bv_j)$. The usual $\sqrt{|G|}$ signal gain therefore requires the independent-frequency variance scaling used in the benchmark. For positive-definite $\Omega$ and generalized least-squares weight $W=\Omega^{-1}$, the paired variance becomes $4\delta^\top\Omega^{-1}\delta$.
+
+Estimated rates, groups, covariances, and the best prediction selected from the same data remain random. Substituting them into these formulas does not create a selection-adjusted test. In particular, holding out acquisition rows need not make errors independent when acquisition noise itself is correlated across those rows. A covariance model and a validation design respecting that dependence would be needed for a new calibrated procedure. No correlated-noise performance is inferred from the current iid benchmark.

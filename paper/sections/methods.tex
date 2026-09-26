@@ -91,12 +91,12 @@ The graph is constructed from normalized training decays, retaining sufficiently
  \nabla F=B^\top((BC-Y)/\Sigma^2)/n
        +\lambda_sR^\top RC+\eta H_wC+\gamma H_w C L_g.
 \end{equation}
-The defaults $(\lambda_s,\eta,\gamma)=(0.02,10^{-5},0.05)$ give a strictly convex quadratic because $\eta H_w\succ0$. Nonnegative L-BFGS-B uses a diagonal Hessian scaling. A converged fixed-grid solution is therefore the unique minimizer of this quadratic, within numerical precision; this statement does not establish identifiability of a continuous measure or optimality of the grid search.
+The defaults $(\lambda_s,\eta,\gamma)=(0.02,10^{-5},0.05)$ give a strictly convex quadratic because $\eta H_w\succ0$. Nonnegative L-BFGS-B uses a diagonal Hessian scaling. The exact fixed-grid minimizer is therefore unique. The implementation records a library termination flag and an unscaled projected-gradient residual; it does not compute a certified distance to that minimizer. Termination by a small objective change alone is insufficient to assert accurate first-order stationarity in an ill-conditioned quadratic. Fixed-grid uniqueness also does not establish identifiability of a continuous measure or optimality of the grid search.
 
-Resolution adaptation starts from 128 bins, proposes midpoint splits while conserving parent mass, and allows at most 256 bins. For a candidate split, let $t_h=(k_{h,L}-k_{h,R})/2$. Its score is the sum across frequencies of squared residual correlations divided by $\|t_h/\Sigma_\ell\|^2$. Splits require sufficient signal information, $\max_\ell\|t_h C_{h\ell}/\Sigma_\ell\|_2/\sqrt n\geq0.25$. Up to a third of current cells are proposed. A refined grid is accepted only with successful inner optimization and a validation MSE below $0.99$ of its predecessor; otherwise refinement stops. The final selected grid is refitted on all supplied reconstruction rows. This chooses resolution, not the number of molecular species.
+Resolution adaptation starts from 128 bins, proposes midpoint splits while conserving parent mass, and allows at most 256 bins. For a candidate split, let $t_h=(k_{h,L}-k_{h,R})/2$. Its score is the sum across frequencies of squared residual correlations divided by $\|t_h/\Sigma_\ell\|^2$. Splits require sufficient signal information, $\max_\ell\|t_h C_{h\ell}/\Sigma_\ell\|_2/\sqrt n\geq0.25$. Up to a third of current cells are proposed. A refined grid is accepted only with successful inner optimization and a validation MSE below $0.99$ of its predecessor; otherwise refinement stops. The column scale is estimated from fitting rows and retained, while the spectral graph is rebuilt using all supplied reconstruction rows for the final fit on the selected grid. This chooses resolution, not the number of molecular species.
 
 \subsection{Adaptive Haar RAI: a convex problem on each tree}\label{sec:raiadaptive}
-The adaptive solver used by RAI-Net is a separate construction. A dyadic tree $\mathcal T$ partitions a 256-cell fine log grid into $m$ active leaves, initially eight and at most 64. If leaf $j$ has width $w_j$, let $U_{j\ell}$ denote its mass divided by $\sqrt{w_j}$. The mass-preserving prolongation and observation matrix are
+The adaptive solver used by RAI-Net is a separate construction. It uses fitting-row scales $s_\ell=\max(\max_{i\in T}|Y_{i\ell}|,8\operatorname{median}_{i\in T}\sigma_{i\ell})$, retained for the final refit. Both the data and noise are divided by these scales, and physical masses are restored afterwards. A dyadic tree $\mathcal T$ partitions a 256-cell fine log grid into $m$ active leaves, initially eight and at most 64. If leaf $j$ has width $w_j$, let $U_{j\ell}$ denote its mass divided by $\sqrt{w_j}$. The mass-preserving prolongation and observation matrix are
 \begin{equation}\label{eq:raiprojection}
  (P_{\mathcal T})_{hj}=\frac{\Delta x_h}{\sqrt{w_j}}\one_{\{h\subset j\}},
  \qquad C=P_{\mathcal T}U,\qquad B_{\mathcal T}=B_{\rm fine}P_{\mathcal T}.
@@ -123,7 +123,7 @@ Tree actions include joint and private residual-detail splits, position-sensitiv
 \begin{equation}\label{eq:raiaction}
  F_{\rm old}-F_{\rm new}>\max\{10^{-9}(1+F_{\rm old}),\mathrm{gap}_{\rm old}+\mathrm{gap}_{\rm new}\}.
 \end{equation}
-Merges allow a loss within $10^{-10}(1+F_{\rm old})$. Visited trees are excluded. The deterministic solver evaluates the available proposals and favors the lowest objective, then fewer leaves. These checks compare attained objectives across representations; they are not a convexity theorem for the whole adaptive search. Completed paths for $\lambda\in\{0,0.01,0.1\}$ are compared by internal validation MSE. Among paths within 0.005 of the minimum, the largest $\lambda$ is chosen, then the selected tree is refitted on all reconstruction rows. Validation selects completed paths; it does not replace Equation~\eqref{eq:raiaction} for intermediate actions.
+Merges allow a loss within $10^{-10}(1+F_{\rm old})$. Visited trees are excluded. The deterministic solver evaluates the available proposals and favors the lowest objective, then fewer leaves. These checks compare attained objectives across representations; they are not a convexity theorem for the whole adaptive search. Completed paths for $\lambda\in\{0,0.01,0.1\}$ are compared by noise-standardized internal validation MSE. Among paths within 0.005 of the minimum, the largest $\lambda$ is chosen, then the selected tree is refitted on all reconstruction rows. Validation selects completed paths; it does not replace Equation~\eqref{eq:raiaction} for intermediate actions.
 
 \subsection{RAI-Net: learning the order of admissible actions}\label{sec:rainetmath}
 RAI-Net retains Equations~\eqref{eq:raihaar}--\eqref{eq:raiaction}. For a tree state and a proposed action $a$, it predicts a scalar priority
@@ -138,41 +138,41 @@ For recorded action gain $g_a$, let $t_a=\operatorname{sign}(g_a)\log(1+|g_a|)$.
  \frac1N\sum_{a=1}^N\ell(q_\theta(\phi_a)-t_a),\qquad
  \ell(e)=\begin{cases}e^2/2,&|e|<1,\\|e|-1/2,&|e|\geq1.\end{cases}
 \end{equation}
-The original policy's target is training-objective decrease. In the retrained policy, it is internal validation prediction-MSE decrease; failed actions receive $g_a=-1$. The latter uses two 48-unit hidden layers, full-batch Adam with learning rate 0.003, 400 epochs, and seed 9252026. Whole-problem training and validation partitions, rather than random action-row splits, avoid sharing a problem across these partitions. The bank and checkpoint selection are documented in Section~\ref{sec:experiments}. Changing the target and the training bank together means this is a policy comparison, not an isolated architecture ablation.
+The original policy's target is training-objective decrease. In the retrained policy, it is noise-standardized internal validation prediction-MSE decrease; failed actions receive $g_a=-1$. The latter uses two 48-unit hidden layers, full-batch Adam with learning rate 0.003, 400 epochs, and seed 9252026. Whole-problem training and validation partitions, rather than random action-row splits, avoid sharing a problem across these partitions. The bank and checkpoint selection are documented in Section~\ref{sec:experiments}. Changing the target and the training bank together means this is a policy comparison, not an isolated architecture ablation.
 
 At inference, actions are sorted by decreasing $q_\theta$. With the archived shortlist of one, evaluation continues until a numerically admissible action is available; failed proposals lead to further candidates. Invalid policy output falls back to the deterministic order. The accepted action must still satisfy the classical gap and descent checks. The network therefore neither returns a density directly nor classifies the number of components. Its ordering can change the finite search path because not every action is evaluated: numerical safeguards are retained, but equality with deterministic RAI's final answer is not guaranteed.
 
 \subsection{DOME: atomic inversion with moment-based proposals}\label{sec:domemath}
-DOME solves the same fixed-order weighted atomic residual problem as Equation~\eqref{eq:raiobjective}; its difference lies in proposal generation, nonlinear refinement, and native model selection. It normalizes the whole matrix by $\max(\max|Y|,\sigma)$ and uses a bounded coordinate $u_j=\log(d_j/D_{\min})/\log(D_{\max}/D_{\min})\in[0,1]$. Thus
+DOME uses a common known $\sigma$ and solves the corresponding fixed-order atomic residual problem in Equation~\eqref{eq:raiobjective}; its difference lies in proposal generation, nonlinear refinement, and native model selection. It normalizes the whole matrix and noise by $\max(\max|Y|,\sigma)$. Internally it uses $D_{\rm ref}=10^{-9}\,\mathrm{m^2\,s^{-1}}$, $t_i=b_iD_{\rm ref}$, $\delta_j=d_j/D_{\rm ref}$, and $u_j=\log(\delta_j/\delta_{\min})/\log(\delta_{\max}/\delta_{\min})\in[0,1]$. Thus
 \begin{equation}\label{eq:domegradient}
- \partial_{u_j}k_j=-b\,d_j\log(D_{\max}/D_{\min})\odot k_j.
+ \partial_{u_j}k_j=-t\,\delta_j\log(\delta_{\max}/\delta_{\min})\odot k_j.
 \end{equation}
 At fixed rates, the small NNLS problem is solved by enumerating all active subsets, including the empty subset, using SVD least squares. A bounded trust-region reflective solve then uses the full active-set residual Jacobian of Proposition~\ref{prop:derivative}. This is distinct from native atomic RAI's L-BFGS-B envelope-gradient search and from original TRAIn's squared-amplitude iteration.
 
-A split of mass $a$ at rate $m$ into $\pi a$ at $m-(1-\pi)\Delta$ and $(1-\pi)a$ at $m+\pi\Delta$ preserves mass and first moment. At fixed $b$,
+The following proposal equations use these dimensionless rates and acquisition coordinates. A split of mass $a$ at rate $m$ into $\pi a$ at $m-(1-\pi)\Delta$ and $(1-\pi)a$ at $m+\pi\Delta$ preserves mass and first moment. At fixed $t$,
 \begin{equation}\label{eq:split}
- Y_{\rm split}(b)-ae^{-bm}
- =\tfrac12 ae^{-bm}b^2\pi(1-\pi)\Delta^2+O(\Delta^3).
+ Y_{\rm split}(t)-ae^{-tm}
+ =\tfrac12 ae^{-tm}t^2\pi(1-\pi)\Delta^2+O(\Delta^3).
 \end{equation}
 Let $E=KA-Y$, $P_K=KK^+$, and $J$ denote the profiled residual Jacobian in the internal normalized units. With consistent rate units, a curvature proposal for component $j$ uses
 \begin{equation}\label{eq:domecurvature}
- h_j=(I-P_K)(b^2\odot k_j/2),\quad
+ h_j=(I-P_K)(t^2\odot k_j/2),\quad
  q_j=(I-JJ^+)\operatorname{vec}(h_j A_{j,:}),\quad
  \widehat v_j=\left[-\frac{\langle\operatorname{vec}E,q_j\rangle}{\|q_j\|_2^2}\right]_+.
 \end{equation}
 Zero or numerically negligible denominators provide no informative direction. A complementary spectral contrast uses
 \begin{equation}\label{eq:domespectral}
- v_j=(I-P_K)(-b\odot k_j),\qquad
+ v_j=(I-P_K)(-t\odot k_j),\qquad
  \zeta_\ell=-\tanh\!\left(\frac{v_j^\top E_\ell}{\max(\sigma\|v_j\|_2,10^{-15})}\right),\qquad
  T_{i\ell}=v_{j,i}A_{j\ell}\zeta_\ell.
 \end{equation}
-Its candidate half-separation is $\widehat s_j=[-\langle E,T\rangle/\|T\|_F^2]_+$. The implementation proposes standard-deviation scales $s\in\{\sqrt{\widehat v_j},\widehat s_j,0.12d_j,0.4d_j,0.85d_j\}$ and fractions $\pi\in\{0.15,0.5,0.85\}$, setting $\Delta=s/\sqrt{\pi(1-\pi)}$ before restricting the pair to the physical bounds. Every proposal is evaluated with exact exponentials, not with the truncated expansion.
+Its candidate half-separation is $\widehat s_j=[-\langle E,T\rangle/\|T\|_F^2]_+$. The implementation proposes standard-deviation scales $s\in\{\sqrt{\widehat v_j},\widehat s_j,0.12\delta_j,0.4\delta_j,0.85\delta_j\}$ and fractions $\pi\in\{0.15,0.5,0.85\}$, setting $\Delta=s/\sqrt{\pi(1-\pi)}$ before restricting the pair to the physical bounds. Every proposal is evaluated with exact exponentials, not with the truncated expansion.
 
 Pairwise exchanges use aggregate masses $M_j=\sum_\ell A_{j\ell}$. Given a pair's mass-normalized mean $m$ and variance $v$, alternative fractions $\pi\in\{0.08,0.2,0.5,0.8,0.92\}$ yield
 \begin{equation}\label{eq:domeexchange}
- d_L=m-\sqrt{v(1-\pi)/\pi},\qquad d_R=m+\sqrt{v\pi/(1-\pi)}.
+ \delta_L=m-\sqrt{v(1-\pi)/\pi},\qquad \delta_R=m+\sqrt{v\pi/(1-\pi)}.
 \end{equation}
-This preserves the pair's aggregate first two moments at proposal construction. It does not preserve each frequency's moments, and subsequent NNLS refinement is not constrained to preserve them. A finite beam, distinct-seed filtering, and local refinement limit the search. The native selector includes the zero model and minimizes
+This preserves the pair's aggregate first two moments at proposal construction. It does not preserve each frequency's moments, and subsequent NNLS refinement is not constrained to preserve them. A finite beam, distinct-seed filtering, and local refinement limit the search. Physical rates are returned as $d_j=D_{\rm ref}\delta_j$; the internal numerical floors apply before this conversion. The native selector includes the zero model and minimizes
 \begin{equation}\label{eq:domescore}
  \mathrm{score}_{\rm DOME}=\mathrm{RSS}/\sigma^2+2d_f+
  \frac{2d_f(d_f+1)}{\max(np-d_f-1,1)},
@@ -204,7 +204,7 @@ For fixed $S$, each amplitude column is obtained with MATLAB's actual \texttt{ls
  \left\|\begin{bmatrix}KS\\\sqrt{\lambda_A}I\end{bmatrix}a
        -\begin{bmatrix}\widetilde Y_\ell\\0\end{bmatrix}\right\|_2^2.
 \end{equation}
-The positive ridge makes this conditional solution unique. For fixed $A$, the $S$ update is a joint simplex-constrained quadratic, not a collection of independently clipped residual fits. If $A^\top=Q_AR_A$ is a thin QR factorization, orthogonality gives
+The positive ridge makes this conditional solution unique. The curvature penalty alone does not guarantee uniqueness of the profile update; Proposition~\ref{prop:mfprofile} supplies a sufficient condition and a degeneracy counterexample. For fixed $A$, the $S$ update is a joint simplex-constrained quadratic, not a collection of independently clipped residual fits. If $A^\top=Q_AR_A$ is a thin QR factorization, orthogonality gives
 \begin{equation}\label{eq:mfqr}
  \|KSA-\widetilde Y\|_F^2
  =\|KS R_A^\top-\widetilde YQ_A\|_F^2+

@@ -1,4 +1,4 @@
-"""Check algebra in manuscript-v4; does not rerun or modify any DOSY fit.
+"""Check manuscript algebra, including v5 audit additions; no DOSY refitting.
 
 Run from the repository root:
     python paper/scripts/check_formulations.py
@@ -103,6 +103,45 @@ def main():
     circe_g = decoder.T@(k.T@(k@physical-y)/noise**2 + .2*rough.T@rough@physical/scale[None,:]**2 + .01*inv_width[:,None]**2*(physical@graph))
     directional('CIRCE v2 decoder and scaled-penalty gradient', circe_f, z, circe_g)
     equal('CIRCE decoder mass preservation', (decoder@z).sum(axis=0), z.sum(axis=0))
+
+    # The actual mass-to-density curvature has an affine-density null space.
+    log_d = np.log(rates); dx = np.diff(log_d)
+    quadrature = np.r_[dx[0]/2, (dx[:-1]+dx[1:])/2, dx[-1]/2]
+    curvature = np.zeros((q-2,q))
+    for j in range(1,q-1):
+        avg = (dx[j-1]+dx[j])/2
+        curvature[j-1,j-1:j+2] = np.array([1/dx[j-1],-1/dx[j-1]-1/dx[j],1/dx[j]])/np.sqrt(avg)
+    curvature /= quadrature[None,:]
+    v = quadrature*(log_d - quadrature@log_d/quadrature.sum())
+    equal('TRAIn-MF mass-zero curvature-null direction', np.r_[v.sum(),curvature@v], np.zeros(q-1))
+    profile = np.full((q,2),1/q)
+    spectra = np.repeat(rng.uniform(.1,1,(1,p)),2,axis=0)
+    perturbation = .001*np.column_stack([v,-v]); changed=profile+perturbation
+    assert changed.min()>0
+    equal('TRAIn-MF coincident spectra leave prediction unchanged', k@profile@spectra, k@changed@spectra)
+    mf_fixed = lambda ss: np.linalg.norm(k@ss@spectra-y)**2/(2*p)+lam_s*np.linalg.norm(curvature@ss)**2/2+lam_a*np.linalg.norm(spectra)**2/(2*p)
+    equal('TRAIn-MF coincident spectra leave full objective unchanged', mf_fixed(profile),mf_fixed(changed))
+
+    # Fixed covariance identities; no adaptive selection or covariance fitting.
+    atom_k=k[:,:3]; atom_a=rng.uniform(.1,1,(3,p)); signal=atom_k@atom_a
+    nuisance=atom_k[:,1:]; residualized=atom_k[:,0]-nuisance@np.linalg.lstsq(nuisance,atom_k[:,0],rcond=None)[0]
+    group=np.array([1.,1.,0.,0.,1.]); functional=np.kron(group,residualized)
+    equal('Correlated-noise screening mean',functional@signal.ravel(order='F'),np.dot(residualized,residualized)*(atom_a[0]@group))
+    vb=rng.normal(size=(n,n)); acquisition_cov=vb@vb.T+.3*np.eye(n)
+    vf=rng.normal(size=(p,p)); frequency_cov=vf@vf.T+.2*np.eye(p)
+    covariance=np.kron(frequency_cov,acquisition_cov)
+    equal('Separable screening covariance',functional@covariance@functional,(group@frequency_cov@group)*(residualized@acquisition_cov@residualized))
+    flat_n=n*p; aa=rng.normal(size=(flat_n,flat_n)); weight=aa.T@aa/flat_n
+    pp=rng.normal(size=flat_n); qq=rng.normal(size=flat_n); mm=signal.ravel(order='F'); error=rng.normal(size=flat_n)
+    def paired(ee):
+        pr=pp-mm-ee; qr=qq-mm-ee
+        return pr@weight@pr-qr@weight@qr
+    difference=pp-qq
+    equal('Paired weighted loss cancellation',paired(error),paired(np.zeros(flat_n))-2*difference@weight@error)
+    # Recover the exact linear random coefficient by evaluating basis directions.
+    basis=np.eye(flat_n)
+    coefficient=np.array([(paired(e)-paired(-e))/2 for e in basis])
+    equal('Paired weighted covariance variance',coefficient@covariance@coefficient,4*difference@weight@covariance@weight@difference)
 
     root=Path(__file__).resolve().parents[2]
     result=dict(scope='Finite-dimensional algebra checks only; no solver benchmark, no model refitting, no identifiability claim.', seed=25092026, numpy=np.__version__, checks=checks, passed=len(checks))

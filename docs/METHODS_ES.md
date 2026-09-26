@@ -17,7 +17,7 @@ Y≈exp(-b D) A, con tasas positivas continuas y amplitudes no negativas. Las pr
 
 Valores: max_components=4, alpha=.01, validation_stride=4, selection_se=1, max_nfev=350. Se comprueban KKT de amplitudes y estacionariedad de tasas; se devuelven alertas de precisión, límites y ajuste atómico inadecuado. La puntuación con tasas y máscaras estimadas es heurística; no es una garantía de detección química.
 
-## Formulaciones específicas de manuscript-v4
+## Formulaciones específicas de manuscript-v5
 
 La [sección editable de métodos](../paper/sections/methods.tex), el [apéndice matemático](../paper/sections/method_details.tex) y el [mapa de ecuaciones y 27 archivos fuente](../paper/evidence/method_formulations.json) especifican operadores, incógnitas, restricciones, objetivos, actualizaciones, regularización, selección y límites numéricos. El Algoritmo 1 usa un entorno real `algorithm`/`algpseudocode`, con líneas numeradas, entradas, salidas, bucles, comprobaciones de convergencia, selección y reajuste final; remite a las ecuaciones correspondientes.
 
@@ -38,7 +38,17 @@ n es el número de adquisiciones; p, las frecuencias con señal; q, las celdas d
 | Partial-C | C=s a+V≥0 con un perfil compartido de masa unidad; penaliza la primera derivada de la densidad total y la norma L² de la privada. NNLS condicional conjunto para (a,V) y SLSQP exterior. Rango compartido fijado a uno en este comparador. |
 | Adaptaciones CIRCE v1 / v2 | Cuadráticas convexas positivas con suavidad y grafo espectral. V2 impone C=T Z, Z≥0, mediante un decodificador positivo fijo que conserva masa y suavidad escalada por columna. FISTA o NNLS cíclico estricto; después comprueba cono residual y cotas de masa. No se atribuyen inferencia CIRCE-Net ni cotas de medidas alternativas a estas adaptaciones. |
 
-Ejecuta `python paper/scripts/check_formulations.py` para 20 comprobaciones algebraicas deterministas: gradientes, identidad QR/Kronecker, brecha Haar factible, momentos de DOME y conservación de masa del decodificador. No repite ajustes ni demuestra recuperación estadística. Registra los resultados en `verification/formulation_checks.json`.
+Ejecuta `python paper/scripts/check_formulations.py` para 27 comprobaciones algebraicas deterministas: gradientes, identidad QR/Kronecker, brecha Haar factible, momentos de DOME, conservación de masa del decodificador, degeneración de curvatura e identidades de covarianza. No repite ajustes ni demuestra recuperación estadística. Registra los resultados en `verification/formulation_checks.json`.
+
+### Ampliaciones de la auditoría matemática
+
+El [nuevo apéndice](../paper/sections/audit_extensions.tex) demuestra una condición suficiente de unicidad de la actualización condicional del perfil: con lambda_S>0, solo U=0 debe satisfacer KUA=0, LU=0 y 1^T U=0. La segunda variación es ||KUA||_F²/p + lambda_S||LU||_F². Dos filas de amplitud iguales permiten intercambiar perfiles mediante una dirección de masa cero en el núcleo de la curvatura; el simplex y la curvatura por sí solos no garantizan unicidad. No se afirma que el ejemplo TRAIn-MF guardado presente esa degeneración.
+
+Con covarianza especificada Omega del ruido vectorizado por columnas, un contraste fijo w tiene varianza w^T Omega w. La diferencia de pérdidas predictivas cuadráticas con peso simétrico fijo W tiene varianza 4 delta^T W Omega W delta, donde delta=vec(P-Q). Son identidades teóricas para diseño fijo; el benchmark conserva ruido iid y no implementa estimación de covarianzas ni calibración después de selección.
+
+La revisión distingue unicidad exacta del problema RAI de densidad y terminación numérica, explicita el escalado por columnas y la reconstrucción final del grafo, expresa las propuestas DOME en coordenadas adimensionales y precisa el MSE de validación normalizado por ruido en Haar RAI y RAI-Net revisado. La comparación neuronal modifica varios factores y no es una ablación aislada.
+
+Ejecuta `python paper/scripts/audit_manuscript.py` para comprobar medias guardadas, intervalos bootstrap pareados, tablas, cobertura de referencias, hashes, metadatos PDF y declaraciones provisionales sin ajustar modelos. La opción `--local-archive RUTA` permite verificar las fuentes históricas conservadas. Las comparaciones Git se omiten explícitamente si faltan los commits publicados. La revisión bibliográfica usa la caché del 25 de septiembre de 2026; no simula una consulta de red nueva.
 
 ### Diferencias que afectan a la interpretación
 

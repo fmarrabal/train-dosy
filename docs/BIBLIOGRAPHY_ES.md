@@ -34,4 +34,4 @@ El listado de [franciscoarrabal.com](https://franciscoarrabal.com/publicaciones)
 
 La web enlaza la corrección de 2016 a `10.1039/C6PY90106A`, que corresponde al índice de una revista. El artículo conserva la corrección real: [10.1039/C6PY90124G](https://doi.org/10.1039/C6PY90124G). No se ha modificado la web. UPEN2D se cita por el año del volumen y número, 2017 (publicación anticipada en diciembre de 2016); ESPIRA por su número de 2023 (publicación en línea en 2022). Se normaliza la separación de nombres y apellidos de Ruiz Martínez, Dal Poggetto, Song y Hürlimann.
 
-El sufijo MF de TRAIn-MF designa el procesamiento multifrecuencia; la factorización matricial no negativa describe el modelo. El software numérico sigue en v0.1.0; la revisión del manuscrito se identifica como `manuscript-v4`.
+El sufijo MF de TRAIn-MF designa el procesamiento multifrecuencia; la factorización matricial no negativa describe el modelo. El software numérico sigue en v0.1.0; la revisión del manuscrito se identifica como `manuscript-v5`.

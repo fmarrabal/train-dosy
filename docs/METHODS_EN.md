@@ -17,7 +17,7 @@ Y≈exp(-b D) A, with positive continuous rates and nonnegative amplitudes. Cand
 
 Defaults: max_components=4, alpha=.01, validation_stride=4, selection_se=1, max_nfev=350. Final amplitude KKT and scaled rate stationarity are checked. Local precision and model-mismatch flags must be reported. Scores with estimated rates and selected masks are heuristic; no familywise chemical-detection guarantee is claimed.
 
-## Method-specific formulations in manuscript-v4
+## Method-specific formulations in manuscript-v5
 
 The [editable method section](../paper/sections/methods.tex), [mathematical appendix](../paper/sections/method_details.tex), and [27-file equation/source map](../paper/evidence/method_formulations.json) specify operators, unknowns, constraints, objectives, updates, regularization, selection and numerical limits. Algorithm 1 is an actual numbered `algorithm`/`algpseudocode` float with inputs, outputs, loops, eligibility checks, selection and final refitting. Its equations are linked in the pseudocode.
 
@@ -38,7 +38,17 @@ Here n denotes acquisitions, p retained frequencies, q diffusion cells, and r sh
 | Partial-C | C=s a+V≥0 with one unit-mass shared spline profile; total-density first-derivative and private-density L² penalties. Joint conditional NNLS for (a,V), simplex outer SLSQP. Shared rank is fixed at one in the comparator. |
 | CIRCE adapters v1 / v2 | Positive convex quadratics with density roughness and spectral graph. V2 constrains C=T Z, Z≥0, using a fixed positive mass-preserving decoder and column-scaled roughness. FISTA or strict cyclic NNLS; residual-cone/mass-cap feasibility is checked afterwards. No CIRCE-Net inference or alternative-measure bounds are attributed to these adapters. |
 
-Run `python paper/scripts/check_formulations.py` for 20 deterministic finite-dimensional algebra checks (gradients, QR/Kronecker identity, feasible Haar gap, DOME moments and decoder mass conservation). This does not rerun fits or establish statistical recovery. Results are recorded in `verification/formulation_checks.json`.
+Run `python paper/scripts/check_formulations.py` for 27 deterministic finite-dimensional algebra checks (gradients, QR/Kronecker identity, feasible Haar gap, DOME moments, decoder mass conservation, curvature degeneracy and covariance identities). This does not rerun fits or establish statistical recovery. Results are recorded in `verification/formulation_checks.json`.
+
+### Mathematical audit additions
+
+The [new appendix](../paper/sections/audit_extensions.tex) gives a sufficient uniqueness condition for the conditional profile update: with lambda_S>0, the only U satisfying KUA=0, LU=0 and 1^T U=0 must be zero. The second variation is ||KUA||_F²/p + lambda_S||LU||_F². Equal amplitude rows admit profile exchanges along a mass-zero curvature-null direction, so simplex normalization and curvature alone do not guarantee uniqueness. This does not assert degeneracy of the saved TRAIn-MF example.
+
+For specified covariance Omega of column-stacked noise, a fixed screening functional w has variance w^T Omega w. A difference of quadratic prediction losses with fixed symmetric weight W has variance 4 delta^T W Omega W delta, where delta=vec(P-Q). These are theoretical fixed-design identities; the frozen benchmark uses iid noise and does not implement covariance estimation or post-selection calibration.
+
+The audit also separates exact uniqueness of the density-RAI quadratic from optimizer termination, states the training-column scales and final graph reconstruction, gives dimensionless DOME proposal coordinates, and specifies noise-standardized validation MSE for Haar RAI and revised RAI-Net. The neural comparison changes several factors and is not an isolated ablation.
+
+Run `python paper/scripts/audit_manuscript.py` to check saved-data means, paired bootstrap intervals, tables, reference-cache coverage, source hashes, PDF metadata and provisional declarations without fitting any model. An optional `--local-archive PATH` checks the retained historical sources. Git comparisons are skipped explicitly when the release commits are unavailable. Bibliographic checks use the cache dated 25 September 2026; they do not claim a fresh network lookup.
 
 ### Distinctions that affect interpretation
 

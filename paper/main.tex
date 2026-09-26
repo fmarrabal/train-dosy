@@ -11,11 +11,16 @@
 \datereceived{ }\daterevised{ }\dateaccepted{ }\datepublished{ }
 \doinum{}\hreflink{}
 \Title{Positive Joint Laplace Inversion: Spectral Support Selection and Identifiability in Diffusion-Ordered Spectroscopy}
-\Author{Author information to be supplied}
-\AuthorNames{Author information to be supplied}
-\address{Affiliations to be supplied.}
-\corres{Corresponding author and email to be supplied.}
-\abstract{Joint inverse Laplace problems arise when several measured signals share decay mechanisms but have different nonnegative amplitudes. In diffusion-ordered spectroscopy, this structure connects diffusion coefficients across chemical shifts, while leaving the number and spectral support of the components unknown. We formulate reconstruction in the space of positive measures and distinguish distributional factorization from finite atomic models. Elementary results establish mass-preserving discretization bounds, finite-sampling ambiguity, conditional amplitude uniqueness, and the limits of matrix-rank evidence. We then develop a spectral-support selector using residualized exponential kernels, nonnegative variable projection, and reserved-acquisition prediction. A conditional Gaussian calculation explains the screening statistic and the paired predictive rule; data-adaptive screening prevents interpreting either as a calibrated discovery test. In 36 independent signal-present atomic simulations, the selector reduces mean spectral leakage from 5.166\% to 1.728\% for RAI and from 3.857\% to 1.728\% for DOME. Joint recovery of order and rates improves from 17 to 23 cases and from 22 to 23 cases, respectively, while unmatched mass increases slightly. Six null controls, six broad-distribution controls, and 24 transfer problems expose remaining limitations. The resulting framework separates numerical stationarity, predictive adequacy, and component identification, and provides reproducible evidence without a universal recovery claim.}
+\newcommand{\orcidauthorB}{0000-0001-8355-580X}
+\newcommand{\orcidauthorC}{0000-0002-5510-6297}
+\Author{Victor Valdivieso $^{1}$, Ignacio Fern\'andez $^{2}$\orcidB{} and Francisco Manuel Arrabal-Campos $^{1,2,*}$\orcidC{}}
+\AuthorNames{Victor Valdivieso, Ignacio Fernández and Francisco Manuel Arrabal-Campos}
+\AuthorCitation{Valdivieso, V.; Fern\'andez, I.; Arrabal-Campos, F.M.}
+\address{%
+$^{1}$ \quad Department of Engineering, Research Centre CIAIMBITAL, Escuela Superior de Ingenier\'ia, University of Almer\'ia; \href{mailto:mcv598@inlumine.ual.es}{mcv598@inlumine.ual.es} (V.V.); \href{mailto:fmarrabal@ual.es}{fmarrabal@ual.es} (F.M.A.-C.)\\
+$^{2}$ \quad Department of Chemistry and Physics, Research Centre CIAIMBITAL, University of Almer\'ia; \href{mailto:ifernan@ual.es}{ifernan@ual.es} (I.F.)}
+\corres{Correspondence: \href{mailto:fmarrabal@ual.es}{fmarrabal@ual.es} (Francisco Manuel Arrabal-Campos).}
+\abstract{Joint inverse Laplace inversion connects diffusion attenuations across chemical shifts, but a small fitting residual does not identify the number or spectral support of the components. We formulate atomic and distributional estimators as positive-measure problems and distinguish their objectives, constraints, updates, and selection targets. Mathematical results establish discretization bounds, conditional uniqueness, finite-sampling ambiguity, and the limits of matrix-rank evidence. A spectral-support selector combines residualized exponential kernels, nonnegative variable projection, and reserved-acquisition prediction. Fixed-design Gaussian identities explain its screening and paired predictive rules; adaptive masking and selection prevent interpreting them as calibrated discovery tests. In 36 independent signal-present atomic simulations, mean spectral leakage decreases from 5.166\% to 1.728\% for RAI and from 3.857\% to 1.728\% for DOME. Recovery of both order and rates improves from 17 to 23 cases and from 22 to 23 cases, respectively. However, DOME's order-only recovery falls from 26 to 25 cases, and unmatched estimated mass increases for both methods. Six null controls, six broad-distribution controls, and 24 transfer problems expose remaining limitations. The framework provides reproducible evidence for improved spectral assignment and prediction while separating numerical stationarity, representation choice, and chemical identification.}
 \keyword{inverse Laplace transform; positive measures; variable projection; nonnegative least squares; model selection; spectral support; identifiability; DOSY}
 \MSC{65R32; 65F22; 62F07; 92E10}
 \newcommand{\R}{\mathbb{R}}
@@ -27,11 +32,11 @@
 \newcommand{\supp}{\operatorname{supp}}
 \newcommand{\draftfield}[1]{\textbf{Author confirmation required:} #1}
 \renewcommand{\contentleftcolumn}{\leftcolFont\raggedright
-\textbf{Research manuscript draft}\\25 September 2026\\[4pt]
-Prepared for Mathematics.\\Not submitted.\\Author details pending.}
+\textbf{Research manuscript draft}\\26 September 2026\\[4pt]
+Prepared for Mathematics.\\Not submitted.}
 \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}
 \fancyfoot[L]{\fontsize{8}{9}\selectfont Research draft for Mathematics}
-\fancyfoot[R]{\fontsize{8}{9}\selectfont 25 September 2026}}
+\fancyfoot[R]{\fontsize{8}{9}\selectfont 26 September 2026}}
 \AtBeginDocument{\fancyhead[L]{\fontsize{8}{9}\selectfont Positive joint Laplace inversion}
 \fancyhead[R]{\fontsize{8}{9}\selectfont\thepage{} of \pageref*{LastPage}}\fancyfoot{}}
 \begin{document}
@@ -48,8 +53,10 @@ Prepared for Mathematics.\\Not submitted.\\Author details pending.}
 \appendixstart
 \appendix
 \renewcommand{\theHequation}{appendix.\arabic{equation}}
+\renewcommand{\theHproposition}{appendix.\arabic{proposition}}
 \input{sections/appendix}
 \input{sections/method_details}
+\input{sections/audit_extensions}
 \reftitle{References}
 \begin{thebibliography}{99}
 \input{references}

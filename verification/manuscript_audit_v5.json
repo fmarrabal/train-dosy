@@ -1,0 +1,181 @@
+{
+  "revision": "manuscript-v5",
+  "scope": "Saved-data reaggregation, source identities, manuscript structure; no solver fits, no new statistical validation.",
+  "primary": {
+    "RAI": {
+      "n": 36,
+      "correct": 17,
+      "recovered": 17,
+      "spectral_leakage_fraction": 0.05165593382654126,
+      "unmatched_mass_fraction": 0.06774063252186399,
+      "test_clean_rmse_sigma": 0.2870359042425086,
+      "w1_logD": 0.1523474218373191
+    },
+    "RAI_S": {
+      "n": 36,
+      "correct": 25,
+      "recovered": 23,
+      "spectral_leakage_fraction": 0.017277297740448696,
+      "unmatched_mass_fraction": 0.07257159906684635,
+      "test_clean_rmse_sigma": 0.23298944747192005,
+      "w1_logD": 0.1094377759040857
+    },
+    "DOME": {
+      "n": 36,
+      "correct": 26,
+      "recovered": 22,
+      "spectral_leakage_fraction": 0.038565275903751854,
+      "unmatched_mass_fraction": 0.0701858896671646,
+      "test_clean_rmse_sigma": 0.25906698280632084,
+      "w1_logD": 0.13926487116728894
+    },
+    "DOME_S": {
+      "n": 36,
+      "correct": 25,
+      "recovered": 23,
+      "spectral_leakage_fraction": 0.01727729774044869,
+      "unmatched_mass_fraction": 0.07257159906714354,
+      "test_clean_rmse_sigma": 0.23298944747194955,
+      "w1_logD": 0.10943777590395734
+    }
+  },
+  "paired_changes": {
+    "RAI": {
+      "spectral_leakage_fraction": {
+        "delta": -0.03437863608609257,
+        "bootstrap95": [
+          -0.05282397193092774,
+          -0.019258362147443475
+        ]
+      },
+      "test_clean_rmse_sigma": {
+        "delta": -0.054046456770588586,
+        "bootstrap95": [
+          -0.07997638015589965,
+          -0.03246695283600854
+        ]
+      },
+      "w1_logD": {
+        "delta": -0.04290964593323346,
+        "bootstrap95": [
+          -0.06863093747148853,
+          -0.02458148559172085
+        ]
+      }
+    },
+    "DOME": {
+      "spectral_leakage_fraction": {
+        "delta": -0.02128797816330317,
+        "bootstrap95": [
+          -0.03155405490609772,
+          -0.012677037817801762
+        ]
+      },
+      "test_clean_rmse_sigma": {
+        "delta": -0.02607753533437136,
+        "bootstrap95": [
+          -0.03377596808518037,
+          -0.01810537092074191
+        ]
+      },
+      "w1_logD": {
+        "delta": -0.029827095263331622,
+        "bootstrap95": [
+          -0.048168793462855485,
+          -0.010122798845300332
+        ]
+      }
+    }
+  },
+  "atomic_success_flags": {
+    "RAI/test": 48,
+    "RAI/archive": 24,
+    "RAI_S/test": 48,
+    "RAI_S/archive": 24,
+    "DOME/test": 48,
+    "DOME/archive": 24,
+    "DOME_S/test": 48,
+    "DOME_S/archive": 24
+  },
+  "neural": {
+    "RAI_Net_original": {
+      "test": {
+        "n": 24,
+        "w1_logD": 0.27226771053036886,
+        "test_clean_rmse_sigma": 0.3079913246454647,
+        "failed_cases": []
+      },
+      "archive": {
+        "n": 24,
+        "w1_logD": 0.20476860838242125,
+        "test_clean_rmse_sigma": 0.326400679005723,
+        "failed_cases": [
+          "r1_snr50_rep2"
+        ]
+      }
+    },
+    "RAI_Net_v2": {
+      "test": {
+        "n": 24,
+        "w1_logD": 0.27215671362117094,
+        "test_clean_rmse_sigma": 0.30792092556353234,
+        "failed_cases": []
+      },
+      "archive": {
+        "n": 24,
+        "w1_logD": 0.20173912417833906,
+        "test_clean_rmse_sigma": 0.32632392619680545,
+        "failed_cases": [
+          "r1_snr50_rep2"
+        ]
+      }
+    }
+  },
+  "immutable_source_files": 22,
+  "formulation_sources_checked": [
+    "TRAIn.m",
+    "matlab/legacy/TRAIn_DOSY_MFV31.m",
+    "matlab/reference/mf_robust/+mfrobust/evaluate.m",
+    "matlab/reference/mf_robust/+mfrobust/nnls_batch.m",
+    "matlab/reference/mf_robust/+mfrobust/simplex_block.m",
+    "matlab/reference/mf_robust/DOSY_MF_Robust.m",
+    "matlab/reference/mf_robust/+mfrobust/profile_refine.m",
+    "matlab/reference/mf_original/dosy_v4/+dosyv4/regularizers.m",
+    "matlab/reference/DOSY_MF_Auto.m",
+    "matlab/reference/DOSY_RankEvidence.m",
+    "matlab/reference/DOSY_SelectConverged.m",
+    "src/train_dosy/_frozen/vendor/rai_ilt/components.py",
+    "src/train_dosy/_frozen/vendor/rai_ilt/solver.py",
+    "src/train_dosy/_frozen/vendor/rai_ilt/model.py",
+    "src/train_dosy/_frozen/vendor/dome/solver.py",
+    "src/train_dosy/_frozen/support.py",
+    "dosy_support_v2_20260925/vendor/rai_ilt/adaptive.py",
+    "dosy_support_v2_20260925/vendor/rai_ilt/tree.py",
+    "dosy_support_v2_20260925/vendor/rai_ilt/net.py",
+    "ilt_unified_benchmark_20260924/sources/rai-ilt/src/rai_ilt/net.py",
+    "dosy_support_v2_20260925/train_net.py",
+    "ilt_unified_benchmark_20260924/sources/rai-ilt/src/rai_ilt/joint_profiles.py",
+    "ilt_unified_benchmark_20260924/sources/rai-ilt/src/rai_ilt/continuous_unmixing.py",
+    "ilt_unified_benchmark_20260924/sources/dome-inversion/src/dome/support_average.py",
+    "ilt_unified_benchmark_20260924/generalized.py",
+    "ilt_unified_benchmark_20260924/sources/circe-ilt/src/circe/refined.py",
+    "ilt_unified_benchmark_20260924/sources/circe-ilt/src/circe/geometry.py"
+  ],
+  "formulation_sources_not_available": [],
+  "references": 48,
+  "doi_cache_entries": 46,
+  "doi_cache_checked_utc": "2026-09-25T10:27:45.142303+00:00",
+  "doi_network_refresh_performed": false,
+  "algebra_checks": 27,
+  "author_metadata_checks": "passed; authorship roles and conflicts remain unconfirmed",
+  "pages": 38,
+  "pdf_sha256": "6dae963159b6302eccb9a146732e2814ef2b9df92afa7ecbaffa7901a00f5533",
+  "latex_log_checked": true,
+  "visual_review": "Separate human/model inspection; not inferred from these automated checks.",
+  "git_comparison": {
+    "status": "passed",
+    "numerical_files_unchanged_from_v0_1_0": 82,
+    "figure_files_unchanged_from_manuscript_v4": 8,
+    "bibliography_and_metrics_unchanged_from_manuscript_v4": true
+  }
+}

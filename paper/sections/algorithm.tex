@@ -59,7 +59,7 @@ If component $j$ is absent throughout $G$, its mean is zero. Testing $rg$ such f
 The nuisance term vanishes because $v_j^\top K_{-j}=0$, while $v_j^\top k_j=\|v_j\|_2^2$. Summing independent normal errors gives variance $|G|\sigma^2\|v_j\|_2^2$ before normalization. The final claim is the union bound and does not require independence between the different tests.
 \end{proof}
 
-When amplitudes are equal to $a$ in a group of $m$ frequencies, the mean score is $a\|v_j\|_2\sqrt m/\sigma$. Coherent small amplitudes can therefore be retained even if each is small relative to an unrelated tall peak. Adding frequencies with no component signal instead dilutes this score. As kernels become collinear, $\|v_j\|_2$ decreases, expressing the loss of separation information (Figure~\ref{fig:geometry}). With correlated spectral errors, the variance generally changes; replacing it by $m\sigma^2$ is not justified.
+When amplitudes are equal to $a$ in a group of $m$ frequencies, the mean score is $a\|v_j\|_2\sqrt m/\sigma$. Coherent small amplitudes can therefore be retained even if each is small relative to an unrelated tall peak. Adding frequencies with no component signal instead dilutes this score. As kernels become collinear, $\|v_j\|_2$ decreases, expressing the loss of separation information (Figure~\ref{fig:geometry}). With correlated spectral errors, the variance generally changes; replacing it by $m\sigma^2$ is not justified. Proposition~\ref{prop:covariance} gives the fixed-covariance form and identifies the assumptions needed for such an extension.
 
 \begin{figure}[htbp]
 \begin{adjustwidth}{-\extralength}{0cm}\centering
@@ -80,7 +80,7 @@ For numerically eligible candidates, let $c_*$ minimize $L_c$. We retain the set
  \mathcal E=\left\{c:L_c\leq L_{c_*}+
  2\|\widehat Y_{c,V}-\widehat Y_{c_*,V}\|_F/\sigma+10^{-10}\right\}.
 \end{equation}
-Within $\mathcal E$, selection is lexicographic: fewer surviving rates, then fewer allowed amplitudes, then lower validation loss. The selected fixed support is refitted on $T\cup V$. The zero-signal model is a legitimate candidate. The selected $r$ is therefore automatic within a declared finite search, without access to the true order. Attaining the cap is reported rather than interpreted as evidence that no additional rates exist.
+Within $\mathcal E$, selection is lexicographic: fewer surviving rates, then fewer allowed amplitudes, then lower validation loss. The selected fixed support is refitted on $T\cup V$. The zero-signal model is a legitimate candidate. The selected $r$ is therefore automatic within a declared finite search, without access to the true order. The selected order and configured cap are reported. A selection at that boundary does not establish that no additional rates exist.
 
 \begin{Proposition}[Conditional paired prediction variance]\label{prop:paired}
 Let $P,Q$ be fixed predictions independent of $E$, and $Y=M+E$ with iid $N(0,\sigma^2)$ errors. Then
@@ -99,7 +99,7 @@ This identity motivates the one-standard-deviation allowance in Equation~\eqref{
 
 The suffix S specifies the complete estimator below: the objective for a fixed $(r,H)$ is Equation~\eqref{eq:nnls}, the proposal path is native atomic RAI or DOME (Sections~\ref{sec:raiatomic} and \ref{sec:domemath}), and the final order/support rule is Equation~\eqref{eq:selection}. Screening defines a finite family of constraints; it is not an extra amplitude penalty. In particular, rates are screened at the native path state before each support-specific refinement. The screen is not iterated after every rate update. Algorithm~\ref{alg:support} records this order of operations and includes explicit failure handling.
 
-\begin{algorithm}[htbp]
+\begin{algorithm}[H]
 \caption{Automatic spectral-support selection for RAI-S and DOME-S}\label{alg:support}
 \begin{algorithmic}[1]
 \Require Observed $(b,Y,\sigma)$, retained frequencies, diffusion bounds, path method $M$, $r_{\max}=4$.
@@ -117,7 +117,7 @@ The suffix S specifies the complete estimator below: the objective for a fixed $
   \For{each $H\in\mathcal H$}
     \State $ (d_H,H)\gets\Call{PruneEmptyRows}{d,H}$.
     \State $c\gets\Call{RefineNNLS}{b_T,Y_T,\sigma,d_H,H}$ using Equations~\eqref{eq:nnls}--\eqref{eq:stationarity}.
-    \State Append $c$ and its numerical diagnostics to $\mathcal L$.
+    \State Append rates, support type, parameter count, success and KKT to $\mathcal L$.
     \If{$c$ is the zero model, or solver success, $\eta_z\leq10^{-6}$ and KKT $\leq10^{-7}$}
       \State $P_c\gets K(b_V,d_c)A_c$; $L_c\gets\|P_c-Y_V\|_F^2/\sigma^2$.
       \State Add $(c,P_c,L_c)$ to $\mathcal C$.

@@ -1,0 +1,47 @@
+{
+  "revision": "manuscript-v5",
+  "source": "Author metadata and funding explicitly supplied by corresponding author on 2026-09-26; no independent attribution verification claimed.",
+  "authors": [
+    {
+      "name": "Victor Valdivieso",
+      "affiliations": [
+        1
+      ],
+      "email": "mcv598@inlumine.ual.es",
+      "orcid": null
+    },
+    {
+      "name": "Ignacio Fernández",
+      "affiliations": [
+        2
+      ],
+      "email": "ifernan@ual.es",
+      "orcid": "0000-0001-8355-580X"
+    },
+    {
+      "name": "Francisco Manuel Arrabal-Campos",
+      "affiliations": [
+        1,
+        2
+      ],
+      "email": "fmarrabal@ual.es",
+      "orcid": "0000-0002-5510-6297",
+      "corresponding": true
+    }
+  ],
+  "affiliations": {
+    "1": "Department of Engineering, Research Centre CIAIMBITAL, Escuela Superior de Ingeniería, University of Almería",
+    "2": "Department of Chemistry and Physics, Research Centre CIAIMBITAL, University of Almería"
+  },
+  "funding_identifiers": [
+    "PID2021-126445OB-I00",
+    "10.13039/501100011033",
+    "PDC2021-121248-I00",
+    "PLEC2021-007774",
+    "CPP2022-009967"
+  ],
+  "credit_status": "proposed from author order at user request; requires confirmation by all authors",
+  "conflicts_status": "not provided; cannot be inferred",
+  "acknowledgments": "removed at user request",
+  "ai_disclosure": "retained in methodology; journal-specific placement remains a submission issue"
+}
