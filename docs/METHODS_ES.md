@@ -17,7 +17,7 @@ Y≈exp(-b D) A, con tasas positivas continuas y amplitudes no negativas. Las pr
 
 Valores: max_components=4, alpha=.01, validation_stride=4, selection_se=1, max_nfev=350. Se comprueban KKT de amplitudes y estacionariedad de tasas; se devuelven alertas de precisión, límites y ajuste atómico inadecuado. La puntuación con tasas y máscaras estimadas es heurística; no es una garantía de detección química.
 
-## Formulaciones específicas de manuscript-v5
+## Formulaciones específicas de manuscript-v6
 
 La [sección editable de métodos](../paper/sections/methods.tex), el [apéndice matemático](../paper/sections/method_details.tex) y el [mapa de ecuaciones y 27 archivos fuente](../paper/evidence/method_formulations.json) especifican operadores, incógnitas, restricciones, objetivos, actualizaciones, regularización, selección y límites numéricos. El Algoritmo 1 usa un entorno real `algorithm`/`algpseudocode`, con líneas numeradas, entradas, salidas, bucles, comprobaciones de convergencia, selección y reajuste final; remite a las ecuaciones correspondientes.
 

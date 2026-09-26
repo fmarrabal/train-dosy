@@ -145,7 +145,8 @@ def main():
     require("proposal based on author order" in backmatter and "must be confirmed by all three authors" in backmatter,
             "Provisional CRediT qualification")
     require("cannot be inferred" in backmatter and "no conflict" not in backmatter.lower(), "Unconfirmed conflicts")
-    require("OpenAI Codex (GPT-6)" in sections, "AI-use disclosure")
+    require("Codex was used as a programming assistant" in sections and "Trinka was used as a language-editing assistant" in sections, "AI-use disclosure")
+    require("GPT-" not in main_tex + sections, "Model/version details removed from current manuscript")
     author_metadata = json.loads((ROOT / "paper/evidence/author_metadata.json").read_text(encoding="utf-8"))
     author_names = [entry["name"] for entry in author_metadata["authors"]]
     require(author_names == ["Victor Valdivieso", "Ignacio Fernández", "Francisco Manuel Arrabal-Campos"], "Author order")
@@ -164,7 +165,7 @@ def main():
     pdf = ROOT / "paper/output/pdf/Positive_Joint_Laplace_Inversion_Mathematics.pdf"
     reader = PdfReader(pdf)
     texts = [page.extract_text() for page in reader.pages]
-    require(len(texts) == 38, "Expected 38-page v5 PDF")
+    require(len(texts) == 38, "Expected 38-page v6 PDF")
     require(all(name in reader.metadata.author for name in author_names), "PDF author metadata")
     pdf_links = []
     for page in reader.pages:
@@ -176,7 +177,8 @@ def main():
         if entry["orcid"]:
             require(any(entry["orcid"] in link for link in pdf_links), "PDF ORCID hyperlink")
     require("Acknowledgments" not in "\n".join(texts), "PDF acknowledgments removal")
-    require("manuscript-v5" in "\n".join(texts), "PDF release citation")
+    require("manuscript-v6" in "\n".join(texts), "PDF release citation")
+    require("Codex" in "\n".join(texts) and "Trinka" in "\n".join(texts) and "GPT-" not in "\n".join(texts), "PDF AI-use disclosure")
     log = ROOT / "paper/output/pdf/main.log"
     log_checked = log.exists()
     if log_checked:
@@ -205,7 +207,7 @@ def main():
 
     algebra = json.loads((ROOT / "verification/formulation_checks.json").read_text())
     require(algebra["passed"] == 27, "Algebra check count")
-    report = dict(revision="manuscript-v5", scope="Saved-data reaggregation, source identities, manuscript structure; no solver fits, no new statistical validation.",
+    report = dict(revision="manuscript-v6", scope="Saved-data reaggregation, source identities, manuscript structure; no solver fits, no new statistical validation.",
                   primary=stats, paired_changes=paired, atomic_success_flags=numerical_success, neural=neural,
                   immutable_source_files=len(immutable), formulation_sources_checked=checked_sources,
                   formulation_sources_not_available=skipped_sources, references=len(references),
@@ -215,7 +217,7 @@ def main():
                   pages=len(texts), pdf_sha256=sha(pdf), latex_log_checked=log_checked,
                   visual_review="Separate human/model inspection; not inferred from these automated checks.",
                   git_comparison=git_checks)
-    target = ROOT / "verification/manuscript_audit_v5.json"
+    target = ROOT / "verification/manuscript_audit_v6.json"
     target.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"status": "passed", "output": str(target), "pages": len(texts),
                       "primary_cases": 36, "formulation_sources_checked": len(checked_sources),

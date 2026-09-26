@@ -67,7 +67,7 @@ Se conservan las denominaciones institucionales facilitadas y se insertan los ci
 
 CRediT se redacta como **propuesta basada en el orden de firma**, por petición del usuario, pendiente de ratificación de los tres autores. No se atribuye adquisición de fondos sin confirmación. No se inventa una declaración de ausencia de conflictos.
 
-Se eliminan los agradecimientos. La declaración de uso de OpenAI Codex (GPT-6) permanece en metodología. La [política editorial de MDPI](https://www.mdpi.com/ethics) pide también información sobre herramientas generativas en Acknowledgments cuando el uso supera la corrección lingüística. Por tanto, la ubicación final de esa declaración es un punto editorial pendiente para el envío; la retirada solicitada no se presenta como conformidad completa con esa política. No se ha contactado con la revista.
+Se eliminan los agradecimientos. En la actualización manuscript-v6, la declaración en metodología identifica Codex como ayuda para programar el repositorio TRAIn-DOSY y Trinka como asistencia para mejorar la claridad y el estilo del manuscrito, sin mencionar modelos ni versiones. Este cambio de redacción fue solicitado por el autor de correspondencia; la auditoría matemática de v5 se conserva. La [política editorial de MDPI](https://www.mdpi.com/ethics) pide también información sobre herramientas generativas en Acknowledgments cuando el uso supera la corrección lingüística. Por tanto, la ubicación final de esa declaración es un punto editorial pendiente para el envío; la retirada solicitada no se presenta como conformidad completa con esa política. No se ha contactado con la revista.
 
 ## Reproducibilidad y límites pendientes
 
@@ -92,4 +92,4 @@ Para contrastar también las fuentes históricas que no están distribuidas en e
 python paper/scripts/audit_manuscript.py --local-archive 'E:/ARTICULOS-CIENTIFICOS/20240905_OLIGOQUITOSANO/CODIGO_MEJORADO'
 ```
 
-Resultados legibles por máquina: [formulation_checks.json](../verification/formulation_checks.json), [manuscript_audit_v5.json](../verification/manuscript_audit_v5.json) y [paper_audit.json](../verification/paper_audit.json). Los checks que necesitan objetos Git o el archivo privado se declaran omitidos cuando esos recursos no están disponibles; no se cuentan como superados. La revisión visual es una comprobación separada de los scripts.
+Resultados legibles por máquina: [formulation_checks.json](../verification/formulation_checks.json), [manuscript_audit_v5.json](../verification/manuscript_audit_v5.json) y su comprobación documental actualizada [manuscript_audit_v6.json](../verification/manuscript_audit_v6.json) y [paper_audit.json](../verification/paper_audit.json). Los checks que necesitan objetos Git o el archivo privado se declaran omitidos cuando esos recursos no están disponibles; no se cuentan como superados. La revisión visual es una comprobación separada de los scripts.

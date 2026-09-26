@@ -1,5 +1,5 @@
 {
-  "revision": "manuscript-v5",
+  "revision": "manuscript-v6",
   "source": "Author metadata and funding explicitly supplied by corresponding author on 2026-09-26; no independent attribution verification claimed.",
   "authors": [
     {
@@ -43,5 +43,5 @@
   "credit_status": "proposed from author order at user request; requires confirmation by all authors",
   "conflicts_status": "not provided; cannot be inferred",
   "acknowledgments": "removed at user request",
-  "ai_disclosure": "retained in methodology; journal-specific placement remains a submission issue"
+  "ai_disclosure": "Codex: programming assistance for the TRAIn-DOSY repository; Trinka: manuscript clarity and style assistance. Wording supplied/requested by corresponding author on 2026-09-26; no model/version details. Retained in methodology; journal-specific placement remains a submission issue."
 }

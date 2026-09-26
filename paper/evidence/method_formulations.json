@@ -1,5 +1,5 @@
 {
-  "revision": "manuscript-v5",
+  "revision": "manuscript-v6",
   "scope": "Mathematical transcription of inspected implementations; no new fits or numerical changes. Local archive entries identify sources, not newly packaged runnable methods.",
   "source_roots": {
     "public": "repository root",

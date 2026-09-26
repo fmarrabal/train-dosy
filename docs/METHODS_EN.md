@@ -17,7 +17,7 @@ Y≈exp(-b D) A, with positive continuous rates and nonnegative amplitudes. Cand
 
 Defaults: max_components=4, alpha=.01, validation_stride=4, selection_se=1, max_nfev=350. Final amplitude KKT and scaled rate stationarity are checked. Local precision and model-mismatch flags must be reported. Scores with estimated rates and selected masks are heuristic; no familywise chemical-detection guarantee is claimed.
 
-## Method-specific formulations in manuscript-v5
+## Method-specific formulations in manuscript-v6
 
 The [editable method section](../paper/sections/methods.tex), [mathematical appendix](../paper/sections/method_details.tex), and [27-file equation/source map](../paper/evidence/method_formulations.json) specify operators, unknowns, constraints, objectives, updates, regularization, selection and numerical limits. Algorithm 1 is an actual numbered `algorithm`/`algpseudocode` float with inputs, outputs, loops, eligibility checks, selection and final refitting. Its equations are linked in the pseudocode.
 
