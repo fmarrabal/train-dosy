@@ -13,7 +13,7 @@ def fit_mf(q,y,b,ppm,mask):
     with tempfile.TemporaryDirectory(prefix='train_dosy_') as temp:
         temp=Path(temp); source=temp/'input.mat';target=temp/'output.json'
         savemat(source,dict(Y=y[:,mask],b=b,ppm=ppm[mask],sigma=q.sigma,
-            D=np.geomspace(*q.diffusion_bounds,q.bins)))
+            D=np.geomspace(*q.diffusion_bounds,q.bins),method=q.method,max_components=q.max_components))
         quote=lambda p:str(p).replace("'","''")
         command=f"addpath('{quote(directory)}'); run_mf_api('{quote(source)}','{quote(target)}');"
         proc=subprocess.run([executable,'-batch',command],capture_output=True,text=True,timeout=600)
@@ -26,13 +26,17 @@ def fit_mf(q,y,b,ppm,mask):
         raise RuntimeError('MF automatic selection unresolved; no usable stationary candidate')
     p=int(mask.sum())
     out['X']=np.asarray(out['X']).reshape(q.bins,p)
-    if r:out['A']=np.asarray(out['A']).reshape(r,p)
+    if r:
+        out['A']=np.asarray(out['A']).reshape(r,p)
+        out['S']=np.asarray(out['S']).reshape(q.bins,r)
     else:out['A']=np.zeros((0,p))
     out['D_grid']=np.asarray(out['D_grid']).ravel()
+    if isinstance(out.get('kkt'),list) and not out['kkt']:
+        out['kkt']=None  # MATLAB [] is not a nullable scalar for the C# SDK.
     out['prediction']=np.exp(-b[:,None]*out['D_grid'])@out['X']
-    out.update(schema_version='1.0',software_version='0.1.0',method='MF-AUTO',
+    out.update(schema_version='1.0',software_version='0.2.0',method=q.method,
         ppm=ppm[mask],mask=mask,selected_frequency_indices=np.flatnonzero(mask),
-        selection_mode='automatic',search_limit=4,search_limit_reached=r==4,
+        selection_mode='automatic',search_limit=q.max_components,search_limit_reached=r==q.max_components,
         units=dict(b='s/m^2',D_grid='m^2/s',X='signal mass per diffusion node'),
         excluded_frequencies='not estimated; zero intensity is not inferred')
     return clean_json(out)

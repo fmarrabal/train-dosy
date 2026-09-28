@@ -1,6 +1,8 @@
 # TRAIn-DOSY: positive joint Laplace inversion
 [Español](README_ES.md) · [API](docs/API_EN.md) · [Mathematics](docs/METHODS_EN.md) · [Provenance](docs/PROVENANCE.md) · [Manuscript](paper/output/pdf/Positive_Joint_Laplace_Inversion_Mathematics.pdf)
 
+**Software 0.2.0 — signed TRAIn-MF correction.** The new `TRAIn-MF` API/CLI method and `matlab/TRAIn_DOSY_MF.m` retain signed observations, use MATLAB NNLS and select shared factors by held-out prediction. `MF-AUTO` and manuscript results remain frozen. [Mathematics, migration and reproducible tests](docs/TRAIN_MF_SIGNED_EN.md).
+
 Research software by **Francisco M. Arrabal-Campos** for joint DOSY reconstruction from whole spectral signal regions. The TRAIn-MF line derives from the original **TRAIn of Xu and Zhang**, through Arrabal-Campos's **TRAIn_DOSY_MFV31**. Both the preserved historical source and the later numerical TRAIn-MF reference are included and explicitly distinguished.
 
 ![DOSY examples with ground truth](examples/dosy_ground_truth.png)

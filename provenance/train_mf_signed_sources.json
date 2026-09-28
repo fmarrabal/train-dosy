@@ -1,0 +1,54 @@
+{
+  "protocol": "signed-v2.1",
+  "software_version": "0.2.0",
+  "created_utc": "2026-09-28T22:06:50.181466+00:00",
+  "upstream_reference": [
+    {
+      "path": "DiffAtOnce/desktop/src/DiffAtOnce.Core/DosyNativeTrainMf.cs",
+      "sha256": "9b6c9c927b1e23aa4315f71545ed145be5b972df67f1c4119524c10678f052a5"
+    },
+    {
+      "path": "DiffAtOnce/desktop/src/DiffAtOnce.Core/DosyNativeMfRank.cs",
+      "sha256": "33ce68d1a14e7595122e0d7705696405ae102d0b6eb2bf54295c11bab81f947e"
+    },
+    {
+      "path": "DiffAtOnce/desktop/src/DiffAtOnce.Core/NativeTrain.cs",
+      "sha256": "99b32f287a4a38e45366cca131fb030512148a59d50c78343313cc45467b5be4"
+    }
+  ],
+  "implementation": [
+    {
+      "path": "matlab/TRAIn_DOSY_MF.m",
+      "sha256": "be35bec7412f69b80df19030e20a68825579a1612f7a7054009283edac344c92",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/TRAIn_DOSY_MF_Signed.m",
+      "sha256": "46ee34af69f89ebbc6aa5832fbb87cd4a629bad69cca4c35748d35fdb3455ac4",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/+trainmf/nnls.m",
+      "sha256": "2b673b847008f091975d208f34cbe547e800ca18aef3b29f011102af6ece6252",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/+trainmf/train.m",
+      "sha256": "8ddd5d36c846988b6616f96201ad43d99ee7acf337c2df6bc29b05caf9d50fad",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/+trainmf/solve.m",
+      "sha256": "87b0d26fc6955f3510501a6ae6ea85ca590225ddb5bdee7adbb6172a2d2be178",
+      "local_copy_identical": true
+    }
+  ],
+  "frozen_reference_unchanged": true,
+  "port_differences": [
+    "Held-out paired one-SE rank selection instead of independent NNLS residual rank gate",
+    "Installed MATLAB lsqnonneg",
+    "No final distribution truncation",
+    "Homogeneous guard for exact-zero initialization and explicit zero NNLS solution",
+    "Check seed convergence; default inner cap 2000; report failures and numerical roundoff"
+  ]
+}

@@ -1,6 +1,8 @@
 # TRAIn-DOSY: inversión conjunta positiva de Laplace
 [English](README.md) · [API](docs/API_ES.md) · [Matemática](docs/METHODS_ES.md) · [Procedencia](docs/PROVENANCE.md) · [Artículo](paper/output/pdf/Positive_Joint_Laplace_Inversion_Mathematics.pdf)
 
+**Software 0.2.0 — corrección de TRAIn-MF.** El nuevo método de API/CLI `TRAIn-MF` y `matlab/TRAIn_DOSY_MF.m` conservan el signo, usan NNLS de MATLAB y seleccionan factores por predicción en gradientes reservados. `MF-AUTO` y los resultados del artículo siguen congelados. [Formulación, migración y pruebas reproducibles](docs/TRAIN_MF_SIGNED_ES.md).
+
 Software de investigación de **Francisco M. Arrabal-Campos** para reconstrucción DOSY conjunta a partir de las regiones con señal del espectro completo. La línea TRAIn-MF procede del **TRAIn original de Xu y Zhang**, a través de la extensión **TRAIn_DOSY_MFV31 de Arrabal-Campos**. Se conservan tanto ese archivo histórico como la referencia numérica posterior.
 
 ![DOSY con verdad de referencia](examples/dosy_ground_truth.png)

@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-09-28T22:06:50.181466+00:00",
+  "protocol": "signed-v2.1",
+  "matlab_regression": "verification/train_mf_signed_regression.json",
+  "matlab_regression_sha256": "77a9c7eb8d1160f87eb6be15e4abce3972e773c1b9c5ea6db6098f799d138ca0",
+  "matlab_code_analyzer_findings": 0,
+  "pytest": {
+    "tests": "16",
+    "failures": "0",
+    "errors": "0",
+    "skipped": "0",
+    "time": "15.528"
+  },
+  "matlab_backend_integration_executed": true,
+  "dotnet_build": {
+    "command": "dotnet build csharp/TrainDosy.Cli -c Release --nologo",
+    "exit_code": 0,
+    "warnings": 0,
+    "errors": 0
+  },
+  "installed_source_hashes_match": true,
+  "github_actions_used": false,
+  "scope": "Local MATLAB numerical regression and real MATLAB REST integration; C# client build; not full experimental validation."
+}

@@ -5,7 +5,7 @@ from . import fit
 def main():
     p=argparse.ArgumentParser(description="Whole-spectrum joint DOSY on selected signal frequencies")
     p.add_argument('input',type=Path);p.add_argument('output',type=Path)
-    p.add_argument('--method',choices=['RAI-S','DOME-S','MF-AUTO'])
+    p.add_argument('--method',choices=['RAI-S','DOME-S','MF-AUTO','TRAIn-MF'])
     a=p.parse_args();q=json.loads(a.input.read_text(encoding='utf-8'))
     if a.method:q['method']=a.method
     result=fit(q)

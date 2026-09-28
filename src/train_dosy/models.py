@@ -9,7 +9,7 @@ class FitRequest(BaseModel):
     b: list[float]
     ppm: list[float]
     sigma: float = Field(gt=0)
-    method: Literal["RAI-S", "DOME-S", "MF-AUTO"] = "RAI-S"
+    method: Literal["RAI-S", "DOME-S", "MF-AUTO", "TRAIn-MF"] = "RAI-S"
     mask: list[bool] | None = None
     diffusion_bounds: tuple[float, float] = (0.1e-9, 15e-9)
     bins: int = Field(default=256, ge=256, le=2048)
