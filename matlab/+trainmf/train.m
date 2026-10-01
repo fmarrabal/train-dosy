@@ -3,22 +3,28 @@ function [h,info] = train(K,y,maxIterations,termFac)
 % Matrix-free Gauss-Newton/Steihaug trust region. No augmented penalty rows
 % and no output peak clipping. The NNLS residual is not a noise estimate.
 y=y(:);
+% Homogeneous scaling protects the gradient products from under/overflow.
+% This does not subtract a baseline or change the signed observations.
+inputScale=max(abs(y));
+if inputScale==0,inputScale=1;end
+y=y/inputScale;
 [hnnls,floorResidual]=trainmf.nnls(K,y);
 roundoff=100*eps*norm(y);
 target=max(termFac*floorResidual,roundoff);
 info=struct('converged',false,'exit_reason','maximum_iterations', ...
     'nnls_residual',floorResidual,'residual_target',target, ...
-    'roundoff_tolerance',roundoff,'iterations',0,'zero_initialization_guard',false);
+    'roundoff_tolerance',roundoff,'iterations',0,'zero_initialization_guard',false, ...
+    'input_scale',inputScale);
 if ~any(hnnls)
     h=zeros(size(K,2),1);
     info.converged=true;info.exit_reason='zero_nnls_solution';
-    info.residual=norm(y);return;
+    info.residual=norm(y);[h,info]=restoreScale(h,info,inputScale);return;
 end
 seed=min(abs(y));
-if seed==0
-    % Original min(abs(y)) initialization is identically stationary at zero.
-    % Use a homogeneous positive seed only in this exact-zero case.
-    seed=norm(y)/sqrt(numel(y));info.zero_initialization_guard=true;
+seedFloor=eps*norm(y)/sqrt(numel(y));
+if seed<seedFloor
+    % Positive subnormal tails also made h or gradient products vanish.
+    seed=seedFloor;info.zero_initialization_guard=true;
 end
 h=ones(size(K,2),1)*(1e-10*seed/size(K,2));eta=sqrt(h);
 radius0=.01*sqrt(norm(y));radius=radius0;
@@ -48,6 +54,14 @@ end
 info.residual=norm(K*h-y);
 info.converged=info.residual<=target;
 if info.converged,info.exit_reason='residual_target';end
+[h,info]=restoreScale(h,info,inputScale);
+end
+
+function [h,info]=restoreScale(h,info,scale)
+h=h*scale;
+for name={'nnls_residual','residual_target','roundoff_tolerance','residual'}
+    info.(name{1})=info.(name{1})*scale;
+end
 end
 
 function step=steihaug(g,Hv,radius)

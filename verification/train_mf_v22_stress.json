@@ -1,0 +1,292 @@
+{
+  "protocol": "signed-v2.2",
+  "matlab_version": "26.1.0.3251617 (R2026a) Update 2",
+  "checks_passed": true,
+  "training_residuals_before_validation_change": [
+    8.48528137423857,
+    0.017569596412639697,
+    0.017297281545270389
+  ],
+  "training_residuals_after_validation_change": [
+    8.48528137423857,
+    0.017569596412639697,
+    0.017297281545270389
+  ],
+  "intensity_unit_scales": [
+    1E-150,
+    1.0E+150
+  ],
+  "intensity_prediction_difference": [
+    2.5162845046349555E-7,
+    3.5682613701068883E-7
+  ],
+  "null_trials": [
+    {
+      "seed": 2.0261021E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        null,
+        0.494008743303598,
+        0.494008743303598
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261022E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        null,
+        -1.1501093795132875,
+        -1.1501093795132875
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261023E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        0.42981719604400714,
+        -0.48442599394766572,
+        -0.48442599394766572
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261024E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        0.89702416976013077,
+        0.5108167945378006,
+        0.48738089974099436
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261025E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        null,
+        -0.12630064758456624,
+        -0.12840924289815792
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261026E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261027E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        0.22988715107903288,
+        0.22988715107903226,
+        0.22988715107903226
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261028E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        null,
+        -0.96577418187480035,
+        -0.96577418187479913
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261029E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        null,
+        2.2043693690917263,
+        2.2043693690917263
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.026103E+7,
+      "selected_rank": 0,
+      "success": false,
+      "model_compatible": false,
+      "signal_z": [
+        null,
+        0.46154363561849088,
+        0.543907447615403,
+        0.543907447615403
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261031E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        0.45944670242710162,
+        0.45944670242710239,
+        0.45944670242710239
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261032E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        1.0178462892334863,
+        0.70427095250424454,
+        0.63904973651606078
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261033E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        -0.48210426979614907,
+        -0.522890521186759,
+        -0.522890521186759
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261034E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        -0.5674293281574686,
+        -0.5279262276960911,
+        -0.5279262276960911
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261035E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261036E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        -1.179766572254519,
+        -1.1797665722545196,
+        -1.1797665722545196
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261037E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        -0.423756536980164,
+        -0.42375653698016419,
+        -0.42375653698016419
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261038E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        0.71922279630639219,
+        0.71922279630639241,
+        0.71922279630639241
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.0261039E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        1.1628875536192229,
+        0.92442726218302329,
+        0.82815882314713563
+      ],
+      "signal_threshold": 2.7130518884727177
+    },
+    {
+      "seed": 2.026104E+7,
+      "selected_rank": 0,
+      "success": true,
+      "model_compatible": true,
+      "signal_z": [
+        null,
+        1.2078751783173847,
+        0.95028006777710794,
+        0.95028006777710794
+      ],
+      "signal_threshold": 2.7130518884727177
+    }
+  ],
+  "null_nonzero_selections": 0,
+  "math": {
+    "conditional_gradient_relative_error": 1.1015014274642115E-16,
+    "trust_gradient_relative_error": 7.0058756159666545E-11,
+    "gauss_newton_product_relative_error": 6.96185765616975E-16
+  },
+  "scope": "Synthetic stress checks; no experimental noise calibration or species identification."
+}

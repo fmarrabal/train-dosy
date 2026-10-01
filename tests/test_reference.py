@@ -61,4 +61,4 @@ def test_api_errors_and_result(payload):
         assert client.post('/v1/fit',json={**payload,'bins':128}).status_code==422
         result=client.post('/v1/fit',json=payload)
         assert result.status_code==200 and result.json()['selected_rank']==1
-        assert client.get('/openapi.json').json()['info']['version']=='0.2.0'
+        assert client.get('/openapi.json').json()['info']['version']=='0.2.1'

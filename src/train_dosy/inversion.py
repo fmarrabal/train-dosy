@@ -38,7 +38,7 @@ def fit(request):
         indices=np.clip(np.searchsorted(edges,np.log(out['D']),side='right')-1,0,q.bins-1)
         np.add.at(x,indices,out['A'])
     order=len(out['D'])
-    return clean_json(dict(schema_version="1.0",software_version="0.2.0",method=q.method,
+    return clean_json(dict(schema_version="1.0",software_version="0.2.1",method=q.method,
         D=out['D'],A=out['A'],X=x,logD_edges=edges,prediction=out['prediction'],
         ppm=ppm[mask],selected_frequency_indices=np.flatnonzero(mask),mask=mask,
         spectral_support=out['support'],selected_rank=order,

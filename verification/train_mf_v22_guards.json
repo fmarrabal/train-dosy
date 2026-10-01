@@ -1,0 +1,977 @@
+{
+  "protocol": "signed-v2.2",
+  "matlab_version": "26.1.0.3251617 (R2026a) Update 2",
+  "checks": [
+    {
+      "name": "shared_1_protocol",
+      "passed": true
+    },
+    {
+      "name": "shared_1_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "shared_1_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "shared_1_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "shared_1_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "shared_1_input_preserved",
+      "passed": true
+    },
+    {
+      "name": "shared_1_feasible",
+      "passed": true
+    },
+    {
+      "name": "shared_1_residual_monotone",
+      "passed": true
+    },
+    {
+      "name": "shared_1_predictive_rank",
+      "passed": true
+    },
+    {
+      "name": "shared_1_truth_accuracy",
+      "passed": true
+    },
+    {
+      "name": "shared_1_noise_and_grid_compatible",
+      "passed": true
+    },
+    {
+      "name": "shared_2_protocol",
+      "passed": true
+    },
+    {
+      "name": "shared_2_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "shared_2_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "shared_2_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "shared_2_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "shared_2_input_preserved",
+      "passed": true
+    },
+    {
+      "name": "shared_2_feasible",
+      "passed": true
+    },
+    {
+      "name": "shared_2_residual_monotone",
+      "passed": true
+    },
+    {
+      "name": "shared_2_predictive_rank",
+      "passed": true
+    },
+    {
+      "name": "shared_2_truth_accuracy",
+      "passed": true
+    },
+    {
+      "name": "shared_2_noise_and_grid_compatible",
+      "passed": true
+    },
+    {
+      "name": "shared_3_protocol",
+      "passed": true
+    },
+    {
+      "name": "shared_3_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "shared_3_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "shared_3_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "shared_3_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "shared_3_input_preserved",
+      "passed": true
+    },
+    {
+      "name": "shared_3_feasible",
+      "passed": true
+    },
+    {
+      "name": "shared_3_residual_monotone",
+      "passed": true
+    },
+    {
+      "name": "shared_3_predictive_rank",
+      "passed": true
+    },
+    {
+      "name": "shared_3_truth_accuracy",
+      "passed": true
+    },
+    {
+      "name": "shared_3_noise_and_grid_compatible",
+      "passed": true
+    },
+    {
+      "name": "scaled_protocol",
+      "passed": true
+    },
+    {
+      "name": "scaled_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "scaled_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "scaled_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "scaled_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "known_sigma_scale_invariance",
+      "passed": true
+    },
+    {
+      "name": "unknown_sigma_protocol",
+      "passed": true
+    },
+    {
+      "name": "unknown_sigma_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "unknown_sigma_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "unknown_sigma_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "unknown_sigma_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "unknown_sigma_never_validates_model",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_1_protocol",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_1_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_1_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_1_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_1_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_1_rejected_against_noise",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_1_boundary_reported",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_2_protocol",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_2_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_2_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_2_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_2_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_2_rejected_against_noise",
+      "passed": true
+    },
+    {
+      "name": "outside_grid_2_boundary_reported",
+      "passed": true
+    },
+    {
+      "name": "pure_noise_protocol",
+      "passed": true
+    },
+    {
+      "name": "pure_noise_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "pure_noise_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "pure_noise_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "pure_noise_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "pure_noise_selects_null",
+      "passed": true
+    },
+    {
+      "name": "pure_noise_has_no_diffusion_estimate",
+      "passed": true
+    },
+    {
+      "name": "zero_1_columns_protocol",
+      "passed": true
+    },
+    {
+      "name": "zero_1_columns_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "zero_1_columns_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "zero_1_columns_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "zero_1_columns_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "zero_1_columns_null",
+      "passed": true
+    },
+    {
+      "name": "zero_1_columns_no_diffusion",
+      "passed": true
+    },
+    {
+      "name": "zero_3_columns_protocol",
+      "passed": true
+    },
+    {
+      "name": "zero_3_columns_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "zero_3_columns_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "zero_3_columns_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "zero_3_columns_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "zero_3_columns_null",
+      "passed": true
+    },
+    {
+      "name": "zero_3_columns_no_diffusion",
+      "passed": true
+    },
+    {
+      "name": "negative_baseline_protocol",
+      "passed": true
+    },
+    {
+      "name": "negative_baseline_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "negative_baseline_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "negative_baseline_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "negative_baseline_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "negative_baseline_rejected",
+      "passed": true
+    },
+    {
+      "name": "auto_false_requires_explicit_rank",
+      "passed": true
+    },
+    {
+      "name": "fixed_rank_protocol",
+      "passed": true
+    },
+    {
+      "name": "fixed_rank_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "fixed_rank_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "fixed_rank_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "fixed_rank_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "fixed_rank_does_not_select_automatically",
+      "passed": true
+    },
+    {
+      "name": "noiseless_protocol",
+      "passed": true
+    },
+    {
+      "name": "noiseless_success_requires_all_guards",
+      "passed": true
+    },
+    {
+      "name": "noiseless_rank_consistency",
+      "passed": true
+    },
+    {
+      "name": "noiseless_resolved_rank_is_active",
+      "passed": true
+    },
+    {
+      "name": "noiseless_no_chemical_identification_claim",
+      "passed": true
+    },
+    {
+      "name": "noiseless_without_sigma_is_not_physical_validation",
+      "passed": true
+    },
+    {
+      "name": "inactive_rank_is_not_resolved",
+      "passed": true
+    },
+    {
+      "name": "subnormal_tail_positive_finite_solution",
+      "passed": true
+    },
+    {
+      "name": "subnormal_tail_initialization_guard",
+      "passed": true
+    },
+    {
+      "name": "subnormal_tail_forward_fit",
+      "passed": true
+    },
+    {
+      "name": "invalid_sigma_rejected",
+      "passed": true
+    }
+  ],
+  "checks_passed": true,
+  "check_count": 104,
+  "shared_profiles": [
+    {
+      "true_rank": 1,
+      "max_mean_D_relative_error": 0.00032892841518583626,
+      "clean_held_out_relative_error": 0.00031426337803120032,
+      "diagnostics": {
+        "protocol": "signed-v2.2",
+        "status": "train_mf_requires_review",
+        "success": false,
+        "numerical_converged": false,
+        "model_compatible": true,
+        "rank_selection_resolved": true,
+        "selected_rank": 1,
+        "active_rank": 1,
+        "boundary_hit": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "relative_residual": 0.0013890037491392521,
+        "residual": 0.011073633368689067,
+        "nnls_residual": 0.010376237679341786,
+        "residual_target": 0.010895049563308877,
+        "exit_reason": "stagnated_before_target",
+        "seed_failures": 0,
+        "subproblem_failures": 0,
+        "d_mean": [
+          2.2351947882342859E-10,
+          2.2351947882342864E-10,
+          2.2351947882342859E-10,
+          2.2351947882342861E-10,
+          2.2351947882342859E-10,
+          2.2351947882342864E-10
+        ],
+        "d_mode": [
+          2.2606996247306466E-10,
+          2.2606996247306466E-10,
+          2.2606996247306466E-10,
+          2.2606996247306466E-10,
+          2.2606996247306466E-10,
+          2.2606996247306466E-10
+        ]
+      }
+    },
+    {
+      "true_rank": 2,
+      "max_mean_D_relative_error": 0.018342486843919037,
+      "clean_held_out_relative_error": 0.0004374492599769567,
+      "diagnostics": {
+        "protocol": "signed-v2.2",
+        "status": "train_mf_requires_review",
+        "success": false,
+        "numerical_converged": false,
+        "model_compatible": true,
+        "rank_selection_resolved": true,
+        "selected_rank": 2,
+        "active_rank": 2,
+        "boundary_hit": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "relative_residual": 0.001526897842498833,
+        "residual": 0.017032579371047431,
+        "nnls_residual": 0.016216115317673297,
+        "residual_target": 0.01702692108355696,
+        "exit_reason": "stagnated_before_target",
+        "seed_failures": 0,
+        "subproblem_failures": 0,
+        "d_mean": [
+          2.2769427704080086E-10,
+          2.2750483047626278E-10,
+          2.2688788445822991E-10,
+          2.2662033933721471E-10,
+          2.2662033933721453E-10,
+          2.27259418629344E-10,
+          7.622351643311974E-10,
+          7.6321290598323579E-10,
+          7.6266498688961109E-10,
+          6.5967440504787529E-10,
+          6.792449819968239E-10,
+          6.66906134668511E-10
+        ],
+        "d_mode": [
+          2.1648882814389085E-10,
+          2.1648882814389085E-10,
+          2.1648882814389085E-10,
+          2.1648882814389085E-10,
+          2.1648882814389085E-10,
+          2.1648882814389085E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10
+        ]
+      }
+    },
+    {
+      "true_rank": 3,
+      "max_mean_D_relative_error": 0.01890065806522534,
+      "clean_held_out_relative_error": 0.00051182264288533329,
+      "diagnostics": {
+        "protocol": "signed-v2.2",
+        "status": "train_mf_requires_review",
+        "success": false,
+        "numerical_converged": false,
+        "model_compatible": true,
+        "rank_selection_resolved": true,
+        "selected_rank": 3,
+        "active_rank": 3,
+        "boundary_hit": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "relative_residual": 0.0017194969463524888,
+        "residual": 0.020915500891165124,
+        "nnls_residual": 0.019819285647812292,
+        "residual_target": 0.020810249930202911,
+        "exit_reason": "stagnated_before_target",
+        "seed_failures": 0,
+        "subproblem_failures": 0,
+        "d_mean": [
+          2.2319010048001858E-10,
+          2.2530285413447803E-10,
+          2.239806837399174E-10,
+          2.2781908023259759E-10,
+          2.2575964472414907E-10,
+          2.2364118762638586E-10,
+          7.673351414038954E-10,
+          7.6459552995757966E-10,
+          7.6477486133161993E-10,
+          7.6037260506033265E-10,
+          7.6640052183584114E-10,
+          7.60684713557135E-10,
+          2.5376062747637439E-9,
+          2.5386881177892584E-9,
+          2.5378531234741422E-9,
+          1.8787506251050029E-9,
+          1.9859071510675309E-9,
+          1.9202442178258196E-9
+        ],
+        "d_mode": [
+          2.21227532767346E-10,
+          2.21227532767346E-10,
+          2.21227532767346E-10,
+          2.21227532767346E-10,
+          2.21227532767346E-10,
+          2.21227532767346E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          7.4378190621769754E-10,
+          2.4470810627163573E-9,
+          2.4470810627163573E-9,
+          2.4470810627163573E-9,
+          2.4470810627163573E-9,
+          2.4470810627163573E-9,
+          2.4470810627163573E-9
+        ]
+      }
+    }
+  ],
+  "boundary": [
+    {
+      "true_D": 5.0000000000000005E-12,
+      "mean_D": [
+        2.0750268945856308E-11,
+        2.0750268945856298E-11,
+        2.0750268945856308E-11,
+        2.0750268945856305E-11
+      ],
+      "rmse_in_noise_units": 165.47151462053642,
+      "diagnostics": {
+        "protocol": "signed-v2.2",
+        "status": "train_mf_requires_review",
+        "success": false,
+        "numerical_converged": true,
+        "model_compatible": false,
+        "rank_selection_resolved": true,
+        "selected_rank": 1,
+        "active_rank": 1,
+        "boundary_hit": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "relative_residual": 0.056803057241173793,
+        "residual": 0.48638493334296068,
+        "nnls_residual": 0.46387493597984125,
+        "residual_target": 0.48706868277883331,
+        "exit_reason": "residual_target",
+        "seed_failures": 0,
+        "subproblem_failures": 0,
+        "d_mean": [
+          2.0750268945856308E-11,
+          2.0750268945856298E-11,
+          2.0750268945856308E-11,
+          2.0750268945856305E-11
+        ],
+        "d_mode": [
+          2.0000000000000002E-11,
+          2.0000000000000002E-11,
+          2.0000000000000002E-11,
+          2.0000000000000002E-11
+        ]
+      }
+    },
+    {
+      "true_D": 8E-9,
+      "mean_D": [
+        4.8881423222992056E-9,
+        4.8881423222992056E-9,
+        4.8881423222992073E-9,
+        4.8881423222992064E-9
+      ],
+      "rmse_in_noise_units": 135.7029388121656,
+      "diagnostics": {
+        "protocol": "signed-v2.2",
+        "status": "train_mf_requires_review",
+        "success": false,
+        "numerical_converged": true,
+        "model_compatible": false,
+        "rank_selection_resolved": true,
+        "selected_rank": 1,
+        "active_rank": 1,
+        "boundary_hit": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "relative_residual": 0.15932079627306803,
+        "residual": 0.39888354802311932,
+        "nnls_residual": 0.38029651638583878,
+        "residual_target": 0.3993113422051307,
+        "exit_reason": "residual_target",
+        "seed_failures": 0,
+        "subproblem_failures": 0,
+        "d_mean": [
+          4.8881423222992056E-9,
+          4.8881423222992056E-9,
+          4.8881423222992073E-9,
+          4.8881423222992064E-9
+        ],
+        "d_mode": [
+          4.9999999999999993E-9,
+          4.9999999999999993E-9,
+          4.9999999999999993E-9,
+          4.9999999999999993E-9
+        ]
+      }
+    }
+  ],
+  "null_data": [
+    {
+      "protocol": "signed-v2.2",
+      "status": "no_signal_supported",
+      "success": true,
+      "numerical_converged": true,
+      "model_compatible": true,
+      "rank_selection_resolved": true,
+      "selected_rank": 0,
+      "active_rank": 0,
+      "boundary_hit": false,
+      "relative_residual": 0,
+      "residual": 0,
+      "nnls_residual": 0,
+      "residual_target": 0,
+      "exit_reason": "closed_form_null",
+      "seed_failures": 0,
+      "subproblem_failures": 0,
+      "d_mean": null,
+      "d_mode": null
+    },
+    {
+      "protocol": "signed-v2.2",
+      "status": "no_signal_supported",
+      "success": true,
+      "numerical_converged": true,
+      "model_compatible": true,
+      "rank_selection_resolved": true,
+      "selected_rank": 0,
+      "active_rank": 0,
+      "boundary_hit": [
+        false,
+        false,
+        false
+      ],
+      "relative_residual": 0,
+      "residual": 0,
+      "nnls_residual": 0,
+      "residual_target": 0,
+      "exit_reason": "closed_form_null",
+      "seed_failures": 0,
+      "subproblem_failures": 0,
+      "d_mean": [
+        null,
+        null,
+        null
+      ],
+      "d_mode": [
+        null,
+        null,
+        null
+      ]
+    }
+  ],
+  "pure_noise": {
+    "protocol": "signed-v2.2",
+    "status": "no_signal_supported",
+    "success": true,
+    "numerical_converged": true,
+    "model_compatible": true,
+    "rank_selection_resolved": true,
+    "selected_rank": 0,
+    "active_rank": 0,
+    "boundary_hit": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "relative_residual": 1,
+    "residual": 0.13475150069009378,
+    "nnls_residual": 0.13255112809838121,
+    "residual_target": 0.13917868450330026,
+    "exit_reason": "closed_form_null",
+    "seed_failures": 0,
+    "subproblem_failures": 0,
+    "d_mean": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "d_mode": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "negative_baseline": {
+    "protocol": "signed-v2.2",
+    "status": "train_mf_requires_review",
+    "success": false,
+    "numerical_converged": true,
+    "model_compatible": false,
+    "rank_selection_resolved": true,
+    "selected_rank": 0,
+    "active_rank": 0,
+    "boundary_hit": [
+      false,
+      false,
+      false
+    ],
+    "relative_residual": 1,
+    "residual": 8.48528137423857,
+    "nnls_residual": 8.48528137423857,
+    "residual_target": 8.909545442950499,
+    "exit_reason": "closed_form_null",
+    "seed_failures": 0,
+    "subproblem_failures": 0,
+    "d_mean": [
+      null,
+      null,
+      null
+    ],
+    "d_mode": [
+      null,
+      null,
+      null
+    ]
+  },
+  "unknown_sigma": {
+    "protocol": "signed-v2.2",
+    "status": "train_mf_requires_review",
+    "success": false,
+    "numerical_converged": false,
+    "model_compatible": null,
+    "rank_selection_resolved": false,
+    "selected_rank": 1,
+    "active_rank": 1,
+    "boundary_hit": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "relative_residual": 0.0013890037491392521,
+    "residual": 0.011073633368689067,
+    "nnls_residual": 0.010376237679341786,
+    "residual_target": 0.010895049563308877,
+    "exit_reason": "stagnated_before_target",
+    "seed_failures": 0,
+    "subproblem_failures": 0,
+    "d_mean": [
+      2.2351947882342859E-10,
+      2.2351947882342864E-10,
+      2.2351947882342859E-10,
+      2.2351947882342861E-10,
+      2.2351947882342859E-10,
+      2.2351947882342864E-10
+    ],
+    "d_mode": [
+      2.2606996247306466E-10,
+      2.2606996247306466E-10,
+      2.2606996247306466E-10,
+      2.2606996247306466E-10,
+      2.2606996247306466E-10,
+      2.2606996247306466E-10
+    ]
+  },
+  "fixed_rank": {
+    "protocol": "signed-v2.2",
+    "status": "train_mf_requires_review",
+    "success": false,
+    "numerical_converged": false,
+    "model_compatible": true,
+    "rank_selection_resolved": false,
+    "selected_rank": 1,
+    "active_rank": 1,
+    "boundary_hit": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "relative_residual": 0.0013890043329906265,
+    "residual": 0.011073638023360493,
+    "nnls_residual": 0.010376237679341817,
+    "residual_target": 0.010895049563308907,
+    "exit_reason": "stagnated_before_target",
+    "seed_failures": 0,
+    "subproblem_failures": 0,
+    "d_mean": [
+      2.2351951770590895E-10,
+      2.2351951770590892E-10,
+      2.2351951770590885E-10,
+      2.2351951770590897E-10,
+      2.2351951770590892E-10,
+      2.235195177059089E-10
+    ],
+    "d_mode": [
+      2.2606996247306456E-10,
+      2.2606996247306456E-10,
+      2.2606996247306456E-10,
+      2.2606996247306456E-10,
+      2.2606996247306456E-10,
+      2.2606996247306456E-10
+    ]
+  },
+  "noiseless": {
+    "protocol": "signed-v2.2",
+    "status": "train_mf_requires_review",
+    "success": false,
+    "numerical_converged": false,
+    "model_compatible": null,
+    "rank_selection_resolved": true,
+    "selected_rank": 1,
+    "active_rank": 1,
+    "boundary_hit": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "relative_residual": 4.32365546341951E-5,
+    "residual": 0.00018037536206733134,
+    "nnls_residual": 4.6084713390367621E-5,
+    "residual_target": 4.838894905988601E-5,
+    "exit_reason": "stagnated_before_target",
+    "seed_failures": 1,
+    "subproblem_failures": 2,
+    "d_mean": [
+      7.0014811537288825E-10,
+      7.00148115372888E-10,
+      7.00148115372888E-10,
+      7.0014811537288825E-10
+    ],
+    "d_mode": [
+      6.9700284415323147E-10,
+      6.9700284415323147E-10,
+      6.9700284415323147E-10,
+      6.9700284415323147E-10
+    ]
+  },
+  "amplitude_scale_prediction_difference": 6.2752699369485552E-8,
+  "auto_false_error": "TRAInMF:FixedRank",
+  "subnormal_tail": {
+    "relative_residual": 0.00011485017679405475,
+    "fit": {
+      "converged": false,
+      "exit_reason": "maximum_iterations",
+      "nnls_residual": 0.00022682014280894517,
+      "residual_target": 0.00023816114994939245,
+      "roundoff_tolerance": 5.1946082394578141E-14,
+      "iterations": 2000,
+      "zero_initialization_guard": true,
+      "input_scale": 1,
+      "residual": 0.00026868550797665787
+    }
+  },
+  "scope": "Synthetic numerical and diagnostic regression; no experimental or chemical validation"
+}

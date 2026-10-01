@@ -26,7 +26,16 @@ for j=1:numel(names)
     end
 end
 if isfield(options,'auto_r')
-    if options.auto_r,options.n_components='auto';end
+    validateattributes(options.auto_r,{'logical','numeric'},{'scalar','binary'});
+    if options.auto_r
+        assert(~isfield(options,'n_components')||isequal(options.n_components,'auto')|| ...
+            isequal(options.n_components,"auto"),'TRAInMF:FixedRank', ...
+            'auto_r=true conflicts with a fixed n_components.');
+        options.n_components='auto';
+    else
+        assert(isfield(options,'n_components')&&isnumeric(options.n_components), ...
+            'TRAInMF:FixedRank','auto_r=false requires an explicit integer n_components.');
+    end
     options=rmfield(options,'auto_r');
 end
 mask=true(1,size(Z,2));

@@ -1,0 +1,97 @@
+{
+  "protocol": "signed-v2.2",
+  "software_version": "0.2.1",
+  "created_utc": "2026-10-01T23:23:34.050487+00:00",
+  "previous_commit": "79271556db919df5c4c9d5e8a9408a14a439b8e4",
+  "implementation": [
+    {
+      "path": "matlab/TRAIn_DOSY_MF.m",
+      "sha256": "24019e7a0679c6815b3e764069dabf583f403240f5978c7dcb5a947709740e61",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/TRAIn_DOSY_MF_Signed.m",
+      "sha256": "46ee34af69f89ebbc6aa5832fbb87cd4a629bad69cca4c35748d35fdb3455ac4",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/+trainmf/solve.m",
+      "sha256": "bcf3fb754001b045ec124d4799050f7f5886988956d237454050574d9042baa8",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/+trainmf/train.m",
+      "sha256": "5d9f76436795a51ed6f7b6a5cc55b4a9b6101cd32600cb5e88d1924c9a00bdd9",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/+trainmf/nnls.m",
+      "sha256": "2b673b847008f091975d208f34cbe547e800ca18aef3b29f011102af6ece6252",
+      "local_copy_identical": true
+    },
+    {
+      "path": "matlab/run_mf_api.m",
+      "sha256": "52766e5a49c62f19ea96c50ea2110a8013bae7d65b5f650551879873574cd7e6"
+    },
+    {
+      "path": "src/train_dosy/mf.py",
+      "sha256": "0cf8a06137010a4f7eb02d414931561d46ca7e057d1c1e5d7bd4b3a506ce91c3"
+    },
+    {
+      "path": "src/train_dosy/inversion.py",
+      "sha256": "0938ea66eec419c66c83149392ac9f7547c0cdd0f8556bec7a6f672d9de6197e"
+    },
+    {
+      "path": "matlab/tests/test_train_mf_guards.m",
+      "sha256": "1e9a511cd2af51d2679123c5f539555953c843a2e667c2b9f4eb1a1ab804c951"
+    },
+    {
+      "path": "matlab/tests/test_train_mf_signed.m",
+      "sha256": "e3952ccf670afb56a7840b3b257ae1d3d2182a9880009f424c91724bf54b2e91"
+    },
+    {
+      "path": "matlab/tests/test_train_mf_v22_stress.m",
+      "sha256": "955877af664309bf2755cef6d6db1041f478fb3a0da27dca12f3949af58079ef"
+    },
+    {
+      "path": "tests/test_mf_signed.py",
+      "sha256": "8258dbd4db7837d01895331e8165687f661c5453ef581480570cd6224be7dd50"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "verification/train_mf_v22_guards.json",
+      "sha256": "c0a010601b76011dfb1bab6d091efb1f671cede2dce210a98c3621e851775ee6"
+    },
+    {
+      "path": "verification/train_mf_v22_recovery.json",
+      "sha256": "028fbadf8ff6a333254ec22d6de58fef5668c6fd683caeb8ccf9829a89e17367"
+    },
+    {
+      "path": "verification/train_mf_v22_stress.json",
+      "sha256": "75c0a62d7e17b9f3be85294e4d4e896e64ad413ea7c5eb648d9e9c8f286ef527"
+    },
+    {
+      "path": "verification/train_mf_v22_python_tests.xml",
+      "sha256": "0a2a5f6bedf41c714772464bffd37e9246220d5f3a9aead4be29bd581cb4057b"
+    }
+  ],
+  "frozen_reference_unchanged": true,
+  "independent_code_review": "No additional blocking issue found in numerical core and wrapper; limitations below remain.",
+  "corrections": [
+    "Null candidate; conditional held-out signal evidence when independent iid sigma is supplied",
+    "Noise-model and grid-boundary guards separate from numerical stopping",
+    "Training-only normalization during held-out candidate fitting",
+    "Explicit fixed-rank intent and separate nominal/active rank",
+    "Homogeneous inner scaling and positive relative initialization floor",
+    "API forwards sigma and preserves null/inactive-factor matrix dimensions"
+  ],
+  "limitations": [
+    "1/2/3 shared-profile guard examples still stagnate before the strict numerical target; success remains false.",
+    "Subnormal-tail example no longer collapses but reaches its iteration cap.",
+    "Known homogeneous iid Gaussian noise is an assumption, not experimental calibration.",
+    "Boundary warnings do not extend the grid or recover out-of-grid diffusion.",
+    "Predictive rank is not chemical identification or proof of global optimization.",
+    "No new experimental data run or manuscript numerical result was produced."
+  ]
+}

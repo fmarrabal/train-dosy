@@ -1,6 +1,6 @@
 # Contrato de la API (v1)
 
-El nombre público del algoritmo es **TRAIn-MF**. Desde software 0.2.0, `TRAIn-MF` invoca la revisión con datos con signo; `MF-AUTO` conserva el solver restringido del artículo (`DOSY_MF_Auto`). Son protocolos numéricos explícitamente distintos dentro de la evolución del mismo método. Véase la [guía de corrección y migración](TRAIN_MF_SIGNED_ES.md).
+El nombre público del algoritmo es **TRAIn-MF**. El software 0.2.1 utiliza el protocolo `signed-v2.2` para `TRAIn-MF`; `MF-AUTO` conserva el solver restringido del artículo (`DOSY_MF_Auto`). Son protocolos numéricos explícitamente distintos dentro de la evolución del mismo método. Véase la [guía de corrección y migración](TRAIN_MF_SIGNED_ES.md).
 La inversión se realiza conjuntamente sobre las frecuencias seleccionadas. La API no acepta especie química, número verdadero de componentes, valor objetivo de difusión ni archivo de verdad de referencia.
 
 ## Arranque y llamada
@@ -20,7 +20,7 @@ En Windows PowerShell, usar curl.exe.
 | Y | Matriz real con signo: gradientes por frecuencias. Debe estar faseada; no recortar el ruido negativo. |
 | b | Factores físicos de atenuación distintos y no negativos, en s/m². No son simplemente G². |
 | ppm | Desplazamientos químicos distintos, uno por columna, ascendentes o descendentes. |
-| sigma | Desviación estándar positiva del ruido homogéneo conocido, en unidades de Y. |
+| sigma | Escalar positivo obligatorio: desviación estándar obtenida independientemente del residuo ajustado, en unidades de Y. El control de TRAIn-MF presupone ruido gaussiano iid homogéneo. |
 | method | RAI-S, DOME-S, MF-AUTO o TRAIn-MF. Los dos MF necesitan MATLAB configurado y con licencia. |
 | mask | Máscara booleana opcional; true incluye una frecuencia. Las excluidas no se estiman. |
 | diffusion_bounds | Intervalo positivo creciente en m²/s; defecto [1e-10, 1.5e-8]. |
@@ -36,9 +36,11 @@ La máscara explícita debe ser previa o calcularse sin datos de prueba externa 
 ## Resultados
 En los métodos atómicos, D contiene tasas fuera de malla; A tiene r por n_seleccionadas. X contiene **masa por bin**, con bins por n_seleccionadas. logD_edges son bordes en logaritmo natural de D en SI; X/diff(logD_edges) es densidad. prediction usa las tasas exactas, conserva el orden de gradientes y solo incluye las frecuencias seleccionadas.
 
-Ambos MF devuelven D_grid, X, S y A, con X=S A. Su rango cuenta factores predictivos compartidos, no especies químicas. MF-AUTO informa del residuo KKT. TRAIn-MF informa del protocolo `signed-v2.1` y diagnósticos de validación del rango y del residuo; su campo kkt es null, porque no calcula estacionariedad KKT conjunta. Sigma se usa al detectar señal, no como sustituto de la referencia NNLS del solver revisado. Revisar success y status antes de interpretar los resultados.
+Ambos MF devuelven D_grid, X, S y A, con X=S A. Su rango cuenta factores predictivos compartidos, no especies químicas. MF-AUTO informa del residuo KKT. TRAIn-MF informa del protocolo `signed-v2.2`; su campo kkt es null, porque no calcula estacionariedad KKT conjunta. Sus diagnósticos separan `numerical_converged`, `model_compatible`, `selected_rank`, `active_rank`, `rank_selection_resolved`, `boundary_hit` y `component_boundary_hit`. Los factores exactamente inactivos se eliminan de S/A, cuya dimensión de factores es `active_rank`; se mantiene `selected_rank` nominal y una discrepancia deja el resultado sin resolver. `candidate_numerical_converged` registra la parada separadamente: la selección predictiva puede usar candidatos finitos y activos que no alcanzaron su objetivo numérico. `success` exige superar todos los controles finales. La convergencia numérica sola no aprueba una D sesgada o incompatible.
 
-Ambos devuelven mask, selected_frequency_indices (índices desde cero), ppm, selected_rank, selection_mode, search_limit, search_limit_reached, units y software_version. El rango cero es válido en ventanas de ruido suministradas explícitamente; si el descubrimiento automático no detecta señal se devuelve 422.
+La API exige sigma y la pasa al detector, a la evidencia en validación contra el modelo nulo y al control independiente de compatibilidad residual de TRAIn-MF, con un umbral superior chi-cuadrado del 99% por defecto para N observaciones y errores gaussianos iid entre todas las celdas. Las señales espectrales subyacentes sí pueden estar correlacionadas: la hipótesis se refiere al ruido de medida. Sigma no sustituye la referencia numérica NNLS. El control de compatibilidad es conservador: no produce un valor p calibrado tras seleccionar el modelo ni demuestra identificabilidad. MATLAB directo permite omitir sigma: `model_compatible` queda NaN (null en JSON) y `success=false`. No convertir esa compatibilidad desconocida en verdadera. Con rango fijo en MATLAB, `rank_selection_applicable=false`, `rank_selection_resolved=false` y `success=false`. Si cambian las unidades de intensidad, escalar sigma junto con Y.
+
+Ambos devuelven mask, selected_frequency_indices (índices desde cero), ppm, selected_rank, selection_mode, search_limit, search_limit_reached, units y software_version. TRAIn-MF incluye r=0 en la selección automática. Un modelo nulo respaldado tiene X=0, S de dimensiones bins por 0, A de 0 por n_seleccionadas, predicción cero y media/moda de D indefinidas. JSON representa S como una lista de filas vacías y A como []; reconstruir la segunda dimensión de A con el número de frecuencias seleccionadas. `no_signal_supported` puede tener `success=true`: se acepta el modelo cero según esos controles, sin identificar un componente. Si el descubrimiento automático no detecta señal se devuelve 422.
 
 Los diagnósticos atómicos incluyen pérdidas de candidatos, soporte, estacionariedad, límites de difusión, precisión deficiente e incompatibilidad con el modelo atómico. No son intervalos de confianza química calibrados. Los diagnósticos no finitos se representan como null.
 

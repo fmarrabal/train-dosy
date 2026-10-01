@@ -1,6 +1,6 @@
 # API contract (v1)
 
-The public algorithm name is **TRAIn-MF**. Since software 0.2.0, identifier `TRAIn-MF` invokes the signed-data TRAIn revision; `MF-AUTO` preserves the frozen constrained manuscript solver (`DOSY_MF_Auto`). See the [correction and migration guide](TRAIN_MF_SIGNED_EN.md). These are explicitly different numerical protocols within the same method's development.
+The public algorithm name is **TRAIn-MF**. Software 0.2.1 uses protocol `signed-v2.2` for identifier `TRAIn-MF`; `MF-AUTO` preserves the frozen constrained manuscript solver (`DOSY_MF_Auto`). See the [correction and migration guide](TRAIN_MF_SIGNED_EN.md). These are explicitly different numerical protocols within the same method's development.
 The service performs joint inversion over selected frequencies. It does not receive a chemical identity, true rank, target diffusion value, or truth file.
 
 ## Run locally
@@ -21,7 +21,7 @@ On Windows PowerShell use curl.exe to avoid the legacy alias.
 | Y | Real signed phased data, rows = gradients, columns = acquired chemical shifts. Negative noise is retained. |
 | b | One distinct nonnegative value per row, in s/m². This is the physical attenuation factor, not raw gradient squared. |
 | ppm | Distinct chemical shifts, matching the columns, in either order. |
-| sigma | Positive known homogeneous noise standard deviation, in the same signal units as Y. |
+| sigma | Required positive scalar noise standard deviation measured independently of the fitted residual, in the same signal units as Y. The TRAIn-MF model check assumes homogeneous iid Gaussian noise. |
 | method | RAI-S (default), DOME-S, or MF-AUTO / TRAIn-MF with a configured licensed MATLAB backend. |
 | mask | Optional Boolean frequency mask. True means include. Excluded frequencies are not estimated. |
 | diffusion_bounds | Positive increasing pair, in m²/s. Default [1e-10, 1.5e-8]. |
@@ -37,9 +37,11 @@ An explicit mask must be predetermined or derived without external test data and
 ## Response
 Atomic output D contains off-grid diffusion coefficients; A has shape r by n_selected. X has shape bins by n_selected and stores **mass per bin**, never density. logD_edges gives natural-log SI diffusion cell boundaries; divide X by the corresponding log width to obtain a density. prediction has input-row order and selected-frequency columns and uses exact off-grid rates. It is not recomputed from rounded display bins.
 
-Both MF protocols output D_grid, X, S and A with X=S A; their predictive factor count is not the number of molecular species. MF-AUTO reports a KKT residual. TRAIn-MF reports protocol `signed-v2.1`, rank-validation and residual diagnostics; its KKT field is null because it does not calculate joint KKT stationarity. Sigma serves signal discovery, not the revised solver's numerical NNLS reference. A returned unresolved result must not be reported as a validated fit.
+Both MF protocols output D_grid, X, S and A with X=S A; their predictive factor count is not the number of molecular species. MF-AUTO reports a KKT residual. TRAIn-MF reports protocol `signed-v2.2`; its KKT field is null because it does not calculate joint KKT stationarity. Its diagnostics separate `numerical_converged`, `model_compatible`, `selected_rank`, `active_rank`, `rank_selection_resolved`, `boundary_hit` and `component_boundary_hit`. Exactly inactive factors are removed from S/A, whose factor dimension is `active_rank`; nominal `selected_rank` is retained and an activity mismatch leaves the result unresolved. `candidate_numerical_converged` records candidate stopping separately: the predictive selection can use finite active candidates that did not attain their numerical target. `success` requires all final checks to pass. Numerical convergence alone cannot approve a biased or incompatible diffusion estimate.
 
-Both return mask, selected_frequency_indices (zero-based), ppm, selected_rank, selection_mode, search_limit, search_limit_reached, units and software_version. A zero order is valid when no component is resolved in supplied noise frequencies. Automatic discovery with no selected frequencies returns 422 instead of claiming a zero-signal measurement.
+For TRAIn-MF, required API sigma is forwarded to signal discovery, held-out evidence against the null, and a separate residual-compatibility check, with a default 99% chi-square upper threshold for N observations under iid Gaussian errors across all cells. Correlated underlying spectral signals are allowed; this assumption concerns measurement noise. Sigma does not replace the numerical NNLS reference. The model check is a conservative lack-of-fit screen, not a calibrated post-selection p-value or proof of identifiability. Direct MATLAB also permits omitting sigma: then `model_compatible` is NaN (JSON null), and `success=false`. Unknown compatibility must never be coerced to true. Direct fixed-rank MATLAB results have `rank_selection_applicable=false`, `rank_selection_resolved=false` and `success=false`. Scale sigma together with Y when changing intensity units.
+
+Both return mask, selected_frequency_indices (zero-based), ppm, selected_rank, selection_mode, search_limit, search_limit_reached, units and software_version. TRAIn-MF includes the null model r=0 in automatic selection. A supported zero rank has X=0, S of shape bins by 0, A of shape 0 by n_selected, zero prediction, and undefined D mean/mode. JSON represents S as a list of empty rows and A as []; reconstruct A's second dimension from the number of selected frequencies. A `no_signal_supported` status may have `success=true`, meaning that the null model passed the stated checks; it does not identify a component. Automatic discovery with no selected frequencies returns 422 instead of claiming a zero-signal measurement.
 
 Atomic diagnostics include candidate losses, support decisions, stationarity, boundary hits, poor rate precision and atomic-model mismatch. The conditional score and local pseudoinverse uncertainty are not calibrated chemical confidence intervals. Nonfinite diagnostic values serialize as null; arrays with physical inputs never accept nonfinite values.
 

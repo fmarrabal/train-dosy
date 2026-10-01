@@ -22,19 +22,24 @@ def fit_mf(q,y,b,ppm,mask):
         out=json.loads(target.read_text(encoding='utf-8'))
     # MATLAB JSON collapses singleton dimensions; restore the public schema.
     r=int(out['selected_rank']) if out.get('selected_rank') is not None else None
-    if r is None or not out.get('X'):
+    if r is None or r<0 or out.get('X') is None or np.asarray(out['X']).size==0:
         raise RuntimeError('MF automatic selection unresolved; no usable stationary candidate')
+    active=int(out.get('active_rank',out.get('diagnostics',{}).get('active_rank',r)))
+    if not 0<=active<=r:
+        raise RuntimeError('MATLAB MF returned an inconsistent active factor count')
     p=int(mask.sum())
     out['X']=np.asarray(out['X']).reshape(q.bins,p)
-    if r:
-        out['A']=np.asarray(out['A']).reshape(r,p)
-        out['S']=np.asarray(out['S']).reshape(q.bins,r)
-    else:out['A']=np.zeros((0,p))
+    # MATLAB serializes both nD-by-0 and 0-by-p matrices as []. Restore both
+    # sides of the null factorization; X=0 remains a usable rank-zero result.
+    # signed-v2.2 also removes exactly inactive factors while retaining the
+    # nominal selected rank for review. Frozen MF-AUTO keeps its prior rank.
+    out['A']=np.asarray(out['A']).reshape(active,p)
+    out['S']=np.asarray(out['S']).reshape(q.bins,active)
     out['D_grid']=np.asarray(out['D_grid']).ravel()
     if isinstance(out.get('kkt'),list) and not out['kkt']:
         out['kkt']=None  # MATLAB [] is not a nullable scalar for the C# SDK.
     out['prediction']=np.exp(-b[:,None]*out['D_grid'])@out['X']
-    out.update(schema_version='1.0',software_version='0.2.0',method=q.method,
+    out.update(schema_version='1.0',software_version='0.2.1',method=q.method,
         ppm=ppm[mask],mask=mask,selected_frequency_indices=np.flatnonzero(mask),
         selection_mode='automatic',search_limit=q.max_components,search_limit_reached=r==q.max_components,
         units=dict(b='s/m^2',D_grid='m^2/s',X='signal mass per diffusion node'),
