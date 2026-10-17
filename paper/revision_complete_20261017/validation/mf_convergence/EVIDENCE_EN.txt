@@ -1,0 +1,134 @@
+CONTROLLED TRAIN-MF CONVERGENCE AND RUNTIME CURVATURE STUDY
+Status: COMPLETE. All 36 fits and the completed-output replay audit are recorded; 14/36 selected fits pass the declared KKT tolerance.
+
+The preserved baseline is matlab/reference/mf_robust, version 5.1. It is the
+regularized profile-factorization reference, not signed-v2.2. The archived
+illustration audited previously recorded solver version 5.0; the new study
+does not relabel that saved output or retroactively instrument it.
+
+SOURCE AND INSTRUMENTATION
+source_frozen retains the original entry point, all mfrobust helpers and the
+dosyv4 preprocessing/regularizer dependency. instrumented contains a separate
+DOSY_MF_Runtime entry point. The objective, gradient, NNLS, feasibility tests,
+warm stop, multistart selection and SQP settings remain those of reference 5.1.
+The experimental control changes the alternating warm cap to 1, 4, 8 or 16.
+The original objective-plus-KKT early stop still applies, so caps are not
+guaranteed actual iteration counts. All arms then have the same SQP cap 250.
+
+For the specified interior second-density-difference regularizer, the
+zero-mass curvature-null direction is v_h=w_h(x_h-weighted_mean(x)). Conditional
+injectivity is equivalent to Kv nonzero and full row rank of A. The runtime
+checks the dimensionless kernel ratio ||Kv||/(||K||_2 ||v||), amplitude singular
+value ratio and operator/mass residuals at tolerance 1e-10. It checks before
+each profile block and at reported SQP iterates (including iteration zero),
+with logs retained per start.
+An unresolved profile-block condition routes that block to the constrained
+interior-point least-squares solver, without altering its objective or adding
+a penalty. The original objective descent and feasibility checks remain in
+force. SQP retains its profiled objective and records unresolved conditions;
+it does not require uniqueness of the conditional S block. Numerical KKT
+success, conditional-injectivity support and physical identification remain
+different statements. The last is never claimed here.
+The reduction is specific to this interior second-difference L and positive
+lambda_S. It is not a general diagnostic for arbitrary L or lambda_S=0, nor
+does support at finitely many iterates establish a uniform coercivity bound.
+
+Five deterministic tests passed: independent amplitude rows, duplicated rows,
+a constant acquisition kernel, zero amplitudes, and an actual duplicated-row
+profile update that triggered the interior-point fallback and preserved
+feasibility and descent. A separate rank1/SNR100/warm8 run of the uninstrumented
+frozen solver exactly reproduces the instrumented prediction (relative
+difference zero), objective and KKT. The original source tree is unchanged.
+
+EXPERIMENTAL DESIGN
+Nine matrices cross generating profile count 1/2/3 and SNR 50/100/200. Profiles
+are finite-width lognormal-like masses (log standard deviation 0.14) on the
+same 256-node [0.1,15]*1e-9 m^2/s grid, with centers 0.7,2.3,7.1*1e-9 m^2/s.
+There are 24 predefined signal-bearing spectral channels spanning 7.2--8.2ppm,
+correlated component spectra and overlapping peaks. All channels are retained;
+there is no truth-dependent signal selection during inversion. Thirty-two
+acquisitions use b=2.2e9*(i/31)^1.7. Every fourth acquisition is external; 24
+rows are fitted and eight are reserved. Noise is iid Gaussian with sigma=1/SNR,
+with maximum true unattenuated total signal normalized to one. Signed noisy
+observations are retained. Configuration, seeds and all inputs were saved
+before any inverse fit.
+
+For each input, all four warm caps use identical data, the same greedy first
+start and the same seeded random second start, lambda_S=lambda_A=1e-8,
+objective tolerance1e-9, KKT tolerance1e-6, inner tolerance1e-10 and inner cap2000.
+The generating factor count is supplied deliberately to isolate numerical
+optimization. This is not validation of automatic factor selection. Each fit
+retains both starts, pre-/post-SQP KKT and objective, profile/amplitude arrays,
+training prediction, external prediction error, optimizer flags, all runtime
+curvature checks, CPU time and wall time. Numerical failures are retained.
+No tolerance, cap or input was changed after inspecting convergence outcomes.
+
+REPRODUCTION
+Use MATLAB R2026a with Optimization Toolbox. Add this folder to the MATLAB
+path; run test_runtime_curvature for the five unit tests. Existing inputs and
+config are immutable: prepare_mf_experiment refuses to replace config.json.
+Use run_mf_case('rank3_snr100',8) for one case, run_mf_batch([1 2]) for ranks1/2,
+and run_rank3_queue in independent singleCompThread processes for rank3. The
+queue uses atomic claim files to prevent duplicate fits. Existing result MAT
+files are retained. Use source_frozen in a fresh MATLAB process for regression
+with test_frozen_equivalence('rank1_snr100'). Use audit_completed_outputs after
+all36 fits exist. Python aggregate_mf.py summarizes all results, including
+failures, and writes the final table/figure; plot_mf_design.py renders the inputs.
+For an independent repeat, copy the .m/.py drivers and source_frozen/instrumented
+directories to a fresh directory, without config.json, inputs, results or
+queue_claims. Run prepare_mf_experiment there, then run_mf_batch([1 2 3]) for a
+serial full run. Run audit_completed_outputs and aggregate_mf.py afterwards.
+The immutable original directory is retained. Alternatively the queued run
+uses no more than three MATLAB -singleCompThread workers. Claim files are
+run-coordination state, not evidence that a fit completed; completion requires
+the corresponding result MAT/JSON.
+
+An initial preparation attempt failed in MATLAB structure-array assignment
+before any inversion. The log and initial configuration are retained. Only
+record construction was corrected; the same declared scientific inputs were
+then frozen successfully. instrument_copy.py reconstructs the instrumented
+source from source_frozen; a separate rebuild was checked text-identical to
+every executing MATLAB file. Do not call the uninstrumented entry point from
+inside instrumented, whose helper package includes the new monitor: use the
+source_frozen tree for the original solver and DOSY_MF_Runtime for the new one.
+source_hashes.json retains the initial preparation snapshot, including an
+instrumented draft. instrumented_start_hashes.json identifies the executing
+instrumented source frozen before the study. provenance_audit.json checks the
+original files against the first manifest and the executed files against the
+second; final_manifest.json hashes the complete delivered evidence set.
+
+LIMITS
+Only one noise realization per rank/SNR combination is included. Shared truth
+families and paired warm policies are not independent experimental replicates.
+Finite-budget KKT diagnostics do not prove factor convergence, global
+optimality, a universally sufficient warm count, chemical identities or
+experimental DOSY performance. Parallel-process wall times depend on contention;
+CPU times and actual iteration counts are also retained. No GPU was used.
+
+FINAL EXECUTED OUTCOMES
+
+Only 1/72 warm-only starts pass the declared KKT tolerance. After the common SQP refinement, the selected fits pass in 3/9, 3/9, 4/9, 4/9 cases for caps 1, 4, 8 and 16, respectively; 48/72 starts terminate at the SQP iteration cap. SQP runs in 71/72 starts; any omitted refinement follows the original KKT rule. Across the nine paired inputs, warm-eight and warm-sixteen selected predictions differ by a median 0.0018 and maximum 0.0104 noise units on external rows, while their largest absolute relative objective difference is 0.0295%. Small predictive or objective differences do not replace the failed KKT checks. Eight warm sweeps are an initialization budget, and neither eight nor sixteen guarantees stationary termination under this finite SQP budget.
+
+The experiment records 14292 before-block/reported-SQP-iterate curvature checks, with 4 numerically unresolved conditions and 4 condition-triggered interior-point fallbacks. The final condition is supported for 72/72 starts. The targeted duplicate-row test exercises the fallback separately. Reevaluation of all 36 saved fits reproduces the stored pre-SQP/final objectives, KKT residuals and training-row predictions, checks common initializations and feasibility, and verifies monotonicity of saved objective histories at the original tolerance. This is a fresh-process audit of saved states, not a second execution of the optimizer or a reevaluation of every historical iterate. Runtime support and finite-budget stationarity are thus empirically different diagnostics. The four flagged checks arise in the same second initialization of the rank-three/SNR-200 input, once per warm cap; they are not four independent data realizations.
+
+
+
+Total summed CPU time: 10957.0 s. Total serial sum of per-fit wall times: 11518.1 s. These are not parallel-study elapsed time.
+
+The S-block least-squares solves returned 0 nonpositive optimizer flags. All returned starts remain feasible in the independent replay audit.
+
+Warm cap | warm-only KKT pass / starts | final selected KKT pass / fits | median CPU s | maximum selected KKT | median clean external RMSE/sigma
+
+1 | 0/18 | 3/9 | 152.0 | 4.67489e-05 | 0.274
+
+4 | 0/18 | 3/9 | 174.0 | 5.1496e-05 | 0.274229
+
+8 | 0/18 | 4/9 | 214.1 | 4.22702e-05 | 0.273726
+
+16 | 1/18 | 4/9 | 274.1 | 6.15639e-05 | 0.274697
+
+
+
+KKT pass is independently recomputed from the full constrained objective. It is not the same field as the SQP exit flag. Nonstationary outputs remain in objective and prediction summaries; no additional fitting or tolerance relaxation was used to remove failures.
+
+summary.json is the authoritative complete summary. all_starts.csv contains both starts and selection flags for all 36 fits. mf_results.tex is the manuscript fragment; convergence_kkt.pdf is the compact scientific figure. completed_output_audit.json records the replay, and provenance_audit.json verifies unchanged source trees.

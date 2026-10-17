@@ -1,0 +1,57 @@
+[
+  {
+    "file": "instrumented\\mf_original\\dosy_v4\\+dosyv4\\prepare.m",
+    "sha256": "8570904f549c0dca038a278f9509306048c91f706262e4126d45c3f12f7e4788",
+    "modified_utc": "2026-09-23T21:25:02.1214802Z"
+  },
+  {
+    "file": "instrumented\\mf_original\\dosy_v4\\+dosyv4\\regularizers.m",
+    "sha256": "0f502e07fd162545157045eb33624422b4aae9f2dce5dedc6ba0f9e9cf5879f4",
+    "modified_utc": "2026-09-23T21:09:42.3076998Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\DOSY_MF_Robust.m",
+    "sha256": "2ee942c911d6f6424dd8cec715ed48bbd65e4ded666f956d1da2abc1bf521ded",
+    "modified_utc": "2026-09-24T22:43:14.6658195Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\DOSY_MF_Runtime.m",
+    "sha256": "0347012d1107154d3256597907d3d8713f27edbb2934f38954bef2f4dbb28a4b",
+    "modified_utc": "2026-10-17T18:57:41.0311799Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\curvature_design.m",
+    "sha256": "9f0d7e3f31e4a9660a6ac75190313b6419bed03692c35f37e72ba9daf5892f64",
+    "modified_utc": "2026-10-17T18:55:49.1920550Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\curvature_report.m",
+    "sha256": "3aabbcbfe350db5c0820025bfbb3c4d8c9bc85838694a5c7dbc20768e92a4b48",
+    "modified_utc": "2026-10-17T18:57:00.4155126Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\evaluate.m",
+    "sha256": "06075cc330b0175b671ee3bdb60105db4cc96147b764340e9359654e00d7d3ac",
+    "modified_utc": "2026-09-24T22:05:18.7479420Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\lognormal_fit.m",
+    "sha256": "ea741e74c622be11e46bba1cb76fe8d0000b6aff989d493f0fb78d3a5d4be0c8",
+    "modified_utc": "2026-09-24T22:05:18.7484814Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\nnls_batch.m",
+    "sha256": "d223afaf9364794bfb059ed9796921d0b41113866c5b174c4dfacb6b6e250ded",
+    "modified_utc": "2026-09-24T22:05:18.7484814Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\profile_refine.m",
+    "sha256": "bde8d4ab9d30487f76546de1ec5da5782f4350906a06e3a0b7ddd8da3b0cc301",
+    "modified_utc": "2026-10-17T18:57:41.0311799Z"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\simplex_block.m",
+    "sha256": "e9d9404f1ea4b6af0a01b3289f6ecbb5260a8df83414bacd13319d1911521e12",
+    "modified_utc": "2026-10-17T18:57:00.4155126Z"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "index": 5,
+  "kind": "correlated",
+  "method": "RAI_S",
+  "scenario": "proportional",
+  "snr": 50,
+  "selected_channels": 80,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_005_proportional",
+    "scenario": "proportional",
+    "snr": 50,
+    "r_true": 3,
+    "w1_logD": 0.4744625187602782,
+    "test_clean_rmse_sigma": 0.27967847321485934,
+    "rank": 2,
+    "correct_rank": false,
+    "matched_components": 1,
+    "ghost_mass_fraction": 0.3753662757849579,
+    "spectral_leakage_fraction": 0.0,
+    "unmatched_mass_fraction": 0.3753662757849579,
+    "minority_rate_recovered": false,
+    "minority_support_recall": 0.0,
+    "test_observed_rmse_sigma": 0.9760798306690719,
+    "mass": 30.165734047739342,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 2.8917101138267303e-16,
+    "stationarity": 3.543949979597183e-08,
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 1.6526077000016812
+}

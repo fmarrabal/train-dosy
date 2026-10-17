@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "rank": 1,
+      "amplitude_relative_error": 2.565002867045945e-16
+    },
+    {
+      "rank": 2,
+      "amplitude_relative_error": 5.954705147709797e-16
+    },
+    {
+      "rank": 3,
+      "amplitude_relative_error": 9.721833505676925e-16
+    },
+    {
+      "rank": 4,
+      "amplitude_relative_error": 3.361017004110848e-15
+    }
+  ],
+  "passed": true,
+  "native_source_sha256": "0ccf66dad06572bc0f80eeef161e306993a2dce0e032810ddca0abe13cf44180",
+  "batch_source_sha256": "17c31f473f502be7027f46823d47f1f2190c5a1744ef90d70d81fe974d05398f"
+}

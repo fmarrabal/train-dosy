@@ -3,7 +3,7 @@
 ## ¿Por qué TRAIn-MF?
 **MF significa multifrecuencia**, de acuerdo con la cabecera original de `TRAIn_DOSY_MFV31`. Matemáticamente se implementa mediante factorización matricial no negativa, `Y ≈ K S A`: las columnas de `S` son perfiles de difusión compartidos y las filas de `A` describen su intensidad en las distintas frecuencias. Sigue siendo multifrecuencia si el rango seleccionado es uno. Un perfil puede ser ancho o multimodal; el rango no equivale al número de sustancias.
 
-**TRAIn-MF: extensión multifrecuencia de TRAIn mediante factorización matricial no negativa** es el nombre del algoritmo. La referencia actual con restricciones sustituye la iteración TRAIn interna original y no es numéricamente idéntica a V3.1. Se conservan los nombres de las funciones, los bytes del original, los núcleos numéricos y los resultados guardados. Consulta la [bibliografía ampliada](BIBLIOGRAPHY_ES.md).
+**TRAIn-MF: extensión multifrecuencia de TRAIn mediante factorización matricial no negativa** es el nombre del algoritmo. V2, la V3 depurada previa al artículo, V3.1 y la implementación actual con restricciones pertenecen al mismo método. La implementación actual mejora su optimización y sustituye la iteración TRAIn interna por las actualizaciones con restricciones aquí documentadas. Se conservan los nombres de las funciones, los bytes del original, los núcleos numéricos y los resultados guardados. Consulta la [bibliografía ampliada](BIBLIOGRAPHY_ES.md).
 
 El modelo es Y(i,l)=integral exp(-b_i D) d mu_l(D)+ruido. D es difusión. Convertirlo a peso molecular requiere una calibración justificada aparte.
 
@@ -52,10 +52,10 @@ Ejecuta `python paper/scripts/audit_manuscript.py` para comprobar medias guardad
 
 ### Diferencias que afectan a la interpretación
 
-- `lambdaSparse` de TRAIn-MFV31 añade sqrt(lambda) diag(sqrt(w)) al diseño: produce una penalización cuadrática ponderada, no L1 explícita. El recorte de pseudocurvas y las modificaciones de suavidad/pesos no equivalen al objetivo fijo actual de TRAIn-MF.
+- `lambdaSparse` en la revisión V3.1 de TRAIn-MF añade sqrt(lambda) diag(sqrt(w)) al diseño: produce una penalización cuadrática ponderada, no L1 explícita. El recorte de pseudocurvas y las modificaciones de suavidad/pesos no equivalen al objetivo fijo actual de TRAIn-MF.
 - El error estándar empírico pareado de TRAIn-MF difiere de la tolerancia de distancia predictiva gaussiana de RAI-S/DOME-S. Ninguno constituye una prueba calibrada del número de especies tras máscaras y selección adaptativas.
 - Un subproblema convexo puede tener mínimo único sin que lo tengan el árbol, la malla, los factores o las especies. La parametrización cuadrática puede tener gradiente cero sin cumplir KKT de NNLS.
-- El alcance ejecutable de la API sigue siendo el del apartado de reproducción. Formular variantes históricas no incorpora su implementación completa ni reentrenamiento al paquete. Se mantienen el software numérico, estimaciones guardadas, métricas y figuras.
+- La API conserva su alcance original. Las formulaciones por sí solas no prueban ejecución: el suplemento fechado identifica los estudios adicionales, sus fuentes y sus límites, mientras conserva el núcleo y el benchmark originales.
 
 ## Identificación
 Un conjunto finito de observaciones Laplace no identifica una medida positiva arbitraria. Pueden fallar las especies próximas, débiles, con espectros proporcionales, las fases/bases incorrectas y el ruido o intervalo mal especificados. Más bins no aportan información experimental. Acertar el rango es distinto de recuperar todas las tasas y de identificar sustancias.
@@ -68,5 +68,9 @@ Un conjunto finito de observaciones Laplace no identifica una medida positiva ar
 - MATLAB y backend opcional: cálculo TRAIn-MF nativo real, con licencia. La figura TRAIn-MF del manuscrito conserva el resultado anterior y su hash.
 - C#: cliente y CLI tipados para la API; no es otra implementación independiente ni otra validación científica.
 
-El entrenamiento neuronal y el rastreo completo de métodos históricos no forman parte de esta publicación de código seleccionada. Se conservan sus métricas citadas, sin prometer que este paquete reentrene esos modelos.
+La API original conserva sus métricas neuronales históricas. El suplemento fechado aporta por separado cinco entrenamientos, 120 problemas nuevos y el código congelado; no convierte todo el rastreo histórico en una comparación ejecutada.
 
+
+## Alcance del estudio numérico
+
+El estudio regularizado de TRAIn-MF fija el rango y varía los barridos previos antes de un presupuesto SQP común. Los 14/36 ajustes seleccionados que cumplen el umbral KKT no validan la selección automática de rango ni una regla de parada de ocho barridos. La monitorización comprueba una condición suficiente de inyectividad condicional para el regularizador especificado; no certifica identidad química. Esta entrada no sustituye signed-v2.2 ni el solver congelado de la API. El [suplemento fechado](VALIDATION_20261017_ES.md) incluye cinco entrenamientos neuronales y 120 problemas nuevos.

@@ -15,8 +15,20 @@ Algorithmic credit:
 - paper/Definitions retains MDPI's original LaTeX template notices.
   LICENSE does not replace third-party notices.
 - Research manuscripts and synthetic figures are author draft materials,
-  not a claim of journal acceptance or approval by a completed author list.
+  not a claim of journal acceptance.
 
 The frozen Python RAI/DOME research sources were supplied from the owner's
 local projects. The minimal initializer is documented in docs/PROVENANCE.md.
 No source implementation of MATLAB's proprietary lsqnonneg is redistributed.
+
+Dated validation supplement (17 October 2026):
+- SCORE/LOCODOSY Python translations retain GNAT GPL notices and attribution
+  in validation/experimental/vendor; preserve those notices with the code.
+- nmrglue 0.11 is supplied under its BSD license, retained with package metadata
+  in validation/experimental/public_mixture/vendor_runtime.
+- The external-comparison dependency diffusion-inversion is pinned separately;
+  its LICENSE, THIRD_PARTY_NOTICES.md, licenses/ and LOCODOSY_SOURCE_NOTICE.md
+  apply to its code. A source snapshot is not a new claim of authorship.
+- Public DOSY Toolbox observations are retrieved from their attributed upstream
+  archive rather than redistributed under an assumed data license.
+- Industrial measured spectra and private documents are not distributed.

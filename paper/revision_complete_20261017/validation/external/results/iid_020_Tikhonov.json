@@ -1,0 +1,43 @@
+{
+  "index": 20,
+  "kind": "iid",
+  "method": "Tikhonov",
+  "scenario": "close",
+  "snr": 200,
+  "selected_channels": 177,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_020_close",
+    "scenario": "close",
+    "snr": 200,
+    "r_true": 3,
+    "w1_logD": 0.20471649996153407,
+    "test_clean_rmse_sigma": 0.31934000900015125,
+    "test_observed_rmse_sigma": 1.0605665562582474
+  },
+  "diagnostics": {
+    "regularization": 10000.0,
+    "inner_validation_loss": [
+      [
+        0.03003235618525399,
+        0.01
+      ],
+      [
+        0.030032318851463805,
+        1.0
+      ],
+      [
+        0.030031094447286785,
+        100.0
+      ],
+      [
+        0.030028999678264133,
+        10000.0
+      ]
+    ],
+    "kkt": 2.030069723435446e-10
+  },
+  "error": null,
+  "seconds": 2.696458300022641
+}

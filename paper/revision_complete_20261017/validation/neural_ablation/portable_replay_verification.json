@@ -1,0 +1,37 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "seed": 172901,
+      "all_checkpoint_arrays_exact": true,
+      "original_sha256": "7d0b631385657aaa9a0133526ed8bb62709110292133b6af7c6066ac82b2eec1",
+      "replay_sha256": "7d0b631385657aaa9a0133526ed8bb62709110292133b6af7c6066ac82b2eec1"
+    },
+    {
+      "seed": 172902,
+      "all_checkpoint_arrays_exact": true,
+      "original_sha256": "be99609f8554951a904291f6a6eda60dadb909c01c8429dc8caf1f6e7dec658a",
+      "replay_sha256": "be99609f8554951a904291f6a6eda60dadb909c01c8429dc8caf1f6e7dec658a"
+    },
+    {
+      "seed": 172903,
+      "all_checkpoint_arrays_exact": true,
+      "original_sha256": "371047ed70ec960fb6444596435222816741cd81e27efa2cd7668f59e038e75d",
+      "replay_sha256": "371047ed70ec960fb6444596435222816741cd81e27efa2cd7668f59e038e75d"
+    },
+    {
+      "seed": 172904,
+      "all_checkpoint_arrays_exact": true,
+      "original_sha256": "5aaf57f3627d5d0f2f0f41d56079fd4c509b6c1e20712e711cc3bfc9877e2188",
+      "replay_sha256": "5aaf57f3627d5d0f2f0f41d56079fd4c509b6c1e20712e711cc3bfc9877e2188"
+    },
+    {
+      "seed": 172905,
+      "all_checkpoint_arrays_exact": true,
+      "original_sha256": "38d9eb265d1a2ba24cc64214f9cf41c7a2cffae11149a6407c7488137bdb4792",
+      "replay_sha256": "38d9eb265d1a2ba24cc64214f9cf41c7a2cffae11149a6407c7488137bdb4792"
+    }
+  ],
+  "scope": "All five CPU training checkpoints reproduced from the bundled immutable source and80traces. The720test fits have not been repeated.",
+  "adaptation": "Only the archive root path is replaced in a fresh runner; numerical code/settings/seeds unchanged."
+}

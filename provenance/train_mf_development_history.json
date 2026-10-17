@@ -1,0 +1,223 @@
+{
+  "checked_utc": "2026-09-26T12:13:44.776231+00:00",
+  "source_directory": "E:\\ARTICULOS-CIENTIFICOS\\20240905_OLIGOQUITOSANO\\CODIGO_MEJORADO",
+  "interpretation": "V2, consolidated pre-publication V3, and V3.1 are development revisions of the same TRAIn-MF method.",
+  "author_reported_duration": "Approximately one year of research and development, supplied by the corresponding author on 2026-09-26; not inferred from filesystem timestamps.",
+  "limitations": [
+    "V1 is mentioned in the V2 header; a separately identifiable V1 source was not located in this archive.",
+    "Modification timestamps describe these surviving snapshots, not first implementation or public release dates.",
+    "The May 2026 creation timestamps postdate January 2026 modifications and are consistent with copying.",
+    "The 2025 header in TRAIn_Improved.m is broader TRAIn development context, not a dated MF V1 source.",
+    "Several DOCX core dates are 2013 template metadata and are not used as development evidence.",
+    "Header change descriptions document stated intent; they are not new numerical validation."
+  ],
+  "exact_duplicate": [
+    "TRAIn_DOSY_MF.m",
+    "TRAIn_DOSY_MF_V3.m"
+  ],
+  "public_v31_matches_author_archive": true,
+  "files": [
+    {
+      "path": "TRAIn.m",
+      "sha256": "25be4da57bd9ce899baba898e1de72ff2eda8f90595663ebff8824d42db3205e",
+      "bytes": 8550,
+      "last_write_utc": "2026-01-12T12:38:00.305356+00:00",
+      "creation_utc": "2026-05-20T11:11:32.561292+00:00",
+      "header_evidence": [
+        {
+          "line": 28,
+          "text": "% 2025"
+        }
+      ]
+    },
+    {
+      "path": "TRAIn_Improved.m",
+      "sha256": "57dc34580567bb2e3da64592f9168e3b4b5426c3eedfea931778f983184ee126",
+      "bytes": 8559,
+      "last_write_utc": "2026-01-14T13:05:52.653349+00:00",
+      "creation_utc": "2026-05-20T11:11:32.725781+00:00",
+      "header_evidence": [
+        {
+          "line": 28,
+          "text": "% 2025"
+        }
+      ]
+    },
+    {
+      "path": "TRAIn_DOSY.m",
+      "sha256": "3aa704ec3f8a3b91e77b2eb75b09b2d4eadeebcd6ab2637961a3c1e863d37ac3",
+      "bytes": 16518,
+      "last_write_utc": "2026-01-16T22:53:29.483596+00:00",
+      "creation_utc": "2026-05-20T11:11:32.561292+00:00",
+      "header_evidence": []
+    },
+    {
+      "path": "TRAIn_DOSY_MFV2.m",
+      "sha256": "c428f687bfa854e9a72f19dd7befdf239e04ea341102ffd8f2db13e34edaf4b8",
+      "bytes": 37944,
+      "last_write_utc": "2026-01-17T23:46:55.632180+00:00",
+      "creation_utc": "2026-05-20T11:11:32.643806+00:00",
+      "header_evidence": [
+        {
+          "line": 1,
+          "text": "function [DOSY_X, D_space, info] = TRAIn_DOSY_MFV2(Z, G2, D_params, options)"
+        },
+        {
+          "line": 2,
+          "text": "%TRAIn_DOSY_MF Multi-frequency multi-component DOSY inversion (V2 - IMPROVED)"
+        },
+        {
+          "line": 4,
+          "text": "% Modelo: Z ≈ K·S·A = Σ_k (K·h_k)·a_k^T"
+        },
+        {
+          "line": 6,
+          "text": "% Esta versión corrige varios problemas de la V1:"
+        },
+        {
+          "line": 27,
+          "text": "% Versión: 2.0 (Enero 2026)"
+        },
+        {
+          "line": 34,
+          "text": "info.version = '2.0';"
+        }
+      ]
+    },
+    {
+      "path": "TRAIn_DOSY_MF.m",
+      "sha256": "9fa86991541ac8f57cddcaac9ca1ef1a56e3065dddca49074a4edefbdfb9fdf1",
+      "bytes": 27271,
+      "last_write_utc": "2026-01-17T23:56:18.643322+00:00",
+      "creation_utc": "2026-05-20T11:11:32.630666+00:00",
+      "header_evidence": [
+        {
+          "line": 2,
+          "text": "%TRAIn_DOSY_MF Multi-frequency / multi-component DOSY inversion (MF, overlap-aware) - V3."
+        },
+        {
+          "line": 4,
+          "text": "%   Model: Z ≈ K*S*A = Σ_k (K*h_k) a_k^T"
+        },
+        {
+          "line": 7,
+          "text": "%   V3 is a consolidation of:"
+        },
+        {
+          "line": 8,
+          "text": "%     - \"MF_fixed\" stability (adaptive sparse weights, robust reinit, reflect smoothing, hold-out r selection)"
+        },
+        {
+          "line": 9,
+          "text": "%     - \"MFV2\" diagnostics/options (init_method choices, convergence window, richer consistency metrics)"
+        },
+        {
+          "line": 40,
+          "text": "info.version = '3.0';"
+        }
+      ]
+    },
+    {
+      "path": "TRAIn_DOSY_MF_V3.m",
+      "sha256": "9fa86991541ac8f57cddcaac9ca1ef1a56e3065dddca49074a4edefbdfb9fdf1",
+      "bytes": 27271,
+      "last_write_utc": "2026-01-17T23:56:27.279470+00:00",
+      "creation_utc": "2026-05-20T11:11:32.709905+00:00",
+      "header_evidence": [
+        {
+          "line": 2,
+          "text": "%TRAIn_DOSY_MF Multi-frequency / multi-component DOSY inversion (MF, overlap-aware) - V3."
+        },
+        {
+          "line": 4,
+          "text": "%   Model: Z ≈ K*S*A = Σ_k (K*h_k) a_k^T"
+        },
+        {
+          "line": 7,
+          "text": "%   V3 is a consolidation of:"
+        },
+        {
+          "line": 8,
+          "text": "%     - \"MF_fixed\" stability (adaptive sparse weights, robust reinit, reflect smoothing, hold-out r selection)"
+        },
+        {
+          "line": 9,
+          "text": "%     - \"MFV2\" diagnostics/options (init_method choices, convergence window, richer consistency metrics)"
+        },
+        {
+          "line": 40,
+          "text": "info.version = '3.0';"
+        }
+      ]
+    },
+    {
+      "path": "TRAIn_DOSY_MFV31.m",
+      "sha256": "d7d2ec44b70f3f68baeb4f7c57592c3e14067cb1a5ed18244d5648724ef4a82f",
+      "bytes": 35161,
+      "last_write_utc": "2026-01-18T18:35:54.852283+00:00",
+      "creation_utc": "2026-05-20T11:11:32.646683+00:00",
+      "header_evidence": [
+        {
+          "line": 1,
+          "text": "function [DOSY_X, D_space, info] = TRAIn_DOSY_MFV31(Z, G2, D_params, options)"
+        },
+        {
+          "line": 2,
+          "text": "%TRAIn_DOSY_MF Multi-frequency / multi-component DOSY inversion (V3.1)"
+        },
+        {
+          "line": 4,
+          "text": "%   Modelo: Z ≈ K·S·A = Σ_k (K·h_k)·a_k^T"
+        },
+        {
+          "line": 7,
+          "text": "%   V3.1 consolida y mejora:"
+        }
+      ]
+    },
+    {
+      "path": "TRAIn_DOSY_MF_Metodo_Matematico_V2.docx",
+      "sha256": "7e482f88f0c5791c152f8130502b5f29bfeb1dd8ba922a0ff65d46aed4aebf95",
+      "bytes": 43324,
+      "last_write_utc": "2026-01-17T22:58:51.729456+00:00",
+      "creation_utc": "2026-05-20T11:11:32.646683+00:00",
+      "docx_core_dates": {
+        "created": "2013-12-23T23:15:00Z",
+        "modified": "2013-12-23T23:15:00Z"
+      }
+    },
+    {
+      "path": "TRAIn_DOSY_MF_Metodo_Matematico_V3.docx",
+      "sha256": "d48fc446cb6e0843de3001d5756495d5415a80d8a9e807f972ce852489ee99f4",
+      "bytes": 20692,
+      "last_write_utc": "2026-01-17T23:45:23.481247+00:00",
+      "creation_utc": "2026-05-20T11:11:32.662484+00:00",
+      "docx_core_dates": {
+        "created": "2026-01-17T23:42:23.752Z",
+        "modified": "2026-01-17T23:42:23.753Z"
+      }
+    },
+    {
+      "path": "TRAIn_DOSY_MF_NMI_Manuscript_Template.docx",
+      "sha256": "0e6177a0c19975491fdcbfcd92da865415cda00c47615ebfa73a9112c5a5c3de",
+      "bytes": 41271,
+      "last_write_utc": "2026-01-18T18:26:35.461728+00:00",
+      "creation_utc": "2026-05-20T11:11:32.694264+00:00",
+      "docx_core_dates": {
+        "created": "2013-12-23T23:15:00Z",
+        "modified": "2013-12-23T23:15:00Z"
+      }
+    },
+    {
+      "path": "TRAIn_DOSY_MF_NMI_Manuscript_Narrative.docx",
+      "sha256": "5dabf03c36db2bc6c46fa77d0ee9f2de5e1d81c39d1ffdfcda4dbe25e29412f5",
+      "bytes": 42273,
+      "last_write_utc": "2026-01-18T19:37:06.265296+00:00",
+      "creation_utc": "2026-05-20T11:11:32.678181+00:00",
+      "docx_core_dates": {
+        "created": "2013-12-23T23:15:00Z",
+        "modified": "2013-12-23T23:15:00Z"
+      }
+    }
+  ]
+}

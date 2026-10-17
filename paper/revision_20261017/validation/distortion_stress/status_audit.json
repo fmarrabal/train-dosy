@@ -1,0 +1,1160 @@
+{
+  "results": [
+    {
+      "id": "test_000_single",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_000_single",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_001_double",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_002_triple",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_003_weak",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_004_close",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_005_proportional",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_008_single",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_009_double",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_010_triple",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_011_weak",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_012_close",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "b_calibration",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "b_calibration",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "b_calibration",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "b_calibration",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "constant_baseline",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "constant_baseline",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "constant_baseline",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "constant_baseline",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "impulsive_contamination",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "impulsive_contamination",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "impulsive_contamination",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "impulsive_contamination",
+      "method": "DOME_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "spectral_ar1",
+      "method": "RAI",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "spectral_ar1",
+      "method": "RAI_S",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "spectral_ar1",
+      "method": "DOME",
+      "success": true
+    },
+    {
+      "id": "test_013_proportional",
+      "kind": "spectral_ar1",
+      "method": "DOME_S",
+      "success": true
+    }
+  ],
+  "known": 192,
+  "failed": 0,
+  "unknown": 0,
+  "note": "Native RAI status is diagnostics.optimizer.success; top-level numerical_status_reported was null. Extraction only, no refit or changed metrics."
+}

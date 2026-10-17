@@ -1,0 +1,14 @@
+{
+  "python": "3.13.13 | packaged by Anaconda, Inc. | (main, Apr 14 2026, 06:12:50) [MSC v.1942 64 bit (AMD64)]",
+  "executable": "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\rai-ilt\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 143 Stepping 8, GenuineIntel",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "torch": "2.14.0+cpu",
+  "device": "cpu",
+  "blas_threads_per_worker": 1,
+  "neural_workers": 4,
+  "factorial_workers": 1,
+  "timing_concurrency": "Neural four-worker and factorial single-worker runs overlap; no isolated hardware speed benchmark"
+}

@@ -1,0 +1,26 @@
+{
+  "index": 5,
+  "kind": "correlated",
+  "method": "LOCODOSY",
+  "scenario": "proportional",
+  "snr": 50,
+  "selected_channels": 80,
+  "success": true,
+  "physical": false,
+  "metrics": {
+    "test_clean_rmse_sigma": 0.3381264046142747,
+    "test_observed_rmse_sigma": 1.0022302210552172
+  },
+  "diagnostics": {
+    "local_orders": [
+      2,
+      3,
+      2
+    ],
+    "failures": [],
+    "unstable_windows": [],
+    "rank_is_not_global_species": true
+  },
+  "error": null,
+  "seconds": 0.3393414000165649
+}

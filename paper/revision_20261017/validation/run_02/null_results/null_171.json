@@ -1,0 +1,534 @@
+{
+  "index": 171,
+  "seed": 202610170171,
+  "sigma": 0.02,
+  "input_file": "inputs\\null_171.npz",
+  "input_sha256": "f98210278b95fc80203e7e6f783994a375785dc16516a5ab31ed54d39d2a32ca",
+  "seconds": 1.355007200007094,
+  "outcomes": [
+    {
+      "mode": "fixed_window",
+      "method": "RAI",
+      "selected_columns": 66,
+      "rank": 0,
+      "computation_status": "fit_returned",
+      "fit_performed": true,
+      "numerical_success": true,
+      "error": null,
+      "seconds": 0.31794799998169765,
+      "D": [],
+      "A": [],
+      "kkt": 0.0,
+      "stationarity": null,
+      "candidate_kind": "unrestricted",
+      "candidate_diagnostics": [
+        {
+          "D": [],
+          "kind": "unrestricted",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [
+            3.0663596031835306e-10
+          ],
+          "kind": "unrestricted",
+          "parameters": 67,
+          "val_sse": 407.28333236884794,
+          "success": true,
+          "kkt": 2.1888808589907995e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              -0.3138556998578435
+            ]
+          ],
+          "threshold": 2.3263478740408408
+        },
+        {
+          "D": [
+            1.0000000023025845e-10,
+            1.4999999972977206e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 134,
+          "val_sse": 410.342954608376,
+          "success": true,
+          "kkt": 3.2971330119236157e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              0.011376054582927406
+            ],
+            [
+              -0.3966193413423415
+            ]
+          ],
+          "threshold": 2.575829303548901
+        },
+        {
+          "D": [
+            1.0000000023025845e-10,
+            3.5572436327970453e-09,
+            1.4999999972977206e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 201,
+          "val_sse": 409.5534407034843,
+          "success": true,
+          "kkt": 2.7651848918926263e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              0.4619035584994102
+            ],
+            [
+              -0.6850534331868549
+            ],
+            [
+              0.4385283498905721
+            ]
+          ],
+          "threshold": 2.713051888472718
+        },
+        {
+          "D": [
+            1.0000000000000031e-10,
+            1.336851855298267e-09,
+            4.705645552050954e-09,
+            1.4999999999999966e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 268,
+          "val_sse": 409.7906032011256,
+          "success": true,
+          "kkt": 2.8549593471946222e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              -0.2922542482629081
+            ],
+            [
+              0.5993365847170159
+            ],
+            [
+              -0.867704340354439
+            ],
+            [
+              0.8126897281112427
+            ]
+          ],
+          "threshold": 2.8070337683438042
+        }
+      ]
+    },
+    {
+      "mode": "fixed_window",
+      "method": "DOME",
+      "selected_columns": 66,
+      "rank": 0,
+      "computation_status": "fit_returned",
+      "fit_performed": true,
+      "numerical_success": true,
+      "error": null,
+      "seconds": 0.06568030000198632,
+      "D": [],
+      "A": [],
+      "kkt": 0.0,
+      "stationarity": null,
+      "candidate_kind": "unrestricted",
+      "candidate_diagnostics": [
+        {
+          "D": [],
+          "kind": "unrestricted",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [
+            3.066359585432927e-10
+          ],
+          "kind": "unrestricted",
+          "parameters": 67,
+          "val_sse": 407.28333238655546,
+          "success": true,
+          "kkt": 3.210358590467097e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              -0.3138556981054237
+            ]
+          ],
+          "threshold": 2.3263478740408408
+        },
+        {
+          "D": [
+            1.0000000023025845e-10,
+            1.4999999972977206e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 134,
+          "val_sse": 410.342954608376,
+          "success": true,
+          "kkt": 3.2971330119236157e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 409.6168756441922,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              0.011376054582927762
+            ],
+            [
+              -0.39661934134234256
+            ]
+          ],
+          "threshold": 2.575829303548901
+        }
+      ]
+    },
+    {
+      "mode": "independent_discovery",
+      "method": "RAI",
+      "selected_columns": 5,
+      "rank": 0,
+      "computation_status": "fit_returned",
+      "fit_performed": true,
+      "numerical_success": true,
+      "error": null,
+      "seconds": 0.07010099999024533,
+      "D": [],
+      "A": [],
+      "kkt": 0.0,
+      "stationarity": null,
+      "candidate_kind": "unrestricted",
+      "candidate_diagnostics": [
+        {
+          "D": [],
+          "kind": "unrestricted",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [
+            1.0529518818475338e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 6,
+          "val_sse": 48.45704913363665,
+          "success": true,
+          "kkt": 4.939565146938803e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [
+            8.143945992720074e-09,
+            1.4999999972977206e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 12,
+          "val_sse": 48.92847426571356,
+          "success": true,
+          "kkt": 3.4910773970845237e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              1.3638502930189442
+            ],
+            [
+              -0.8512187929710041
+            ]
+          ],
+          "threshold": 2.575829303548901
+        },
+        {
+          "D": [
+            1.0000000023025845e-10,
+            8.143945992720074e-09,
+            1.4999999972977206e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 18,
+          "val_sse": 49.034204861491425,
+          "success": true,
+          "kkt": 3.041522102604626e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              -0.8322635552167902
+            ],
+            [
+              1.5975947606393959
+            ],
+            [
+              -1.1137931904880445
+            ]
+          ],
+          "threshold": 2.713051888472718
+        },
+        {
+          "D": [
+            1.0000000000000031e-10,
+            7.590870183999036e-09,
+            8.451270758894328e-09,
+            1.4999999999999966e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 24,
+          "val_sse": 48.992843971964255,
+          "success": true,
+          "kkt": 1.5707194911274297e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              -0.35992805213312357
+            ],
+            [
+              -0.7744197345758053
+            ],
+            [
+              0.8492612359381173
+            ],
+            [
+              -1.0737330104082934
+            ]
+          ],
+          "threshold": 2.8070337683438042
+        }
+      ]
+    },
+    {
+      "mode": "independent_discovery",
+      "method": "DOME",
+      "selected_columns": 5,
+      "rank": 0,
+      "computation_status": "fit_returned",
+      "fit_performed": true,
+      "numerical_success": true,
+      "error": null,
+      "seconds": 0.8804707000090275,
+      "D": [],
+      "A": [],
+      "kkt": 0.0,
+      "stationarity": null,
+      "candidate_kind": "unrestricted",
+      "candidate_diagnostics": [
+        {
+          "D": [],
+          "kind": "unrestricted",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [
+            1.0529518804882746e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 6,
+          "val_sse": 48.457049130475575,
+          "success": true,
+          "kkt": 2.00051998569555e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [
+            8.143866877245417e-09,
+            1.4999999999999966e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 12,
+          "val_sse": 48.92847904130302,
+          "success": false,
+          "kkt": 1.91901212844692e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              1.3638486945407906
+            ],
+            [
+              -0.8512142584154544
+            ]
+          ],
+          "threshold": 2.575829303548901
+        },
+        {
+          "D": [
+            1.0000000514570867e-10,
+            8.143878721080752e-09,
+            1.4999999999999966e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 18,
+          "val_sse": 49.034208920395,
+          "success": false,
+          "kkt": 3.305476872374617e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              -0.8322371163366316
+            ],
+            [
+              1.5975491256113028
+            ],
+            [
+              -1.1136895438033214
+            ]
+          ],
+          "threshold": 2.713051888472718
+        },
+        {
+          "D": [
+            1.000000032834688e-10,
+            7.590970650285367e-09,
+            8.451266544793673e-09,
+            1.4999999997107557e-08
+          ],
+          "kind": "unrestricted",
+          "parameters": 24,
+          "val_sse": 48.99284667869336,
+          "success": true,
+          "kkt": 1.9598171992140287e-16,
+          "group_scores": null,
+          "threshold": null
+        },
+        {
+          "D": [],
+          "kind": "screened",
+          "parameters": 0,
+          "val_sse": 38.12213941938307,
+          "success": true,
+          "kkt": 0.0,
+          "group_scores": [
+            [
+              -0.35991769002200225
+            ],
+            [
+              -0.7744339525684428
+            ],
+            [
+              0.8492822538652413
+            ],
+            [
+              -1.0737502228613616
+            ]
+          ],
+          "threshold": 2.8070337683438042
+        }
+      ]
+    }
+  ]
+}

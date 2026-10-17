@@ -1,0 +1,98 @@
+\section{Supplementary Revision Experiments}\label{app:revisionvalidation}
+These post-review experiments supplement the frozen primary benchmark; they do not replace its inputs, outputs or method definitions. The protocol and seeds were saved before execution. The unchanged screened estimators were run on CPU, without neural training or parameter tuning against the new outcomes. Each new null matrix has 32 acquisitions and 1024 spectral channels. Eight external acquisitions remain outside reconstruction; the remaining 24 are divided into 18 candidate-fitting and six validation rows. In the fixed-window branch, the noise-only interval $4<\mathrm{ppm}<4.65$ is specified independently of observations.
+
+\subsection{Supplementary null and mechanism checks}
+The supplementary null panel contains 300 independently generated problems,
+with 100 at each known noise standard deviation $0.02$, $0.01$, and $0.005$.
+Each screened method selected a nonzero model in two of the same 300 fixed-window
+problems. Both selected rates were at the lower allowed boundary.
+Under a common-event-probability binomial model, the pooled 95\% interval
+would be $[0.081,2.387]\%$. This is a descriptive reference, without a claim
+of coverage for heterogeneous event probabilities across noise scales.
+Table~\ref{tab:revisionnull} instead reports exact intervals within each noise stratum.
+These are paired method outcomes, not 600 independent replicates, and do not
+establish a universal 1\% full-pipeline error guarantee.
+
+\begin{table}[htbp]\centering
+\caption{Additional fixed-window null controls. RAI-S and DOME-S have identical
+event counts on paired inputs. Intervals are two-sided Clopper--Pearson intervals.}
+\label{tab:revisionnull}
+\begin{tabular}{lrr}\toprule
+Known $\sigma$ & Nonzero outputs & 95\% interval (\%)\\\midrule
+0.020 & 1/100 & [0.025,5.446]\\
+0.010 & 1/100 & [0.025,5.446]\\
+0.005 & 0/100 & [0,3.622]\\\bottomrule
+\end{tabular}
+\end{table}
+
+The separate discovery branch selects no spectral channels in 291 problems;
+only nine proceed to inversion, all returning the null model. Zero reported
+components in 300 discovery pipelines must therefore be distinguished from
+zero nonzero fits in nine inversions. Treating each pooled denominator as a
+common-probability binomial sample gives two-sided 95\% upper reference
+endpoints of 1.222\% and 33.627\%, respectively; these are descriptive pooled
+comparisons, with the same heterogeneity limitation as above.
+
+The matched three-arm comparison in Table~\ref{tab:revisionablation} uses
+24 previously frozen signal-present problems, one common proposal bank per
+method on 18 rows, six validation rows, the same refinement tolerances and
+a final 24-row refit. It does not constitute a complete factorial experiment:
+there is no screening-only arm, and the number of candidate refinements differs.
+The native-order arm retains native order selection but uses the common
+refinement; it is not the original 24-row native baseline.
+
+\begin{table}[htbp]\centering\small
+\caption{Matched supplementary comparison. $E_U$ is clean external RMSE in
+noise units; UM is unmatched estimated mass as a percentage of all estimated
+mass. Recovery requires both order and all rates within the stated
+log-rate tolerance.}\label{tab:revisionablation}
+\begin{tabularx}{\linewidth}{@{}lXrrrrr@{}}\toprule
+Path & Arm & \shortstack[r]{Leakage\\(\%)} & \shortstack[r]{UM\\(\%)} & $E_U$ & $W_{1,h}$ & Recovery\\\midrule
+RAI & Native order + common refit & 6.922 & 9.651 & 0.31259 & 0.18531 & 9/24\\
+RAI & Prediction only & 4.373 & 8.735 & 0.25994 & 0.15224 & 12/24\\
+RAI & Screen + prediction & 1.744 & 7.594 & 0.23236 & 0.11246 & 14/24\\
+DOME & Native order + common refit & 4.373 & 8.735 & 0.25994 & 0.15224 & 12/24\\
+DOME & Prediction only & 4.373 & 8.735 & 0.25994 & 0.15224 & 12/24\\
+DOME & Screen + prediction & 1.744 & 7.594 & 0.23236 & 0.11246 & 14/24\\\bottomrule
+\end{tabularx}
+\end{table}
+
+The incremental screened-candidate comparison reduces leakage and prediction
+error, while the proposal paths again produce equivalent full-method results
+to displayed precision. This supports a bounded contribution of the shared
+selection procedure, not an independent superiority claim for either path.
+
+\subsection{Supplementary distortion sensitivity}
+Twelve frozen underlying truths were subjected to four prespecified stresses:
+spectral AR(1) noise with correlation 0.6 and unchanged marginal variance;
+an unattenuated offset of one background-noise standard deviation;
+independent signed $8\sigma$ impulses in 0.5\% of cells; and physical diffusion
+weighting equal to 1.05 times the supplied $b$ values. Masks, partitions and
+solver settings were held fixed. These perturbations were not calibrated to
+an instrument and do not replace experimental mixture validation.
+
+\begin{table}[htbp]\centering\small
+\caption{Supplementary sensitivity of RAI-S and DOME-S, whose results agree
+to displayed precision. Each row contains the same 12 underlying chemical
+truths; the correlated-noise row uses newly drawn errors. UM denotes
+unmatched estimated mass as a percentage of all estimated mass.}\label{tab:revisionstress}
+\begin{tabularx}{\linewidth}{@{}Xrrrrr@{}}\toprule
+Condition & \shortstack[r]{Leakage\\(\%)} & \shortstack[r]{UM\\(\%)} & $E_U$ & $W_{1,h}$ & Recovery\\\midrule
+Original iid & 1.544 & 8.425 & 0.22643 & 0.11689 & 7/12\\
+Spectral AR(1) & 1.731 & 13.034 & 0.23729 & 0.13763 & 7/12\\
+Constant offset & 7.212 & 17.018 & 1.01092 & 0.26446 & 3/12\\
+Impulsive contamination & 1.872 & 8.547 & 0.26445 & 0.12324 & 7/12\\
+$b$ calibration +5\% & 1.351 & 7.144 & 0.22596 & 0.14808 & 8/12\\\bottomrule
+\end{tabularx}
+\end{table}
+
+The offset substantially degrades recovery, despite all fits returning
+numerical success. For miscalibrated $b$, a compensating rate scale can retain
+accurate prediction while biasing physical diffusion; the 0.25 log-rate
+matching tolerance does not exclude a 5\% bias. These results do not support
+unqualified robustness or chemical-identification claims.
+
+\subsection{Reproducibility and scope}
+The revision supplement retains the scripts, input arrays, seeds, configuration and source hashes, together with all method outputs and status records. The null and ablation results are in \path{paper/revision_20261017/validation/run_02}; the distortion results are in \path{paper/revision_20261017/validation/distortion_stress}. An earlier execution failed only in diagnostic reporting for a closed-form null result. That attempt is explicitly marked invalid and excluded; the successful rerun retains the same generator and solver settings. The valid null, ablation and distortion experiments have no reported numerical failures. Numerical success does not imply a correct order, support or diffusion scale.
+
+The separate discovery branch uses six low-$b$ fitting acquisitions, excludes internal validation acquisitions, thresholds their mean at $4\sigma/\sqrt{6}$ and dilates the selected mask by two spectral channels. It tests that declared pipeline, not an arbitrary experimental signal detector. The original signal-present masks in the matched comparison and distortion panel remain unchanged and retain their original internal-validation reuse. These initial controls do not include new physical mixture measurements or a larger neural training study. The subsequently completed neural and measured-data studies are reported separately in Appendix~\ref{app:completevalidation}.

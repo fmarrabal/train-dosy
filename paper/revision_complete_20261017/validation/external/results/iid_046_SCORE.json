@@ -1,0 +1,69 @@
+{
+  "index": 46,
+  "kind": "iid",
+  "method": "SCORE",
+  "scenario": "null",
+  "snr": 200,
+  "selected_channels": 66,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_046_null",
+    "scenario": "null",
+    "snr": 200,
+    "r_true": 0,
+    "w1_logD": 0.0,
+    "test_clean_rmse_sigma": 0.0,
+    "rank": 0,
+    "correct_rank": true,
+    "matched_components": 0,
+    "ghost_mass_fraction": 0.0,
+    "spectral_leakage_fraction": 0.0,
+    "unmatched_mass_fraction": 0.0,
+    "minority_rate_recovered": null,
+    "minority_support_recall": null,
+    "test_observed_rmse_sigma": 0.9914836779623095,
+    "mass": 0.0,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "evaluations": 0,
+    "candidates": [
+      {
+        "rank": 0,
+        "success": true,
+        "physical": true,
+        "val_sse": 368.15057771649424
+      },
+      {
+        "rank": 1,
+        "success": true,
+        "physical": true,
+        "val_sse": 392.0329319135398
+      },
+      {
+        "rank": 2,
+        "success": true,
+        "physical": false,
+        "val_sse": 659.8612142959125
+      },
+      {
+        "rank": 3,
+        "success": true,
+        "physical": false,
+        "val_sse": 633.8544297251902
+      },
+      {
+        "rank": 4,
+        "success": true,
+        "physical": false,
+        "val_sse": 853.5200472552003
+      }
+    ],
+    "rank": 0
+  },
+  "error": null,
+  "seconds": 0.16426700001466088
+}

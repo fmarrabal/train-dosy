@@ -1,0 +1,73 @@
+{
+  "index": 4,
+  "snr": 50,
+  "level": 0.02,
+  "seed": 202610181004,
+  "selected_minority_mass": 0.6500804066244571,
+  "selected_channels": 130,
+  "outcomes": [
+    {
+      "method": "RAI",
+      "success": true,
+      "metrics": {
+        "id": "test_800035_weak",
+        "scenario": "weak",
+        "snr": 50,
+        "r_true": 3,
+        "rank": 2,
+        "correct_rank": false,
+        "matched_components": 2,
+        "ghost_mass_fraction": 0.0,
+        "spectral_leakage_fraction": 0.0,
+        "unmatched_mass_fraction": 0.0,
+        "minority_rate_recovered": false,
+        "minority_support_recall": 0.0,
+        "test_clean_rmse_sigma": 0.21746527364376092,
+        "test_observed_rmse_sigma": 1.0173140914686838,
+        "w1_logD": 0.055025630021879934,
+        "mass": 34.835343828607165,
+        "success": true,
+        "kkt": 3.0518524082350295e-16,
+        "stationarity": 8.029964810285209e-10
+      },
+      "error": null,
+      "seconds": 2.3060051999927964,
+      "D": [
+        7.072591342741215e-10,
+        2.4298976229072526e-09
+      ]
+    },
+    {
+      "method": "DOME",
+      "success": true,
+      "metrics": {
+        "id": "test_800035_weak",
+        "scenario": "weak",
+        "snr": 50,
+        "r_true": 3,
+        "rank": 2,
+        "correct_rank": false,
+        "matched_components": 2,
+        "ghost_mass_fraction": 0.0,
+        "spectral_leakage_fraction": 0.0,
+        "unmatched_mass_fraction": 0.0,
+        "minority_rate_recovered": false,
+        "minority_support_recall": 0.0,
+        "test_clean_rmse_sigma": 0.21746527364376092,
+        "test_observed_rmse_sigma": 1.0173140914686838,
+        "w1_logD": 0.055025630021879934,
+        "mass": 34.835343828607165,
+        "success": true,
+        "kkt": 3.0518524082350295e-16,
+        "stationarity": 8.029964810285209e-10
+      },
+      "error": null,
+      "seconds": 1.4183590000029653,
+      "D": [
+        7.072591342741215e-10,
+        2.4298976229072526e-09
+      ]
+    }
+  ],
+  "input_sha256": "f46a369d88d5068c4c74d05a614f5041adc9d9d5b6eac398c3293e48e56a5fa4"
+}

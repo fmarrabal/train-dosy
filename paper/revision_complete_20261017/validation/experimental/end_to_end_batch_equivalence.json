@@ -1,0 +1,15 @@
+{
+  "seconds": 0.42809410000336356,
+  "native_D": [
+    4.4853870463588084e-10,
+    1.8052196918678122e-09
+  ],
+  "batched_D": [
+    4.4853870463588084e-10,
+    1.8052196918678122e-09
+  ],
+  "relative_prediction_discrepancy": 0.0,
+  "same_support": true,
+  "native_success": true,
+  "batched_success": true
+}

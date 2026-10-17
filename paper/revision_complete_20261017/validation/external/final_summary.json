@@ -1,0 +1,474 @@
+{
+  "raw_results": 504,
+  "analysed_results": 497,
+  "pilot_index_excluded_from_iid": 0,
+  "summaries": [
+    {
+      "kind": "iid",
+      "method": "RAI_S",
+      "n": 47,
+      "signal_n": 41,
+      "returned": 47,
+      "success": 47,
+      "positive_representation": 47,
+      "E": 0.23477081708398342,
+      "E_n": 41,
+      "W1": 0.12006842782965857,
+      "W1_n": 41,
+      "seconds": 104.56424530004733
+    },
+    {
+      "kind": "iid",
+      "method": "DOME_S",
+      "n": 47,
+      "signal_n": 41,
+      "returned": 47,
+      "success": 47,
+      "positive_representation": 47,
+      "E": 0.2347708170840093,
+      "E_n": 41,
+      "W1": 0.12006842782954588,
+      "W1_n": 41,
+      "seconds": 76.09158769992064
+    },
+    {
+      "kind": "iid",
+      "method": "SCORE",
+      "n": 47,
+      "signal_n": 41,
+      "returned": 47,
+      "success": 47,
+      "positive_representation": 9,
+      "E": 0.3032880066558602,
+      "E_n": 41,
+      "W1": 0.0,
+      "W1_n": 3,
+      "seconds": 8.965697299980093
+    },
+    {
+      "kind": "iid",
+      "method": "SCORE_NNLS",
+      "n": 47,
+      "signal_n": 41,
+      "returned": 47,
+      "success": 47,
+      "positive_representation": 47,
+      "E": 0.26681184288222,
+      "E_n": 41,
+      "W1": 0.15628244199488497,
+      "W1_n": 41,
+      "seconds": 96.45755479997024
+    },
+    {
+      "kind": "iid",
+      "method": "LOCODOSY",
+      "n": 47,
+      "signal_n": 41,
+      "returned": 47,
+      "success": 47,
+      "positive_representation": 4,
+      "E": 0.26114261975995984,
+      "E_n": 41,
+      "W1": 0.0013497481911875946,
+      "W1_n": 4,
+      "seconds": 31.858080200006953
+    },
+    {
+      "kind": "iid",
+      "method": "Tikhonov",
+      "n": 47,
+      "signal_n": 41,
+      "returned": 47,
+      "success": 47,
+      "positive_representation": 47,
+      "E": 0.33522775326396537,
+      "E_n": 41,
+      "W1": 0.30571329495342864,
+      "W1_n": 41,
+      "seconds": 106.05424010002753
+    },
+    {
+      "kind": "iid",
+      "method": "PALMA",
+      "n": 47,
+      "signal_n": 41,
+      "returned": 47,
+      "success": 0,
+      "positive_representation": 47,
+      "E": 0.7362716286277801,
+      "E_n": 41,
+      "W1": 0.42249553013838204,
+      "W1_n": 41,
+      "seconds": 1376.178079800011,
+      "column_converged": 3918,
+      "column_n": 5959
+    },
+    {
+      "kind": "baseline",
+      "method": "RAI_S",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 1.010923553333306,
+      "E_n": 12,
+      "W1": 0.264460590348737,
+      "W1_n": 12,
+      "seconds": 25.202040400065016
+    },
+    {
+      "kind": "baseline",
+      "method": "DOME_S",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 1.0109235533364616,
+      "E_n": 12,
+      "W1": 0.26446059034259894,
+      "W1_n": 12,
+      "seconds": 23.173681999905966
+    },
+    {
+      "kind": "baseline",
+      "method": "SCORE",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 2,
+      "E": 1.011774934847564,
+      "E_n": 12,
+      "W1": 0.03914558823512771,
+      "W1_n": 2,
+      "seconds": 2.445772900013253
+    },
+    {
+      "kind": "baseline",
+      "method": "SCORE_NNLS",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 1.0004461476288304,
+      "E_n": 12,
+      "W1": 0.2615838169010303,
+      "W1_n": 12,
+      "seconds": 20.23665589999291
+    },
+    {
+      "kind": "baseline",
+      "method": "LOCODOSY",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 0,
+      "E": 1.0091429509635954,
+      "E_n": 12,
+      "W1": null,
+      "W1_n": 0,
+      "seconds": 8.978146899986314
+    },
+    {
+      "kind": "baseline",
+      "method": "Tikhonov",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 1.0492147902361486,
+      "E_n": 12,
+      "W1": 0.4329887343682067,
+      "W1_n": 12,
+      "seconds": 41.70561650002492
+    },
+    {
+      "kind": "baseline",
+      "method": "PALMA",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 0,
+      "positive_representation": 12,
+      "E": 1.0857058013130116,
+      "E_n": 12,
+      "W1": 0.5757574426333641,
+      "W1_n": 12,
+      "seconds": 310.0608750000247,
+      "column_converged": 1272,
+      "column_n": 1469
+    },
+    {
+      "kind": "correlated",
+      "method": "RAI_S",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 0.2413937390208467,
+      "E_n": 12,
+      "W1": 0.13804807840188718,
+      "W1_n": 12,
+      "seconds": 27.00155280000763
+    },
+    {
+      "kind": "correlated",
+      "method": "DOME_S",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 0.2413937390208063,
+      "E_n": 12,
+      "W1": 0.13804807840183328,
+      "W1_n": 12,
+      "seconds": 23.91432250002981
+    },
+    {
+      "kind": "correlated",
+      "method": "SCORE",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 1,
+      "E": 0.28884444422540095,
+      "E_n": 12,
+      "W1": 0.0,
+      "W1_n": 1,
+      "seconds": 3.0555138000054285
+    },
+    {
+      "kind": "correlated",
+      "method": "SCORE_NNLS",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 0.2639047645695625,
+      "E_n": 12,
+      "W1": 0.1724231665207263,
+      "W1_n": 12,
+      "seconds": 25.552899399976013
+    },
+    {
+      "kind": "correlated",
+      "method": "LOCODOSY",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 1,
+      "E": 0.2628206970269689,
+      "E_n": 12,
+      "W1": 0.005787431741026414,
+      "W1_n": 1,
+      "seconds": 7.439325999992434
+    },
+    {
+      "kind": "correlated",
+      "method": "Tikhonov",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 12,
+      "positive_representation": 12,
+      "E": 0.3286333894788454,
+      "E_n": 12,
+      "W1": 0.33088425077126454,
+      "W1_n": 12,
+      "seconds": 28.45868650006014
+    },
+    {
+      "kind": "correlated",
+      "method": "PALMA",
+      "n": 12,
+      "signal_n": 12,
+      "returned": 12,
+      "success": 0,
+      "positive_representation": 12,
+      "E": 0.7283109475550403,
+      "E_n": 12,
+      "W1": 0.45439961378936794,
+      "W1_n": 12,
+      "seconds": 309.69484949993785,
+      "column_converged": 1115,
+      "column_n": 1469
+    }
+  ],
+  "paired": [
+    {
+      "kind": "iid",
+      "comparison": "SCORE minus RAI_S",
+      "n": 41,
+      "mean": 0.06851718957187682,
+      "interval95": [
+        0.05376440050123737,
+        0.08366882962552143
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "iid",
+      "comparison": "SCORE_NNLS minus RAI_S",
+      "n": 41,
+      "mean": 0.03204102579823659,
+      "interval95": [
+        0.024684954743389765,
+        0.0392241280762609
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "iid",
+      "comparison": "LOCODOSY minus RAI_S",
+      "n": 41,
+      "mean": 0.026371802675976455,
+      "interval95": [
+        0.018234367137862584,
+        0.03478827754597941
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "iid",
+      "comparison": "Tikhonov minus RAI_S",
+      "n": 41,
+      "mean": 0.10045693617998194,
+      "interval95": [
+        0.09391895092656247,
+        0.10676759333488406
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "iid",
+      "comparison": "PALMA minus RAI_S",
+      "n": 41,
+      "mean": 0.5015008115437966,
+      "interval95": [
+        0.4809350902691696,
+        0.5211563757066341
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "baseline",
+      "comparison": "SCORE minus RAI_S",
+      "n": 12,
+      "mean": 0.0008513815142576209,
+      "interval95": [
+        -0.01663764050262868,
+        0.0148247102674538
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "baseline",
+      "comparison": "SCORE_NNLS minus RAI_S",
+      "n": 12,
+      "mean": -0.010477405704475723,
+      "interval95": [
+        -0.02583320411953771,
+        0.001963328751790021
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "baseline",
+      "comparison": "LOCODOSY minus RAI_S",
+      "n": 12,
+      "mean": -0.001780602369711078,
+      "interval95": [
+        -0.025324635471238203,
+        0.022461196251727718
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "baseline",
+      "comparison": "Tikhonov minus RAI_S",
+      "n": 12,
+      "mean": 0.03829123690284219,
+      "interval95": [
+        0.02448766234211339,
+        0.05318399782800752
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "baseline",
+      "comparison": "PALMA minus RAI_S",
+      "n": 12,
+      "mean": 0.07478224797970519,
+      "interval95": [
+        -0.019359193531857055,
+        0.1813833167579544
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "correlated",
+      "comparison": "SCORE minus RAI_S",
+      "n": 12,
+      "mean": 0.047450705204554244,
+      "interval95": [
+        0.023106371009964606,
+        0.07244221098395194
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "correlated",
+      "comparison": "SCORE_NNLS minus RAI_S",
+      "n": 12,
+      "mean": 0.022511025548715837,
+      "interval95": [
+        0.0086440040483866,
+        0.03707114160726404
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "correlated",
+      "comparison": "LOCODOSY minus RAI_S",
+      "n": 12,
+      "mean": 0.021426958006122303,
+      "interval95": [
+        -0.003375323321379225,
+        0.041181507277756914
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "correlated",
+      "comparison": "Tikhonov minus RAI_S",
+      "n": 12,
+      "mean": 0.0872396504579987,
+      "interval95": [
+        0.06734716903124939,
+        0.10408188885284268
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    },
+    {
+      "kind": "correlated",
+      "comparison": "PALMA minus RAI_S",
+      "n": 12,
+      "mean": 0.4869172085341937,
+      "interval95": [
+        0.43768359739375456,
+        0.5326252449059539
+      ],
+      "inference": "Descriptive paired problem bootstrap; no multiplicity adjustment, all returned estimates including nonconverged fits."
+    }
+  ]
+}

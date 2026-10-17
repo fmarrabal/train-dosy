@@ -1,0 +1,24 @@
+{
+  "index": 14,
+  "kind": "iid",
+  "method": "LOCODOSY",
+  "scenario": "null",
+  "snr": 100,
+  "selected_channels": 66,
+  "success": true,
+  "physical": false,
+  "metrics": {
+    "test_clean_rmse_sigma": 0.27876456518463744,
+    "test_observed_rmse_sigma": 0.9758968546542858
+  },
+  "diagnostics": {
+    "local_orders": [
+      1
+    ],
+    "failures": [],
+    "unstable_windows": [],
+    "rank_is_not_global_species": true
+  },
+  "error": null,
+  "seconds": 0.10097069997573271
+}

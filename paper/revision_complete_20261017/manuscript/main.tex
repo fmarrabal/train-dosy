@@ -1,0 +1,67 @@
+\documentclass[mathematics,article,submit,moreauthors]{Definitions/mdpi}
+\usepackage{placeins}
+\usepackage{xurl}
+\usepackage{tabularx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\firstpage{1}
+\makeatletter\setcounter{page}{\@firstpage}\makeatother
+\pubvolume{0}\issuenum{0}\articlenumber{0}
+\pubyear{2026}\copyrightyear{2026}
+\datereceived{ }\daterevised{ }\dateaccepted{ }\datepublished{ }
+\doinum{}\hreflink{}
+\Title{Positive Joint Laplace Inversion: Spectral Support Selection and Identifiability in Diffusion-Ordered Spectroscopy}
+\newcommand{\orcidauthorC}{0000-0001-8355-580X}
+\newcommand{\orcidauthorD}{0000-0002-5510-6297}
+\Author{Victor Valdivieso $^{1}$, Marta Gonz\'alez-L\'azaro $^{2}$, Ignacio Fern\'andez $^{2}$\orcidC{} and Francisco Manuel Arrabal-Campos $^{1,2,*}$\orcidD{}}
+\AuthorNames{Victor Valdivieso, Marta González-Lázaro, Ignacio Fernández and Francisco Manuel Arrabal-Campos}
+\AuthorCitation{Valdivieso, V.; Gonz\'alez-L\'azaro, M.; Fern\'andez, I.; Arrabal-Campos, F.M.}
+\address{%
+$^{1}$ \quad Department of Engineering, Research Centre CIAIMBITAL, Escuela Superior de Ingenier\'ia, University of Almer\'ia, 04120 Almer\'ia, Spain; \href{mailto:mcv598@inlumine.ual.es}{mcv598@inlumine.ual.es} (V.V.); \href{mailto:fmarrabal@ual.es}{fmarrabal@ual.es} (F.M.A.-C.)\\
+$^{2}$ \quad Department of Chemistry and Physics, Research Centre CIAIMBITAL, University of Almer\'ia, 04120 Almer\'ia, Spain; \href{mailto:glm332@ual.es}{glm332@ual.es} (M.G.-L.); \href{mailto:ifernan@ual.es}{ifernan@ual.es} (I.F.)}
+\corres{Correspondence: \href{mailto:fmarrabal@ual.es}{fmarrabal@ual.es} (Francisco Manuel Arrabal-Campos).}
+\abstract{A small DOSY fitting error does not establish which components are present. We formulate joint positive Laplace inversion for shared diffusion distributions in TRAIn-MF and shared atomic rates in resolution-adaptive inversion (RAI) and diffusion orthogonal moment exchange (DOME). The analysis gives discretization bounds, conditional uniqueness and fixed-rate stability estimates. A common component selector combines residualized kernels, nonnegative variable projection and prediction on reserved acquisitions. Across 36 primary atomic simulations, mean spectral leakage decreases from 5.166\% to 1.728\% for RAI and from 3.857\% to 1.728\% for DOME. A factorial experiment supports contributions from both selection stages without establishing an independent advantage of either proposal mechanism. Additional studies include 300 null matrices, 96 weak-component problems, controlled TRAIn-MF convergence tests, five neural training seeds on 120 new problems, classical references and measured DOSY spectra. Weak components are often missed, some TRAIn-MF fits fail the stationarity check, and the neural accuracy gains remain inconclusive. Classical references predict better on the public multicomponent example. These findings separate the demonstrated reduction in spectral leakage from stronger claims about distributional width, chemical identity or confidence after adaptive selection.}
+\keyword{inverse Laplace transform; positive measures; variable projection; nonnegative least squares; model selection; spectral support; identifiability; DOSY}
+\MSC{65R32; 65F22; 62F07; 92E10}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+
+\renewcommand{\contentleftcolumn}{\leftcolFont\raggedright
+\textbf{Research manuscript}\\17 October 2026\\[4pt]
+Revised manuscript.}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\renewcommand{\footrulewidth}{0.4pt}
+\fancyfoot[L]{\fontsize{8}{9}\selectfont Research manuscript for Mathematics}
+\fancyfoot[R]{\fontsize{8}{9}\selectfont 17 October 2026}}
+\AtBeginDocument{\fancyhead[L]{\fontsize{8}{9}\selectfont Positive joint Laplace inversion}
+\fancyhead[R]{\fontsize{8}{9}\selectfont\thepage{} of \pageref*{LastPage}}\fancyfoot{}}
+\begin{document}
+\input{sections/introduction}
+\input{sections/related}
+\input{sections/theory}
+\input{sections/methods}
+\input{sections/algorithm}
+\input{sections/experiments}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/backmatter}
+\appendixtitles{yes}
+\appendixstart
+\appendix
+\renewcommand{\theHequation}{appendix.\arabic{equation}}
+\renewcommand{\theHproposition}{appendix.\arabic{proposition}}
+\input{sections/appendix}
+\input{sections/method_details}
+\input{sections/audit_extensions}
+\input{sections/revision_validation}
+\input{sections/revision_complete}
+\clearpage
+\reftitle{References}
+\begin{thebibliography}{99}
+\input{references}
+\end{thebibliography}
+\end{document}

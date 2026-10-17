@@ -1,0 +1,38 @@
+{
+  "index": 3,
+  "kind": "baseline",
+  "method": "DOME_S",
+  "scenario": "weak",
+  "snr": 50,
+  "selected_channels": 125,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_003_weak",
+    "scenario": "weak",
+    "snr": 50,
+    "r_true": 3,
+    "w1_logD": 0.21230460922903877,
+    "test_clean_rmse_sigma": 1.0126167000774398,
+    "rank": 2,
+    "correct_rank": false,
+    "matched_components": 2,
+    "ghost_mass_fraction": 0.062360081757239866,
+    "spectral_leakage_fraction": 0.0623600817572397,
+    "unmatched_mass_fraction": 0.0,
+    "minority_rate_recovered": false,
+    "minority_support_recall": 0.0,
+    "test_observed_rmse_sigma": 1.0290500517438994,
+    "mass": 34.99970121920885,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 3.41440037533425e-16,
+    "stationarity": 9.135579002141651e-08,
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 2.0069590999919455
+}

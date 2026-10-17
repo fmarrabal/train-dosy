@@ -1,0 +1,9 @@
+{
+  "id": "rank1_snr100",
+  "relative_prediction_difference": 0,
+  "relative_mass_difference": 0,
+  "objective_difference": 0,
+  "kkt_difference": 0,
+  "wall_seconds": 15.4691738,
+  "passed": true
+}

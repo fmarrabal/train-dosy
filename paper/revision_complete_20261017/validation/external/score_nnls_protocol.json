@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-10-17T19:11:12Z",
+  "source_sha256": "e7edac56fbf68a67fe3602e6dbef2c38ff479ccd1ac73fb205d2b32d5585d421",
+  "primary_script_sha256": "9475d27742d123274cd1b7ff27ea593ed56e64339a19fbee5df53347c58efb2a",
+  "method": "SCORE_NNLS",
+  "selection": "Same as SCORE primary, including null candidate and physical-rate eligibility",
+  "budgets": "Same 5000 Nelder-Mead evaluations",
+  "scope": "Additional amplitude-constraint sensitivity, distinct from signed published default; no modification of primary protocol."
+}

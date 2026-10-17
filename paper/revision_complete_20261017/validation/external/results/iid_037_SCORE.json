@@ -1,0 +1,52 @@
+{
+  "index": 37,
+  "kind": "iid",
+  "method": "SCORE",
+  "scenario": "proportional",
+  "snr": 100,
+  "selected_channels": 88,
+  "success": true,
+  "physical": false,
+  "metrics": {
+    "test_clean_rmse_sigma": 0.30470838563641794,
+    "test_observed_rmse_sigma": 1.023779053253195
+  },
+  "diagnostics": {
+    "evaluations": 144,
+    "candidates": [
+      {
+        "rank": 0,
+        "success": true,
+        "physical": true,
+        "val_sse": 502852.41005478916
+      },
+      {
+        "rank": 1,
+        "success": true,
+        "physical": true,
+        "val_sse": 2799.3608083015647
+      },
+      {
+        "rank": 2,
+        "success": true,
+        "physical": true,
+        "val_sse": 585.8333189038143
+      },
+      {
+        "rank": 3,
+        "success": true,
+        "physical": false,
+        "val_sse": 608.8962881621163
+      },
+      {
+        "rank": 4,
+        "success": true,
+        "physical": false,
+        "val_sse": 680.140957592306
+      }
+    ],
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 0.18399039999349043
+}

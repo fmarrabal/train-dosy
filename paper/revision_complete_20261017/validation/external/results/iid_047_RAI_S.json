@@ -1,0 +1,38 @@
+{
+  "index": 47,
+  "kind": "iid",
+  "method": "RAI_S",
+  "scenario": "broad",
+  "snr": 200,
+  "selected_channels": 179,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_047_broad",
+    "scenario": "broad",
+    "snr": 200,
+    "r_true": 3,
+    "w1_logD": 0.16150993649515286,
+    "test_clean_rmse_sigma": 0.2477515775172931,
+    "rank": 4,
+    "correct_rank": false,
+    "matched_components": 3,
+    "ghost_mass_fraction": 0.005109140070460686,
+    "spectral_leakage_fraction": 0.0005613296306658689,
+    "unmatched_mass_fraction": 0.004550364694328082,
+    "minority_rate_recovered": true,
+    "minority_support_recall": 1.0,
+    "test_observed_rmse_sigma": 1.0567829468198684,
+    "mass": 32.09906910020714,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 1.103267406640225e-15,
+    "stationarity": 1.1329705882091388e-08,
+    "rank": 4
+  },
+  "error": null,
+  "seconds": 3.170357900002273
+}

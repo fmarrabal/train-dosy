@@ -1,0 +1,38 @@
+{
+  "index": 27,
+  "kind": "iid",
+  "method": "RAI_S",
+  "scenario": "weak",
+  "snr": 50,
+  "selected_channels": 136,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_027_weak",
+    "scenario": "weak",
+    "snr": 50,
+    "r_true": 3,
+    "w1_logD": 0.045559194713647846,
+    "test_clean_rmse_sigma": 0.20971071797598329,
+    "rank": 2,
+    "correct_rank": false,
+    "matched_components": 2,
+    "ghost_mass_fraction": 0.013108024020338333,
+    "spectral_leakage_fraction": 0.013108024020338078,
+    "unmatched_mass_fraction": 0.0,
+    "minority_rate_recovered": false,
+    "minority_support_recall": 0.0,
+    "test_observed_rmse_sigma": 1.0088533172672098,
+    "mass": 31.53066604022529,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 6.194053435209374e-16,
+    "stationarity": 8.458183587265855e-09,
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 2.460746199998539
+}

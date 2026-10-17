@@ -1,0 +1,318 @@
+{
+  "rows": [
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.02,
+      "snr": 50,
+      "n": 8,
+      "recovered": 0,
+      "interval95": [
+        0,
+        0.36941664755281917
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.594239965707835
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.02,
+      "snr": 50,
+      "n": 8,
+      "recovered": 0,
+      "interval95": [
+        0,
+        0.36941664755281917
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.594239965707835
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.02,
+      "snr": 100,
+      "n": 8,
+      "recovered": 0,
+      "interval95": [
+        0,
+        0.36941664755281917
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.6214836041140683
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.02,
+      "snr": 100,
+      "n": 8,
+      "recovered": 0,
+      "interval95": [
+        0,
+        0.36941664755281917
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.6214836041140683
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.02,
+      "snr": 200,
+      "n": 8,
+      "recovered": 1,
+      "interval95": [
+        0.0031597235312519063,
+        0.5265096708752065
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.8303909102832869
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.02,
+      "snr": 200,
+      "n": 8,
+      "recovered": 1,
+      "interval95": [
+        0.0031597235312519063,
+        0.5265096708752065
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.8303909102832869
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.04,
+      "snr": 50,
+      "n": 8,
+      "recovered": 0,
+      "interval95": [
+        0,
+        0.36941664755281917
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.6588570616564906
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.04,
+      "snr": 50,
+      "n": 8,
+      "recovered": 0,
+      "interval95": [
+        0,
+        0.36941664755281917
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.6588570616564906
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.04,
+      "snr": 100,
+      "n": 8,
+      "recovered": 1,
+      "interval95": [
+        0.0031597235312519063,
+        0.5265096708752065
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.860438843201647
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.04,
+      "snr": 100,
+      "n": 8,
+      "recovered": 0,
+      "interval95": [
+        0,
+        0.36941664755281917
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.860438843201647
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.04,
+      "snr": 200,
+      "n": 8,
+      "recovered": 4,
+      "interval95": [
+        0.15701277048705795,
+        0.842987229512942
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9517080767084922
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.04,
+      "snr": 200,
+      "n": 8,
+      "recovered": 4,
+      "interval95": [
+        0.15701277048705795,
+        0.842987229512942
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9517080767084922
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.08,
+      "snr": 50,
+      "n": 8,
+      "recovered": 1,
+      "interval95": [
+        0.0031597235312519063,
+        0.5265096708752065
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.8061656265691077
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.08,
+      "snr": 50,
+      "n": 8,
+      "recovered": 1,
+      "interval95": [
+        0.0031597235312519063,
+        0.5265096708752065
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.8061656265691077
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.08,
+      "snr": 100,
+      "n": 8,
+      "recovered": 8,
+      "interval95": [
+        0.6305833524471807,
+        1
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9620824412577447
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.08,
+      "snr": 100,
+      "n": 8,
+      "recovered": 8,
+      "interval95": [
+        0.6305833524471807,
+        1
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9620824412577447
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.08,
+      "snr": 200,
+      "n": 8,
+      "recovered": 8,
+      "interval95": [
+        0.6305833524471807,
+        1
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9834106110902789
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.08,
+      "snr": 200,
+      "n": 8,
+      "recovered": 8,
+      "interval95": [
+        0.6305833524471807,
+        1
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9834106110902789
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.16,
+      "snr": 50,
+      "n": 8,
+      "recovered": 7,
+      "interval95": [
+        0.47349032912479344,
+        0.9968402764687481
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9569095264569432
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.16,
+      "snr": 50,
+      "n": 8,
+      "recovered": 7,
+      "interval95": [
+        0.47349032912479344,
+        0.9968402764687481
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9569095264569432
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.16,
+      "snr": 100,
+      "n": 8,
+      "recovered": 7,
+      "interval95": [
+        0.47349032912479344,
+        0.9968402764687481
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9803264290618459
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.16,
+      "snr": 100,
+      "n": 8,
+      "recovered": 7,
+      "interval95": [
+        0.47349032912479344,
+        0.9968402764687481
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9803264290618459
+    },
+    {
+      "method": "RAI",
+      "minority_amplitude_factor": 0.16,
+      "snr": 200,
+      "n": 8,
+      "recovered": 8,
+      "interval95": [
+        0.6305833524471807,
+        1
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9932666717008468
+    },
+    {
+      "method": "DOME",
+      "minority_amplitude_factor": 0.16,
+      "snr": 200,
+      "n": 8,
+      "recovered": 8,
+      "interval95": [
+        0.6305833524471807,
+        1
+      ],
+      "numerical_success": 8,
+      "mean_mask_minority_recall": 0.9932666717008468
+    }
+  ],
+  "n_problems": 96,
+  "scope": "Factor-level recovery counts include failures; pairs are not independent method replications. No calibrated species probability."
+}

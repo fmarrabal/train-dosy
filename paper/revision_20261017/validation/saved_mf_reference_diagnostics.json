@@ -1,0 +1,54 @@
+{
+  "source": "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\paper\\reproduction_inputs\\ilt_unified_benchmark_20260924\\results\\r3_snr200_rep1_mf_auto.mat",
+  "source_solver_version": "5.0-matlab-nnls-256",
+  "source_status": "converged",
+  "source_selected_rank": 3,
+  "starts": [
+    {
+      "start": 1,
+      "alternating_sweeps": 8,
+      "post_alternating_kkt": 0.0067715835922277324,
+      "final_kkt": 5.5638197273140522E-8,
+      "final_status": "converged",
+      "final_objective": 0.0065221528351660655,
+      "post_alternating_objective": 0.012230451865479009,
+      "sqp_iterations": 250,
+      "sqp_evaluations": 1407,
+      "sqp_exitflag": 0,
+      "sqp_accepted": true
+    },
+    {
+      "start": 2,
+      "alternating_sweeps": 8,
+      "post_alternating_kkt": 0.0028309025750415441,
+      "final_kkt": 7.01133833002554E-9,
+      "final_status": "converged",
+      "final_objective": 0.0065221528311508606,
+      "post_alternating_objective": 0.00870949706197912,
+      "sqp_iterations": 235,
+      "sqp_evaluations": 1374,
+      "sqp_exitflag": 2,
+      "sqp_accepted": true
+    }
+  ],
+  "post_hoc_curvature": {
+    "scope": "Post-hoc algebraic diagnostic; frozen solver unchanged",
+    "condition": "Kv nonzero and A full row rank for the specified interior curvature",
+    "lambda_S": 1E-8,
+    "tolerance": 1E-10,
+    "rank_requested": 3,
+    "amplitude_numeric_row_rank": 3,
+    "amplitude_singular_value_ratio": 0.641978886440329,
+    "kernel_null_direction_ratio": 0.41575579507606791,
+    "curvature_null_direction_residual": 7.08142438466109E-18,
+    "mass_null_direction_residual": 1.824071750714629E-17,
+    "operator_consistent": true,
+    "conditional_injectivity_numerically_supported": true,
+    "status": "conditional_injectivity_numerically_supported",
+    "outer_factorization_uniqueness_claimed": false,
+    "physical_identification_claimed": false
+  },
+  "saved_quadrature_max_abs_difference": 0,
+  "source_elapsed_seconds": 457.1130633,
+  "scope": "Read-only extraction plus post-hoc curvature check of one saved illustration; not a convergence study"
+}

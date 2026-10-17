@@ -1,0 +1,38 @@
+{
+  "index": 4,
+  "kind": "correlated",
+  "method": "RAI_S",
+  "scenario": "close",
+  "snr": 50,
+  "selected_channels": 156,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_004_close",
+    "scenario": "close",
+    "snr": 50,
+    "r_true": 3,
+    "w1_logD": 0.18686831249367716,
+    "test_clean_rmse_sigma": 0.2850292167559417,
+    "rank": 2,
+    "correct_rank": false,
+    "matched_components": 2,
+    "ghost_mass_fraction": 0.17400562751664023,
+    "spectral_leakage_fraction": 0.1740056275166402,
+    "unmatched_mass_fraction": 1.8501253973748157e-16,
+    "minority_rate_recovered": true,
+    "minority_support_recall": 1.0,
+    "test_observed_rmse_sigma": 1.042694472541618,
+    "mass": 38.405112257164035,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 4.2409597272256864e-16,
+    "stationarity": 1.685322076553578e-08,
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 2.862189200008288
+}

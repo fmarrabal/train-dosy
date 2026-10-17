@@ -1,0 +1,158 @@
+[
+  {
+    "id": "rank1_snr50",
+    "rank": 1,
+    "snr": 50,
+    "noise_seed": 2.0262067E+7,
+    "solver_seed": 730001,
+    "minimum_unattenuated_channel_signal": 0.06898587274955735,
+    "spectral_cosines": 0.99999999999999989
+  },
+  {
+    "id": "rank1_snr100",
+    "rank": 1,
+    "snr": 100,
+    "noise_seed": 2.0262117E+7,
+    "solver_seed": 730002,
+    "minimum_unattenuated_channel_signal": 0.06898587274955735,
+    "spectral_cosines": 0.99999999999999989
+  },
+  {
+    "id": "rank1_snr200",
+    "rank": 1,
+    "snr": 200,
+    "noise_seed": 2.0262217E+7,
+    "solver_seed": 730003,
+    "minimum_unattenuated_channel_signal": 0.06898587274955735,
+    "spectral_cosines": 0.99999999999999989
+  },
+  {
+    "id": "rank2_snr50",
+    "rank": 2,
+    "snr": 50,
+    "noise_seed": 2.0263067E+7,
+    "solver_seed": 730004,
+    "minimum_unattenuated_channel_signal": 0.1615805692775146,
+    "spectral_cosines": [
+      [
+        0.99999999999999978,
+        0.58570099166286727
+      ],
+      [
+        0.58570099166286727,
+        1
+      ]
+    ]
+  },
+  {
+    "id": "rank2_snr100",
+    "rank": 2,
+    "snr": 100,
+    "noise_seed": 2.0263117E+7,
+    "solver_seed": 730005,
+    "minimum_unattenuated_channel_signal": 0.1615805692775146,
+    "spectral_cosines": [
+      [
+        0.99999999999999978,
+        0.58570099166286727
+      ],
+      [
+        0.58570099166286727,
+        1
+      ]
+    ]
+  },
+  {
+    "id": "rank2_snr200",
+    "rank": 2,
+    "snr": 200,
+    "noise_seed": 2.0263217E+7,
+    "solver_seed": 730006,
+    "minimum_unattenuated_channel_signal": 0.1615805692775146,
+    "spectral_cosines": [
+      [
+        0.99999999999999978,
+        0.58570099166286727
+      ],
+      [
+        0.58570099166286727,
+        1
+      ]
+    ]
+  },
+  {
+    "id": "rank3_snr50",
+    "rank": 3,
+    "snr": 50,
+    "noise_seed": 2.0264067E+7,
+    "solver_seed": 730007,
+    "minimum_unattenuated_channel_signal": 0.36330997566767836,
+    "spectral_cosines": [
+      [
+        0.99999999999999978,
+        0.58570099166286727,
+        0.5560373391376221
+      ],
+      [
+        0.58570099166286727,
+        1,
+        0.67746128953670726
+      ],
+      [
+        0.5560373391376221,
+        0.67746128953670726,
+        0.99999999999999989
+      ]
+    ]
+  },
+  {
+    "id": "rank3_snr100",
+    "rank": 3,
+    "snr": 100,
+    "noise_seed": 2.0264117E+7,
+    "solver_seed": 730008,
+    "minimum_unattenuated_channel_signal": 0.36330997566767836,
+    "spectral_cosines": [
+      [
+        0.99999999999999978,
+        0.58570099166286727,
+        0.5560373391376221
+      ],
+      [
+        0.58570099166286727,
+        1,
+        0.67746128953670726
+      ],
+      [
+        0.5560373391376221,
+        0.67746128953670726,
+        0.99999999999999989
+      ]
+    ]
+  },
+  {
+    "id": "rank3_snr200",
+    "rank": 3,
+    "snr": 200,
+    "noise_seed": 2.0264217E+7,
+    "solver_seed": 730009,
+    "minimum_unattenuated_channel_signal": 0.36330997566767836,
+    "spectral_cosines": [
+      [
+        0.99999999999999978,
+        0.58570099166286727,
+        0.5560373391376221
+      ],
+      [
+        0.58570099166286727,
+        1,
+        0.67746128953670726
+      ],
+      [
+        0.5560373391376221,
+        0.67746128953670726,
+        0.99999999999999989
+      ]
+    ]
+  }
+]

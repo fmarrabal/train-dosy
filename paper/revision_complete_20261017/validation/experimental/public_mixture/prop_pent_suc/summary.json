@@ -1,0 +1,396 @@
+{
+  "status": "completed",
+  "dataset": "PropPentSuc_DOSY.fid",
+  "independent_experiments": 1,
+  "records": [
+    {
+      "method": "RAI-S",
+      "status": "completed",
+      "seconds": 16.996945799997775,
+      "numerical_success": true,
+      "selected_rank": 4,
+      "D_SI": [
+        2.817201492148263e-10,
+        4.671897313833e-10,
+        6.982491990162252e-10,
+        1.474862693436424e-09
+      ],
+      "test_nrmse": 0.005818189639500476,
+      "test_rmse_over_sigma": 2.848747778619833,
+      "training_nrmse": 0.009341757210586684,
+      "A_negative_mass_ratio": 0.0,
+      "global_kernel_condition": 120.92192671797338,
+      "amplitude_expansion": 1.28225512976409,
+      "unstable_global_amplitudes": false,
+      "atomic_model_mismatch": true,
+      "search_cap_reached": true,
+      "points": 4074,
+      "local_nonconvergence": 0,
+      "source_input_sha256": "d8843e2574d6b7a5deb0bc1fd2765bfaba45b062eab2ee2d2ee7fddd3be1c62f"
+    },
+    {
+      "method": "DOME-S",
+      "status": "completed",
+      "seconds": 16.67564699999639,
+      "numerical_success": true,
+      "selected_rank": 4,
+      "D_SI": [
+        2.8172014902518024e-10,
+        4.671897301850767e-10,
+        6.982491959847753e-10,
+        1.4748626932102758e-09
+      ],
+      "test_nrmse": 0.0058181896321963696,
+      "test_rmse_over_sigma": 2.8487477750435395,
+      "training_nrmse": 0.009341757210586799,
+      "A_negative_mass_ratio": 0.0,
+      "global_kernel_condition": 120.92192714049224,
+      "amplitude_expansion": 1.2822551298471156,
+      "unstable_global_amplitudes": false,
+      "atomic_model_mismatch": true,
+      "search_cap_reached": true,
+      "points": 4074,
+      "local_nonconvergence": 0,
+      "source_input_sha256": "d8843e2574d6b7a5deb0bc1fd2765bfaba45b062eab2ee2d2ee7fddd3be1c62f"
+    },
+    {
+      "method": "SCORE-CV",
+      "status": "completed",
+      "seconds": 1.2367937000235543,
+      "numerical_success": true,
+      "selected_rank": 4,
+      "D_SI": [
+        2.861905699645583e-10,
+        5.133440836519925e-10,
+        8.041712778245664e-10,
+        1.505501348405052e-09
+      ],
+      "test_nrmse": 0.00231820765363445,
+      "test_rmse_over_sigma": 1.1350590669708085,
+      "training_nrmse": 0.00205859813827934,
+      "A_negative_mass_ratio": 0.0954194620467781,
+      "global_kernel_condition": 111.87733007924908,
+      "amplitude_expansion": 1.2465392887771196,
+      "unstable_global_amplitudes": false,
+      "atomic_model_mismatch": null,
+      "search_cap_reached": true,
+      "points": 4074,
+      "local_nonconvergence": 0,
+      "source_input_sha256": "d8843e2574d6b7a5deb0bc1fd2765bfaba45b062eab2ee2d2ee7fddd3be1c62f"
+    },
+    {
+      "method": "SCORE-NNLS-CV",
+      "status": "completed",
+      "seconds": 12.943166100012604,
+      "numerical_success": true,
+      "selected_rank": 4,
+      "D_SI": [
+        2.817203164459144e-10,
+        4.671908110031836e-10,
+        6.98251940095767e-10,
+        1.4748628950428767e-09
+      ],
+      "test_nrmse": 0.005818196246763826,
+      "test_rmse_over_sigma": 2.848751013720089,
+      "training_nrmse": 0.009341757210533146,
+      "A_negative_mass_ratio": 0.0,
+      "global_kernel_condition": 120.92154088462175,
+      "amplitude_expansion": 1.2822550553597944,
+      "unstable_global_amplitudes": false,
+      "atomic_model_mismatch": null,
+      "search_cap_reached": true,
+      "points": 4074,
+      "local_nonconvergence": 0,
+      "source_input_sha256": "d8843e2574d6b7a5deb0bc1fd2765bfaba45b062eab2ee2d2ee7fddd3be1c62f"
+    },
+    {
+      "method": "LOCODOSY-SCORE",
+      "status": "completed",
+      "seconds": 1.1758071999938693,
+      "numerical_success": null,
+      "selected_rank": 31,
+      "D_SI": [
+        2.79503743809752e-10,
+        3.9927233208831485e-10,
+        1.1078737173684354e-09,
+        1.5824411811755341e-09,
+        2.7576541325237035e-10,
+        3.9748003823808935e-10,
+        2.7956007720438116e-10,
+        4.097264409229287e-10,
+        2.7592226991424086e-10,
+        4.050194998933179e-10,
+        2.784282548354342e-10,
+        4.163571775066658e-10,
+        2.810387789944497e-10,
+        4.166106476013707e-10,
+        2.718016148712865e-10,
+        4.1618697749748864e-10,
+        6.537800366505859e-10,
+        1.135300885256051e-09,
+        2.3042727391493783e-10,
+        3.402403486100912e-10,
+        1.0270848652967601e-09,
+        2.197309898108559e-10,
+        3.392170749451995e-10,
+        1.040916379895461e-09,
+        4.0204743618717667e-10,
+        6.13439697111778e-10,
+        8.456117357993319e-10,
+        4.863259904645261e-10,
+        7.123765478419376e-10,
+        3.6089818320453003e-10,
+        5.073443917405167e-10
+      ],
+      "test_nrmse": 0.002701045249642061,
+      "test_rmse_over_sigma": 1.3225070222238575,
+      "training_nrmse": 0.0027031720700999512,
+      "A_negative_mass_ratio": 0.03725683586020784,
+      "global_kernel_condition": 9.25254984400249e+17,
+      "amplitude_expansion": 1.0402914536115768,
+      "unstable_global_amplitudes": false,
+      "atomic_model_mismatch": null,
+      "search_cap_reached": false,
+      "points": 4074,
+      "local_nonconvergence": 0,
+      "source_input_sha256": "d8843e2574d6b7a5deb0bc1fd2765bfaba45b062eab2ee2d2ee7fddd3be1c62f"
+    }
+  ],
+  "RAI_DOME_relative_prediction_difference": 7.588320847955438e-11,
+  "preprocessing": {
+    "archive": "Official DOSY Toolbox datasets_v09.zip, linked by official downloads page",
+    "archive_sha256": "1b29d59ff54392ddea05587b25d159442f51f56509c112df80145a89a6b82216",
+    "source_title": "propanol and sucrose in D2O - sample from 27vii04\n",
+    "source_directory": "PropPentSuc_DOSY.fid",
+    "documented_solutes_in_text": [
+      "propanol",
+      "sucrose"
+    ],
+    "possible_additional_solute": "Directory name suggests pentanol; not assigned as certified composition without an exact source crosswalk.",
+    "known_component_D": false,
+    "known_global_diffusion_order": false,
+    "n_acquisitions": 30,
+    "n_original_channels": 32768,
+    "n_selected_channels": 4074,
+    "mask": {
+      "anchor_rows_zero_based": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "discovery_rows_zero_based": [
+        0,
+        1,
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        14,
+        16,
+        17,
+        20,
+        21,
+        22,
+        25,
+        26,
+        28,
+        29
+      ],
+      "selected_channels": 4074,
+      "total_channels": 32768,
+      "regions_original": [
+        [
+          5824,
+          5962
+        ],
+        [
+          7741,
+          8035
+        ],
+        [
+          9723,
+          9799
+        ],
+        [
+          9801,
+          9899
+        ],
+        [
+          10233,
+          10471
+        ],
+        [
+          10762,
+          11255
+        ],
+        [
+          11263,
+          11346
+        ],
+        [
+          11350,
+          12202
+        ],
+        [
+          12209,
+          12292
+        ],
+        [
+          12302,
+          12452
+        ],
+        [
+          18025,
+          19063
+        ],
+        [
+          20451,
+          20872
+        ],
+        [
+          23575,
+          23685
+        ]
+      ],
+      "low_mean_noise": 186219.95879054436,
+      "background_single_row_sigma": [
+        266193.86665433075,
+        178790.07086464996,
+        80933.80605001436,
+        68194.37957372399,
+        57410.811341929584,
+        38531.52221389904,
+        34085.97275401334,
+        28732.62165671384,
+        26153.232054251777,
+        24599.065192477217,
+        24024.4462068708,
+        22906.391724852387,
+        22724.53684886887,
+        22739.626246516145,
+        22565.45050164123,
+        22187.31401109237,
+        22262.535100233406,
+        22379.29137909417
+      ],
+      "background_channels": 28023,
+      "background_neighbour_correlation": 0.9828341826983304,
+      "negative_coherent_points": 28,
+      "no_baseline_subtraction": true,
+      "no_rectification": true,
+      "no_channel_downsampling": true
+    },
+    "negative_coherent_points_outside_support": 0,
+    "outer_test_positions_one_based": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28
+    ],
+    "discovery_positions_one_based": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      10,
+      11,
+      13,
+      15,
+      17,
+      18,
+      21,
+      22,
+      23,
+      26,
+      27,
+      29,
+      30
+    ],
+    "inner_validation_positions_one_based": [
+      3,
+      9,
+      14,
+      19,
+      25
+    ],
+    "processing": {
+      "reader": "Unmodified nmrglue 0.11 Varian module",
+      "first_point_multiplier": 0.5,
+      "zero_fill": 32768,
+      "apodization": "none",
+      "phase": "One common ACME phase estimated only from discovery rows and frozen for all methods/rows",
+      "archived_rp": -8.04705965913,
+      "archived_lp": 46.1240619757,
+      "phase_degrees": [
+        -30.94465701419537,
+        37.33311924119223
+      ],
+      "phase_runs": [
+        {
+          "x": [
+            -30.944659037151943,
+            37.333121936144266
+          ],
+          "fun": 0.0003158620217989069,
+          "success": true,
+          "nfev": 139
+        },
+        {
+          "x": [
+            -30.94465701419537,
+            37.33311924119223
+          ],
+          "fun": 0.00031586202179890435,
+          "success": true,
+          "nfev": 193
+        },
+        {
+          "x": [
+            -30.94465895808946,
+            37.333121892564115
+          ],
+          "fun": 0.0003158620217989063,
+          "success": true,
+          "nfev": 220
+        }
+      ],
+      "baseline_correction": false,
+      "rectification": false,
+      "ppm_axis": "(rfp-rfl+sw*(1-t))/sfrq",
+      "phase_selection": "Saved metadata phase left dispersion visible in discovery-only QA. ACME fitted to normalized mean discovery complex spectrum using unmodified nmrglue 0.11 objective. No test/internal-validation input.",
+      "phase_objective_source_sha256": "b07da9993b93cd4489057572535d3a0c6137c4aab2140bbbbfbf382a44c4f6e7"
+    },
+    "diffusion_encoding": {
+      "equation": "b=dosygamma^2*dosytimecubed*(gzlvl1*DAC_to_G*0.01)^2",
+      "gamma": 267524551.685,
+      "time_cubed": 2.67598e-06,
+      "DAC_to_G": 0.00101,
+      "source": "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\ALGORITMOS\\GNAT\\UoM_GNAT-GNAT-2.4.1\\Import_Export\\varianimport.m",
+      "source_sha256": "301537cff360d146ade72e569693c7e01a5d415c55bcb333b92fcfadaa379f97",
+      "source_lines": "229-251",
+      "calibration": "Nominal archived Varian scale; no independently verified D accuracy.",
+      "NUG": "Homogeneous-gradient exponential kernel. Archive nugcal400 is retained but not imposed without an exact acquisition-calibration crosswalk; unmodelled nonuniform gradients can create curvature."
+    },
+    "sigma_normalized": 0.001916900935654276,
+    "source_hashes": {
+      "legacy_data\\TestData\\DOSY\\PropPentSuc_DOSY.fid\\fid": "6b0c8261ad19ada748fd0687e6171be3453e2941d29a76127d8f3537b7fb2134",
+      "legacy_data\\TestData\\DOSY\\PropPentSuc_DOSY.fid\\log": "dbcd4146576aadd80dcc7bcfa3f34323fd28db1892f70241eb892a004020d2d4",
+      "legacy_data\\TestData\\DOSY\\PropPentSuc_DOSY.fid\\procpar": "318e6fe7d7e4f4a00c3d2744959d90dcae40bb0a55e189781f8986ed425017d4",
+      "legacy_data\\TestData\\DOSY\\PropPentSuc_DOSY.fid\\text": "247cc96db881cddd5fcdbe3ce1e11896d4364f7c194ffe65389ebf6cea27b975"
+    },
+    "input_sha256": "d8843e2574d6b7a5deb0bc1fd2765bfaba45b062eab2ee2d2ee7fddd3be1c62f"
+  },
+  "all_five_prediction_replays_passed": true,
+  "discovery_mask_replay_passed": true,
+  "source_hash_replay_passed": true,
+  "known_global_order": false,
+  "independent_D_truth": false,
+  "conclusion": "Independent public experimental predictive illustration. Signed SCORE predicts best here; RAI-S and DOME-S agree, reach the four-atom cap and flag mismatch. No superiority or chemically correct order claim."
+}

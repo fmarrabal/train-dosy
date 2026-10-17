@@ -1,0 +1,75 @@
+{
+  "index": 63,
+  "snr": 100,
+  "level": 0.08,
+  "seed": 202610181063,
+  "selected_minority_mass": 0.9805519085062552,
+  "selected_channels": 143,
+  "outcomes": [
+    {
+      "method": "RAI",
+      "success": true,
+      "metrics": {
+        "id": "test_800507_weak",
+        "scenario": "weak",
+        "snr": 100,
+        "r_true": 3,
+        "rank": 3,
+        "correct_rank": true,
+        "matched_components": 3,
+        "ghost_mass_fraction": 0.000774533241402251,
+        "spectral_leakage_fraction": 0.0007745332414022065,
+        "unmatched_mass_fraction": 0.0,
+        "minority_rate_recovered": true,
+        "minority_support_recall": 1.0000000000000002,
+        "test_clean_rmse_sigma": 0.22293166353360583,
+        "test_observed_rmse_sigma": 1.016696266204138,
+        "w1_logD": 0.026879104530159636,
+        "mass": 38.76064745793376,
+        "success": true,
+        "kkt": 4.894764513629626e-16,
+        "stationarity": 5.249868999437954e-09
+      },
+      "error": null,
+      "seconds": 2.6973838999983855,
+      "D": [
+        6.513895471345384e-10,
+        2.320748809459808e-09,
+        6.6690867340640565e-09
+      ]
+    },
+    {
+      "method": "DOME",
+      "success": true,
+      "metrics": {
+        "id": "test_800507_weak",
+        "scenario": "weak",
+        "snr": 100,
+        "r_true": 3,
+        "rank": 3,
+        "correct_rank": true,
+        "matched_components": 3,
+        "ghost_mass_fraction": 0.000774533241402251,
+        "spectral_leakage_fraction": 0.0007745332414022065,
+        "unmatched_mass_fraction": 0.0,
+        "minority_rate_recovered": true,
+        "minority_support_recall": 1.0000000000000002,
+        "test_clean_rmse_sigma": 0.22293166353360583,
+        "test_observed_rmse_sigma": 1.016696266204138,
+        "w1_logD": 0.026879104530159636,
+        "mass": 38.76064745793376,
+        "success": true,
+        "kkt": 4.894764513629626e-16,
+        "stationarity": 5.249868999437954e-09
+      },
+      "error": null,
+      "seconds": 1.5342843999969773,
+      "D": [
+        6.513895471345384e-10,
+        2.320748809459808e-09,
+        6.6690867340640565e-09
+      ]
+    }
+  ],
+  "input_sha256": "42c833be5b0545b8d3dedef46f1a0bf695cc4096a47b1606b38b2bd982d99b9a"
+}

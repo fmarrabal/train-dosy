@@ -1,0 +1,47 @@
+{
+  "baseline": [
+    {
+      "method": "RAI",
+      "n": 12,
+      "correct_order": 5,
+      "order_and_rates": 5,
+      "spectral_leakage_fraction": 0.0613081186951964,
+      "unmatched_mass_fraction": 0.07078649792419862,
+      "test_clean_rmse_sigma": 0.2771494871951204,
+      "w1_logD": 0.1787166797269505
+    },
+    {
+      "method": "RAI_S",
+      "n": 12,
+      "correct_order": 8,
+      "order_and_rates": 7,
+      "spectral_leakage_fraction": 0.015437767553794857,
+      "unmatched_mass_fraction": 0.0842471251351284,
+      "test_clean_rmse_sigma": 0.22642818097970122,
+      "w1_logD": 0.11688743518376919
+    },
+    {
+      "method": "DOME",
+      "n": 12,
+      "correct_order": 8,
+      "order_and_rates": 6,
+      "spectral_leakage_fraction": 0.04742569440855554,
+      "unmatched_mass_fraction": 0.10610309235389047,
+      "test_clean_rmse_sigma": 0.25324993064578083,
+      "w1_logD": 0.16590391161010043
+    },
+    {
+      "method": "DOME_S",
+      "n": 12,
+      "correct_order": 8,
+      "order_and_rates": 7,
+      "spectral_leakage_fraction": 0.015437767553794857,
+      "unmatched_mass_fraction": 0.08424712513573418,
+      "test_clean_rmse_sigma": 0.2264281809797444,
+      "w1_logD": 0.11688743518350113
+    }
+  ],
+  "source": "paper/evidence/metrics.csv",
+  "source_sha256": "9d2d80de7eef543efd1692d15d23febd62e620d15e47c22076b17fb2f2972030",
+  "note": "Same12 underlying truths and original masks. AR1 replaces the noise realization; other distortions retain original Gaussian background."
+}

@@ -1,0 +1,42 @@
+{
+  "change": "Figure 2 typography only: legend 8 to 11 pt; ticks/axis label 9 to 11 pt; ylabel line break.",
+  "original_generator": "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\paper\\scripts\\prepare_evidence.py",
+  "original_generator_sha256": "70315ec8c6e48ec84b207718f8f7869297b86c3fcd8379a0bfdea8f6ea3c1461",
+  "metrics_source": "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\paper\\reproduction_inputs\\dosy_support_v2_20260925\\metrics.csv",
+  "metrics_sha256": "9d2d80de7eef543efd1692d15d23febd62e620d15e47c22076b17fb2f2972030",
+  "counts_checked": 24,
+  "all_counts_equal_original": true,
+  "canvas_inches": [
+    7.2,
+    2.65
+  ],
+  "bar_width": 0.17,
+  "bar_spacing": 0.18,
+  "methods": [
+    "RAI",
+    "RAI_S",
+    "DOME",
+    "DOME_S"
+  ],
+  "scenarios": [
+    "single",
+    "double",
+    "triple",
+    "close",
+    "weak",
+    "proportional"
+  ],
+  "colors": [
+    "#96afca",
+    "#176b96",
+    "#d9ae8e",
+    "#ad5a20"
+  ],
+  "numerical_refits": 0,
+  "outputs": {
+    "recovery.pdf": "65137a6c3fc56316a7911abc3862fc2fb2dca24497eea65479c1a41d49fa9e3b",
+    "recovery.png": "58b14c7f134bce7d5f08862dc8df094ad09118df3b2c41faff4994b00f40e712",
+    "recovery_counts_provenance.csv": "b954234e7287c391ccc4af6d5752afa21dd280e4b239d2ddd2007a633a09ed5f",
+    "generate_recovery_readable.py": "c5611b8a4bef82011425c78ea1984f327465bd1aa57553411a4fd4b9c5226bb9"
+  }
+}

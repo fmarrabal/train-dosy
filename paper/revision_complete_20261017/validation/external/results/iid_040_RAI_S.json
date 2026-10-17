@@ -1,0 +1,38 @@
+{
+  "index": 40,
+  "kind": "iid",
+  "method": "RAI_S",
+  "scenario": "single",
+  "snr": 200,
+  "selected_channels": 90,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_040_single",
+    "scenario": "single",
+    "snr": 200,
+    "r_true": 1,
+    "w1_logD": 1.2938837291284174e-148,
+    "test_clean_rmse_sigma": 0.2071971000495726,
+    "rank": 1,
+    "correct_rank": true,
+    "matched_components": 1,
+    "ghost_mass_fraction": 1.6350966581356249e-16,
+    "spectral_leakage_fraction": 0.0,
+    "unmatched_mass_fraction": 0.0,
+    "minority_rate_recovered": true,
+    "minority_support_recall": 1.0,
+    "test_observed_rmse_sigma": 1.0457735441911626,
+    "mass": 21.727851140319665,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 2.679420083335276e-16,
+    "stationarity": 7.136002767266619e-10,
+    "rank": 1
+  },
+  "error": null,
+  "seconds": 2.4454575999989174
+}

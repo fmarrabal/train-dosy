@@ -1,0 +1,13 @@
+Compact public reproduction scope
+
+This public subset contains the downloader, preprocessing and fitting scripts,
+recorded scalar summaries, attribution and licensed software dependencies.
+It does not contain measured raw or processed spectral arrays, fitted arrays,
+the source manual, or industrial observations.
+
+From this folder, run download_varian.py first, then prepare_varian.py,
+run_varian.py and summarize_varian.py. The downloader checks the official archive
+hash and extracts the four required PropPentSuc_DOSY.fid files. Generated
+input.npz, results and figures then permit full numerical replay and audit.
+See docs/VALIDATION_20261017_EN.md at the repository root for environment pins,
+the source dependency and the distinction between prediction and chemical truth.

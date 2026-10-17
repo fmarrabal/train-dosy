@@ -1,0 +1,183 @@
+{
+  "paired": [
+    {
+      "method": "RAI",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "spectral_leakage_fraction",
+      "mean_change": -0.02548444305456561,
+      "descriptive_bootstrap95": [
+        -0.049421251155380465,
+        -0.006372713337807374
+      ]
+    },
+    {
+      "method": "RAI",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "unmatched_mass_fraction",
+      "mean_change": -0.009166652241835003,
+      "descriptive_bootstrap95": [
+        -0.07617467299962571,
+        0.03950545005456442
+      ]
+    },
+    {
+      "method": "RAI",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "test_clean_rmse_sigma",
+      "mean_change": -0.05264781469216063,
+      "descriptive_bootstrap95": [
+        -0.10070827158942819,
+        -0.014106841194783967
+      ]
+    },
+    {
+      "method": "RAI",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "w1_logD",
+      "mean_change": -0.0330689739062102,
+      "descriptive_bootstrap95": [
+        -0.07081824620971182,
+        -0.00164102541082843
+      ]
+    },
+    {
+      "method": "RAI",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "spectral_leakage_fraction",
+      "mean_change": -0.02629497728022136,
+      "descriptive_bootstrap95": [
+        -0.042199868747203856,
+        -0.013137972840490697
+      ]
+    },
+    {
+      "method": "RAI",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "unmatched_mass_fraction",
+      "mean_change": -0.011406071832664025,
+      "descriptive_bootstrap95": [
+        -0.032784050546193655,
+        6.787200180184238e-18
+      ]
+    },
+    {
+      "method": "RAI",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "test_clean_rmse_sigma",
+      "mean_change": -0.02758178928796721,
+      "descriptive_bootstrap95": [
+        -0.03772720049414651,
+        -0.017583374157491588
+      ]
+    },
+    {
+      "method": "RAI",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "w1_logD",
+      "mean_change": -0.039777984941419736,
+      "descriptive_bootstrap95": [
+        -0.05974563720791345,
+        -0.02270639288782745
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "spectral_leakage_fraction",
+      "mean_change": 0.0,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "unmatched_mass_fraction",
+      "mean_change": 0.0,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "test_clean_rmse_sigma",
+      "mean_change": 0.0,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "native_order_common_refit",
+      "to_arm": "prediction_only",
+      "metric": "w1_logD",
+      "mean_change": 0.0,
+      "descriptive_bootstrap95": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "spectral_leakage_fraction",
+      "mean_change": -0.026294977280672798,
+      "descriptive_bootstrap95": [
+        -0.04219986874732679,
+        -0.013137972840421204
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "unmatched_mass_fraction",
+      "mean_change": -0.011406071831518955,
+      "descriptive_bootstrap95": [
+        -0.032784050542582356,
+        0.0
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "test_clean_rmse_sigma",
+      "mean_change": -0.027581789287887196,
+      "descriptive_bootstrap95": [
+        -0.037727200494135645,
+        -0.017583374157378272
+      ]
+    },
+    {
+      "method": "DOME",
+      "from_arm": "prediction_only",
+      "to_arm": "screen_and_prediction",
+      "metric": "w1_logD",
+      "mean_change": -0.03977798494110216,
+      "descriptive_bootstrap95": [
+        -0.059745637207433,
+        -0.022706392887660125
+      ]
+    }
+  ],
+  "bootstrap_replicates": 10000,
+  "seed": 9925,
+  "scope": "Post-hoc24-problem paired descriptive intervals; no simultaneous coverage or independent confirmation claim."
+}

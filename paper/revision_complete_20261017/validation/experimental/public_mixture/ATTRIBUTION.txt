@@ -1,0 +1,27 @@
+Software provenance and licensing
+
+nmrglue 0.11 is retained unmodified in vendor_runtime. Its copyright and full
+BSD license are vendor_runtime/nmrglue-0.11.dist-info/LICENSE.txt; package
+metadata and RECORD are also retained. Copyright (c) 2010-2015 Jonathan J.
+Helmus. The pipeline loads the Varian and Bruker modules directly to avoid
+an unrelated Tecmag importer incompatibility with NumPy 2.5. This does not
+alter the imported modules or the ACME objective source.
+
+The SCORE/LOCODOSY translation is inherited from ../vendor/locodosy_native.py,
+with its GPL-3.0-or-later attribution, ../vendor/COPYING-GNAT and
+../vendor/ATTRIBUTION.txt. It implements published methods and is not a
+novel method of this manuscript. No additional GNAT source code was copied
+here; the acquisition-parameter conversion is documented with source hashes
+and exact line references in the preprocessing JSON.
+
+The public DOSY raw data were downloaded without authentication from the
+Manchester NMR Methodology Group's official DOSY Toolbox archive. The dataset
+is attributed separately in public_mixture_references.tex. No explicit data
+license was found inside the legacy data archive; do not transfer the CC-BY
+license of the unrelated GNAT Mendeley dataset to this older example. The
+public download URLs and hashes suffice for reproducible retrieval. Preserve
+source attribution and upstream notices when packaging software.
+
+The manual PDF is an attribution/context source; it need not be redistributed
+with the reproduction package. The excluded 8-acquisition GNAT example is
+documented in GNAT8_INELIGIBLE.json and contributes no fitted result.

@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-10-17 18:57:47",
+  "scope": "Controlled synthetic convergence study; conditional known factor count, not chemical identification or rank-selection validation",
+  "warm_sweeps": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "sqpcap": 250,
+  "n_starts": 2,
+  "kkt_tol": 1E-6,
+  "objective_tol": 1E-9,
+  "solver_tol": 1E-10,
+  "solver_max_iter": 2000,
+  "curvature_tolerance": 1E-10,
+  "fallback_on_unresolved": true,
+  "lambda_S": 1E-8,
+  "lambda_A": 1E-8,
+  "bins": 256,
+  "acquisitions": 32,
+  "channels": 24,
+  "ranks": [
+    1,
+    2,
+    3
+  ],
+  "snrs": [
+    50,
+    100,
+    200
+  ],
+  "noise_seed_base": 2.0261017E+7,
+  "solver_seed_base": 730000,
+  "replicates": 1,
+  "comparison": "Same inputs, initialization seeds, SQP budget, tolerances and objective across warm budgets. Runtime condition failure routes S to interior-point, without altering objective.",
+  "source_version": "Frozen regularized MATLAB reference 5.1; not signed-v2.2; archived illustration itself was 5.0",
+  "runtime_scope": "Condition checked before every S block and at each accepted SQP iteration; unresolved status never proves nonuniqueness of a boundary solution."
+}

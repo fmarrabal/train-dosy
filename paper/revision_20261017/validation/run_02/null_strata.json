@@ -1,0 +1,186 @@
+{
+  "strata": [
+    {
+      "sigma": 0.02,
+      "mode": "fixed_window",
+      "method": "RAI",
+      "events": 1,
+      "n": 100,
+      "rate": 0.01,
+      "exact_two_sided_95": [
+        0.0002531460329774206,
+        0.054459385392080645
+      ],
+      "exact_one_sided_upper_95": 0.046559811453538935,
+      "fits": 100,
+      "errors": 0
+    },
+    {
+      "sigma": 0.02,
+      "mode": "fixed_window",
+      "method": "DOME",
+      "events": 1,
+      "n": 100,
+      "rate": 0.01,
+      "exact_two_sided_95": [
+        0.0002531460329774206,
+        0.054459385392080645
+      ],
+      "exact_one_sided_upper_95": 0.046559811453538935,
+      "fits": 100,
+      "errors": 0
+    },
+    {
+      "sigma": 0.02,
+      "mode": "independent_discovery",
+      "method": "RAI",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 3,
+      "errors": 0
+    },
+    {
+      "sigma": 0.02,
+      "mode": "independent_discovery",
+      "method": "DOME",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 3,
+      "errors": 0
+    },
+    {
+      "sigma": 0.01,
+      "mode": "fixed_window",
+      "method": "RAI",
+      "events": 1,
+      "n": 100,
+      "rate": 0.01,
+      "exact_two_sided_95": [
+        0.0002531460329774206,
+        0.054459385392080645
+      ],
+      "exact_one_sided_upper_95": 0.046559811453538935,
+      "fits": 100,
+      "errors": 0
+    },
+    {
+      "sigma": 0.01,
+      "mode": "fixed_window",
+      "method": "DOME",
+      "events": 1,
+      "n": 100,
+      "rate": 0.01,
+      "exact_two_sided_95": [
+        0.0002531460329774206,
+        0.054459385392080645
+      ],
+      "exact_one_sided_upper_95": 0.046559811453538935,
+      "fits": 100,
+      "errors": 0
+    },
+    {
+      "sigma": 0.01,
+      "mode": "independent_discovery",
+      "method": "RAI",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 3,
+      "errors": 0
+    },
+    {
+      "sigma": 0.01,
+      "mode": "independent_discovery",
+      "method": "DOME",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 3,
+      "errors": 0
+    },
+    {
+      "sigma": 0.005,
+      "mode": "fixed_window",
+      "method": "RAI",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 100,
+      "errors": 0
+    },
+    {
+      "sigma": 0.005,
+      "mode": "fixed_window",
+      "method": "DOME",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 100,
+      "errors": 0
+    },
+    {
+      "sigma": 0.005,
+      "mode": "independent_discovery",
+      "method": "RAI",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 3,
+      "errors": 0
+    },
+    {
+      "sigma": 0.005,
+      "mode": "independent_discovery",
+      "method": "DOME",
+      "events": 0,
+      "n": 100,
+      "rate": 0.0,
+      "exact_two_sided_95": [
+        0.0,
+        0.03621669264517641
+      ],
+      "exact_one_sided_upper_95": 0.02951304960703993,
+      "fits": 3,
+      "errors": 0
+    }
+  ],
+  "pooled_scope": "Three prespecified noise-scale strata,100 independent problems each; stratified exact intervals avoid requiring identical event probabilities across scales. Pooled binomial intervals in summary are descriptive for the equally weighted generator and not a general FWER guarantee.",
+  "paired_methods": "The same300 inputs are fitted by both methods: this is not600 independent replicates."
+}

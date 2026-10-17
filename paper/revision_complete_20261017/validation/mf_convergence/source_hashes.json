@@ -1,0 +1,78 @@
+[
+  {
+    "file": "source_frozen\\mf_original\\dosy_v4\\+dosyv4\\prepare.m",
+    "sha256": "8570904f549c0dca038a278f9509306048c91f706262e4126d45c3f12f7e4788"
+  },
+  {
+    "file": "source_frozen\\mf_original\\dosy_v4\\+dosyv4\\regularizers.m",
+    "sha256": "0f502e07fd162545157045eb33624422b4aae9f2dce5dedc6ba0f9e9cf5879f4"
+  },
+  {
+    "file": "source_frozen\\mf_robust\\+mfrobust\\evaluate.m",
+    "sha256": "06075cc330b0175b671ee3bdb60105db4cc96147b764340e9359654e00d7d3ac"
+  },
+  {
+    "file": "source_frozen\\mf_robust\\+mfrobust\\lognormal_fit.m",
+    "sha256": "ea741e74c622be11e46bba1cb76fe8d0000b6aff989d493f0fb78d3a5d4be0c8"
+  },
+  {
+    "file": "source_frozen\\mf_robust\\+mfrobust\\nnls_batch.m",
+    "sha256": "d223afaf9364794bfb059ed9796921d0b41113866c5b174c4dfacb6b6e250ded"
+  },
+  {
+    "file": "source_frozen\\mf_robust\\+mfrobust\\profile_refine.m",
+    "sha256": "6835fef1149f13ed41f187ac70df113278ca2b382859fd3b09540a8b4b2f1f02"
+  },
+  {
+    "file": "source_frozen\\mf_robust\\+mfrobust\\simplex_block.m",
+    "sha256": "bc6d4e8e1698aed00e60d407da0fe4dbe58a842258acc1f21e641713f687f1ae"
+  },
+  {
+    "file": "source_frozen\\mf_robust\\DOSY_MF_Robust.m",
+    "sha256": "2ee942c911d6f6424dd8cec715ed48bbd65e4ded666f956d1da2abc1bf521ded"
+  },
+  {
+    "file": "instrumented\\mf_original\\dosy_v4\\+dosyv4\\prepare.m",
+    "sha256": "8570904f549c0dca038a278f9509306048c91f706262e4126d45c3f12f7e4788"
+  },
+  {
+    "file": "instrumented\\mf_original\\dosy_v4\\+dosyv4\\regularizers.m",
+    "sha256": "0f502e07fd162545157045eb33624422b4aae9f2dce5dedc6ba0f9e9cf5879f4"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\curvature_design.m",
+    "sha256": "9f0d7e3f31e4a9660a6ac75190313b6419bed03692c35f37e72ba9daf5892f64"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\curvature_report.m",
+    "sha256": "d3d7f0bb40524f7aaf53de13040017d9fb3a05962c6071abd320e54103a63598"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\evaluate.m",
+    "sha256": "06075cc330b0175b671ee3bdb60105db4cc96147b764340e9359654e00d7d3ac"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\lognormal_fit.m",
+    "sha256": "ea741e74c622be11e46bba1cb76fe8d0000b6aff989d493f0fb78d3a5d4be0c8"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\nnls_batch.m",
+    "sha256": "d223afaf9364794bfb059ed9796921d0b41113866c5b174c4dfacb6b6e250ded"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\profile_refine.m",
+    "sha256": "98361f28f17499b2528b81a87a02fe4ed5cc0b2607691b043da51b6ca8a5190b"
+  },
+  {
+    "file": "instrumented\\mf_robust\\+mfrobust\\simplex_block.m",
+    "sha256": "654e4500458a1b96d867558781aef5a5d5f14a3dd457179160184b132fde4b99"
+  },
+  {
+    "file": "instrumented\\mf_robust\\DOSY_MF_Robust.m",
+    "sha256": "2ee942c911d6f6424dd8cec715ed48bbd65e4ded666f956d1da2abc1bf521ded"
+  },
+  {
+    "file": "instrumented\\mf_robust\\DOSY_MF_Runtime.m",
+    "sha256": "e8728d566f862fc2308717ff148733e04dec19e452806964fc859640bcb968f9"
+  }
+]

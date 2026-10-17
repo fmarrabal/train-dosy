@@ -1,0 +1,38 @@
+{
+  "index": 41,
+  "kind": "iid",
+  "method": "DOME_S",
+  "scenario": "double",
+  "snr": 200,
+  "selected_channels": 142,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_041_double",
+    "scenario": "double",
+    "snr": 200,
+    "r_true": 2,
+    "w1_logD": 0.004190030171030667,
+    "test_clean_rmse_sigma": 0.21828324555579906,
+    "rank": 2,
+    "correct_rank": true,
+    "matched_components": 2,
+    "ghost_mass_fraction": 0.00017289503042627424,
+    "spectral_leakage_fraction": 0.00017289503042640318,
+    "unmatched_mass_fraction": 0.0,
+    "minority_rate_recovered": true,
+    "minority_support_recall": 1.0,
+    "test_observed_rmse_sigma": 0.9961209630768075,
+    "mass": 28.452634070419197,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 4.0436427599753167e-16,
+    "stationarity": 1.0921773388186847e-11,
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 1.683809799986193
+}

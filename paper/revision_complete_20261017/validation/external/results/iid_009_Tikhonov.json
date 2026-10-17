@@ -1,0 +1,43 @@
+{
+  "index": 9,
+  "kind": "iid",
+  "method": "Tikhonov",
+  "scenario": "double",
+  "snr": 100,
+  "selected_channels": 142,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_009_double",
+    "scenario": "double",
+    "snr": 100,
+    "r_true": 2,
+    "w1_logD": 0.30452259711858004,
+    "test_clean_rmse_sigma": 0.3251753223894186,
+    "test_observed_rmse_sigma": 1.089802030782204
+  },
+  "diagnostics": {
+    "regularization": 10000.0,
+    "inner_validation_loss": [
+      [
+        0.09410773159071278,
+        0.01
+      ],
+      [
+        0.09410098552988333,
+        1.0
+      ],
+      [
+        0.09408868756291618,
+        100.0
+      ],
+      [
+        0.0940539053763397,
+        10000.0
+      ]
+    ],
+    "kkt": 1.3732459266946329e-10
+  },
+  "error": null,
+  "seconds": 2.7278654999972787
+}

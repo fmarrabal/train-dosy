@@ -1,0 +1,38 @@
+{
+  "index": 35,
+  "kind": "iid",
+  "method": "DOME_S",
+  "scenario": "weak",
+  "snr": 100,
+  "selected_channels": 129,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_035_weak",
+    "scenario": "weak",
+    "snr": 100,
+    "r_true": 3,
+    "w1_logD": 0.040103171791632405,
+    "test_clean_rmse_sigma": 0.19952402751802303,
+    "rank": 2,
+    "correct_rank": false,
+    "matched_components": 2,
+    "ghost_mass_fraction": 0.013225558895031707,
+    "spectral_leakage_fraction": 0.013225558895031717,
+    "unmatched_mass_fraction": 0.0,
+    "minority_rate_recovered": false,
+    "minority_support_recall": 0.0,
+    "test_observed_rmse_sigma": 1.0232542725989686,
+    "mass": 26.166189784988617,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 3.8972875489589763e-16,
+    "stationarity": 6.882553750429147e-10,
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 3.5832520999829285
+}

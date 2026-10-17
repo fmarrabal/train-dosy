@@ -1,0 +1,38 @@
+{
+  "index": 26,
+  "kind": "iid",
+  "method": "RAI_S",
+  "scenario": "triple",
+  "snr": 50,
+  "selected_channels": 159,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_026_triple",
+    "scenario": "triple",
+    "snr": 50,
+    "r_true": 3,
+    "w1_logD": 0.055725238266647444,
+    "test_clean_rmse_sigma": 0.23038892087565732,
+    "rank": 3,
+    "correct_rank": true,
+    "matched_components": 3,
+    "ghost_mass_fraction": 0.0005746292400778164,
+    "spectral_leakage_fraction": 0.0005746292400777816,
+    "unmatched_mass_fraction": 1.6289280432442172e-16,
+    "minority_rate_recovered": true,
+    "minority_support_recall": 1.0,
+    "test_observed_rmse_sigma": 1.0388370466700925,
+    "mass": 43.620265407486265,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 7.315903021457598e-16,
+    "stationarity": 1.4792685647507196e-08,
+    "rank": 3
+  },
+  "error": null,
+  "seconds": 2.5018000999989454
+}

@@ -1,0 +1,43 @@
+{
+  "index": 39,
+  "kind": "iid",
+  "method": "Tikhonov",
+  "scenario": "broad",
+  "snr": 100,
+  "selected_channels": 166,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_039_broad",
+    "scenario": "broad",
+    "snr": 100,
+    "r_true": 3,
+    "w1_logD": 0.2649853738158761,
+    "test_clean_rmse_sigma": 0.34961089303521725,
+    "test_observed_rmse_sigma": 1.0259138281523132
+  },
+  "diagnostics": {
+    "regularization": 10000.0,
+    "inner_validation_loss": [
+      [
+        0.1061692279321504,
+        0.01
+      ],
+      [
+        0.10616827945584037,
+        1.0
+      ],
+      [
+        0.10614047017471849,
+        100.0
+      ],
+      [
+        0.10607159565962354,
+        10000.0
+      ]
+    ],
+    "kkt": 5.745622033703768e-11
+  },
+  "error": null,
+  "seconds": 3.219702700007474
+}

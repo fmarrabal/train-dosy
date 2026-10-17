@@ -1,0 +1,58 @@
+{
+  "index": 42,
+  "kind": "iid",
+  "method": "SCORE_NNLS",
+  "scenario": "triple",
+  "snr": 200,
+  "selected_channels": 174,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_042_triple",
+    "scenario": "triple",
+    "snr": 200,
+    "r_true": 3,
+    "w1_logD": 0.046375050839963496,
+    "test_clean_rmse_sigma": 0.2633414160092666,
+    "test_observed_rmse_sigma": 1.0601667560884227
+  },
+  "diagnostics": {
+    "evaluations": 299,
+    "candidates": [
+      {
+        "rank": 0,
+        "success": true,
+        "physical": true,
+        "val_sse": 932949.3137272154
+      },
+      {
+        "rank": 1,
+        "success": true,
+        "physical": true,
+        "val_sse": 41599.73635466677
+      },
+      {
+        "rank": 2,
+        "success": true,
+        "physical": true,
+        "val_sse": 3805.9532864843045
+      },
+      {
+        "rank": 3,
+        "success": true,
+        "physical": true,
+        "val_sse": 1130.0003658988846
+      },
+      {
+        "rank": 4,
+        "success": true,
+        "physical": false,
+        "val_sse": 1135.291095390937
+      }
+    ],
+    "rank": 3,
+    "variant": "Positive-amplitude sensitivity of SCORE with unchanged CV wrapper; not signed GNAT default"
+  },
+  "error": null,
+  "seconds": 4.019235099985963
+}

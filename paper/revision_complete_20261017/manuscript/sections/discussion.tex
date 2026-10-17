@@ -1,0 +1,90 @@
+\FloatBarrier
+\section{Discussion}
+Our formulation makes clear which part of the result comes from the representation,
+the regularization, the optimizer and the available information. Exporting a fit
+on 256 bins reduces display quantization; it does not create 256 independent
+diffusion observations. Likewise, a lower prediction error cannot by itself
+identify distributional width, chemical species or a unique factorization.
+
+The support selector limits the assignment of a proposed rate to unrelated
+spectral regions. It first asks whether that rate contributes beyond the other
+candidate decays, using groups of channels to retain coherent weak signals.
+Unrestricted support remains a candidate. The factorial study finds contributions
+from both screening and predictive selection, together with an interaction.
+It does not establish an independent advantage for the RAI or DOME proposals.
+Their primary outputs coincide, as do many of the additional outputs, although
+the weak-component panel contains one different minority-rate match. The searches
+have not been proved equivalent.
+
+The spectral groups are geometric windows and need not coincide with chemical
+resonances. Masking can remove weak signal, errors in nuisance rates can bias the
+residualized score, and nearly coincident rates make its direction ill-conditioned.
+Proposition~\ref{prop:screen} and the stability bounds describe fixed designs.
+The 300 null matrices and 96 weak-component problems characterize particular
+generators; they do not calibrate $\alpha=0.01$ as a universal family-wise error
+rate. The prediction allowance uses the correct difference between fitted
+predictions, but choosing the best model and searching supports make its subsequent
+use heuristic. The discovery masks in the new weak-component and experimental
+studies exclude validation observations. This removes one source of data reuse,
+while leaving uncertainty in the estimated nuisance model and the need for
+selection-adjusted inference.
+
+A TRAIn-MF factor represents a shared distribution, which may be broad or
+multimodal. Its unit-mass normalization fixes scale, not chemical identity.
+The runtime curvature check concerns injectivity of a conditional subproblem.
+The controlled warm-start study supplies factor count to isolate optimization
+and records nonstationary outcomes. It therefore tests neither automatic species
+selection nor convergence to a global minimum. The search caps and iteration
+budgets remain essential parts of the reported procedure.
+
+An atomic model can predict the measured attenuation of a broad distribution
+well because the Laplace operator smooths differences between measures.
+The bound in Section~7.3 explains why good prediction can coexist with an
+incorrect distributional model. Screening may reduce estimation variance at
+the cost of approximation bias, but the prediction gains alone do not isolate
+that mechanism or recover the true width. This matters for industrial resins,
+whose heterogeneity may require more than a few atoms. Their selected model
+order should not be read as a count of molecular constituents.
+
+The external comparisons show how strongly the result depends on the fitted
+representation and the chosen evaluation measure. Signed cancellation, native
+order rules and incomplete optimization remain visible alongside prediction
+error. A signed fit may not define a positive measure, so transport scores
+computed only on eligible outputs describe different subsets. On the public
+mixture, signed SCORE converges and passes the stability checks; it and LOCODOSY
+predict better than the positive global estimators. We report that advantage
+without treating it as proof of chemical recovery. The nominal composition
+provides neither a complete reference order nor independently measured diffusion
+coefficients. These results also cannot rank the four external methods that
+were not run.
+
+The larger neural study compares five seeded policies on 120 new problems,
+including changes in noise and acquisition design. All policies use the same
+search caps and numerical acceptance checks. The policies share a trace bank
+and test problems; their 720 fitted outputs are not 720 independent mixtures.
+We average seed-level metrics within each problem before the paired analysis
+and retain numerical failures. The pooled accuracy intervals include zero. The cost
+reduction is conditional on the stated training and search design and does
+not establish an end-to-end speedup or experimental chemical recovery.
+
+The resin measurements provide four specimen series, each with three
+diffusion-time blocks. They do not provide twelve independently prepared
+mixtures of known composition. Their strongly correlated background and possible
+phase, baseline, suppression, exchange, relaxation or encoding errors can violate
+the ideal observation model. Support is detected without the reserved acquisitions;
+negative coherent structure and unestimated regions remain documented.
+Prediction on reserved acquisitions and consistency across diffusion times are
+useful checks, but neither supplies a component diffusion reference or a
+molecular-weight calibration. The experimental interpretation must remain within
+those limits.
+
+\section{Conclusions}
+Joint positive Laplace inversion can improve spectral assignment when shared
+components are supported by the data. The distinction between bin masses,
+densities, atoms and shared profiles is essential to interpreting the result.
+Our conditional stability and uniqueness calculations explain where reconstruction
+can fail; the additional experiments show those limits in practice. Weak rates
+are missed, finite optimization budgets leave some fits nonstationary, and the
+neural accuracy gains remain inconclusive. The observed reduction in spectral
+leakage therefore supports a specific empirical contribution. Chemical identity
+and distributional width require additional evidence.

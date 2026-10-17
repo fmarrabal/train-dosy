@@ -1,0 +1,31 @@
+{
+  "index": 8,
+  "kind": "correlated",
+  "method": "LOCODOSY",
+  "scenario": "single",
+  "snr": 100,
+  "selected_channels": 87,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_008_single",
+    "scenario": "single",
+    "snr": 100,
+    "r_true": 1,
+    "w1_logD": 0.005787431741026414,
+    "test_clean_rmse_sigma": 0.20004187263405696,
+    "test_observed_rmse_sigma": 0.9691774653203113
+  },
+  "diagnostics": {
+    "local_orders": [
+      1,
+      1,
+      1
+    ],
+    "failures": [],
+    "unstable_windows": [],
+    "rank_is_not_global_species": true
+  },
+  "error": null,
+  "seconds": 0.265590399998473
+}

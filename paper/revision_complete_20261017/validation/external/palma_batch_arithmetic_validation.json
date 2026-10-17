@@ -1,0 +1,50 @@
+{
+  "scope": "Fixed-iteration PPXA+ arithmetic equivalence only. All cases unresolved. The normalized batch certificate and physical-scale native stopping criteria need not stop at the same iteration.",
+  "cases": [
+    {
+      "weight": 0.01,
+      "prediction_relative_error": 5.0451513809464865e-15,
+      "maximum_mass_difference": 7.153166947659884e-13,
+      "batch_converged": false,
+      "native_converged": false,
+      "iterations_per_column": 200,
+      "scales": [
+        0.2,
+        1.0,
+        7.0
+      ]
+    },
+    {
+      "weight": 0.1,
+      "prediction_relative_error": 2.3892528604646503e-15,
+      "maximum_mass_difference": 3.069766663088558e-14,
+      "batch_converged": false,
+      "native_converged": false,
+      "iterations_per_column": 200,
+      "scales": [
+        0.2,
+        1.0,
+        7.0
+      ]
+    },
+    {
+      "weight": 0.5,
+      "prediction_relative_error": 1.576133099833429e-15,
+      "maximum_mass_difference": 6.078471059822732e-15,
+      "batch_converged": false,
+      "native_converged": false,
+      "iterations_per_column": 200,
+      "scales": [
+        0.2,
+        1.0,
+        7.0
+      ]
+    }
+  ],
+  "pass_": true,
+  "source_sha256": {
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\paper\\revision_complete_20261017\\validation\\external\\validate_palma_batch.py": "d45b5aed057bd2be9b49ff89eb2d78e771e08542cefe95699c276ca9d838c884",
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\paper\\revision_complete_20261017\\validation\\external\\palma_batch.py": "46eee80a77c3a43d92d1fa6ec70ea980cdb2e1c5113ab8bb99ebd42badddc3a6",
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\diffusion-inversion\\python\\src\\diffusion_inversion\\entropy.py": "81f67d8514c5b3150daf66fb15cc46f1ccdaf6653f53263a88c8c82b2a891415"
+  }
+}

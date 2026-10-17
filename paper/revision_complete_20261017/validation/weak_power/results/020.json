@@ -1,0 +1,73 @@
+{
+  "index": 20,
+  "snr": 200,
+  "level": 0.02,
+  "seed": 202610181020,
+  "selected_minority_mass": 0.7292119041056454,
+  "selected_channels": 152,
+  "outcomes": [
+    {
+      "method": "RAI",
+      "success": true,
+      "metrics": {
+        "id": "test_800163_weak",
+        "scenario": "weak",
+        "snr": 200,
+        "r_true": 3,
+        "rank": 2,
+        "correct_rank": false,
+        "matched_components": 2,
+        "ghost_mass_fraction": 0.005610265385112888,
+        "spectral_leakage_fraction": 0.005610265385113,
+        "unmatched_mass_fraction": 0.0,
+        "minority_rate_recovered": false,
+        "minority_support_recall": 0.0,
+        "test_clean_rmse_sigma": 0.22030298353772026,
+        "test_observed_rmse_sigma": 0.9909742264310089,
+        "w1_logD": 0.015449383148984048,
+        "mass": 35.56875906838553,
+        "success": true,
+        "kkt": 3.1433673142110023e-16,
+        "stationarity": 6.67390676452066e-11
+      },
+      "error": null,
+      "seconds": 2.795482399989851,
+      "D": [
+        6.572344697049249e-10,
+        2.880852425653957e-09
+      ]
+    },
+    {
+      "method": "DOME",
+      "success": true,
+      "metrics": {
+        "id": "test_800163_weak",
+        "scenario": "weak",
+        "snr": 200,
+        "r_true": 3,
+        "rank": 2,
+        "correct_rank": false,
+        "matched_components": 2,
+        "ghost_mass_fraction": 0.005610265385112888,
+        "spectral_leakage_fraction": 0.005610265385113,
+        "unmatched_mass_fraction": 0.0,
+        "minority_rate_recovered": false,
+        "minority_support_recall": 0.0,
+        "test_clean_rmse_sigma": 0.22030298353772026,
+        "test_observed_rmse_sigma": 0.9909742264310089,
+        "w1_logD": 0.015449383148984048,
+        "mass": 35.56875906838553,
+        "success": true,
+        "kkt": 3.1433673142110023e-16,
+        "stationarity": 6.67390676452066e-11
+      },
+      "error": null,
+      "seconds": 2.0129650000017136,
+      "D": [
+        6.572344697049249e-10,
+        2.880852425653957e-09
+      ]
+    }
+  ],
+  "input_sha256": "fc95735685fd03a1128e6d1c79be536e0f6f8ca4173e8e9754ee0150d4e4b404"
+}

@@ -1,0 +1,25 @@
+{
+  "fits_verified": 504,
+  "input_conditions": 72,
+  "maximum_forward_difference": 0.0,
+  "maximum_rmse_difference": 0.0,
+  "source_hashes_unchanged": {
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\paper\\revision_complete_20261017\\validation\\external\\run_external_benchmark.py": true,
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\src\\train_dosy\\_frozen\\support.py": true,
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\diffusion-inversion\\python\\src\\diffusion_inversion\\locodosy_native.py": true,
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\diffusion-inversion\\python\\src\\diffusion_inversion\\solvers.py": true,
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\diffusion-inversion\\python\\src\\diffusion_inversion\\entropy.py": true,
+    "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\paper\\revision_complete_20261017\\validation\\external\\palma_batch.py": true
+  },
+  "iid_outside_nominal_interval": {
+    "LOCODOSY": [
+      6,
+      14,
+      22,
+      38,
+      46
+    ]
+  },
+  "passed": true,
+  "scope": "Saved-output arithmetic and source-integrity replay, not independent refitting or chemical validation."
+}

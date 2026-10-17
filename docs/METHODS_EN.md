@@ -3,7 +3,7 @@
 ## Why TRAIn-MF?
 **MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
 
-**TRAIn-MF: a multifrequency extension of TRAIn through nonnegative matrix factorization** is the algorithm name. The current constrained reference replaces the original embedded TRAIn iteration; it is not numerically identical to V3.1. Function names, historical source bytes, numerical cores and frozen results are preserved. See the [expanded bibliography](BIBLIOGRAPHY_EN.md).
+**TRAIn-MF: a multifrequency extension of TRAIn through nonnegative matrix factorization** is the algorithm name. V2, consolidated pre-publication V3, V3.1 and the current constrained implementation belong to the same method. The current implementation refines its optimization, replacing the embedded TRAIn iteration with the constrained updates documented here. Function names, historical source bytes, numerical cores and frozen results are preserved. See the [expanded bibliography](BIBLIOGRAPHY_EN.md).
 
 The acquisition model is Y(i,l)=integral exp(-b_i D) d mu_l(D)+noise. D is diffusion; inferred molecular weight requires a separately justified calibration.
 
@@ -52,10 +52,10 @@ Run `python paper/scripts/audit_manuscript.py` to check saved-data means, paired
 
 ### Distinctions that affect interpretation
 
-- TRAIn-MFV31's `lambdaSparse` augments the design by sqrt(lambda) diag(sqrt(w)); the resulting term is weighted quadratic, not an explicit L1 penalty. Clipped residual pseudo-curves and adaptive smoothing/weights do not implement the current fixed TRAIn-MF objective.
+- The V3.1 development revision of TRAIn-MF uses `lambdaSparse`, which augments the design by sqrt(lambda) diag(sqrt(w)); the resulting term is weighted quadratic, not an explicit L1 penalty. Clipped residual pseudo-curves and adaptive smoothing/weights do not implement the current fixed TRAIn-MF objective.
 - TRAIn-MF's empirical paired standard error across validation acquisitions differs from RAI-S/DOME-S's conditional Gaussian prediction-distance allowance. Neither is a calibrated chemical order test after adaptive masking and selection.
 - A fixed convex subproblem can have a unique minimizer while its selected tree, grid, factors or underlying species remain nonidentifiable. Squared positivity can have a zero gradient at a point failing NNLS KKT.
-- The public API scope remains the packaged methods listed above in the reproduction section. Formulating historical variants does not add runnable implementations or retraining to this curated release. Numerical software, saved estimates, metrics and figures remain unchanged.
+- The public API scope remains the packaged methods listed above in the reproduction section. Method formulations alone do not establish execution. The original numerical core and benchmark remain unchanged; the dated supplement identifies the additional executed studies and their separate sources.
 
 ## Identifiability
 Finite Laplace observations do not uniquely identify arbitrary positive measures. Narrow close components, weak species, proportional spectra, baseline/phase errors, noise misspecification and overly narrow bounds can defeat recovery. A fine grid cannot manufacture information. Recovering the fitted rank is weaker than recovering all diffusion rates and weaker still than chemical identification. The manuscript reports these separately.
@@ -67,5 +67,9 @@ Finite Laplace observations do not uniquely identify arbitrary positive measures
 - paper/scripts/prepare_evidence.py: regenerate manuscript tables and figures from a minimal saved synthetic fixture set, with no solver calls.
 - MATLAB example and optional API backend: actual native TRAIn-MF fit using licensed MATLAB. The manuscript's original TRAIn-MF figure remains the hashed saved output.
 - C#: typed SDK/CLI for the same API. It is not an independent numerical reimplementation and provides no third independent scientific validation.
-Neural training and the full historical multi-algorithm survey are outside this curated release. Their frozen reported metrics are retained; the release does not claim end-to-end retraining of those exploratory models.
+The original API release preserves its historical neural metrics. The dated validation supplement separately supplies five training seeds, 120 new test problems and source snapshots; it does not turn the full historical algorithm survey into an executed comparison. See [the validation scope](VALIDATION_20261017_EN.md).
 
+
+## Numerical-study scope
+
+The controlled regularized TRAIn-MF experiment supplies the factor count and varies warm sweeps before a common SQP budget. Its 14/36 selected fits below the declared KKT threshold do not validate automatic factor selection or a fixed eight-sweep stopping rule. Runtime curvature monitoring checks a sufficient conditional injectivity condition for the specified regularizer; it is not a certificate of chemical uniqueness. This entry point does not replace signed-v2.2 or the frozen API solver.

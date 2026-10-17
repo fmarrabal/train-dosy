@@ -1,0 +1,38 @@
+{
+  "methods": [
+    "RAI-S",
+    "DOME-S",
+    "SCORE-CV",
+    "SCORE-NNLS-CV",
+    "LOCODOSY-SCORE"
+  ],
+  "outer_test_positions_one_based": [
+    4,
+    8,
+    12,
+    16,
+    20
+  ],
+  "same_mask_for_all_methods": true,
+  "mask": "8-sigma seeds, 3-sigma connected growth, close gaps <=0.005 ppm, pad 0.004 ppm; four lowest discovery acquisitions only.",
+  "mask_excludes_outer_and_inner_validation": true,
+  "normalization": "One discovery RMS scalar for the full selected spectral matrix.",
+  "sigma": "Median background MAD single-acquisition sigma over discovery rows; correlated processed noise is diagnosed, not claimed iid.",
+  "bounds_D_SI": [
+    1e-11,
+    1.5e-08
+  ],
+  "max_components": 4,
+  "diffusion_display_bins": 256,
+  "model_order_truth": null,
+  "chemical_identity_truth": null,
+  "calibration": "Previously verified HDO/TBO coefficient; no TTMS or mass conversion.",
+  "independent_units": "Four specimen series, three diffusion-time blocks each. Twelve blocks are not twelve independent mixtures.",
+  "preprocessing": "Existing processed absorption spectra; no new baseline, phase, frequency alignment or sign correction.",
+  "display": "Training fits with held-out acquisitions not reused. All signal channels fitted; top trace decimation is display only.",
+  "external_baselines": "Published-method attributed GNAT translation; SCORE signed amplitudes, native initialization, common CV order; LOCODOSY native SVD local order with same signal windows.",
+  "material_identity": "Industrial resins, author-provided identity; exact batch-to-composition crosswalk not established.",
+  "outside_support": "Unestimated, not zero; signs inside support preserved.",
+  "SCORE_NNLS_CV": "Explicit positive-amplitude variant, same native initialization and optimizer budget as signed SCORE-CV.",
+  "runtime_comparison": "Wall times were collected with concurrent jobs and are not a controlled speed benchmark."
+}

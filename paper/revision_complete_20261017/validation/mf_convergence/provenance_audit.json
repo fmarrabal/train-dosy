@@ -1,0 +1,93 @@
+{
+  "source_records": [
+    {
+      "file": "source_frozen\\mf_original\\dosy_v4\\+dosyv4\\prepare.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    },
+    {
+      "file": "source_frozen\\mf_original\\dosy_v4\\+dosyv4\\regularizers.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    },
+    {
+      "file": "source_frozen\\mf_robust\\+mfrobust\\evaluate.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    },
+    {
+      "file": "source_frozen\\mf_robust\\+mfrobust\\lognormal_fit.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    },
+    {
+      "file": "source_frozen\\mf_robust\\+mfrobust\\nnls_batch.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    },
+    {
+      "file": "source_frozen\\mf_robust\\+mfrobust\\profile_refine.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    },
+    {
+      "file": "source_frozen\\mf_robust\\+mfrobust\\simplex_block.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    },
+    {
+      "file": "source_frozen\\mf_robust\\DOSY_MF_Robust.m",
+      "initial_hash_matches": true,
+      "live_original_matches": true
+    }
+  ],
+  "executed_source_records": [
+    {
+      "file": "instrumented\\mf_original\\dosy_v4\\+dosyv4\\prepare.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_original\\dosy_v4\\+dosyv4\\regularizers.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\DOSY_MF_Robust.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\DOSY_MF_Runtime.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\+mfrobust\\curvature_design.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\+mfrobust\\curvature_report.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\+mfrobust\\evaluate.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\+mfrobust\\lognormal_fit.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\+mfrobust\\nnls_batch.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\+mfrobust\\profile_refine.m",
+      "unchanged": true
+    },
+    {
+      "file": "instrumented\\mf_robust\\+mfrobust\\simplex_block.m",
+      "unchanged": true
+    }
+  ],
+  "baseline_equal_to_frozen_tag_v010": true,
+  "git_check_returncode": 0,
+  "passed": true
+}

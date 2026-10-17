@@ -1,0 +1,196 @@
+{
+  "source_sha256": "b5dad83860301874a7db752cb5d2e63191f3092e8b3866c948fed05cb31fe7e8",
+  "null_cases": 300,
+  "null_summary": [
+    {
+      "mode": "fixed_window",
+      "method": "RAI",
+      "errors": 0,
+      "nonzero_outputs": {
+        "events": 2,
+        "n": 300,
+        "rate": 0.006666666666666667,
+        "exact_two_sided_95": [
+          0.0008083864127997914,
+          0.02387349757217365
+        ],
+        "exact_one_sided_upper_95": 0.020836230527024657
+      },
+      "nonzero_among_fitted": {
+        "events": 2,
+        "n": 300,
+        "rate": 0.006666666666666667,
+        "exact_two_sided_95": [
+          0.0008083864127997914,
+          0.02387349757217365
+        ],
+        "exact_one_sided_upper_95": 0.020836230527024657
+      },
+      "no_selected_frequencies": 0,
+      "numerical_failures": 0,
+      "total_fit_seconds": 90.59933929980616
+    },
+    {
+      "mode": "fixed_window",
+      "method": "DOME",
+      "errors": 0,
+      "nonzero_outputs": {
+        "events": 2,
+        "n": 300,
+        "rate": 0.006666666666666667,
+        "exact_two_sided_95": [
+          0.0008083864127997914,
+          0.02387349757217365
+        ],
+        "exact_one_sided_upper_95": 0.020836230527024657
+      },
+      "nonzero_among_fitted": {
+        "events": 2,
+        "n": 300,
+        "rate": 0.006666666666666667,
+        "exact_two_sided_95": [
+          0.0008083864127997914,
+          0.02387349757217365
+        ],
+        "exact_one_sided_upper_95": 0.020836230527024657
+      },
+      "no_selected_frequencies": 0,
+      "numerical_failures": 0,
+      "total_fit_seconds": 70.97940799989738
+    },
+    {
+      "mode": "independent_discovery",
+      "method": "RAI",
+      "errors": 0,
+      "nonzero_outputs": {
+        "events": 0,
+        "n": 300,
+        "rate": 0.0,
+        "exact_two_sided_95": [
+          0.0,
+          0.012220974694293552
+        ],
+        "exact_one_sided_upper_95": 0.009936081944457708
+      },
+      "nonzero_among_fitted": {
+        "events": 0,
+        "n": 9,
+        "rate": 0.0,
+        "exact_two_sided_95": [
+          0.0,
+          0.3362671168799428
+        ],
+        "exact_one_sided_upper_95": 0.2831288355631134
+      },
+      "no_selected_frequencies": 291,
+      "numerical_failures": 0,
+      "total_fit_seconds": 0.6187374999863096
+    },
+    {
+      "mode": "independent_discovery",
+      "method": "DOME",
+      "errors": 0,
+      "nonzero_outputs": {
+        "events": 0,
+        "n": 300,
+        "rate": 0.0,
+        "exact_two_sided_95": [
+          0.0,
+          0.012220974694293552
+        ],
+        "exact_one_sided_upper_95": 0.009936081944457708
+      },
+      "nonzero_among_fitted": {
+        "events": 0,
+        "n": 9,
+        "rate": 0.0,
+        "exact_two_sided_95": [
+          0.0,
+          0.3362671168799428
+        ],
+        "exact_one_sided_upper_95": 0.2831288355631134
+      },
+      "no_selected_frequencies": 291,
+      "numerical_failures": 0,
+      "total_fit_seconds": 4.651049700012663
+    }
+  ],
+  "ablation_cases": 24,
+  "ablation_summary": [
+    {
+      "method": "RAI",
+      "arm": "native_order_common_refit",
+      "n": 24,
+      "correct_order": 9,
+      "order_and_rates": 9,
+      "numerical_failures": 0,
+      "spectral_leakage_fraction": 0.06921694847786942,
+      "unmatched_mass_fraction": 0.09651297551458331,
+      "test_clean_rmse_sigma": 0.3125859458042393,
+      "w1_logD": 0.1853117578322517
+    },
+    {
+      "method": "RAI",
+      "arm": "prediction_only",
+      "n": 24,
+      "correct_order": 15,
+      "order_and_rates": 12,
+      "numerical_failures": 0,
+      "spectral_leakage_fraction": 0.043732505423303814,
+      "unmatched_mass_fraction": 0.08734632327274831,
+      "test_clean_rmse_sigma": 0.2599381311120787,
+      "w1_logD": 0.15224278392604151
+    },
+    {
+      "method": "RAI",
+      "arm": "screen_and_prediction",
+      "n": 24,
+      "correct_order": 16,
+      "order_and_rates": 14,
+      "numerical_failures": 0,
+      "spectral_leakage_fraction": 0.017437528143082456,
+      "unmatched_mass_fraction": 0.07594025144008427,
+      "test_clean_rmse_sigma": 0.23235634182411147,
+      "w1_logD": 0.11246479898462176
+    },
+    {
+      "method": "DOME",
+      "arm": "native_order_common_refit",
+      "n": 24,
+      "correct_order": 15,
+      "order_and_rates": 12,
+      "numerical_failures": 0,
+      "spectral_leakage_fraction": 0.04373250542375523,
+      "unmatched_mass_fraction": 0.08734632327204861,
+      "test_clean_rmse_sigma": 0.2599381311120433,
+      "w1_logD": 0.1522427839255316
+    },
+    {
+      "method": "DOME",
+      "arm": "prediction_only",
+      "n": 24,
+      "correct_order": 15,
+      "order_and_rates": 12,
+      "numerical_failures": 0,
+      "spectral_leakage_fraction": 0.04373250542375523,
+      "unmatched_mass_fraction": 0.08734632327204861,
+      "test_clean_rmse_sigma": 0.2599381311120433,
+      "w1_logD": 0.1522427839255316
+    },
+    {
+      "method": "DOME",
+      "arm": "screen_and_prediction",
+      "n": 24,
+      "correct_order": 16,
+      "order_and_rates": 14,
+      "numerical_failures": 0,
+      "spectral_leakage_fraction": 0.017437528143082432,
+      "unmatched_mass_fraction": 0.07594025144052967,
+      "test_clean_rmse_sigma": 0.2323563418241561,
+      "w1_logD": 0.11246479898442945
+    }
+  ],
+  "ablation_errors": [],
+  "total_worker_seconds": 228.0975798999716,
+  "scope": "Synthetic supplement of frozen atomic RAI-S/DOME-S; not TRAIn-MF signed-v2.2; no GPU/training; no experimental validation."
+}

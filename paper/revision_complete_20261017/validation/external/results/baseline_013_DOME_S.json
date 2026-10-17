@@ -1,0 +1,38 @@
+{
+  "index": 13,
+  "kind": "baseline",
+  "method": "DOME_S",
+  "scenario": "proportional",
+  "snr": 100,
+  "selected_channels": 79,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_013_proportional",
+    "scenario": "proportional",
+    "snr": 100,
+    "r_true": 3,
+    "w1_logD": 0.4588773931768449,
+    "test_clean_rmse_sigma": 1.0002878462428433,
+    "rank": 2,
+    "correct_rank": false,
+    "matched_components": 1,
+    "ghost_mass_fraction": 0.41038801503507455,
+    "spectral_leakage_fraction": 0.0,
+    "unmatched_mass_fraction": 0.41038801503507455,
+    "minority_rate_recovered": false,
+    "minority_support_recall": 0.0,
+    "test_observed_rmse_sigma": 1.0655759158051017,
+    "mass": 27.192036003334437,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 5.0627457532838e-16,
+    "stationarity": 2.257244321764049e-08,
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 0.9541285000159405
+}

@@ -1,0 +1,38 @@
+{
+  "index": 12,
+  "kind": "iid",
+  "method": "RAI_S",
+  "scenario": "close",
+  "snr": 100,
+  "selected_channels": 155,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_012_close",
+    "scenario": "close",
+    "snr": 100,
+    "r_true": 3,
+    "w1_logD": 0.11706588030496125,
+    "test_clean_rmse_sigma": 0.23965520513349017,
+    "rank": 3,
+    "correct_rank": true,
+    "matched_components": 2,
+    "ghost_mass_fraction": 0.26772871192304576,
+    "spectral_leakage_fraction": 0.1266601029156537,
+    "unmatched_mass_fraction": 0.16152772761023615,
+    "minority_rate_recovered": true,
+    "minority_support_recall": 1.0,
+    "test_observed_rmse_sigma": 1.0438748436101866,
+    "mass": 32.70803678776248,
+    "success": true,
+    "kkt": null,
+    "stationarity": null
+  },
+  "diagnostics": {
+    "kkt": 5.618533517677644e-16,
+    "stationarity": 7.363471759509372e-08,
+    "rank": 3
+  },
+  "error": null,
+  "seconds": 2.847445199993672
+}

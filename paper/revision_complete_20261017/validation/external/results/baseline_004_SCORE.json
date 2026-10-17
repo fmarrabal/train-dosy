@@ -1,0 +1,52 @@
+{
+  "index": 4,
+  "kind": "baseline",
+  "method": "SCORE",
+  "scenario": "close",
+  "snr": 50,
+  "selected_channels": 156,
+  "success": true,
+  "physical": false,
+  "metrics": {
+    "test_clean_rmse_sigma": 0.9960396272994408,
+    "test_observed_rmse_sigma": 1.0878334093310311
+  },
+  "diagnostics": {
+    "evaluations": 139,
+    "candidates": [
+      {
+        "rank": 0,
+        "success": true,
+        "physical": true,
+        "val_sse": 84175.44571114858
+      },
+      {
+        "rank": 1,
+        "success": true,
+        "physical": true,
+        "val_sse": 3290.789946223673
+      },
+      {
+        "rank": 2,
+        "success": true,
+        "physical": true,
+        "val_sse": 975.645755351306
+      },
+      {
+        "rank": 3,
+        "success": true,
+        "physical": true,
+        "val_sse": 966.0695852983366
+      },
+      {
+        "rank": 4,
+        "success": true,
+        "physical": false,
+        "val_sse": 1038.011021457811
+      }
+    ],
+    "rank": 2
+  },
+  "error": null,
+  "seconds": 0.16272110000136308
+}

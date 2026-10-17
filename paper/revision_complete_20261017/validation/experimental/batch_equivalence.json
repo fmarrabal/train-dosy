@@ -1,0 +1,82 @@
+{
+  "fixtures": [
+    {
+      "rank": 1,
+      "noise": 0.0,
+      "relative_errors": [
+        1.7929382239351805e-28,
+        5.685590252519818e-13,
+        1.9037076153633596e-16
+      ]
+    },
+    {
+      "rank": 1,
+      "noise": 0.02,
+      "relative_errors": [
+        1.6916961267238984e-16,
+        4.306959267929596e-15,
+        1.8724228217713673e-16
+      ]
+    },
+    {
+      "rank": 2,
+      "noise": 0.0,
+      "relative_errors": [
+        6.372733268864653e-28,
+        4.763098982824248e-13,
+        7.830276833233972e-16
+      ]
+    },
+    {
+      "rank": 2,
+      "noise": 0.02,
+      "relative_errors": [
+        2.1051306803663957e-16,
+        2.1389121958202216e-14,
+        6.752201812399283e-16
+      ]
+    },
+    {
+      "rank": 3,
+      "noise": 0.0,
+      "relative_errors": [
+        2.3587754813406195e-26,
+        1.3400736265510501e-11,
+        1.0341510470009493e-15
+      ]
+    },
+    {
+      "rank": 3,
+      "noise": 0.02,
+      "relative_errors": [
+        1.973818739871364e-16,
+        1.4815168918771271e-12,
+        1.1835685209562476e-15
+      ]
+    },
+    {
+      "rank": 4,
+      "noise": 0.0,
+      "relative_errors": [
+        8.11976278068939e-27,
+        6.4916190096477855e-12,
+        1.7462516495067397e-15
+      ]
+    },
+    {
+      "rank": 4,
+      "noise": 0.02,
+      "relative_errors": [
+        2.430498190716227e-16,
+        3.311307939513471e-12,
+        2.0875167287423276e-15
+      ]
+    }
+  ],
+  "passed": true,
+  "interpretation": "Identical independent NNLS minimizers for constant row weights; no model, objective or starting-point change.",
+  "original_source": "E:\\ARTICULOS-CIENTIFICOS\\NEW_ITERATIVE_ILT\\train-dosy-public\\src\\train_dosy\\_frozen\\vendor\\rai_ilt\\components.py",
+  "original_sha256": "cd5dfea2bb4c5684c2bc383f0aad8dc36963e09151f03165c609814a95eb2671",
+  "batch_source": "dome.solver.amplitudes_exact",
+  "script_sha256": "569d9e95f20596dcc1d1f078f28d279c145867335e4e319587b87d0accbee1e2"
+}

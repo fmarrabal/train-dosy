@@ -1,0 +1,15 @@
+locodosy_native.py is a byte-for-byte copy of the existing Python translation
+from diffusion-inversion/python/src/diffusion_inversion/locodosy_native.py.
+The source module contains its original attribution and GPL-3.0-or-later
+translation notice. The GNAT distribution's GPLv3 license is included in
+COPYING-GNAT. Original MATLAB copyright: Mathias Nilsson (2007, 2010, 2017).
+
+This is an attributed comparator implementing existing SCORE / LOCODOSY
+methodology, not a new inversion method of the present manuscript. The common
+acquisition-CV wrapper and the explicitly labeled SCORE-NNLS-CV variant are
+defined separately in run_experimental.py and score_nnls_cv.py.
+
+The experimental calculations originally imported this same module from the
+local diffusion-inversion checkout. It was then frozen here, with identical
+SHA-256, to remove an absolute path dependency for replay. No scientific source
+code in the copied module was changed.

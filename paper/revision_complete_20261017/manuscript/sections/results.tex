@@ -1,0 +1,137 @@
+\section{Results}\label{sec:results}
+\subsection{Atomic recovery and spectral leakage}
+Table~\ref{tab:primary} reports the 36 signal-present atomic test problems. RAI-S reduces mean leakage from 5.166\% to 1.728\%, and DOME-S from 3.857\% to 1.728\%. The clean external prediction error decreases from 0.2870 to 0.2330 for RAI and from 0.2591 to 0.2330 for DOME. Binned shape loss decreases from 0.1523 to 0.1094 and from 0.1393 to 0.1094, respectively. These are paired changes on the same observations and masks.
+
+\begin{table}[htbp]
+\caption{New atomic test: 36 signal-present problems, excluding null and broad-distribution controls. Leakage and unmatched mass are percentages. $E_U$ is clean external RMSE divided by $\sigma$; $W_{1,h}$ is the binned log-diffusion shape score. A correct count is weaker than recovery of both order and rates.}\label{tab:primary}
+\begin{adjustwidth}{-\extralength}{0cm}\centering\small
+\input{sections/table_positive}
+\end{adjustwidth}
+\end{table}
+
+The favorable averages do not hold for every endpoint. Unmatched estimated mass increases from 6.774\% to 7.257\% for RAI and from 7.019\% to 7.257\% for DOME. RAI's correct-order count rises from 17/36 to 25/36, but DOME's falls from 26/36 to 25/36. The stricter order-and-rates count improves from 17/36 to 23/36 and from 22/36 to 23/36. Thus the strongest common conclusion is improved spectral assignment and prediction, not uniformly improved component counting.
+
+For RAI, the mean leakage change is $-3.438$ percentage points, with a descriptive 95\% paired bootstrap interval $[-5.282,-1.926]$. For DOME the change is $-2.129$ points, with interval $[-3.155,-1.268]$. The corresponding clean prediction changes are $-0.0540$ [$-0.0800,-0.0325$] and $-0.0261$ [$-0.0338,-0.0181$]. These intervals summarize the saved 36-case panel under the stated resampling convention; they do not adjust for multiple reported endpoints or establish external experimental performance.
+
+RAI-S and DOME-S yield effectively identical primary summaries to the displayed precision. Their common post-proposal objective, support rule, and refinement can erase differences between proposal paths. These outcomes support the shared selection procedure and give no evidence that two independent improvements have been discovered.
+
+\subsection{Scenario-level failures and a DOSY illustration}
+Figure~\ref{fig:recovery} separates ordinary mixtures from difficult identification regimes. Both screened methods recover order and all rates in all six one-, two-, and three-separated-component cases. In close-rate cases they recover the correct order in 5/6 problems, but all rates in only 4/6. For proportional spectra they recover neither the full three-rate structure nor the correct order in any of six cases. The original DOME recovers the correct order in one of these cases, so the screened version has a visible regression.
+
+In the weak family, the correct order is selected in 2/6 cases, but the weakest rate is matched in only 1/6; neither original method matches it in these six cases. In the one matched screened case, approximately 72\% of the true minority spectral mass lies within the retained allowed support. The support metric is a recall of permitted spectral channels, not a claim of unbiased amplitude recovery. These results leave weak-species detection unresolved.
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{figures/recovery.pdf}
+\caption{Recovery of both order and all rates by scenario in the new atomic test. Every bar has six independently generated problems. Matching uses a log-rate tolerance of 0.25. Narrow output bands and correct order alone do not imply successful localization.}\label{fig:recovery}
+\end{figure}
+
+\begin{figure}[p]
+\begin{adjustwidth}{-\extralength}{0cm}\centering
+% The preserved source has a clipped vertical color label at its right edge.
+% Crop that label only and typeset its exact meaning below; data are unchanged.
+\includegraphics[width=\fulllength,height=.77\textheight,keepaspectratio,trim=0 0 5pt 0,clip]{figures/dosy_discrete.pdf}
+\par\smallskip{\footnotesize Color scale: cell density / common reference maximum.}\par
+\caption{Saved independent test problem 18, with three true atomic rates and SNR 200. The complete reference is shown alongside DOME and the two support-selected outputs. All panels use the same selected spectral channels, 256-bin mass-to-density display, and common absolute reference maximum; values below 0.1\% of that maximum are not colored. The top traces show measured attenuation spectra. Side projections have separate horizontal scales. The display creates finite-width cells for atoms; it is not a recovered continuous width. Quantitative results use the unthresholded saved outputs.}\label{fig:dosyatomic}
+\end{adjustwidth}
+\end{figure}
+
+Figure~\ref{fig:dosyatomic} provides one fixed illustration, rather than selecting a new representative after ranking the test outputs. The ground truth is displayed explicitly. Correlation is used through common rates and component-specific spectral amplitudes; it is not an assumption that every spectral channel has the same decay. The color threshold is a plotting convention applied to every panel and has no role in model order or support estimation.
+
+\subsection{Null controls, broad distributions, and transfer}
+All four atomic methods select the null model in all six noise-only controls. This observed count is not a guarantee of a population false-positive rate: even under a common Bernoulli model, zero false selections in six trials gives a one-sided 95\% upper bound of $1-0.05^{1/6}=0.393$. The larger revision controls are reported separately in Appendix~\ref{app:revisionvalidation}, without pooling them with the frozen study. On the six broad controls, the screened methods have clean prediction error 0.2382, compared with 0.3664 for RAI and 0.2837 for DOME. Their binned shape score is 0.1638, compared with 0.2686 and 0.1972. An atom model nevertheless cannot reproduce nonzero distributional width exactly. The apparent improvement in prediction is therefore not evidence of recovered width. For a positive diffusion measure with mass $M$, mean $\bar D$, variance $v$ and support $D\geq D_{\min}\geq0$, convexity and Taylor's theorem give the finite-measurement bound
+\[
+0\leq\int e^{-bD}\,d\mu(D)-M e^{-b\bar D}\leq \tfrac12 M b^2 e^{-bD_{\min}}v.
+\]
+Thus a narrow continuous profile can have an attenuation close to an atomic one on the sampled interval. Reducing the allowed spectral support can trade approximation bias against estimation variance. This explains why lower prediction error is compatible with an incorrect measure class; it is not a proof that variance reduction alone caused the observed improvement or that the true distributional width was identified. Counting its fitted rates against the number of generating broad profiles is a descriptive center-count comparison, not a valid literal atom-recovery claim.
+
+On the 24 archived finite-width problems, leakage decreases from 1.245\% to 0.082\% for both native paths. Clean prediction error changes from 0.2650 to 0.2329 for RAI and from 0.2492 to 0.2329 for DOME. The selected-order count agrees with the number of generating profiles in 19/24 screened fits versus 18/24 native fits, while the stricter matching count remains 18/24. Transfer performance is encouraging for spectral assignment, but the differing true measure class prevents pooling it with the atomic test.
+
+\begin{figure}[p]
+\begin{adjustwidth}{-\extralength}{0cm}\centering
+\includegraphics[width=\fulllength,height=.77\textheight,keepaspectratio]{figures/dosy_continuous.pdf}
+\caption{Archived problem \texttt{r3\_snr200\_rep1}: three finite-width lognormal diffusion profiles, SNR 200, and 120 selected spectral channels of 1024. Ground truth, the unchanged automatic TRAIn-MF reference, RAI-S, and DOME-S are shown. TRAIn-MF uses its original masses and original cell edges without remapping. Its factor count and the atomic methods' order are selected automatically but have different meanings. The common reference maximum is 63.34986357 in the saved cell-density units, with a 0.1\% display floor. Side projections are separately scaled. Fitted atoms occupy individual export cells and do not estimate the true widths.}\label{fig:dosycontinuous}
+\end{adjustwidth}
+\end{figure}
+
+Figure~\ref{fig:dosycontinuous} retains the existing TRAIn-MF reconstruction and its native grid. For this case, the native atomic leakage of approximately 1.975\% decreases to 0.279\% after support selection, with three selected rates. The TRAIn-MF result is used to display the distinction between distributional factorization and atomic inference. It was not recomputed for this manuscript, and the figure is not a new all-method performance ranking. No conclusion about polymer molecular weights is drawn without a separate calibration and experimental analysis.
+
+\subsection{Exploratory neural policy comparison}
+Table~\ref{tab:net} reports the policy comparison. On 24 new test problems the relative change in mean binned shape score is approximately 0.041\%, with mean paired difference $-0.000111$ and bootstrap interval $[-0.001356,0.001105]$. The clean-error interval also includes zero. On the archived transfer panel, the shape score improves by approximately 1.48\%, but this does not establish an advantage on the new test. One fit per policy in the archived panel fails its numerical convergence criterion; both outputs remain in the reported averages.
+
+\begin{table}[htbp]\centering
+\caption{RAI-Net policy comparison on its predefined panels. These are distributional methods, so no chemical order-recovery count is assigned. All saved outcomes, including the two numerical failures, enter the averages.}\label{tab:net}
+\begin{tabular}{llrrr}\toprule
+Panel & Policy & $W_{1,h}$ & $E_U$ & Numerical success\\\midrule
+New test, $n=24$ & Original & 0.272268 & 0.307991 & 24/24\\
+ & Retrained & 0.272157 & 0.307921 & 24/24\\
+Archived, $n=24$ & Original & 0.204769 & 0.326401 & 23/24\\
+ & Retrained & 0.201739 & 0.326324 & 23/24\\\bottomrule
+\end{tabular}
+\end{table}
+
+The new neural panel includes atomic, broad, and null cases, with zero shape-score contributions for nulls under the archived bookkeeping convention. Its averages therefore do not share the population of Table~\ref{tab:primary}. The policy ranks adaptive actions within an existing numerical procedure. It neither adds observations nor certifies the chemical support. These data do not support promoting the retrained policy as a superior substitute for the support-selected atomic estimator, and the two are not compared as if they shared the same output class. This original small comparison is retained as an inconclusive exploratory result. The extended revision now supplies five reproducible training seeds and 120 new whole-problem tests, including noise and acquisition-design shifts, against a classical policy with the same search caps (Appendix~\ref{app:neuralexpanded}). Numerical failures, realized costs and paired whole-problem intervals are reported there; the extended experiment is not pooled with Table~\ref{tab:net}.
+
+
+\subsection{Extended computational and experimental validation}\label{sec:extendedresults}
+The factorial experiment in Appendix~\ref{app:completevalidation} examines
+screening and predictive selection separately. For RAI, screening at native order
+reduces clean error from 0.30677 to 0.29087 noise units. Predictive selection alone
+gives 0.26189, and combining the stages gives 0.23145. DOME reaches the same final
+factorial result from a different native-order baseline. These interventions
+support a contribution from both shared stages on this panel, with an interaction,
+without demonstrating an independent advantage of either proposal family. Unlike
+the mandatory-screening factorial arm, the production selector also considers
+unrestricted support and reproduces the original saved result.
+
+In the larger weak-component panel, RAI-S matches the minority rate in 45/96 fits
+and DOME-S in 44/96. Figure~\ref{fig:weakpowerrevision} shows how recovery changes
+with SNR and amplitude. Even though all fits meet their numerical criteria, the
+smallest components are often missed; a nonselected component cannot generally be
+declared absent. The TRAIn-MF study in Appendix~\ref{app:mfconvergence} also shows
+why iteration counts need a separate stationarity check. Only 14 of 36 selected
+fits meet the $10^{-6}$ KKT tolerance within the common SQP budget. We retain the
+22 unresolved fits in the objective and prediction summaries.
+
+All 720 final outputs in the larger neural study pass their numerical checks.
+After averaging the five neural metrics within each problem, the difference
+from the classical shortlist is $\Delta W_{1,h}=-0.00054$, with a descriptive
+95\% interval $[-0.00174,0.00056]$ over 105 signal-present problems. The clean-error
+difference is $-0.00012$, with interval $[-0.00044,0.00010]$ over all 120 problems.
+Both intervals include zero, so the study does not establish improved accuracy.
+The neural policies require fewer fixed-tree fits under the same search caps;
+Appendix~\ref{app:neuralexpanded} gives the cost definitions and accounts for the
+reused training traces.
+
+Table~\ref{tab:externalexecuted} compares the attributed SCORE and LOCODOSY
+implementations, a positive-amplitude SCORE variant and positive distributional
+controls. All methods predict the same withheld observations, but their component
+counts and distributional shape scores have different meanings. Every returned
+estimate enters the prediction summary; numerical failures and outputs that do
+not define a positive measure are identified separately. This is a comparison of
+the stated implementations and tuning policies, rather than a universal ranking
+of algorithm names.
+
+The industrial-resin study in Appendix~\ref{app:experimentalrevision} tests the
+methods on measured spectra with processing distortions and strongly correlated
+background. Here, the fitted atomic order describes a model of the data; reaching
+the search cap does not identify the number of constituents. A signed fit can
+have a smaller predictive error while relying on nearly coincident rates and
+cancelling spectra. These experimental outcomes test the scope of the synthetic
+conclusions and retain model-mismatch and optimization flags.
+
+The public 30-acquisition example in Appendix~\ref{app:publicmixture} provides
+a useful counterexample. Its archived sample text documents propanol and sucrose.
+All four final global fits and all 27 local SCORE solver calls pass their numerical
+checks, yet signed SCORE predicts best: test NRMSE is $0.232\%$, compared with
+$0.582\%$ for RAI-S and DOME-S and $0.270\%$ for LOCODOSY. The signed SCORE fit
+also passes the conditioning checks, so its advantage cannot be attributed to
+failed optimization. Amplitude constraints and possible acquisition-model error
+affect this comparison. RAI-S and DOME-S reach the cap and flag model mismatch.
+We therefore find no general experimental predictive advantage for the positive
+global selector. The nominal solutes do not establish the full composition,
+chemical assignments or independently measured diffusion coefficients.
+
+\subsection{Numerical and provenance checks}
+The archived audit verifies 144 support-selected fits across the new test and transfer banks. Their maximum relative amplitude KKT residual is $1.12\times10^{-15}$; the maximum normalized projected log-rate residual is $1.34\times10^{-7}$. Four poor-precision flags and four atomic-model-mismatch flags remain visible. The 100-column MATLAB NNLS comparison has relative prediction discrepancy $4.62\times10^{-17}$. Five targeted numerical tests pass. These figures are compatibility and numerical checks, not confidence bounds for chemical recovery. All saved native and support-selected fits in the frozen primary and archived transfer banks report numerical success; the two neural failures in those panels occur on the same archived problem. The extended revision experiments have their own numerical failure counts in Appendix~\ref{app:completevalidation}; they are not pooled with this archived audit. These flags use method-specific stopping rules and are not interchangeable certificates of accuracy.
+
+An earlier clean extraction of the reproducibility bundle reproduced a selected prediction exactly. A later correction restored the original TRAIn-MF plotting grid and color floor without changing its numerical result or the support-selection core. The current manuscript hashes its input files and regenerates tables and figures from saved outputs. The TRAIn-MF array hash remains unchanged. Appendix~\ref{app:repro} specifies the replay and refitting scopes of the public release and the exploratory work retained in earlier archives.

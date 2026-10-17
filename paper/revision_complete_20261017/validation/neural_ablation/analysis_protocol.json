@@ -1,0 +1,15 @@
+{
+  "frozen_utc": "2026-10-17T19:03:38.285809+00:00",
+  "script_sha256": "54f55df067314212080c8e0a0dc179087307293bf151d10a573c108bac0623f5",
+  "bootstrap_seed": 2026101899,
+  "replicates": 10000,
+  "correction": "Review clarified pooled uncertainty: preserve domain sizes by resampling problems within each domain. Original neural_study summary pooled bootstrap is unstratified; final_summary.json from this script is authoritative for intervals. No solver/selection/checkpoint or endpoint was changed.",
+  "sampling_unit": "Whole synthetic problem; average five neural predictions only at the metric level before calculating paired differences. Train runs share data; no600-case pseudo-replication.",
+  "scope": "Conditional on the80-problem trace bank and five declared independent seed runs. Includes failed numerical fits in metrics; execution errors and absent pairs reported separately.",
+  "endpoints": {
+    "W1": "105 signal-present problems, nulls undefined and excluded",
+    "clean_RMSE_sigma": "all120 problems including15nulls"
+  },
+  "subgroup_scope": "Domain and scenario summaries are descriptive; no multiplicity-adjusted or clinical/chemical validation claim.",
+  "budget_scope": "Six rounds and shortlist1 with fallback match algorithmic caps, not realized time/fit counts. Solver timings exclude checkpoint load/serialization; reused trace cost reported separately."
+}

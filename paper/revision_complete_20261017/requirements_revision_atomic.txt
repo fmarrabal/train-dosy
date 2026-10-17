@@ -1,0 +1,6 @@
+numpy==2.5.1
+scipy==1.18.0
+matplotlib==3.11.0
+pydantic==2.13.2
+threadpoolctl==3.6.0
+# nmrglue 0.11 is supplied with its BSD license in the public-data vendor_runtime.

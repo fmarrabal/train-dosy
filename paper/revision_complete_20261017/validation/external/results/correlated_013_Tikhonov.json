@@ -1,0 +1,43 @@
+{
+  "index": 13,
+  "kind": "correlated",
+  "method": "Tikhonov",
+  "scenario": "proportional",
+  "snr": 100,
+  "selected_channels": 79,
+  "success": true,
+  "physical": true,
+  "metrics": {
+    "id": "test_013_proportional",
+    "scenario": "proportional",
+    "snr": 100,
+    "r_true": 3,
+    "w1_logD": 0.4834782542848939,
+    "test_clean_rmse_sigma": 0.36008532166916424,
+    "test_observed_rmse_sigma": 1.061376515208413
+  },
+  "diagnostics": {
+    "regularization": 10000.0,
+    "inner_validation_loss": [
+      [
+        0.04638596468245859,
+        0.01
+      ],
+      [
+        0.046384423035485386,
+        1.0
+      ],
+      [
+        0.046371172693586475,
+        100.0
+      ],
+      [
+        0.04633317013132125,
+        10000.0
+      ]
+    ],
+    "kkt": 7.010363470283387e-11
+  },
+  "error": null,
+  "seconds": 2.256342200009385
+}
