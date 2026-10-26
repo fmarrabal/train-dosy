@@ -20,6 +20,8 @@ The results set useful limits. Only 14 of 36 selected TRAIn-MF fits met the decl
 
 The API remains software 0.2.1. The regularized TRAIn-MF convergence study has its own monitored entry point and is separate from the signed-v2.2 API backend. Historical numerical results are preserved. Industrial measurements and private laboratory documents are not part of this public update; the public example can be rebuilt through its source URL, hash and preprocessing scripts.
 
+**26 October 2026 — compact delivery.** The MDPI upload form used that day imposed a 250 MB file limit, so a 153.8 MB scientific supplement was prepared without changing the results, algorithms or API 0.2.1. All 60 saved industrial predictions and their five error metrics were reconstructed within an absolute tolerance of `1e-12`, without refitting. This checks numerical replay, not NPZ byte identity or chemical identification. The compact archive retains private industrial observations and amplitudes and is not hosted here. See the [packaging and replay note](docs/VALIDATION_20261017_EN.md#compact-delivery-and-replay-26-october-2026) and [verification summary](verification/compact_packaging_20261026.json).
+
 ## Why TRAIn-MF?
 **MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
 

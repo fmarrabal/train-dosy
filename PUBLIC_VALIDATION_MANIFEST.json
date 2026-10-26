@@ -27,15 +27,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "d2c945f0022bb8ba30ba2ccefc1716f2013269dc301d1f6747fc3158c29afd94",
-      "bytes": 12838,
+      "sha256": "1f87a0dd663368b0aa989ce5d98b2a3a1c209a92fcefc8234e902d7b1cd58993",
+      "bytes": 13560,
       "role": "Documentation with revised-manuscript link",
       "source_bytes_unchanged": false
     },
     {
       "path": "README_ES.md",
-      "sha256": "990022708b000991620c31c6a49a40a1b02fa6642ebe98549416584ac93b3403",
-      "bytes": 12865,
+      "sha256": "32a11f27489d9114c70ca28ac8c772c206f13adad3a86b9b31f229427a7a914c",
+      "bytes": 13691,
       "role": "Documentation with revised-manuscript link",
       "source_bytes_unchanged": false
     },
@@ -109,15 +109,15 @@
     },
     {
       "path": "docs/VALIDATION_20261017_EN.md",
-      "sha256": "261f20224ac158f00acef5a3215d5b3c1da7467a3dd10f8ef413bd5676e5b5cd",
-      "bytes": 10784,
+      "sha256": "d5b055e9bcad54e8e8bcec5876834049e25deb5794a79b8c88603b17eb1ae9e9",
+      "bytes": 13382,
       "role": "public documentation",
       "source_bytes_unchanged": false
     },
     {
       "path": "docs/VALIDATION_20261017_ES.md",
-      "sha256": "19e43610e1645f206c24a2a553c21ec72a5c6b9949c91dc3c7f5f3d3e733e3e1",
-      "bytes": 10701,
+      "sha256": "c0c3dee34f75dafa1c877859b76c08cf1b3d6ec0aa9ab5c204770accb591c319",
+      "bytes": 13683,
       "role": "public documentation",
       "source_bytes_unchanged": false
     },
@@ -11128,6 +11128,19 @@
       "bytes": 1905,
       "role": "existing public dependency",
       "source_bytes_unchanged": true
+    },
+    {
+      "path": "verification/compact_packaging_20261026.json",
+      "sha256": "29ec6294dbcddf36d59711cdc532f73ee7fff01fb084e5acdf9a029ee3649587",
+      "bytes": 2439,
+      "role": "Public aggregate packaging verification; no observations or specimen parameters",
+      "source_bytes_unchanged": false
     }
-  ]
+  ],
+  "documentation_update": {
+    "date": "2026-10-26",
+    "previous_publication_commit": "47269db793b112d6c4e5be32b122765966b1f5ae",
+    "scope": "Packaging documentation and aggregate replay verification only",
+    "numerical_api_unchanged": true
+  }
 }

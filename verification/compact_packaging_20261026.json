@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-26",
+  "scope": "Archive packaging and arithmetic replay of saved atomic fits; no new estimation or chemical validation.",
+  "software_version": "0.2.1",
+  "numerical_solvers_changed": false,
+  "clean_manuscript_changed": false,
+  "public_reference_sha256": {
+    "Manuscript_Revised_CLEAN.pdf": "62f09ec6733b3b1bd530c34ae31c73dd484f9d01e7a7f4297c930cb32963a9e2",
+    "Manuscript_LaTeX_Source_REVISED.zip": "ae1f507b1da744515d9310d4079dc5d8840d983d796f1411cba21db5da66e558"
+  },
+  "companion_archive": {
+    "hosted_in_this_repository": false,
+    "private_observations_and_amplitudes_distributed_here": false,
+    "bytes": 153797527,
+    "upload_limit_observed_MB": 250,
+    "limit_scope": "Limit observed in the journal submission interface on this date, not a universal publisher guarantee.",
+    "members": 2820,
+    "member_hashes_verified": 2819,
+    "crc_passed": true,
+    "unchanged_original_files": 2751,
+    "omitted_generated_npz_files": 2268,
+    "omissions_have_original_paths_sizes_hashes_and_reasons": true,
+    "preserved_training_traces": 80,
+    "preserved_neural_checkpoints": 5,
+    "preserved_mf_inputs": 9,
+    "original_full_archive_unchanged": true
+  },
+  "arithmetic_replay": {
+    "saved_fit_records_checked": 60,
+    "model_refits": 0,
+    "scalar_errors_checked_per_record": 5,
+    "absolute_tolerance": 1e-12,
+    "maximum_array_absolute_difference_in_recorded_build": 0.0,
+    "maximum_metric_absolute_difference_in_recorded_build": 0.0,
+    "extracted_helper_smoke_passed": true,
+    "npz_container_byte_identity_claimed": false
+  },
+  "interpretation": [
+    "The top-level compact membership manifest covers the files actually delivered. Historical study manifests can reference omitted generated arrays.",
+    "Atomic prediction and residual arrays are reconstructed from saved diffusion rates, signed amplitudes and corresponding measured inputs; this is not an approximation of a distributional MF profile.",
+    "Recreating omitted synthetic solver outputs requires new evaluations with preserved seeds and checkpoints; it is distinct from arithmetic replay.",
+    "Case-level manifests, measured spectra, fitted amplitude arrays and editorial material are not included in this public aggregate report.",
+    "The reported tolerance describes the recorded environment and does not guarantee bitwise equality on other platforms."
+  ]
+}

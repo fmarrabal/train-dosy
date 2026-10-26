@@ -20,6 +20,8 @@ Los resultados delimitan el alcance del método. Solo 14 de los 36 ajustes selec
 
 La API sigue en la versión 0.2.1. El estudio de convergencia regularizado tiene una entrada con monitorización propia y está separado del backend signed-v2.2. Se conservan los resultados históricos. Esta actualización pública no incluye medidas industriales ni documentos privados de laboratorio; el ejemplo público se puede reconstruir mediante su URL, hash y scripts de procesado.
 
+**26 de octubre de 2026 — entrega compacta.** El formulario de MDPI utilizado ese día imponía un límite de 250 MB por archivo. Se preparó un suplemento científico de 153,8 MB sin cambiar los resultados, los algoritmos ni la API 0.2.1. Se reconstruyeron las 60 predicciones industriales guardadas y sus cinco métricas de error con una tolerancia absoluta de `1e-12`, sin reajustar. La comprobación verifica la reproducción numérica, no la identidad binaria del NPZ ni la identificación química. El archivo compacto conserva observaciones y amplitudes industriales privadas y no se aloja aquí. Consulta la [nota de empaquetado y reproducción](docs/VALIDATION_20261017_ES.md#entrega-compacta-y-reproducción-26-de-octubre-de-2026) y el [resumen de comprobaciones](verification/compact_packaging_20261026.json).
+
 ## ¿Por qué TRAIn-MF?
 **MF significa multifrecuencia**, de acuerdo con la cabecera original de `TRAIn_DOSY_MFV31`. Matemáticamente se implementa mediante factorización matricial no negativa, `Y ≈ K S A`: las columnas de `S` son perfiles de difusión compartidos y las filas de `A` describen su intensidad en las distintas frecuencias. Sigue siendo multifrecuencia si el rango seleccionado es uno. Un perfil puede ser ancho o multimodal; el rango no equivale al número de sustancias.
 
