@@ -7,7 +7,7 @@ function [X,D,info]=DOSY_MF_Auto(Y,x,D,sigma,innerRows,validationRows,options)
 % This estimates resolved predictive factors, never a chemical species count.
 if nargin<7,options=struct();end
 assert(isstruct(options)&&isscalar(options));
-here=fileparts(mfilename('fullpath'));addpath(here,fullfile(here,'mf_robust'),fullfile(here,'mf_original','dosy_v4'));
+here=fileparts(mfilename('fullpath'));addpath(here,fullfile(here,'mf_robust'));
 assert(startsWith(which('lsqnonneg'),matlabroot,'IgnoreCase',true),'MATLAB lsqnonneg required.');
 n=size(Y,1);x=x(:);D=D(:);innerRows=logical(innerRows(:));validationRows=logical(validationRows(:));
 assert(isnumeric(Y)&&isreal(Y)&&ismatrix(Y)&&~isempty(Y)&&all(isfinite(Y),'all'));

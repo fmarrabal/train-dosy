@@ -1,41 +1,25 @@
 # TRAIn-DOSY: positive joint Laplace inversion
-[Español](README_ES.md) · [API](docs/API_EN.md) · [Mathematics](docs/METHODS_EN.md) · [Provenance](docs/PROVENANCE.md) · [Manuscript](paper/revision_complete_20261017/Manuscript_Revised_CLEAN.pdf)
+[Español](README_ES.md) · [Manuscript](paper/Manuscript.pdf) · [Editable sources](paper/manuscript/Manuscript.tex) · [API](docs/API_EN.md) · [Mathematics](docs/METHODS_EN.md) · [Validation](docs/VALIDATION_EN.md)
 
-**Software 0.2.1 — signed-v2.2 diagnostics.** `TRAIn-MF` retains signed observations and MATLAB NNLS, now compares against a zero-signal model, checks an independently supplied noise scale and flags diffusion-grid boundaries. Numerical convergence and predictive rank are reported separately. `MF-AUTO` and the original manuscript benchmark remain frozen; the dated validation supplement is reported separately. [Mathematics, migration and reproducible tests](docs/TRAIN_MF_SIGNED_EN.md).
+TRAIn-DOSY jointly reconstructs diffusion components across spectral signal regions. **TRAIn-MF** means multifrequency: shared nonnegative diffusion profiles and their spectral amplitudes are fitted through `Y ≈ K S A`. **RAI-S** and **DOME-S** fit shared atomic diffusion rates with automatic spectral-support and order selection. They infer different representations; a factor count is not a chemical species count.
 
-Research software by **Francisco M. Arrabal-Campos** for joint DOSY reconstruction from whole spectral signal regions. TRAIn-MF extends the original **TRAIn of Xu and Zhang**. Arrabal-Campos developed it through successive revisions, including V2, consolidated pre-publication V3 and V3.1. The preserved V3.1 source and current implementation are versions of the same method. See the [development history](docs/TRAIN_MF_HISTORY.md).
+TRAIn-MF is Francisco M. Arrabal-Campos's multifrequency extension of the original TRAIn algorithm by Xu and Zhang. The [method and software credits](docs/PROVENANCE.md) identify the original methods and third-party implementations.
+
+This tree contains the final manuscript, numerical implementations, clients, examples and the validation records supporting the paper. Older manuscripts and development iterations remain recoverable in Git history. Canonical filenames have no draft or revision suffixes.
 
 ![DOSY examples with ground truth](examples/dosy_ground_truth.png)
 
-Archived manuscript release: [manuscript-v6](https://github.com/fmarrabal/train-dosy/releases/tag/manuscript-v6), 38 pages and 48 references. This revision names Codex as a programming assistant for the repository and Trinka as a language-editing assistant for the manuscript, without model or version details. It retains the author metadata, funding and mathematical audit introduced in v5. Numerical software v0.1.0 and its results are preserved. See the [manuscript audit](paper/AUDITORIA_MANUSCRITO_ES.md).
+## Implementations
 
-## Validation added on 17 October 2026
-
-The [revised 57-page manuscript and editable sources](paper/revision_complete_20261017/MANUSCRIPT.md) accompany this dated validation. The numerical software version and historical manuscript remain archived.
-
-
-The dated [validation supplement](docs/VALIDATION_20261017_EN.md) adds protocols, source snapshots, training checkpoints and recorded summaries. It includes 300 null matrices, 96 weak-component problems, a paired factorial study, a controlled TRAIn-MF convergence study, 120 new neural test problems and comparisons with attributed classical reference implementations. Experimental summaries cover four industrial-resin series and one public DOSY Toolbox example.
-
-The results set useful limits. Only 14 of 36 selected TRAIn-MF fits met the declared KKT threshold within the common budget. RAI-S and DOME-S often agreed and missed many weak components. Five neural training seeds did not establish a predictive advantage over the classical policy. Signed SCORE predicted the public experiment better than the positive global methods. These results do not establish chemical component counts or general superiority.
-
-The API remains software 0.2.1. The regularized TRAIn-MF convergence study has its own monitored entry point and is separate from the signed-v2.2 API backend. Historical numerical results are preserved. Industrial measurements and private laboratory documents are not part of this public update; the public example can be rebuilt through its source URL, hash and preprocessing scripts.
-
-**26 October 2026 — compact delivery.** The MDPI upload form used that day imposed a 250 MB file limit, so a 153.8 MB scientific supplement was prepared without changing the results, algorithms or API 0.2.1. All 60 saved industrial predictions and their five error metrics were reconstructed within an absolute tolerance of `1e-12`, without refitting. This checks numerical replay, not NPZ byte identity or chemical identification. The compact archive retains private industrial observations and amplitudes and is not hosted here. See the [packaging and replay note](docs/VALIDATION_20261017_EN.md#compact-delivery-and-replay-26-october-2026) and [verification summary](verification/compact_packaging_20261026.json).
-
-## Why TRAIn-MF?
-**MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
-
-**TRAIn-MF: a multifrequency extension of TRAIn through nonnegative matrix factorization** is the algorithm name. V2, consolidated pre-publication V3, V3.1 and the current constrained implementation belong to the same method. The current implementation refines its optimization, replacing the embedded TRAIn iteration with the constrained updates documented here. Function names, historical source bytes, numerical cores and frozen results are preserved. See the [expanded bibliography](docs/BIBLIOGRAPHY_EN.md).
-
-## What is implemented
-| Language | Implementation | Role |
+| Entry point | Language | Purpose |
 |---|---|---|
-| MATLAB | TRAIn-MF: preserved V3.1 source, native DOSY_MF_Auto and current constrained implementation | Distributional/polymer profiles, ≥256 diffusion bins, installed MATLAB NNLS |
-| Python | Frozen RAI-S and DOME-S solvers, validation, CLI, REST API, synthetic benchmark and plotting | Discrete shared diffusion rates and automatic spectral-support/order selection |
-| C#/.NET 10 | Typed SDK and command-line client | Calls the same API; not a third independent numerical solver |
-| API TRAIn-MF backend | Python launches the native MATLAB code when explicitly configured by the operator | Preserves the MATLAB algorithm and licensing requirements |
+| `RAI-S`, `DOME-S` | Python | Shared atomic rates with automatic spectral-support/order selection |
+| `TRAIn-MF` | MATLAB, callable through the API | Signed observations, trust-region profile updates and NNLS amplitudes |
+| `MF-AUTO` | MATLAB, callable through the API | The regularized constrained reference used in the manuscript |
+| REST API and CLI | Python | One input contract in physical units |
+| SDK and CLI | C#/.NET 10 | Typed client of the same reference API |
 
-The numerical TRAIn-MF reference and frozen atomic core are copied without alteration and hashed. The public packaging adds no manual peak-height deletion. The automatic API estimators receive neither ground truth nor an expected component count. The controlled convergence experiment separately supplies factor count to isolate numerical optimization.
+The software version is 0.2.1. The `TRAIn-MF` response protocol remains `signed-v2.2`; that identifier is an API contract, not a second copy of the source. See the [TRAIn-MF guide](docs/TRAIN_MF_EN.md) for its objective, scaling and diagnostics. The regularized manuscript reference has its own objective and is selected explicitly as `MF-AUTO`.
 
 ## Install Python
 Python 3.11 or newer; the release was tested with Python 3.13.13. Use a virtual environment:
@@ -99,8 +83,6 @@ D = logspace(-10, log10(15e-9), 256)';
 ~~~
 innerRows and validationRows are disjoint logical vectors. The final refit uses their union. Always inspect info.status and info.fit.kkt when available; unresolved rank/convergence is not chemical identification.
 
-matlab/legacy/TRAIn_DOSY_MFV31.m preserves the author's original V3.1 interface and defaults for provenance. Its D_params convention, optional b scaling, smoothing and thresholding differ from the later reference. The historical file is not the validated automatic selector used in this paper.
-
 ## REST API and C#
 ~~~sh
 python -m uvicorn train_dosy.api:app --host 127.0.0.1 --port 8765
@@ -123,30 +105,39 @@ From MATLAB, request = jsondecode(fileread('examples/one_component/input.json'))
 ~~~sh
 python -m pytest -q
 python benchmarks/run_atomic.py --count 48 --output benchmark_run
-python paper/scripts/prepare_evidence.py
+python validation/primary/replay_figures.py
 ~~~
 Compile on Windows with PowerShell:
 ~~~powershell
 .\paper\build.ps1
 ~~~
-On another platform, run pdflatex three times on main.tex from paper/ (MiKTeX/TeX Live and the required packages must be installed). The editable source and original MDPI template notices are supplied.
+On another platform, run pdflatex three times on Manuscript.tex from paper/manuscript/ (MiKTeX/TeX Live and the required packages must be installed). The editable source and original MDPI template notices are supplied.
 
 The atomic protocol contains 36 signal-present discrete cases, six null cases and six broad-profile controls. The frozen primary table reports correct order/all rates as RAI 17/36, RAI-S 23/36, DOME 22/36, DOME-S 23/36 (all-rates column). Selected order alone differs: 17, 25, 26 and 25 of 36 respectively. Agreement of the two S variants does not create independent replication. Broad polymer distributions require a different representation.
 
-The original TRAIn-MF manuscript illustration is an unchanged saved result. The original release did not include the later experimental or neural studies. The dated supplement adds those studies while retaining their numerical failures and identification limits; no general superiority or global optimum is claimed. See [methods and reproducibility scopes](docs/METHODS_EN.md). Full-benchmark reruns may be slow; the three examples are smoke demonstrations, not replacements for the test panel.
+The validation records include numerical failures, weak-component limitations and comparisons where classical references predicted better. See the [validation guide](docs/VALIDATION_EN.md). Full benchmark runs may be slow; the three examples are smoke demonstrations.
 
-## Layout
-- src/train_dosy: contract, API, CLI and frozen Python estimator.
-- matlab/reference: native TRAIn-MF, NNLS/simplex/profile optimization and automatic selection.
-- matlab/legacy: original TRAIn_DOSY_MFV31.
-- csharp: reusable SDK and CLI.
-- examples: inputs, separate truth, fitted outputs and DOSY figures.
-- benchmarks: frozen generator, evaluation and historical per-problem metrics.
-- paper: source, PDF, minimal synthetic replay inputs, tables and figures.
-- provenance and verification: source hashes and local validation evidence.
-- docs: bilingual API/mathematical documentation and attribution.
+## Final files and validation
 
-## Citation, license and status
-Use [CITATION.cff](CITATION.cff) for software and cite [original TRAIn](https://doi.org/10.1021/ac402698h) when discussing its lineage. Relevant author publications include [diffGA](https://doi.org/10.1039/c7sm01569k), [dART](https://doi.org/10.1021/acs.jpca.8b08584), and [regularized Kaczmarz](https://doi.org/10.3390/math13132166); the manuscript adds the molecular-weight studies and the 2016 correction.
+- `paper/Manuscript.pdf`: final manuscript, without development notes or checksum listings.
+- `paper/manuscript/Manuscript.tex`: the editable source and required figures/template.
+- `validation/`: protocols, recorded outcomes, checkpoints and reproducible study scripts.
+- `examples/`: separate observations and ground truth for one, two and three components.
+- `src/`, `matlab/`, `csharp/`: the numerical implementation and its API clients.
+- `docs/`: API, mathematical definitions, interpretation and validation in English and Spanish.
 
-Software: GPL-3.0-or-later; [NOTICE](NOTICE) preserves attribution and dependency distinctions. MATLAB is separately licensed. This is research software; computational checks do not establish chemical identity or journal acceptance. Validation runs locally. GitHub Actions remains disabled and no workflows are installed.
+Read-only checks:
+```sh
+python validation/check_compact_summaries.py
+python scripts/verify.py
+```
+
+The controlled convergence panel has 14/36 stationary selected TRAIn-MF fits; 22 remain unresolved. Weak rates were recovered in 45/96 RAI-S and 44/96 DOME-S problems. Five neural seeds did not establish a predictive accuracy gain. These limits and the better signed-SCORE prediction on the public example are reported in the final manuscript.
+
+Processed industrial observations and fitted specimen amplitudes accompany the journal supplement. Editorial correspondence remains private. Public reference data are retrieved through their attributed downloader. See [validation](docs/VALIDATION_EN.md) and [third-party notices](THIRD_PARTY_NOTICES.md).
+
+## Citation and license
+
+Use [CITATION.cff](CITATION.cff) and cite [original TRAIn](https://doi.org/10.1021/ac402698h). Related work includes [diffGA](https://doi.org/10.1039/c7sm01569k), [dART](https://doi.org/10.1021/acs.jpca.8b08584) and [regularized Kaczmarz](https://doi.org/10.3390/math13132166).
+
+Software is GPL-3.0-or-later, subject to the retained [NOTICE](NOTICE) and dependency licences. MATLAB is separately licensed. Codex assisted repository programming and Trinka assisted manuscript language editing; the authors take responsibility for the work. Validation runs locally; GitHub Actions remains disabled.

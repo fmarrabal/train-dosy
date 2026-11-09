@@ -1,5 +1,5 @@
 function result=example_mf()
-% Reproducible one-factor example. Run from any directory.
+% Reproducible one-factor MF-AUTO manuscript reference. Run from any directory.
 here=fileparts(mfilename('fullpath'));root=fileparts(here);
 z=jsondecode(fileread(fullfile(root,'examples','one_component','input.json')));
 assert(isfield(z,'mask'),'Example mask was generated without held-out rows.');

@@ -3,11 +3,11 @@ function [X,D,info]=DOSY_MF_Robust(Y,x,D,options)
 % .5/nf||K*S*A-Y/q||F^2 + lambdaS/2||L*S||F^2 + lambdaA/(2nf)||A||F^2
 % S>=0, sum(S,1)=1, A>=0. No spectral selection or binning. Real signed Y.
 if nargin<4,options=struct();end
-here=fileparts(mfilename('fullpath'));addpath(fullfile(here,'..','mf_original','dosy_v4'));
+here=fileparts(mfilename('fullpath'));addpath(fullfile(here,'..'));
 assert(numel(D)>=256,'MF256:Grid','The MF reconstruction requires at least 256 diffusion bins.');
 assert(~isfield(options,'sigma')||isempty(options.sigma),'FullSpec:Weights','This implementation uses homogeneous relative weighting.');
 assert(~isfield(options,'lambda_frequency')||options.lambda_frequency==0,'FullSpec:SpectralPenalty','No spectral smoothness penalty in this reference.');
-p=dosyv4.prepare(Y,x,D,options);o=p.options;K=p.K;V=p.Y;L=p.L;D=p.D;
+p=dosygrid.prepare(Y,x,D,options);o=p.options;K=p.K;V=p.Y;L=p.L;D=p.D;
 t=tic;[nd,r,nf]=deal(numel(D),o.n_components,size(Y,2));starts=struct([]);best=[];bestval=Inf;
 for start=1:o.n_starts
     stream=RandStream('mt19937ar','Seed',mod(o.seed+104729*(start-1),2^32));

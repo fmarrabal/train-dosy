@@ -1,11 +1,6 @@
-# Contrato matemático y límites
+# Contrato matemático e interpretación
 
-## ¿Por qué TRAIn-MF?
-**MF significa multifrecuencia**, de acuerdo con la cabecera original de `TRAIn_DOSY_MFV31`. Matemáticamente se implementa mediante factorización matricial no negativa, `Y ≈ K S A`: las columnas de `S` son perfiles de difusión compartidos y las filas de `A` describen su intensidad en las distintas frecuencias. Sigue siendo multifrecuencia si el rango seleccionado es uno. Un perfil puede ser ancho o multimodal; el rango no equivale al número de sustancias.
-
-**TRAIn-MF: extensión multifrecuencia de TRAIn mediante factorización matricial no negativa** es el nombre del algoritmo. V2, la V3 depurada previa al artículo, V3.1 y la implementación actual con restricciones pertenecen al mismo método. La implementación actual mejora su optimización y sustituye la iteración TRAIn interna por las actualizaciones con restricciones aquí documentadas. Se conservan los nombres de las funciones, los bytes del original, los núcleos numéricos y los resultados guardados. Consulta la [bibliografía ampliada](BIBLIOGRAPHY_ES.md).
-
-El modelo es Y(i,l)=integral exp(-b_i D) d mu_l(D)+ruido. D es difusión. Convertirlo a peso molecular requiere una calibración justificada aparte.
+MF significa multifrecuencia. TRAIn-MF representa perfiles no negativos y espectros compartidos mediante `Y ≈ K S A`. Los perfiles pueden ser anchos o multimodales; su rango no cuenta sustancias. Esta guía formula la referencia regularizada del manuscrito; el objetivo con signo de la API se describe en [TRAIn-MF](TRAIN_MF_ES.md).
 
 ## TRAIn-MF distribucional
 Y≈K S A, K(i,j)=exp(-b_i D_j), S≥0 con columnas de masa unidad y A≥0. Se minimiza
@@ -17,9 +12,9 @@ Y≈exp(-b D) A, con tasas positivas continuas y amplitudes no negativas. Las pr
 
 Valores: max_components=4, alpha=.01, validation_stride=4, selection_se=1, max_nfev=350. Se comprueban KKT de amplitudes y estacionariedad de tasas; se devuelven alertas de precisión, límites y ajuste atómico inadecuado. La puntuación con tasas y máscaras estimadas es heurística; no es una garantía de detección química.
 
-## Formulaciones específicas de manuscript-v6
+## Formulaciones de cada método
 
-La [sección editable de métodos](../paper/sections/methods.tex), el [apéndice matemático](../paper/sections/method_details.tex) y el [mapa de ecuaciones y 27 archivos fuente](../paper/evidence/method_formulations.json) especifican operadores, incógnitas, restricciones, objetivos, actualizaciones, regularización, selección y límites numéricos. El Algoritmo 1 usa un entorno real `algorithm`/`algpseudocode`, con líneas numeradas, entradas, salidas, bucles, comprobaciones de convergencia, selección y reajuste final; remite a las ecuaciones correspondientes.
+El [manuscrito final](../paper/Manuscript.pdf) y su [fuente editable](../paper/manuscript/Manuscript.tex) especifican operadores, variables, restricciones, objetivos, actualizaciones, regularización, selección y límites numéricos. El Algoritmo 1 presenta el estimador completo mediante pseudocódigo estructurado.
 
 n es el número de adquisiciones; p, las frecuencias con señal; q, las celdas de difusión; r, los factores compartidos. El operador de una base integra exp(-b D) contra funciones positivas de integral unidad: sus coeficientes son masas. Las tasas atómicas permanecen continuas; asignarlas a bins para dibujar no convierte el ajuste en una inversión sobre una malla.
 
@@ -36,26 +31,26 @@ n es el número de adquisiciones; p, las frecuencias con señal; q, las celdas d
 | DOME con promedio | Tasas nativas fijas; NNLS en cada subconjunto espectral y pesos suaves con entropía, puntuación RSS/sigma²+6 tamaño del subconjunto y temperatura 0.5. No equivale a DOME-S. |
 | RAI-FLEX | Y≈[K(d),G C]A; perfiles spline C positivos de masa unidad y penalización de segunda derivada lambda||L₂C||²/2. NNLS perfilado, optimización log-tasa/softmax y refinamiento sobre simplex. Selección heurística de átomos/perfiles por dimensión efectiva local. |
 | Partial-C | C=s a+V≥0 con un perfil compartido de masa unidad; penaliza la primera derivada de la densidad total y la norma L² de la privada. NNLS condicional conjunto para (a,V) y SLSQP exterior. Rango compartido fijado a uno en este comparador. |
-| Adaptaciones CIRCE v1 / v2 | Cuadráticas convexas positivas con suavidad y grafo espectral. V2 impone C=T Z, Z≥0, mediante un decodificador positivo fijo que conserva masa y suavidad escalada por columna. FISTA o NNLS cíclico estricto; después comprueba cono residual y cotas de masa. No se atribuyen inferencia CIRCE-Net ni cotas de medidas alternativas a estas adaptaciones. |
+| CIRCE con base completa / decodificador positivo | Cuadráticas convexas positivas con suavidad y grafo espectral. El modelo de decodificador positivo impone C=T Z, Z≥0, mediante un decodificador positivo fijo que conserva masa y suavidad escalada por columna. FISTA o NNLS cíclico estricto; después comprueba cono residual y cotas de masa. No se atribuyen inferencia CIRCE-Net ni cotas de medidas alternativas a estas adaptaciones. |
 
-Ejecuta `python paper/scripts/check_formulations.py` para 27 comprobaciones algebraicas deterministas: gradientes, identidad QR/Kronecker, brecha Haar factible, momentos de DOME, conservación de masa del decodificador, degeneración de curvatura e identidades de covarianza. No repite ajustes ni demuestra recuperación estadística. Registra los resultados en `verification/formulation_checks.json`.
+Ejecuta `python validation/primary/check_formulations.py` para 27 comprobaciones algebraicas deterministas: gradientes, identidad QR/Kronecker, brecha Haar factible, momentos de DOME, conservación de masa del decodificador, degeneración de curvatura e identidades de covarianza. No repite ajustes ni demuestra recuperación estadística. Registra los resultados en `verification/formulation_checks.json`.
 
 ### Ampliaciones de la auditoría matemática
 
-El [nuevo apéndice](../paper/sections/audit_extensions.tex) demuestra una condición suficiente de unicidad de la actualización condicional del perfil: con lambda_S>0, solo U=0 debe satisfacer KUA=0, LU=0 y 1^T U=0. La segunda variación es ||KUA||_F²/p + lambda_S||LU||_F². Dos filas de amplitud iguales permiten intercambiar perfiles mediante una dirección de masa cero en el núcleo de la curvatura; el simplex y la curvatura por sí solos no garantizan unicidad. No se afirma que el ejemplo TRAIn-MF guardado presente esa degeneración.
+El [apéndice matemático](../paper/manuscript/Manuscript.tex) demuestra una condición suficiente de unicidad de la actualización condicional del perfil: con lambda_S>0, solo U=0 debe satisfacer KUA=0, LU=0 y 1^T U=0. La segunda variación es ||KUA||_F²/p + lambda_S||LU||_F². Dos filas de amplitud iguales permiten intercambiar perfiles mediante una dirección de masa cero en el núcleo de la curvatura; el simplex y la curvatura por sí solos no garantizan unicidad. No se afirma que el ejemplo TRAIn-MF guardado presente esa degeneración.
 
 Con covarianza especificada Omega del ruido vectorizado por columnas, un contraste fijo w tiene varianza w^T Omega w. La diferencia de pérdidas predictivas cuadráticas con peso simétrico fijo W tiene varianza 4 delta^T W Omega W delta, donde delta=vec(P-Q). Son identidades teóricas para diseño fijo; el benchmark conserva ruido iid y no implementa estimación de covarianzas ni calibración después de selección.
 
 La revisión distingue unicidad exacta del problema RAI de densidad y terminación numérica, explicita el escalado por columnas y la reconstrucción final del grafo, expresa las propuestas DOME en coordenadas adimensionales y precisa el MSE de validación normalizado por ruido en Haar RAI y RAI-Net revisado. La comparación neuronal modifica varios factores y no es una ablación aislada.
 
-Ejecuta `python paper/scripts/audit_manuscript.py` para comprobar medias guardadas, intervalos bootstrap pareados, tablas, cobertura de referencias, hashes, metadatos PDF y declaraciones provisionales sin ajustar modelos. La opción `--local-archive RUTA` permite verificar las fuentes históricas conservadas. Las comparaciones Git se omiten explícitamente si faltan los commits publicados. La revisión bibliográfica usa la caché del 25 de septiembre de 2026; no simula una consulta de red nueva.
+
 
 ### Diferencias que afectan a la interpretación
 
-- `lambdaSparse` en la revisión V3.1 de TRAIn-MF añade sqrt(lambda) diag(sqrt(w)) al diseño: produce una penalización cuadrática ponderada, no L1 explícita. El recorte de pseudocurvas y las modificaciones de suavidad/pesos no equivalen al objetivo fijo actual de TRAIn-MF.
+
 - El error estándar empírico pareado de TRAIn-MF difiere de la tolerancia de distancia predictiva gaussiana de RAI-S/DOME-S. Ninguno constituye una prueba calibrada del número de especies tras máscaras y selección adaptativas.
 - Un subproblema convexo puede tener mínimo único sin que lo tengan el árbol, la malla, los factores o las especies. La parametrización cuadrática puede tener gradiente cero sin cumplir KKT de NNLS.
-- La API conserva su alcance original. Las formulaciones por sí solas no prueban ejecución: el suplemento fechado identifica los estudios adicionales, sus fuentes y sus límites, mientras conserva el núcleo y el benchmark originales.
+- La API conserva su alcance original. Las formulaciones por sí solas no prueban ejecución: los estudios de validación identifican los estudios adicionales, sus fuentes y sus límites, mientras conserva el núcleo y el benchmark originales.
 
 ## Identificación
 Un conjunto finito de observaciones Laplace no identifica una medida positiva arbitraria. Pueden fallar las especies próximas, débiles, con espectros proporcionales, las fases/bases incorrectas y el ruido o intervalo mal especificados. Más bins no aportan información experimental. Acertar el rango es distinto de recuperar todas las tasas y de identificar sustancias.
@@ -64,13 +59,13 @@ Un conjunto finito de observaciones Laplace no identifica una medida positiva ar
 - examples: tres ejemplos de desarrollo regenerables mediante scripts/make_examples.py.
 - benchmarks/run_atomic.py: 48 problemas y cuatro métodos atómicos; 36 discretos con señal, seis nulos y seis controles anchos. Conserva la máscara histórica calculada con todo el entrenamiento externo, incluida la validación interna.
 - benchmarks/frozen/metrics.csv: métricas previas por problema, incluidos archivos históricos y resultados neuronales exploratorios; no se han cambiado.
-- paper/scripts/prepare_evidence.py: tablas y figuras desde entradas sintéticas guardadas, sin reajuste.
-- MATLAB y backend opcional: cálculo TRAIn-MF nativo real, con licencia. La figura TRAIn-MF del manuscrito conserva el resultado anterior y su hash.
+- validation/primary/replay_figures.py: tablas y figuras desde entradas sintéticas guardadas, sin reajuste.
+- MATLAB y backend opcional: cálculo TRAIn-MF nativo real, con licencia. La figura TRAIn-MF del manuscrito utiliza el ajuste de referencia conservado.
 - C#: cliente y CLI tipados para la API; no es otra implementación independiente ni otra validación científica.
 
-La API original conserva sus métricas neuronales históricas. El suplemento fechado aporta por separado cinco entrenamientos, 120 problemas nuevos y el código congelado; no convierte todo el rastreo histórico en una comparación ejecutada.
+Los registros de validación aportan por separado cinco entrenamientos, 120 problemas nuevos y el código congelado; no convierte todo el rastreo histórico en una comparación ejecutada.
 
 
 ## Alcance del estudio numérico
 
-El estudio regularizado de TRAIn-MF fija el rango y varía los barridos previos antes de un presupuesto SQP común. Los 14/36 ajustes seleccionados que cumplen el umbral KKT no validan la selección automática de rango ni una regla de parada de ocho barridos. La monitorización comprueba una condición suficiente de inyectividad condicional para el regularizador especificado; no certifica identidad química. Esta entrada no sustituye signed-v2.2 ni el solver congelado de la API. El [suplemento fechado](VALIDATION_20261017_ES.md) incluye cinco entrenamientos neuronales y 120 problemas nuevos.
+El estudio regularizado de TRAIn-MF fija el rango y varía los barridos previos antes de un presupuesto SQP común. Los 14/36 ajustes seleccionados que cumplen el umbral KKT no validan la selección automática de rango ni una regla de parada de ocho barridos. La monitorización comprueba una condición suficiente de inyectividad condicional para el regularizador especificado; no certifica identidad química. Esta entrada no sustituye signed-v2.2 ni el solver congelado de la API. El [estudio de validación](VALIDATION_ES.md) incluye cinco entrenamientos neuronales y 120 problemas nuevos.

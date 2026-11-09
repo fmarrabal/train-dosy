@@ -1,9 +1,6 @@
-# Mathematical contract and limits
+# Mathematical contract and interpretation
 
-## Why TRAIn-MF?
-**MF means multifrequency** here, consistent with the original `TRAIn_DOSY_MFV31` header. The mathematical implementation is a nonnegative matrix factorization, `Y ≈ K S A`: columns of `S` are shared diffusion profiles and rows of `A` describe their intensities across chemical shifts. It still processes multiple frequencies when the selected rank is one. A profile can be broad or multimodal; rank is not a chemical species count.
-
-**TRAIn-MF: a multifrequency extension of TRAIn through nonnegative matrix factorization** is the algorithm name. V2, consolidated pre-publication V3, V3.1 and the current constrained implementation belong to the same method. The current implementation refines its optimization, replacing the embedded TRAIn iteration with the constrained updates documented here. Function names, historical source bytes, numerical cores and frozen results are preserved. See the [expanded bibliography](BIBLIOGRAPHY_EN.md).
+MF means multifrequency. TRAIn-MF uses shared nonnegative profiles and spectra, `Y ≈ K S A`. A profile can be broad or multimodal; its factor count is not a chemical species count. This guide states the regularized manuscript reference; the signed-data API objective is described separately in [TRAIn-MF](TRAIN_MF_EN.md).
 
 The acquisition model is Y(i,l)=integral exp(-b_i D) d mu_l(D)+noise. D is diffusion; inferred molecular weight requires a separately justified calibration.
 
@@ -17,15 +14,15 @@ Y≈exp(-b D) A, with positive continuous rates and nonnegative amplitudes. Cand
 
 Defaults: max_components=4, alpha=.01, validation_stride=4, selection_se=1, max_nfev=350. Final amplitude KKT and scaled rate stationarity are checked. Local precision and model-mismatch flags must be reported. Scores with estimated rates and selected masks are heuristic; no familywise chemical-detection guarantee is claimed.
 
-## Method-specific formulations in manuscript-v6
+## Method-specific formulations
 
-The [editable method section](../paper/sections/methods.tex), [mathematical appendix](../paper/sections/method_details.tex), and [27-file equation/source map](../paper/evidence/method_formulations.json) specify operators, unknowns, constraints, objectives, updates, regularization, selection and numerical limits. Algorithm 1 is an actual numbered `algorithm`/`algpseudocode` float with inputs, outputs, loops, eligibility checks, selection and final refitting. Its equations are linked in the pseudocode.
+The [final manuscript](../paper/Manuscript.pdf) and its [editable source](../paper/manuscript/Manuscript.tex) specify the operators, unknowns, constraints, objectives, updates, regularization, selection and numerical limits. Algorithm 1 presents the complete estimator in structured pseudocode.
 
 Here n denotes acquisitions, p retained frequencies, q diffusion cells, and r shared factors. A basis operator integrates exp(-b D) against unit-integral positive functions. Its coefficients are masses. Atomic rates instead remain continuous; binning them for display is not a grid inversion.
 
 | Method | Specific inversion and selector |
 |---|---|
-| TRAIn supplied file | h=eta²; minimize ||K h-y||². Gauss-Newton B=8 diag(eta) KᵀK diag(eta), truncated-CG trust step, actual/predicted reduction ratio. Stop relative to an NNLS residual floor. The core has no explicit Tikhonov penalty. |
+| Single-channel TRAIn | h=eta²; minimize ||K h-y||². Gauss-Newton B=8 diag(eta) KᵀK diag(eta), truncated-CG trust step, actual/predicted reduction ratio. Stop relative to an NNLS residual floor. The core has no explicit Tikhonov penalty. |
 | Native atomic RAI | Profile A≥0 out of ||(K(d)A-Y)/sigma||²/2. Bounded L-BFGS-B in log d with ten starts and residual births. Native score RSS/sigma²+r(p+1)log(np). |
 | Density RAI | Positive bin masses C; data loss/(2n) + lambda_s||R C||²/2 + eta tr(CᵀH C)/2 + gamma tr(H C L_graph Cᵀ)/2. R acts on density differences; H=diag(1/bin width). Positive ridge gives a unique fixed-grid minimizer. Validation decides grid splits. |
 | Adaptive Haar RAI | Positive normalized leaf masses U, physical masses P_tree U. Data loss/(2n)+eta||U||²/2+lambda sqrt(p) sum of Haar-detail row norms. ADMM uses positivity projection and group shrinkage; feasible primal/dual gap checks each fixed tree. Completed penalty paths compete on validation. |
@@ -36,26 +33,26 @@ Here n denotes acquisitions, p retained frequencies, q diffusion cells, and r sh
 | DOME averaging | Fixed native rates; NNLS on every spectral subset, entropy-regularized soft weights with scores RSS/sigma²+6 subset size and temperature 0.5. Different from DOME-S. |
 | RAI-FLEX | Y≈[K(d),G C]A, unit-mass positive spline profiles C, second-derivative penalty lambda||L₂C||²/2. Profiled NNLS, log-rate/softmax optimization then simplex refinement. Heuristic local-effective-dimension score selects atom/profile allocation. |
 | Partial-C | C=s a+V≥0 with one unit-mass shared spline profile; total-density first-derivative and private-density L² penalties. Joint conditional NNLS for (a,V), simplex outer SLSQP. Shared rank is fixed at one in the comparator. |
-| CIRCE adapters v1 / v2 | Positive convex quadratics with density roughness and spectral graph. V2 constrains C=T Z, Z≥0, using a fixed positive mass-preserving decoder and column-scaled roughness. FISTA or strict cyclic NNLS; residual-cone/mass-cap feasibility is checked afterwards. No CIRCE-Net inference or alternative-measure bounds are attributed to these adapters. |
+| CIRCE full basis / positive decoder | Positive convex quadratics with density roughness and spectral graph. The positive-decoder model constrains C=T Z, Z≥0, using a fixed positive mass-preserving decoder and column-scaled roughness. FISTA or strict cyclic NNLS; residual-cone/mass-cap feasibility is checked afterwards. No CIRCE-Net inference or alternative-measure bounds are attributed to these adapters. |
 
-Run `python paper/scripts/check_formulations.py` for 27 deterministic finite-dimensional algebra checks (gradients, QR/Kronecker identity, feasible Haar gap, DOME moments, decoder mass conservation, curvature degeneracy and covariance identities). This does not rerun fits or establish statistical recovery. Results are recorded in `verification/formulation_checks.json`.
+Run `python validation/primary/check_formulations.py` for 27 deterministic finite-dimensional algebra checks (gradients, QR/Kronecker identity, feasible Haar gap, DOME moments, decoder mass conservation, curvature degeneracy and covariance identities). This does not rerun fits or establish statistical recovery. Results are recorded in `verification/formulation_checks.json`.
 
 ### Mathematical audit additions
 
-The [new appendix](../paper/sections/audit_extensions.tex) gives a sufficient uniqueness condition for the conditional profile update: with lambda_S>0, the only U satisfying KUA=0, LU=0 and 1^T U=0 must be zero. The second variation is ||KUA||_F²/p + lambda_S||LU||_F². Equal amplitude rows admit profile exchanges along a mass-zero curvature-null direction, so simplex normalization and curvature alone do not guarantee uniqueness. This does not assert degeneracy of the saved TRAIn-MF example.
+The [mathematical appendix](../paper/manuscript/Manuscript.tex) gives a sufficient uniqueness condition for the conditional profile update: with lambda_S>0, the only U satisfying KUA=0, LU=0 and 1^T U=0 must be zero. The second variation is ||KUA||_F²/p + lambda_S||LU||_F². Equal amplitude rows admit profile exchanges along a mass-zero curvature-null direction, so simplex normalization and curvature alone do not guarantee uniqueness. This does not assert degeneracy of the saved TRAIn-MF example.
 
 For specified covariance Omega of column-stacked noise, a fixed screening functional w has variance w^T Omega w. A difference of quadratic prediction losses with fixed symmetric weight W has variance 4 delta^T W Omega W delta, where delta=vec(P-Q). These are theoretical fixed-design identities; the frozen benchmark uses iid noise and does not implement covariance estimation or post-selection calibration.
 
 The audit also separates exact uniqueness of the density-RAI quadratic from optimizer termination, states the training-column scales and final graph reconstruction, gives dimensionless DOME proposal coordinates, and specifies noise-standardized validation MSE for Haar RAI and revised RAI-Net. The neural comparison changes several factors and is not an isolated ablation.
 
-Run `python paper/scripts/audit_manuscript.py` to check saved-data means, paired bootstrap intervals, tables, reference-cache coverage, source hashes, PDF metadata and provisional declarations without fitting any model. An optional `--local-archive PATH` checks the retained historical sources. Git comparisons are skipped explicitly when the release commits are unavailable. Bibliographic checks use the cache dated 25 September 2026; they do not claim a fresh network lookup.
+
 
 ### Distinctions that affect interpretation
 
-- The V3.1 development revision of TRAIn-MF uses `lambdaSparse`, which augments the design by sqrt(lambda) diag(sqrt(w)); the resulting term is weighted quadratic, not an explicit L1 penalty. Clipped residual pseudo-curves and adaptive smoothing/weights do not implement the current fixed TRAIn-MF objective.
+
 - TRAIn-MF's empirical paired standard error across validation acquisitions differs from RAI-S/DOME-S's conditional Gaussian prediction-distance allowance. Neither is a calibrated chemical order test after adaptive masking and selection.
 - A fixed convex subproblem can have a unique minimizer while its selected tree, grid, factors or underlying species remain nonidentifiable. Squared positivity can have a zero gradient at a point failing NNLS KKT.
-- The public API scope remains the packaged methods listed above in the reproduction section. Method formulations alone do not establish execution. The original numerical core and benchmark remain unchanged; the dated supplement identifies the additional executed studies and their separate sources.
+- The public API scope remains the packaged methods listed above in the reproduction section. Method formulations alone do not establish execution. The original numerical core and benchmark remain unchanged; the validation studies identify the additional executed studies and their separate sources.
 
 ## Identifiability
 Finite Laplace observations do not uniquely identify arbitrary positive measures. Narrow close components, weak species, proportional spectra, baseline/phase errors, noise misspecification and overly narrow bounds can defeat recovery. A fine grid cannot manufacture information. Recovering the fitted rank is weaker than recovering all diffusion rates and weaker still than chemical identification. The manuscript reports these separately.
@@ -64,10 +61,10 @@ Finite Laplace observations do not uniquely identify arbitrary positive measures
 - examples: three fixed development examples; regenerate with scripts/make_examples.py.
 - benchmarks/run_atomic.py: exact historical 48-case test generator and four atomic methods; 36 signal-present discrete problems, six nulls, six broad misspecification controls. Its historical mask uses all outer training rows, including internal validation rows.
 - benchmarks/frozen/metrics.csv: full existing per-case metrics including archived and exploratory neural results. No frozen numerical results were altered for the public release.
-- paper/scripts/prepare_evidence.py: regenerate manuscript tables and figures from a minimal saved synthetic fixture set, with no solver calls.
-- MATLAB example and optional API backend: actual native TRAIn-MF fit using licensed MATLAB. The manuscript's original TRAIn-MF figure remains the hashed saved output.
+- validation/primary/replay_figures.py: regenerate manuscript tables and figures from a minimal saved synthetic fixture set, with no solver calls.
+- MATLAB example and optional API backend: actual native TRAIn-MF fit using licensed MATLAB. The manuscript TRAIn-MF figure uses the saved reference fit.
 - C#: typed SDK/CLI for the same API. It is not an independent numerical reimplementation and provides no third independent scientific validation.
-The original API release preserves its historical neural metrics. The dated validation supplement separately supplies five training seeds, 120 new test problems and source snapshots; it does not turn the full historical algorithm survey into an executed comparison. See [the validation scope](VALIDATION_20261017_EN.md).
+The validation records separately supply five training seeds, 120 new test problems and source snapshots; it does not turn the full historical algorithm survey into an executed comparison. See [the validation scope](VALIDATION_EN.md).
 
 
 ## Numerical-study scope

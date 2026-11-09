@@ -1,19 +1,30 @@
 cff-version: 1.2.0
-message: "Cite the software release and original TRAIn; see docs/PROVENANCE.md for method-specific credit."
+message: "Cite the software and the original TRAIn method; the final manuscript gives method-specific references."
 title: "TRAIn-DOSY: Positive Joint Laplace Inversion"
 type: software
 authors:
   - family-names: "Arrabal-Campos"
-    given-names: "Francisco M."
-version: 0.1.0
-date-released: 2026-09-25
+    given-names: "Francisco Manuel"
+    orcid: "https://orcid.org/0000-0002-5510-6297"
+version: 0.2.1
 url: "https://github.com/fmarrabal/train-dosy"
 repository-code: "https://github.com/fmarrabal/train-dosy"
 license: GPL-3.0-or-later
-keywords:
-  - DOSY
-  - inverse Laplace transform
-  - NMR
-  - NNLS
-  - spectral support
-
+keywords: [DOSY, inverse Laplace transform, NMR, NNLS, spectral support]
+preferred-citation:
+  type: article
+  title: "Positive Joint Laplace Inversion: Spectral Support Selection and Identifiability in Diffusion-Ordered Spectroscopy"
+  authors:
+    - family-names: "Valdivieso"
+      given-names: "Víctor"
+    - family-names: "González-Lázaro"
+      given-names: "Marta"
+    - family-names: "Fernández"
+      given-names: "Ignacio"
+      orcid: "https://orcid.org/0000-0001-8355-580X"
+    - family-names: "Arrabal-Campos"
+      given-names: "Francisco Manuel"
+      orcid: "https://orcid.org/0000-0002-5510-6297"
+  journal: "Mathematics"
+  year: 2026
+  url: "https://github.com/fmarrabal/train-dosy/blob/main/paper/Manuscript.pdf"

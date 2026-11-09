@@ -1,6 +1,6 @@
 # Contrato de la API (v1)
 
-El nombre público del algoritmo es **TRAIn-MF**. El software 0.2.1 utiliza el protocolo `signed-v2.2` para `TRAIn-MF`; `MF-AUTO` conserva el solver restringido del artículo (`DOSY_MF_Auto`). Son protocolos numéricos explícitamente distintos dentro de la evolución del mismo método. Véase la [guía de corrección y migración](TRAIN_MF_SIGNED_ES.md).
+El nombre público del algoritmo es **TRAIn-MF**. El software 0.2.1 utiliza el protocolo `signed-v2.2` para `TRAIn-MF`; `MF-AUTO` conserva el solver restringido del artículo (`DOSY_MF_Auto`). Son protocolos numéricos explícitamente distintos dentro de la evolución del mismo método. Véase la [guía de corrección y migración](TRAIN_MF_ES.md).
 La inversión se realiza conjuntamente sobre las frecuencias seleccionadas. La API no acepta especie química, número verdadero de componentes, valor objetivo de difusión ni archivo de verdad de referencia.
 
 ## Arranque y llamada
@@ -55,4 +55,4 @@ Instalar MATLAB y Optimization Toolbox; configurar en el proceso del servidor:
 $env:TRAIN_DOSY_MATLAB = 'C:\Program Files\MATLAB\R2026a\bin\matlab.exe'
 $env:TRAIN_DOSY_MATLAB_FUNCTIONS = (Resolve-Path matlab).Path
 ~~~
-Arrancar después el servidor o usar la CLI con `--method TRAIn-MF` (revisado) o `--method MF-AUTO` (congelado). Las rutas las fija el operador, nunca la petición. Cada ajuste inicia MATLAB en modo batch. MATLAB y su lsqnonneg no se redistribuyen. La [guía de corrección](TRAIN_MF_SIGNED_ES.md) incluye el uso MATLAB revisado; `matlab/example_mf.m` conserva el ejemplo del artículo.
+Arrancar después el servidor o usar la CLI con `--method TRAIn-MF` (revisado) o `--method MF-AUTO` (congelado). Las rutas las fija el operador, nunca la petición. Cada ajuste inicia MATLAB en modo batch. MATLAB y su lsqnonneg no se redistribuyen. La [guía de corrección](TRAIN_MF_ES.md) incluye el uso MATLAB revisado; `matlab/example_mf.m` conserva el ejemplo del artículo.

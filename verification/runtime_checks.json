@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-09",
+  "scope": "Current source-layout and API regression checks; no training, experimental refitting or benchmark-wide rerun.",
+  "software_version": "0.2.1",
+  "reference_layout": {
+    "previous_commit": "afe7d6c82000fa9db2f7843e014e306b4f7ae79b",
+    "number_of_reference_files_checked_against_exact_allowed_path_substitutions": 4,
+    "all_other_bytes_identical": true
+  },
+  "python": {
+    "suite": "tests/",
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "time_seconds": 36.575,
+    "junit": "verification/python_tests.xml",
+    "junit_sha256": "2731a0b342d4c45c8696f1e186697fa3a297c7540a0f9afe3de70250f4308fb1",
+    "junit_host_identifier_removed": true,
+    "matlab_integration_cases": 3,
+    "warning": "The installed Starlette TestClient emits one deprecation warning for its httpx dependency."
+  },
+  "matlab": {
+    "release": "R2026a",
+    "signed_protocol": "signed-v2.2",
+    "signed_integration": "Real one-factor and zero-factor HTTP cases, including one and three selected columns.",
+    "reference": {
+      "method": "MF-AUTO",
+      "saved_fixture": "examples/one_component/MF_AUTO.mat",
+      "saved_fixture_sha256": "f5f2f397f36bba3cb29ca45528c48efae3f2b06cda0d46e3f7defb8ae2040cb7",
+      "selected_rank": 1,
+      "bins": 256,
+      "selected_frequencies": 100,
+      "max_absolute_X_difference": 0.0,
+      "relative_prediction_difference": 0.0
+    }
+  },
+  "csharp": {
+    "sdk": "10.0.300",
+    "build_errors": 0,
+    "build_warnings": 0,
+    "local_http_example": {
+      "passed": true,
+      "method": "RAI-S",
+      "rank": 1,
+      "shape": [
+        24,
+        100
+      ],
+      "max_prediction_difference": 0.0,
+      "api_version": "0.2.1"
+    }
+  },
+  "github_actions_used": false,
+  "hardware_training_used": false,
+  "interpretation": "File checks, equality with a saved synthetic result and client integration are not proof of physical identifiability, global convergence or a validation on measured samples."
+}

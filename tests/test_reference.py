@@ -11,7 +11,7 @@ ROOT=Path(__file__).resolve().parents[1]
 @pytest.fixture
 def payload():return json.loads((ROOT/'examples/one_component/input.json').read_text())
 
-def test_frozen_sources():
+def test_declared_source_hashes():
     for record in json.loads((ROOT/'provenance/source_hashes.json').read_text()):
         assert hashlib.sha256((ROOT/record['path']).read_bytes()).hexdigest()==record['sha256']
 
@@ -62,3 +62,14 @@ def test_api_errors_and_result(payload):
         result=client.post('/v1/fit',json=payload)
         assert result.status_code==200 and result.json()['selected_rank']==1
         assert client.get('/openapi.json').json()['info']['version']=='0.2.1'
+
+def test_dome_api_matches_saved_example(payload):
+    from fastapi.testclient import TestClient
+    from train_dosy.api import app
+    reference=json.loads((ROOT/'examples/one_component/DOME-S.json').read_text())
+    with TestClient(app) as client:
+        response=client.post('/v1/fit',json={**payload,'method':'DOME-S'})
+    assert response.status_code==200
+    actual=response.json()
+    assert actual['method']==reference['method'] and actual['selected_rank']==reference['selected_rank']
+    np.testing.assert_allclose(actual['prediction'],reference['prediction'],rtol=1e-10,atol=1e-12)

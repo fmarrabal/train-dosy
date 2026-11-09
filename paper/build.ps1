@@ -1,10 +1,14 @@
 $ErrorActionPreference = 'Stop'
-Push-Location $PSScriptRoot
+$paperDirectory = $PSScriptRoot
+$sourceDirectory = Join-Path $paperDirectory 'manuscript'
+$buildDirectory = Join-Path $paperDirectory 'build'
+New-Item -ItemType Directory -Path $buildDirectory -Force | Out-Null
+Push-Location $sourceDirectory
 try {
-    New-Item -ItemType Directory -Force -Path 'output/pdf' | Out-Null
-    for ($pass = 0; $pass -lt 3; $pass++) {
-        & pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -output-directory=output/pdf main.tex
-        if ($LASTEXITCODE -ne 0) { throw 'LaTeX compilation failed.' }
+    for ($pass = 1; $pass -le 3; $pass++) {
+        & pdflatex '-interaction=nonstopmode' '-halt-on-error' '-no-shell-escape' "-output-directory=$buildDirectory" 'Manuscript.tex'
+        if ($LASTEXITCODE -ne 0) { throw "LaTeX failed on pass $pass" }
     }
-    Copy-Item -LiteralPath 'output/pdf/main.pdf' -Destination 'output/pdf/Positive_Joint_Laplace_Inversion_Mathematics.pdf' -Force
-} finally { Pop-Location }
+    Copy-Item -LiteralPath (Join-Path $buildDirectory 'Manuscript.pdf') -Destination (Join-Path $paperDirectory 'Manuscript.pdf') -Force
+}
+finally { Pop-Location }

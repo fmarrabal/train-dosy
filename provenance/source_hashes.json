@@ -54,16 +54,14 @@
     "source_filename": "metrics.csv"
   },
   {
-    "path": "matlab/legacy/TRAIn_DOSY_MFV31.m",
-    "sha256": "d7d2ec44b70f3f68baeb4f7c57592c3e14067cb1a5ed18244d5648724ef4a82f",
-    "source_project": "CODIGO_MEJORADO",
-    "source_filename": "TRAIn_DOSY_MFV31.m"
-  },
-  {
     "path": "matlab/reference/DOSY_MF_Auto.m",
-    "sha256": "eef726fc289205091b3cfe133190deb3580e51437d496026b206f99da17dbaef",
+    "sha256": "715a30e9d1bb0aa091b8c999663bb0094350945f6bc8cff92aebd3534ee30c74",
     "source_project": "ilt_unified_benchmark_20260924",
-    "source_filename": "DOSY_MF_Auto.m"
+    "source_filename": "DOSY_MF_Auto.m",
+    "previous_commit": "afe7d6c82000fa9db2f7843e014e306b4f7ae79b",
+    "previous_path": "matlab/reference/DOSY_MF_Auto.m",
+    "previous_sha256": "eef726fc289205091b3cfe133190deb3580e51437d496026b206f99da17dbaef",
+    "adaptation": "MATLAB package relocation and package/addpath references only. Numerical expressions unchanged."
   },
   {
     "path": "matlab/reference/DOSY_RankEvidence.m",
@@ -79,9 +77,13 @@
   },
   {
     "path": "matlab/reference/mf_robust/DOSY_MF_Robust.m",
-    "sha256": "2ee942c911d6f6424dd8cec715ed48bbd65e4ded666f956d1da2abc1bf521ded",
+    "sha256": "c53d5727975a887569db59a7eda41fea62acd33401641b24a312cee962d9d9fb",
     "source_project": "mf_robust",
-    "source_filename": "DOSY_MF_Robust.m"
+    "source_filename": "DOSY_MF_Robust.m",
+    "previous_commit": "afe7d6c82000fa9db2f7843e014e306b4f7ae79b",
+    "previous_path": "matlab/reference/mf_robust/DOSY_MF_Robust.m",
+    "previous_sha256": "2ee942c911d6f6424dd8cec715ed48bbd65e4ded666f956d1da2abc1bf521ded",
+    "adaptation": "MATLAB package relocation and package/addpath references only. Numerical expressions unchanged."
   },
   {
     "path": "matlab/reference/mf_robust/+mfrobust/evaluate.m",
@@ -114,16 +116,24 @@
     "source_filename": "simplex_block.m"
   },
   {
-    "path": "matlab/reference/mf_original/dosy_v4/+dosyv4/prepare.m",
-    "sha256": "8570904f549c0dca038a278f9509306048c91f706262e4126d45c3f12f7e4788",
+    "path": "matlab/reference/+dosygrid/prepare.m",
+    "sha256": "b69a275c622ecfb0114b9da128f6d4b2f07ec5fac132a13ced23290a52cf39f2",
     "source_project": "+dosyv4",
-    "source_filename": "prepare.m"
+    "source_filename": "prepare.m",
+    "previous_commit": "afe7d6c82000fa9db2f7843e014e306b4f7ae79b",
+    "previous_path": "matlab/reference/mf_original/dosy_v4/+dosyv4/prepare.m",
+    "previous_sha256": "8570904f549c0dca038a278f9509306048c91f706262e4126d45c3f12f7e4788",
+    "adaptation": "MATLAB package relocation and package/addpath references only. Numerical expressions unchanged."
   },
   {
-    "path": "matlab/reference/mf_original/dosy_v4/+dosyv4/regularizers.m",
+    "path": "matlab/reference/+dosygrid/regularizers.m",
     "sha256": "0f502e07fd162545157045eb33624422b4aae9f2dce5dedc6ba0f9e9cf5879f4",
     "source_project": "+dosyv4",
-    "source_filename": "regularizers.m"
+    "source_filename": "regularizers.m",
+    "previous_commit": "afe7d6c82000fa9db2f7843e014e306b4f7ae79b",
+    "previous_path": "matlab/reference/mf_original/dosy_v4/+dosyv4/regularizers.m",
+    "previous_sha256": "0f502e07fd162545157045eb33624422b4aae9f2dce5dedc6ba0f9e9cf5879f4",
+    "adaptation": "MATLAB package relocation and package/addpath references only. Numerical expressions unchanged."
   },
   {
     "path": "LICENSE",

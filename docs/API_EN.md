@@ -1,6 +1,6 @@
 # API contract (v1)
 
-The public algorithm name is **TRAIn-MF**. Software 0.2.1 uses protocol `signed-v2.2` for identifier `TRAIn-MF`; `MF-AUTO` preserves the frozen constrained manuscript solver (`DOSY_MF_Auto`). See the [correction and migration guide](TRAIN_MF_SIGNED_EN.md). These are explicitly different numerical protocols within the same method's development.
+The public algorithm name is **TRAIn-MF**. Software 0.2.1 uses protocol `signed-v2.2` for identifier `TRAIn-MF`; `MF-AUTO` preserves the frozen constrained manuscript solver (`DOSY_MF_Auto`). See the [correction and migration guide](TRAIN_MF_EN.md). These are explicitly different numerical protocols within the same method's development.
 The service performs joint inversion over selected frequencies. It does not receive a chemical identity, true rank, target diffusion value, or truth file.
 
 ## Run locally
@@ -56,4 +56,4 @@ Install MATLAB with Optimization Toolbox and set these environment variables in 
 $env:TRAIN_DOSY_MATLAB = 'C:\Program Files\MATLAB\R2026a\bin\matlab.exe'
 $env:TRAIN_DOSY_MATLAB_FUNCTIONS = (Resolve-Path matlab).Path
 ~~~
-Then start the server or use the CLI with `--method TRAIn-MF` (revised) or `--method MF-AUTO` (frozen). Only the operator chooses the executable and MATLAB code path. Each request starts a separate MATLAB batch process. MATLAB is neither bundled nor redistributed. Direct revised MATLAB usage and reproducible checks are in [the correction guide](TRAIN_MF_SIGNED_EN.md); `matlab/example_mf.m` retains the manuscript example.
+Then start the server or use the CLI with `--method TRAIn-MF` (revised) or `--method MF-AUTO` (frozen). Only the operator chooses the executable and MATLAB code path. Each request starts a separate MATLAB batch process. MATLAB is neither bundled nor redistributed. Direct revised MATLAB usage and reproducible checks are in [the correction guide](TRAIN_MF_EN.md); `matlab/example_mf.m` retains the manuscript example.

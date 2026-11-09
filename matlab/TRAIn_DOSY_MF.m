@@ -2,7 +2,7 @@ function [X,D_space,info] = TRAIn_DOSY_MF(Z,b,D_params,options)
 %TRAIN_DOSY_MF Revised entry point. b MUST be physical b values in s/m^2.
 % D_params=[Dmin Dmax bins], D in 1e-9 m^2/s, bins>=256.
 % Use signal_mask to select complete signal regions from the full spectrum.
-% Historical V3/V3.1 preprocessing is deliberately not reproduced here.
+% Historical preprocessing is not part of the signed-observation protocol.
 % For a direct SI grid use TRAIn_DOSY_MF_Signed instead.
 if nargin<4,options=struct();end
 validateattributes(D_params,{'numeric'},{'real','finite','vector','numel',3});

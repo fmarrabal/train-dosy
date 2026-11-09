@@ -1,16 +1,16 @@
-# Third-party notices for the dated validation supplement
+# Third-party notices for the validation studies
 
 The repository's GPL-3.0-or-later licence does not replace the licences below.
 Keep the original notices with redistributed source. No proprietary MATLAB
 NNLS source, industrial observations or private documents are redistributed.
 
-* SCORE/LOCODOSY: `paper/revision_complete_20261017/validation/experimental/vendor/locodosy_native.py`
+* SCORE/LOCODOSY: `validation/experimental/vendor/locodosy_native.py`
   is the attributed Python translation of the GNAT implementation, with original
   MATLAB attribution to Mathias Nilsson (2007, 2010, 2017). The module retains
   its GPL-3.0-or-later translation notice. The full GNAT GPL is adjacent as
   `COPYING-GNAT`; `ATTRIBUTION.txt` explains the translation and CV wrappers.
 * nmrglue 0.11: source is under `experimental/public_mixture/vendor_runtime/`,
-  relative to the dated validation directory. Copyright (c) 2010-2015 Jonathan
+  relative to the validation directory. Copyright (c) 2010-2015 Jonathan
   J. Helmus. The complete BSD licence and distribution metadata are retained
   in `nmrglue-0.11.dist-info/`. The numerical source is unchanged; the reader
   loader avoids importing an unrelated NumPy-incompatible module.
