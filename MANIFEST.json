@@ -354,8 +354,8 @@
     },
     {
       "path": "paper/Manuscript.pdf",
-      "sha256": "aad89ca185ced4d225a18b7c0c507c8c054ab22fc69ccea9f40da6fdcdbb3839",
-      "bytes": 2103935
+      "sha256": "adc340bf7afff1cc4ab7792b45dd03f8b13af923f0901552b92c9c7b61e6bd74",
+      "bytes": 2103934
     },
     {
       "path": "paper/README.md",
@@ -439,7 +439,7 @@
     },
     {
       "path": "paper/manuscript/Manuscript.tex",
-      "sha256": "e70f2797abae5530831394b8d5b68ee77687a957aab82961e8a9988e58edad04",
+      "sha256": "24667ccefb86a57539722029d747e97b9a38cb18e59462fa47605f701888aef1",
       "bytes": 195526
     },
     {
